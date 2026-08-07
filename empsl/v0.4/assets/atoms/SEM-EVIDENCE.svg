@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+<title id="title">證據</title><desc id="desc">證據語義／語法外框。</desc>
+<rect width="256" height="256" fill="none"/>
+<path d="M44 128 C76 38 180 38 212 128 C180 218 76 218 44 128 Z" stroke="#151a24" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+</svg>

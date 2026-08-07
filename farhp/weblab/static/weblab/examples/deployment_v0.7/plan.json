@@ -1,0 +1,37 @@
+{
+  "farhp_weblab_plan_version": "0.7",
+  "study_id": "FARHP-DEPLOY-TEST",
+  "task": "multi_stimulus_ABX_identity_match",
+  "planned_sample_size": 12,
+  "primary_endpoint": "abx_accuracy_vs_0_5",
+  "preregistration_note": "Primary endpoint fixed before collection.",
+  "design": {
+    "selected_stimuli": [
+      "nihao",
+      "nihaoma"
+    ],
+    "altered_condition": "zero",
+    "intervention_strength": 0.75,
+    "repeats_per_stimulus": 1,
+    "practice_trials": 1,
+    "break_every_main_trials": 1,
+    "seed": 424242,
+    "ordering": "participant_indexed_latin_or_cyclic_order_plus_balanced_ABX_cells",
+    "blinding": "formal-trial A/B mapping and correctness hidden until completion"
+  },
+  "exclusion_policy": {
+    "min_rt_ms": 150,
+    "max_rt_ms": 30000,
+    "min_completion_ratio": 1,
+    "min_valid_trial_ratio": 0.8,
+    "min_plays_each_label": 1,
+    "accuracy_based_exclusion": false
+  },
+  "status": "locked",
+  "created_at": "2026-07-31T03:41:12.881Z",
+  "locked_at": "2026-07-31T03:41:14.943Z",
+  "plan_fingerprint": {
+    "algorithm": "FNV32x8-fallback",
+    "value": "b6c3a1c3afb3d45e27bb255514dd9f386c18ab0fd21a5eeab72e05711a359444"
+  }
+}

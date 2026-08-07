@@ -1,0 +1,8 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://evemisslab.com/spec/FARHP_Server_Invite_Spec_v1.0-rc.1.schema.json",
+  "title":"FARHP Server Invite v1.0 RC1","type":"object",
+  "required":["plan_id","max_uses","participant_url"],
+  "properties":{"code":{"type":"string","minLength":8},"plan_id":{"type":"integer"},"max_uses":{"type":"integer","minimum":1},"uses":{"type":"integer","minimum":0},"expires_at":{"type":["string","null"]},"participant_url":{"type":"string"},"code_digest_only":{"type":"string"}},
+  "additionalProperties":true,"oneOf":[{"required":["code"]},{"required":["code_digest_only"]}]
+}

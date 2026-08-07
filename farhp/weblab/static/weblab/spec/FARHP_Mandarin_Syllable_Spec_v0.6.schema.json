@@ -1,0 +1,210 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://evemisslab.example/spec/FARHP_Mandarin_Syllable_Spec_v0.6.schema.json",
+  "title": "FARHP Mandarin Syllable Object v0.6",
+  "type": "object",
+  "required": [
+    "farhp_weblab_syllable_version",
+    "phonology",
+    "acoustics",
+    "farhp",
+    "decomposition",
+    "warning"
+  ],
+  "properties": {
+    "farhp_weblab_syllable_version": {
+      "const": "0.6"
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "phonology": {
+      "type": "object",
+      "required": [
+        "bopomofo",
+        "initial",
+        "final",
+        "tone",
+        "tone_name",
+        "sihu",
+        "coda",
+        "category_check"
+      ],
+      "properties": {
+        "bopomofo": {
+          "type": "string",
+          "minLength": 1
+        },
+        "initial": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "final": {
+          "type": "string"
+        },
+        "tone": {
+          "type": "integer",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "tone_name": {
+          "type": "string"
+        },
+        "sihu": {
+          "type": "string",
+          "enum": [
+            "開口呼",
+            "齊齒呼",
+            "合口呼",
+            "撮口呼",
+            "舌尖元音"
+          ]
+        },
+        "coda": {
+          "type": "string"
+        },
+        "category_check": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "acoustics": {
+      "type": "object",
+      "required": [
+        "sample_rate_hz",
+        "duration_sec",
+        "base_f0_hz",
+        "f0_min_hz",
+        "f0_max_hz",
+        "onset_model",
+        "residual_strength",
+        "tone_trajectory"
+      ],
+      "properties": {
+        "sample_rate_hz": {
+          "type": "integer",
+          "minimum": 8000
+        },
+        "duration_sec": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "base_f0_hz": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "f0_min_hz": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "f0_max_hz": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "onset_model": {
+          "type": "string"
+        },
+        "residual_strength": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "tone_trajectory": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "required": [
+              "u",
+              "semitones",
+              "f0_hz"
+            ],
+            "properties": {
+              "u": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "semitones": {
+                "type": "number"
+              },
+              "f0_hz": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "farhp": {
+      "type": "object",
+      "required": [
+        "source",
+        "strength",
+        "anchor_phase_rad",
+        "harmonic_count",
+        "quantization_bins",
+        "values"
+      ],
+      "properties": {
+        "source": {
+          "type": "string",
+          "enum": [
+            "lab",
+            "aligned",
+            "curved",
+            "alternating",
+            "random"
+          ]
+        },
+        "strength": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "anchor_phase_rad": {
+          "type": "number"
+        },
+        "harmonic_count": {
+          "type": "integer",
+          "minimum": 2
+        },
+        "quantization_bins": {
+          "type": "integer",
+          "enum": [
+            0,
+            8,
+            16,
+            32,
+            64
+          ]
+        },
+        "values": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "decomposition": {
+      "type": "string"
+    },
+    "warning": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

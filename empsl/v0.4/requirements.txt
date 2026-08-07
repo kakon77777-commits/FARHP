@@ -1,0 +1,5 @@
+cairosvg>=2.7
+Pillow>=10
+jsonschema>=4.20
+PyYAML>=6
+playwright>=1.49

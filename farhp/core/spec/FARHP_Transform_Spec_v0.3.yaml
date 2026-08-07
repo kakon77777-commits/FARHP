@@ -1,0 +1,53 @@
+farhp_transform_spec_version: "0.3"
+name: FARHP phase-only transformation object
+scope:
+  - circular geodesic interpolation
+  - controlled phase conditions
+  - phase-style transfer
+  - blind-listening experiment manifests
+required_invariants:
+  preserve_by_default:
+    - sample_rate_hz
+    - frame_times_sec
+    - voiced_state
+    - f0_hz
+    - harmonic_amplitude
+    - anchor_phase
+    - duration
+  mutable:
+    - farhp_rad
+    - farhp_unwrapped_rad
+    - phase_velocity_rad_per_sec
+operations:
+  condition:
+    modes: [identity, zero, alternating, random_static, random_smooth]
+    strength_range: [0.0, 1.0]
+    random_seed_required_for: [random_static, random_smooth]
+  style_transfer:
+    time_alignment: normalized_trajectory_time
+    harmonic_alignment: shared_harmonic_indices
+    interpolation: shortest_geodesic_on_S1
+    strength_range: [0.0, 1.0]
+missing_data:
+  policy: preserve_content_coordinate
+  zero_is_missing: false
+report:
+  fields:
+    - operation
+    - strength
+    - changed_coordinates
+    - mean_geodesic_shift_rad
+    - max_geodesic_shift_rad
+blind_pack:
+  public_files:
+    - public_manifest.json
+    - rating_template.json
+    - audio/*.wav
+  secret_files:
+    - secret_key.json
+  minimum_controls:
+    - identity
+    - zero
+    - random_static
+    - random_smooth
+    - style_morph

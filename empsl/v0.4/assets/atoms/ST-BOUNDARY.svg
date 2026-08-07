@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+<title id="title">邊界</title><desc id="desc">邊界結構附標。</desc>
+<rect width="256" height="256" fill="none"/>
+<line x1="112" y1="56" x2="112" y2="200" stroke="#151a24" stroke-width="9" stroke-linecap="round" /><line x1="144" y1="56" x2="144" y2="200" stroke="#151a24" stroke-width="9" stroke-linecap="round" />
+</svg>

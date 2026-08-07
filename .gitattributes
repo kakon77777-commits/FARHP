@@ -1,0 +1,2 @@
+# Release manifests verify exact bytes; do not rewrite line endings on checkout.
+* -text

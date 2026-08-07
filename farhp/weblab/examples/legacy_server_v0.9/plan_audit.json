@@ -1,0 +1,59 @@
+{
+  "verification": {
+    "valid": true,
+    "failed_index": null,
+    "event_count": 4,
+    "head": "26a648162f0830399b319619add008af0cc2d018dabbf7d53c9539b859aea000"
+  },
+  "events": [
+    {
+      "index": 0,
+      "type": "plan_imported",
+      "payload": {
+        "actor": "admin",
+        "revision": 1,
+        "study_id": "FARHP-DEPLOY-TEST"
+      },
+      "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "hash": "2dd7b1ee0aa7400963c8a8371359e2d2341f6f51b29329c7928063e844eb373e",
+      "created_at": "2026-07-31T07:04:27.930658"
+    },
+    {
+      "index": 1,
+      "type": "plan_locked",
+      "payload": {
+        "actor": "admin",
+        "fingerprint": {
+          "algorithm": "SHA-256",
+          "value": "3f16b9795be8dd7278d56e09f067bd5efc879a5bcae55d48b6ea7cdfeebd1a67"
+        }
+      },
+      "prev_hash": "2dd7b1ee0aa7400963c8a8371359e2d2341f6f51b29329c7928063e844eb373e",
+      "hash": "fc7b156a9e77676a2227fc860013b73a591cb8a044e2fca064406a1f2418973d",
+      "created_at": "2026-07-31T07:04:27.938129"
+    },
+    {
+      "index": 2,
+      "type": "preregistration_archived",
+      "payload": {
+        "actor": "admin",
+        "archive_digest": "86ee2e1500d9f1bc376b636c2f1cfccdb307f09de986af402fb5ebae959c337c"
+      },
+      "prev_hash": "fc7b156a9e77676a2227fc860013b73a591cb8a044e2fca064406a1f2418973d",
+      "hash": "3988374926814851b20d25f463a95c737a72269b416653d5de9a900e4d360618",
+      "created_at": "2026-07-31T07:04:27.953537"
+    },
+    {
+      "index": 3,
+      "type": "invite_created",
+      "payload": {
+        "actor": "admin",
+        "invite_code_digest": "14056a442e13f85277b85dcad0183497074e765d567aa1ac20b6e0bd809098e0",
+        "max_uses": 5
+      },
+      "prev_hash": "3988374926814851b20d25f463a95c737a72269b416653d5de9a900e4d360618",
+      "hash": "26a648162f0830399b319619add008af0cc2d018dabbf7d53c9539b859aea000",
+      "created_at": "2026-07-31T07:04:27.964305"
+    }
+  ]
+}

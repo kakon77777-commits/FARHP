@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://evemisslab.com/spec/FARHP_Consent_Record_Spec_v0.8.schema.json",
+  "title": "FARHP Consent Record v0.8",
+  "type": "object",
+  "required": [
+    "consent_version",
+    "consent_title",
+    "consented_at",
+    "affirmative_consent",
+    "eligibility_attested",
+    "plan_fingerprint"
+  ],
+  "properties": {
+    "consent_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "consent_title": {
+      "type": "string"
+    },
+    "consented_at": {
+      "type": "string"
+    },
+    "affirmative_consent": {
+      "const": true
+    },
+    "eligibility_attested": {
+      "const": true
+    },
+    "withdrawal_code": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "participant_pseudonym": {
+      "type": "string"
+    },
+    "plan_fingerprint": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  },
+  "additionalProperties": true
+}

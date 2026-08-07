@@ -1,0 +1,63 @@
+{
+  "id": "eml.empsl:glyph:case-0-mut",
+  "version": "0.4",
+  "frame": "SEM-META",
+  "seed_base": "ENO-02",
+  "seed_transform": "ID",
+  "seed_variant": "ENO-02@ID",
+  "phonology": [
+    "ST-BOUNDARY"
+  ],
+  "tone": "T0",
+  "phase": "PH16-00",
+  "operator": "OP-NULL",
+  "transform_role": "identity",
+  "semantic": {
+    "kind": "delimiter",
+    "concept_id": "eml.concept:delimiter:boundary-0",
+    "signature": {
+      "inputs": [],
+      "output": "Meta",
+      "arity": {
+        "mode": "fixed",
+        "value": 0
+      }
+    }
+  },
+  "acoustic": {
+    "source": "NONE",
+    "class": "mixed",
+    "phase_signature": "PH16-00",
+    "profile_id": null,
+    "confidence": 1.0
+  },
+  "reading": "",
+  "gloss": "generated conformance case",
+  "validation_certificate": {
+    "valid": false,
+    "status": "FAIL",
+    "error_count": 1,
+    "warning_count": 1,
+    "issues": [
+      {
+        "rule_id": "P-005",
+        "severity": "warning",
+        "domain": "phonology",
+        "message": "T0 建議加入 ST-LIGHT",
+        "field": "tone",
+        "suggestion": "加入 ST-LIGHT"
+      },
+      {
+        "rule_id": "A-002",
+        "severity": "error",
+        "domain": "acoustics",
+        "message": "acoustic.class=mixed，推導值為 silent",
+        "field": "acoustic.class",
+        "suggestion": "改為 silent"
+      }
+    ],
+    "ruleset_sha256": "84fecd66f230f4c52fd125e45a4164c96c7afc8fad5c6f40fa47c9f67f3cb689"
+  },
+  "recipe_sha256": "22e5497f7803f14c79e40279c3159016f829fe3c3e24884955b9b3f679724af0",
+  "_mutation": "bad_class"
+}

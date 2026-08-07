@@ -1,0 +1,22 @@
+spec_version: "0.4"
+title: EMPSL Glyph Grammar and Legality Specification
+ruleset_sha256: 84fecd66f230f4c52fd125e45a4164c96c7afc8fad5c6f40fa47c9f67f3cb689
+recipe:
+  identity: namespace:kind:local-id
+  slots: [frame, seed_variant, phonology, tone, phase, operator]
+  extensions: [transform_role, semantic, acoustic, validation_certificate]
+validation_domains:
+  glyph: [G-001, G-002, G-003, G-004]
+  phonology: [P-001, P-002, P-003, P-004, P-005, P-006, P-007, P-008, P-009, P-010]
+  transform: [T-001, T-002, T-003]
+  semantics: [S-001, S-002, S-003, S-004, S-005, S-006]
+  acoustics: [A-001, A-002, A-003, A-004, A-005, A-006, A-007]
+certificate:
+  statuses: [PASS, FAIL]
+  issue_severity: [error, warning]
+  pass_condition: error_count == 0
+corpus:
+  samples: 4096
+  valid_generator: 1024
+  mutated_invalid: 1024
+  fuzz: 2048

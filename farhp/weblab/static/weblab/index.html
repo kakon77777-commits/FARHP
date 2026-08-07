@@ -1,0 +1,777 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FARHP WebLab v0.8 · Server Bridge：具研究計畫鎖定、工作階段恢復、排除規則與階層統計的離線 FARHP 研究治理與可稽核分析 MVP。">
+  <title>FARHP WebLab v0.8｜研究治理與可稽核分析 MVP</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <noscript>此網站需要 JavaScript 才能執行聲音合成與分析。</noscript>
+
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="回到頁首">
+      <span class="brand-mark" aria-hidden="true">Φ</span>
+      <span><strong>FARHP WebLab</strong><small>MVP v0.8 · Research Governance</small></span>
+    </a>
+    <nav aria-label="主要導覽">
+      <a href="#syllable">華語音節</a>
+      <a href="#utterance">多音節語流</a>
+      <a href="#experiment">研究治理</a>
+      <a href="#lab">相位實驗台</a>
+      <a href="#analysis">WAV 分析</a>
+      <a href="#validation">驗證</a>
+      <a href="#about">邊界</a>
+    </nav>
+    <button id="themeToggle" class="icon-btn" type="button" title="切換明暗模式" aria-label="切換明暗模式">◐</button>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <div class="hero-copy">
+        <p class="eyebrow">Fundamental-Anchored Relative Harmonic Phase</p>
+        <h1>把 FARHP 推進到可部署研究<br><span>同意、封存、事件鏈與去識別分析</span></h1>
+        <p class="lead">研究計畫、同意版本與排除政策先共同封存；正式研究建立可驗證事件鏈與輕量檢查點。完成後可輸出去識別資料、品質證書與混合效應分析模板。</p>
+        <div class="hero-actions">
+          <a class="primary-btn" href="#syllable">合成華語音節</a>
+          <button id="heroSyllablePlay" class="secondary-btn" type="button">播放「ㄇㄚˇ」</button>
+        </div>
+        <div class="formula-card" aria-label="FARHP 核心公式">
+          <span>核心座標</span>
+          <code>ψₖ = wrap(φₖ − kφ₁)</code>
+          <small>消除共同時間平移造成的諧波相位漂移</small>
+        </div>
+      </div>
+      <div class="hero-visual panel">
+        <canvas id="heroCanvas" width="720" height="520" aria-label="動態諧波相位視覺化"></canvas>
+        <div class="hero-badges">
+          <span>電子同意</span><span>事件雜湊鏈</span><span>去識別化</span><span>分析模板</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats shell" aria-label="目前聲音狀態">
+      <article><small>基頻</small><strong id="statF0">125.0 Hz</strong></article>
+      <article><small>有效諧波</small><strong id="statHarmonics">24</strong></article>
+      <article><small>相位量化</small><strong id="statQuant">16 相</strong></article>
+      <article><small>量化 RMSE</small><strong id="statRmse">0.000 rad</strong></article>
+    </section>
+
+    <section id="syllable" class="section syllable-section">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="eyebrow">01 / MANDARIN PHASE SYLLABLE</p>
+          <h2>華語相位音節合成器</h2>
+          <p>以注音組合音節；聲調產生連續 $f_0(t)$，FARHP 只控制諧波的相對相位。聲母爆破、送氣、摩擦與鼻韻尾分別使用獨立聲學插槽。</p>
+        </div>
+
+        <div class="syllable-workspace">
+          <aside class="panel syllable-controls">
+            <div class="syllable-display" aria-live="polite">
+              <small>目前音節</small>
+              <strong id="syllableDisplay">ㄇㄚˇ</strong>
+              <span id="syllableStructure">ㄇ + ㄚ · 第三聲</span>
+            </div>
+
+            <label class="field">
+              <span>快速示範</span>
+              <select id="syllablePreset">
+                <option value="ma1">媽｜ㄇㄚ（一聲）</option>
+                <option value="ma2">麻｜ㄇㄚˊ（二聲）</option>
+                <option value="ma3" selected>馬｜ㄇㄚˇ（三聲）</option>
+                <option value="ma4">罵｜ㄇㄚˋ（四聲）</option>
+                <option value="ma0">嗎｜˙ㄇㄚ（輕聲）</option>
+                <option value="xuan2">旋｜ㄒㄩㄢˊ</option>
+                <option value="guang1">光｜ㄍㄨㄤ</option>
+                <option value="zhong1">中｜ㄓㄨㄥ</option>
+                <option value="ren2">人｜ㄖㄣˊ</option>
+                <option value="custom">自訂組合</option>
+              </select>
+            </label>
+
+            <div class="phonology-grid">
+              <label class="field"><span>聲母</span><select id="initialSelect"></select></label>
+              <label class="field"><span>韻母</span><select id="finalSelect"></select></label>
+            </div>
+
+            <div class="field">
+              <span>聲調</span>
+              <div class="tone-buttons" id="toneButtons" role="group" aria-label="選擇華語聲調">
+                <button type="button" data-tone="1">一聲</button>
+                <button type="button" data-tone="2">二聲</button>
+                <button type="button" data-tone="3" class="active">三聲</button>
+                <button type="button" data-tone="4">四聲</button>
+                <button type="button" data-tone="0">輕聲</button>
+              </div>
+            </div>
+
+            <label class="field range-field">
+              <span><b>中值基頻</b><output id="syllableF0Out">132 Hz</output></span>
+              <input id="syllableF0" type="range" min="80" max="260" step="1" value="132">
+            </label>
+            <label class="field range-field">
+              <span><b>音節時長</b><output id="syllableDurationOut">0.78 s</output></span>
+              <input id="syllableDuration" type="range" min="0.28" max="1.30" step="0.01" value="0.78">
+            </label>
+            <label class="field range-field">
+              <span><b>聲母／殘差強度</b><output id="residualOut">52%</output></span>
+              <input id="residualStrength" type="range" min="0" max="1" step="0.01" value="0.52">
+            </label>
+            <label class="field range-field">
+              <span><b>FARHP 介入</b><output id="syllablePhaseOut">100%</output></span>
+              <input id="syllablePhaseStrength" type="range" min="0" max="1" step="0.01" value="1">
+            </label>
+
+            <label class="field">
+              <span>FARHP 來源</span>
+              <select id="syllablePhaseSource">
+                <option value="lab">使用相位實驗台目前座標</option>
+                <option value="aligned">零相位</option>
+                <option value="curved">曲面相位</option>
+                <option value="alternating">奇偶交替</option>
+                <option value="random">固定隨機</option>
+              </select>
+            </label>
+
+            <div id="phonotacticState" class="test-result pass">結構檢查：可合成</div>
+            <div class="button-stack">
+              <button id="playSyllableBtn" class="primary-btn wide" type="button">▶ 播放音節</button>
+              <button id="stopSyllableBtn" class="secondary-btn wide" type="button">■ 停止</button>
+            </div>
+            <div class="export-grid">
+              <button id="syllableWavBtn" type="button">匯出 WAV</button>
+              <button id="syllableJsonBtn" type="button">匯出音節 JSON</button>
+              <button id="sendToLabBtn" type="button">送入相位實驗台</button>
+            </div>
+          </aside>
+
+          <div class="syllable-visuals">
+            <article class="panel syllable-summary">
+              <div class="summary-main">
+                <small>複合發音物件</small>
+                <strong id="summaryBopomofo">ㄇㄚˇ</strong>
+                <p id="summaryFormula">聲調 $T_3(t)$ × 母音 ㄚ × FARHP × 鼻音聲母</p>
+              </div>
+              <dl class="syllable-metrics">
+                <div><dt>四呼</dt><dd id="metricSihu">開口呼</dd></div>
+                <div><dt>聲母模型</dt><dd id="metricOnset">鼻音／預發聲</dd></div>
+                <div><dt>韻尾</dt><dd id="metricCoda">無</dd></div>
+                <div><dt>基頻範圍</dt><dd id="metricF0Range">—</dd></div>
+              </dl>
+            </article>
+
+            <article class="panel plot-card">
+              <div class="panel-title"><div><h3>五聲基頻軌跡</h3><small>以半音輪廓生成連續 $f_0(t)$；不由 FARHP 取代</small></div><span id="toneBadge" class="status-badge">第三聲</span></div>
+              <canvas id="toneCanvas" width="1000" height="300" aria-label="華語聲調基頻軌跡"></canvas>
+            </article>
+
+            <article class="panel plot-card">
+              <div class="panel-title"><div><h3>合成音節波形</h3><small>包含聲母瞬態、諧波聲源、聲調與韻尾</small></div><span id="syllablePeak" class="status-badge">Peak —</span></div>
+              <canvas id="syllableWaveCanvas" width="1000" height="300" aria-label="華語音節合成波形"></canvas>
+            </article>
+
+            <article class="panel layer-card">
+              <div class="panel-title"><div><h3>分層證書</h3><small>確認各參數沒有越權取代其他聲學層</small></div></div>
+              <div class="layer-flow">
+                <div><b>注音</b><span id="layerPhonology">ㄇ＋ㄚ</span></div>
+                <i>→</i><div><b>聲調</b><span id="layerTone">$T_3(t)$</span></div>
+                <i>→</i><div><b>FARHP</b><span id="layerPhase">24 諧波</span></div>
+                <i>→</i><div><b>殘差</b><span id="layerResidual">鼻音預發聲</span></div>
+                <i>→</i><div><b>聲波</b><span>本機合成</span></div>
+              </div>
+              <p class="note" id="syllableCertificate">FARHP 改變週期內形狀；聲調仍由 $f_0(t)$ 獨立控制。</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="utterance" class="section utterance-section">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="eyebrow">02 / MANDARIN UTTERANCE</p>
+          <h2>華語韻律與語流合成器</h2>
+          <p>把詞典音系、韻律組、表層變調、句調與跨音節聲道參數分開處理。點擊序列中的「｜」可建立韻律邊界；邊界會限制變調、重設短語下傾並插入可控停頓。</p>
+        </div>
+
+        <div class="utterance-workspace">
+          <aside class="panel utterance-controls">
+            <label class="field">
+              <span>快速語流</span>
+              <select id="utterancePreset">
+                <option value="nihao">你好｜三聲變調</option>
+                <option value="nihaoma" selected>你好嗎｜疑問句＋輕聲</option>
+                <option value="wohenhao">我很好｜連續三聲</option>
+                <option value="mamahao">媽媽好｜輕聲</option>
+                <option value="yigebuhaoma">一個不好嗎｜一變調＋疑問句</option>
+                <option value="yitianbuqu">一天不去｜一／不變調</option>
+                <option value="grouped">我很好｜你呢｜韻律分組</option>
+                <option value="custom">自訂序列</option>
+              </select>
+            </label>
+
+            <div class="sequence-add-row">
+              <button id="addCurrentSyllable" class="secondary-btn" type="button">＋ 加入目前音節</button>
+              <button id="clearUtterance" class="text-btn" type="button">清空</button>
+            </div>
+
+            <div class="switch-list">
+              <label><input id="sandhiEnabled" type="checkbox" checked><span><b>三聲變調</b><small>只在同一韻律組內套用局部規則</small></span></label>
+              <label><input id="yiBuSandhiEnabled" type="checkbox" checked><span><b>「一／不」變調</b><small>依後續表層聲調改寫並保留獨立證書</small></span></label>
+              <label><input id="neutralContextEnabled" type="checkbox" checked><span><b>輕聲語境</b><small>依同組前一音節的表層聲調調整</small></span></label>
+              <label><input id="prosodicGroupingEnabled" type="checkbox" checked><span><b>韻律分組</b><small>邊界限制變調、重設下傾並加入停頓</small></span></label>
+              <label><input id="coarticulationEnabled" type="checkbox" checked><span><b>音訊邊界交疊</b><small>等功率交疊消除拼接突變</small></span></label>
+              <label><input id="formantCoarticulationEnabled" type="checkbox" checked><span><b>聲道參數插值</b><small>在音節首尾混合相鄰母音共振包絡</small></span></label>
+              <label><input id="declinationEnabled" type="checkbox" checked><span><b>短語基頻下傾</b><small>每個韻律組獨立施加下降</small></span></label>
+            </div>
+
+            <label class="field">
+              <span>句型與句調</span>
+              <select id="sentenceType">
+                <option value="declarative">陳述句｜句末微降</option>
+                <option value="question" selected>疑問句｜句末上揚</option>
+                <option value="exclamation">感嘆句｜高起急降</option>
+              </select>
+            </label>
+
+            <label class="field range-field">
+              <span><b>語速</b><output id="speechRateOut">1.00×</output></span>
+              <input id="speechRate" type="range" min="0.65" max="1.55" step="0.05" value="1">
+            </label>
+            <label class="field range-field">
+              <span><b>邊界交疊</b><output id="overlapOut">32 ms</output></span>
+              <input id="boundaryOverlap" type="range" min="0" max="80" step="2" value="32">
+            </label>
+            <label class="field range-field">
+              <span><b>韻律組停頓</b><output id="groupPauseOut">90 ms</output></span>
+              <input id="groupPause" type="range" min="0" max="260" step="10" value="90">
+            </label>
+            <label class="field range-field">
+              <span><b>句調強度</b><output id="intonationOut">100%</output></span>
+              <input id="intonationStrength" type="range" min="0" max="1.6" step="0.05" value="1">
+            </label>
+            <label class="field range-field">
+              <span><b>句末／組末延長</b><output id="finalLengthOut">18%</output></span>
+              <input id="finalLengthening" type="range" min="0" max="0.45" step="0.01" value="0.18">
+            </label>
+
+            <div class="button-stack">
+              <button id="playUtteranceBtn" class="primary-btn wide" type="button">▶ 播放語流</button>
+              <button id="stopUtteranceBtn" class="secondary-btn wide" type="button">■ 停止</button>
+            </div>
+            <div class="export-grid">
+              <button id="utteranceWavBtn" type="button">匯出 WAV</button>
+              <button id="utteranceJsonBtn" type="button">匯出語流 JSON</button>
+            </div>
+          </aside>
+
+          <div class="utterance-visuals">
+            <article class="panel utterance-header">
+              <div>
+                <small>詞典層</small>
+                <strong id="utteranceLexical">ㄋㄧˇ　ㄏㄠˇ　˙ㄇㄚ</strong>
+              </div>
+              <div>
+                <small>表層實現</small>
+                <strong id="utteranceSurface">ㄋㄧˊ　ㄏㄠˇ　˙ㄇㄚ</strong>
+              </div>
+              <span id="utteranceDurationBadge" class="status-badge">— s</span>
+            </article>
+
+            <article class="panel sequence-card">
+              <div class="panel-title"><div><h3>音節序列與規則證書</h3><small>每個項目保留詞典聲調、表層聲調與 FARHP 來源</small></div></div>
+              <div id="sequenceList" class="sequence-list"></div>
+              <div id="utteranceRuleCertificate" class="test-result pass">規則待計算</div>
+            </article>
+
+            <article class="panel plot-card">
+              <div class="panel-title"><div><h3>語句基頻與音節邊界</h3><small>顯示變調、分組停頓、短語下傾與句末語調的合成結果</small></div><span id="utteranceF0Badge" class="status-badge">F₀ —</span></div>
+              <canvas id="utteranceF0Canvas" width="1000" height="300" aria-label="多音節語句基頻軌跡"></canvas>
+            </article>
+
+            <article class="panel plot-card">
+              <div class="panel-title"><div><h3>語流合成波形</h3><small>組內同時使用等功率交疊與共振包絡插值；FARHP 仍逐音節保存</small></div><span id="utterancePeakBadge" class="status-badge">Peak —</span></div>
+              <canvas id="utteranceWaveCanvas" width="1000" height="300" aria-label="多音節語流波形"></canvas>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experiment" class="section experiment-section">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="eyebrow">03 / MULTI-STIMULUS PERCEPTION STUDY</p>
+          <h2>FARHP 多刺激 ABX 知覺研究台</h2>
+          <p>從華語語流刺激池建立 FARHP-only 對照。匿名受試者 ID 決定拉丁方／循環順序；練習輪不納入統計，正式輪可插入休息節點，完成前持續封存條件映射。</p>
+        </div>
+
+        <div class="experiment-workspace">
+          <aside class="panel experiment-controls">
+            <div class="panel-title"><div><h3>研究設定</h3><small>請只使用匿名代碼，不輸入姓名或聯絡資料</small></div></div>
+
+            <label class="field">
+              <span>研究 ID</span>
+              <input id="studyId" data-plan-control type="text" maxlength="48" value="FARHP-PERCEPT-v0.8">
+            </label>
+
+            <div class="participant-row">
+              <label class="field">
+                <span>匿名受試者 ID</span>
+                <input id="participantId" type="text" maxlength="32" value="P-0001">
+              </label>
+              <button id="generateParticipantBtn" class="secondary-btn" type="button">產生</button>
+            </div>
+
+            <div class="deployment-card researcher-only">
+              <div class="panel-title compact-title"><div><h3>研究計畫、同意版本與預註冊鎖</h3><small>鎖定後，設計欄位不可在本工作階段中修改</small></div><span id="planLockBadge" class="status-badge neutral">未鎖定</span></div>
+              <div class="study-mini-grid">
+                <label class="field"><span>預定受試者數</span><input id="plannedSampleSize" data-plan-control type="number" min="1" max="100000" step="1" value="24"></label>
+                <label class="field"><span>主要終點</span><select id="primaryEndpoint" data-plan-control><option value="abx_accuracy_vs_0_5">ABX 正確率 vs 50%</option></select></label>
+              </div>
+              <label class="field"><span>預註冊備註</span><textarea id="preregistrationNote" data-plan-control rows="3" maxlength="1200" placeholder="研究假設、資料收集停止規則或分析備註"></textarea></label>
+              <div class="study-mini-grid governance-plan-grid">
+                <label class="field"><span>研究操作角色</span><select id="researchRole" data-plan-control><option value="principal_investigator">研究主持人</option><option value="data_collector">資料收集者</option><option value="analyst">資料分析者</option></select></label>
+                <label class="field"><span>同意書版本</span><input id="consentVersion" data-plan-control type="text" maxlength="64" value="FARHP-CONSENT-v0.8"></label>
+              </div>
+              <label class="field"><span>同意書標題</span><input id="consentTitle" data-plan-control type="text" maxlength="160" value="FARHP 相位知覺研究參與同意"></label>
+              <label class="field"><span>同意摘要</span><textarea id="consentSummary" data-plan-control rows="4" maxlength="2000">本研究比較合成華語語流中的相對諧波相位差。參與者可隨時停止；網站不蒐集姓名、電子郵件或聯絡方式，資料只以匿名代碼保存。</textarea></label>
+              <div class="plan-button-grid">
+                <button id="lockPlanBtn" class="primary-btn" type="button">鎖定研究計畫</button>
+                <button id="exportPlanBtn" class="secondary-btn" type="button">匯出計畫 JSON</button>
+                <label class="file-btn">匯入計畫<input id="planJsonInput" type="file" accept="application/json,.json"></label>
+                <button id="duplicatePlanBtn" class="secondary-btn" type="button" disabled>複製為新計畫</button>
+              </div>
+              <div id="planState" class="test-result neutral">尚未鎖定。正式研究必須先鎖定設計。</div>
+            </div>
+
+            <div class="field researcher-only">
+              <span>刺激池</span>
+              <div id="stimulusPool" class="stimulus-pool" data-plan-control-group></div>
+              <small class="field-note">至少選擇兩組；每組會各自生成基準與介入刺激。</small>
+            </div>
+
+            <label class="field">
+              <span>對照條件</span>
+              <select id="experimentCondition" data-plan-control>
+                <option value="zero">零相位</option>
+                <option value="alternating">奇偶交替相位</option>
+                <option value="random">固定隨機相位</option>
+                <option value="curved">曲面相位</option>
+              </select>
+            </label>
+
+            <label class="field range-field">
+              <span><b>相位介入強度</b><output id="experimentStrengthOut">100%</output></span>
+              <input id="experimentStrength" data-plan-control type="range" min="0.05" max="1" step="0.05" value="1">
+            </label>
+
+            <label class="field range-field">
+              <span><b>每刺激重複</b><output id="studyRepeatsOut">1 次</output></span>
+              <input id="studyRepeats" data-plan-control type="range" min="1" max="3" step="1" value="1">
+            </label>
+
+            <div class="study-mini-grid">
+              <label class="field"><span>練習輪</span><select id="practiceTrials" data-plan-control><option value="0">0</option><option value="1">1</option><option value="2" selected>2</option><option value="3">3</option><option value="4">4</option></select></label>
+              <label class="field"><span>每幾輪休息</span><select id="breakEvery" data-plan-control><option value="0">不插入</option><option value="1">1（測試）</option><option value="4">4</option><option value="6">6</option><option value="8" selected>8</option><option value="12">12</option></select></label>
+            </div>
+
+            <label class="field">
+              <span>可重複研究種子</span>
+              <input id="experimentSeed" data-plan-control type="number" min="1" max="2147483647" step="1" value="20260731">
+            </label>
+
+            <div class="deployment-card exclusion-card researcher-only">
+              <div class="panel-title compact-title"><div><h3>預先指定排除規則</h3><small>只使用流程品質條件，不以正確率排除受試者</small></div></div>
+              <div class="study-mini-grid">
+                <label class="field"><span>最短 RT</span><input id="minRtMs" data-plan-control type="number" min="0" max="10000" step="50" value="150"></label>
+                <label class="field"><span>最長 RT</span><input id="maxRtMs" data-plan-control type="number" min="1000" max="300000" step="1000" value="30000"></label>
+                <label class="field"><span>最低完成率</span><input id="minCompletionRatio" data-plan-control type="number" min="0" max="1" step="0.05" value="1"></label>
+                <label class="field"><span>最低有效輪比例</span><input id="minValidTrialRatio" data-plan-control type="number" min="0" max="1" step="0.05" value="0.8"></label>
+              </div>
+            </div>
+
+            <div class="deployment-card governance-role-card">
+              <div class="panel-title compact-title"><div><h3>工作介面角色</h3><small>只做介面分流，不是伺服器端權限控制</small></div><span id="roleBadge" class="status-badge neutral">研究者</span></div>
+              <label class="field"><span>目前介面</span><select id="roleView"><option value="researcher">研究者／完整介面</option><option value="participant">受試者／作答介面</option><option value="analyst">分析者／資料介面</option></select></label>
+            </div>
+
+            <div class="deployment-card participant-consent-card participant-only">
+              <div class="panel-title compact-title"><div><h3>電子同意與資格確認</h3><small id="consentTemplateLabel">等待鎖定研究計畫</small></div><span id="consentBadge" class="status-badge neutral">未同意</span></div>
+              <div id="consentText" class="consent-text">研究計畫鎖定後，這裡會顯示已封存的同意摘要。</div>
+              <label class="check-line"><input id="eligibilityAttest" type="checkbox"> <span>我確認自己符合研究者說明的參與資格。</span></label>
+              <label class="check-line"><input id="consentAttest" type="checkbox"> <span>我已閱讀上述說明，並自願參與本研究。</span></label>
+              <div class="withdrawal-row"><label class="field"><span>撤回代碼</span><input id="withdrawalCode" type="text" readonly value="尚未產生"></label><button id="generateWithdrawalBtn" class="secondary-btn" type="button">產生代碼</button></div>
+              <div id="consentState" class="test-result neutral">尚未完成同意與資格確認。</div>
+            </div>
+
+            <div class="button-stack">
+              <button id="startExperimentBtn" class="primary-btn wide" type="button">建立／重設研究</button>
+              <button id="stopExperimentAudioBtn" class="secondary-btn wide" type="button">■ 停止聲音</button>
+            </div>
+
+            <div class="export-grid">
+              <button id="experimentJsonBtn" type="button" disabled>匯出研究 JSON</button>
+              <button id="experimentCsvBtn" type="button" disabled>匯出逐輪 CSV</button>
+            </div>
+
+            <div class="deployment-card checkpoint-card">
+              <div class="panel-title compact-title"><div><h3>中斷恢復</h3><small>檢查點不保存音訊；恢復時依計畫與種子重建</small></div></div>
+              <div class="plan-button-grid">
+                <button id="checkpointExportBtn" class="secondary-btn" type="button" disabled>匯出檢查點</button>
+                <button id="resumeLocalBtn" class="secondary-btn" type="button">從瀏覽器恢復</button>
+                <label class="file-btn">匯入檢查點<input id="checkpointJsonInput" type="file" accept="application/json,.json"></label>
+                <button id="clearCheckpointBtn" class="secondary-btn" type="button">清除本機檢查點</button>
+              </div>
+              <div id="checkpointState" class="test-result neutral">尚無工作階段檢查點。</div>
+            </div>
+
+            <div id="experimentInvariant" class="test-result neutral">尚未建立研究。每組刺激將固定音系、聲調、時長、基頻軌跡與聲道參數，只改變 FARHP。</div>
+          </aside>
+
+          <div class="experiment-main">
+            <article class="panel deployment-status-card">
+              <div><small>計畫狀態</small><strong id="deploymentPlanStatus">未鎖定</strong></div>
+              <div><small>計畫指紋</small><code id="deploymentFingerprint">—</code></div>
+              <div><small>恢復狀態</small><strong id="deploymentCheckpointStatus">尚無</strong></div>
+              <span id="deploymentBadge" class="status-badge neutral">設計階段</span>
+            </article>
+            <article class="panel governance-status-card">
+              <div><small>介面角色</small><strong id="governanceRoleStatus">研究者</strong></div>
+              <div><small>電子同意</small><strong id="governanceConsentStatus">尚未建立</strong></div>
+              <div><small>事件數</small><strong id="governanceEventCount">0</strong></div>
+              <div><small>事件鏈頭</small><code id="governanceChainHead">—</code></div>
+              <span id="governanceBadge" class="status-badge neutral">治理待命</span>
+            </article>
+            <article class="panel experiment-status-card">
+              <div><small>正式輪進度</small><strong id="experimentProgress">0 / 0</strong></div>
+              <div><small>目前階段</small><strong id="experimentPhase">—</strong></div>
+              <div><small>正式輪正確率</small><strong id="experimentAccuracy">—</strong></div>
+              <div><small>反應時間中位數</small><strong id="experimentMedianRt">—</strong></div>
+              <span id="experimentStateBadge" class="status-badge">尚未開始</span>
+            </article>
+
+            <article class="panel abx-card">
+              <div class="panel-title">
+                <div><h3>本輪 ABX</h3><small>A 與 B 分別代表兩個隱藏條件；X 與其中之一完全相同</small></div>
+                <div class="trial-identifiers"><span id="experimentStimulusBadge" class="status-badge neutral">刺激 —</span><span id="experimentTrialBadge" class="status-badge">Trial —</span></div>
+              </div>
+
+              <div class="abx-stimuli">
+                <button type="button" id="playStimA" disabled><b>A</b><span>播放刺激 A</span><small id="playCountA">0 次</small></button>
+                <button type="button" id="playStimB" disabled><b>B</b><span>播放刺激 B</span><small id="playCountB">0 次</small></button>
+                <button type="button" id="playStimX" disabled><b>X</b><span>播放未知刺激 X</span><small id="playCountX">0 次</small></button>
+              </div>
+
+              <div class="abx-question">
+                <p>X 與哪一個刺激相同？</p>
+                <div class="abx-answer-buttons">
+                  <button id="answerA" class="secondary-btn" type="button" disabled>X = A</button>
+                  <button id="answerB" class="secondary-btn" type="button" disabled>X = B</button>
+                </div>
+              </div>
+
+              <div id="experimentFeedback" class="test-result neutral">建立實驗後，請先播放 A、B、X，再提交判斷。</div>
+              <button id="nextExperimentTrial" class="primary-btn wide" type="button" disabled>下一輪</button>
+            </article>
+
+            <article class="panel experiment-log-card">
+              <div class="panel-title"><div><h3>匿名試驗紀錄</h3><small>完成前不顯示 A／B 的真實條件；結束後才揭示映射</small></div></div>
+              <div class="experiment-table-wrap">
+                <table class="experiment-table">
+                  <thead><tr><th>輪次</th><th>回答</th><th>結果</th><th>反應時間</th><th>重播</th><th>映射</th></tr></thead>
+                  <tbody id="experimentLog"><tr><td colspan="6">尚無紀錄</td></tr></tbody>
+                </table>
+              </div>
+            </article>
+
+            <article class="panel audit-card researcher-only analyst-only">
+              <div class="panel-title"><div><h3>事件鏈與封存證書</h3><small>關鍵事件以前一筆雜湊為輸入；可驗證順序、內容與計畫指紋是否一致</small></div><span id="auditBadge" class="status-badge neutral">尚無事件</span></div>
+              <div class="audit-actions">
+                <button id="verifyAuditBtn" class="secondary-btn" type="button">驗證事件鏈</button>
+                <button id="exportAuditBtn" type="button" disabled>匯出封存證書</button>
+                <button id="exportDeidentifiedBtn" type="button" disabled>匯出去識別研究 JSON</button>
+              </div>
+              <div id="auditState" class="test-result neutral">建立工作階段後開始記錄。</div>
+              <div class="experiment-table-wrap group-table-wrap"><table class="experiment-table compact-table"><thead><tr><th>#</th><th>時間</th><th>事件</th><th>前一雜湊</th><th>本筆雜湊</th></tr></thead><tbody id="auditRows"><tr><td colspan="5">尚無事件</td></tr></tbody></table></div>
+            </article>
+
+            <article class="panel group-analysis-card">
+              <div class="panel-title"><div><h3>群體結果合併</h3><small>匯入 v0.6–v0.8 研究 JSON；套用排除規則、同意與事件鏈品質檢查，所有運算只在本機完成</small></div></div>
+              <div class="group-import-row">
+                <label class="file-btn">選擇多份 JSON<input id="groupJsonInput" type="file" accept="application/json,.json" multiple></label>
+                <button id="mergeGroupBtn" class="secondary-btn" type="button">合併與分析</button>
+                <button id="groupJsonBtn" type="button" disabled>匯出群體 JSON</button>
+                <button id="groupCsvBtn" type="button" disabled>匯出群體 CSV</button>
+                <button id="analysisLongCsvBtn" type="button" disabled>匯出長表 CSV</button>
+                <button id="analysisScriptsBtn" type="button" disabled>匯出分析腳本</button>
+              </div>
+              <div class="group-metrics">
+                <div><small>納入受試者</small><strong id="groupParticipants">—</strong></div>
+                <div><small>排除工作階段</small><strong id="groupExcluded">—</strong></div>
+                <div><small>有效正式輪</small><strong id="groupTrials">—</strong></div>
+                <div><small>正確率</small><strong id="groupAccuracy">—</strong></div>
+                <div><small>95% Wilson CI</small><strong id="groupWilson">—</strong></div>
+                <div><small>二項檢定 p</small><strong id="groupPValue">—</strong></div>
+                <div><small>治理品質</small><strong id="groupGovernanceQuality">—</strong></div>
+                <div><small>事件鏈異常</small><strong id="groupAuditFailures">—</strong></div>
+              </div>
+              <div id="groupAnalysisState" class="test-result neutral">尚未匯入群體資料。</div>
+              <div class="experiment-table-wrap group-table-wrap">
+                <table class="experiment-table">
+                  <thead><tr><th>條件／刺激</th><th>受試者</th><th>輪數</th><th>正確</th><th>正確率</th><th>中位 RT</th></tr></thead>
+                  <tbody id="groupAnalysisRows"><tr><td colspan="6">尚無資料</td></tr></tbody>
+                </table>
+              </div>
+              <div class="hierarchy-grid">
+                <div>
+                  <h4>受試者層級</h4>
+                  <div class="experiment-table-wrap group-table-wrap"><table class="experiment-table compact-table"><thead><tr><th>匿名受試者</th><th>工作階段</th><th>有效輪</th><th>正確率</th><th>中位 RT</th><th>狀態</th></tr></thead><tbody id="participantAnalysisRows"><tr><td colspan="6">尚無資料</td></tr></tbody></table></div>
+                </div>
+                <div>
+                  <h4>刺激層級</h4>
+                  <div class="experiment-table-wrap group-table-wrap"><table class="experiment-table compact-table"><thead><tr><th>刺激</th><th>受試者</th><th>有效輪</th><th>正確率</th><th>Wilson CI</th><th>中位 RT</th></tr></thead><tbody id="stimulusAnalysisRows"><tr><td colspan="6">尚無資料</td></tr></tbody></table></div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="lab" class="section shell">
+      <div class="section-heading">
+        <p class="eyebrow">04 / FARHP SYNTHESIS</p>
+        <h2>FARHP 合成實驗台</h2>
+        <p>固定基頻、振幅與時長，只改變相對諧波相位，即可進行嚴格的 FARHP-only 對照。</p>
+      </div>
+
+      <div class="workspace-grid">
+        <aside class="panel controls-panel">
+          <div class="panel-title"><h3>聲學參數</h3><button id="resetBtn" class="text-btn" type="button">重設</button></div>
+
+          <label class="field">
+            <span>母音頻譜預設</span>
+            <select id="vowelPreset">
+              <option value="a">ㄚ / a</option>
+              <option value="i">ㄧ / i</option>
+              <option value="u">ㄨ / u</option>
+              <option value="e">ㄝ / e</option>
+              <option value="o">ㄛ / o</option>
+              <option value="flat">平坦諧波</option>
+            </select>
+          </label>
+
+          <label class="field range-field">
+            <span><b>基頻 f₀</b><output id="f0Out">125 Hz</output></span>
+            <input id="f0" type="range" min="70" max="320" step="1" value="125">
+          </label>
+
+          <label class="field range-field">
+            <span><b>時長</b><output id="durationOut">0.80 s</output></span>
+            <input id="duration" type="range" min="0.2" max="2" step="0.05" value="0.8">
+          </label>
+
+          <label class="field range-field">
+            <span><b>諧波數 K</b><output id="harmonicsOut">24</output></span>
+            <input id="harmonics" type="range" min="4" max="48" step="1" value="24">
+          </label>
+
+          <label class="field range-field">
+            <span><b>錨相位 φ₁</b><output id="anchorOut">0.35 rad</output></span>
+            <input id="anchor" type="range" min="-3.1416" max="3.1416" step="0.01" value="0.35">
+          </label>
+
+          <label class="field range-field">
+            <span><b>輸出音量</b><output id="gainOut">80%</output></span>
+            <input id="gain" type="range" min="0.05" max="1" step="0.01" value="0.8">
+          </label>
+
+          <hr>
+
+          <div class="panel-title"><h3>相位條件</h3></div>
+          <label class="field">
+            <span>FARHP 預設</span>
+            <select id="phasePreset">
+              <option value="curved">曲面相位</option>
+              <option value="aligned">零相位／對齊</option>
+              <option value="alternating">奇偶交替</option>
+              <option value="random">固定隨機</option>
+              <option value="custom">自訂</option>
+            </select>
+          </label>
+
+          <label class="field range-field">
+            <span><b>相位介入強度 λ</b><output id="strengthOut">1.00</output></span>
+            <input id="strength" type="range" min="0" max="1" step="0.01" value="1">
+          </label>
+
+          <label class="field">
+            <span>量化解析度</span>
+            <select id="quantization">
+              <option value="0">連續相位</option>
+              <option value="8">8 相</option>
+              <option value="16" selected>16 相</option>
+              <option value="32">32 相</option>
+              <option value="64">64 相</option>
+            </select>
+          </label>
+
+          <div class="button-stack">
+            <button id="playBtn" class="primary-btn wide" type="button">▶ 播放目前聲音</button>
+            <button id="stopBtn" class="secondary-btn wide" type="button">■ 停止</button>
+          </div>
+
+          <div class="export-grid">
+            <button id="wavBtn" type="button">匯出 WAV</button>
+            <button id="jsonBtn" type="button">匯出 JSON</button>
+            <label class="file-btn">匯入 JSON<input id="jsonInput" type="file" accept="application/json,.json"></label>
+          </div>
+        </aside>
+
+        <div class="visual-column">
+          <article class="panel plot-card">
+            <div class="panel-title">
+              <div><h3>波形</h3><small>前 40 ms；相位會改變週期內形狀</small></div>
+              <span id="peakBadge" class="status-badge">Peak 0.00</span>
+            </div>
+            <canvas id="waveCanvas" width="1000" height="320" aria-label="合成波形圖"></canvas>
+          </article>
+
+          <div class="plot-grid">
+            <article class="panel plot-card">
+              <div class="panel-title"><div><h3>諧波振幅</h3><small>頻譜包絡保持獨立</small></div></div>
+              <canvas id="spectrumCanvas" width="560" height="300" aria-label="諧波振幅圖"></canvas>
+            </article>
+            <article class="panel plot-card">
+              <div class="panel-title"><div><h3>FARHP 相位輪</h3><small>每個點代表 ψₖ</small></div></div>
+              <canvas id="phaseCanvas" width="560" height="300" aria-label="FARHP 相位輪"></canvas>
+            </article>
+          </div>
+
+          <article class="panel harmonic-editor-card">
+            <div class="panel-title">
+              <div><h3>諧波編輯器</h3><small>顯示前 16 個諧波；其餘仍參與合成</small></div>
+              <button id="normalizeAmpBtn" class="text-btn" type="button">振幅正規化</button>
+            </div>
+            <div class="harmonic-table-wrap">
+              <table class="harmonic-table">
+                <thead><tr><th>k</th><th>頻率</th><th>振幅 Aₖ</th><th>FARHP ψₖ</th><th>量化碼</th></tr></thead>
+                <tbody id="harmonicRows"></tbody>
+              </table>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="analysis" class="section alt-section">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="eyebrow">05 / ANALYSIS</p>
+          <h2>匯入 WAV，抽取一個 FARHP 框架</h2>
+          <p>選擇單聲道或立體聲 PCM WAV。網站會取中央約 80 ms，進行自相關基頻估計與諧波複數投影。</p>
+        </div>
+
+        <div class="analysis-grid">
+          <article class="panel drop-card" id="wavDrop">
+            <input id="wavInput" type="file" accept="audio/wav,.wav" hidden>
+            <div class="drop-icon">↥</div>
+            <h3>拖放 WAV 到這裡</h3>
+            <p>或選擇本機檔案；音訊不會上傳。</p>
+            <button id="chooseWavBtn" class="secondary-btn" type="button">選擇 WAV</button>
+            <small>建議：穩定母音、單一音高、至少 0.25 秒</small>
+          </article>
+
+          <article class="panel analysis-result">
+            <div class="panel-title"><h3>分析結果</h3><span id="analysisState" class="status-badge neutral">尚未分析</span></div>
+            <dl class="metrics">
+              <div><dt>取樣率</dt><dd id="aSampleRate">—</dd></div>
+              <div><dt>估計基頻</dt><dd id="aF0">—</dd></div>
+              <div><dt>基頻置信度</dt><dd id="aConfidence">—</dd></div>
+              <div><dt>有效諧波</dt><dd id="aHarmonics">—</dd></div>
+              <div><dt>框架位置</dt><dd id="aFrameTime">—</dd></div>
+              <div><dt>適用性</dt><dd id="aGrade">—</dd></div>
+            </dl>
+            <div class="analysis-actions">
+              <button id="useAnalysisBtn" class="primary-btn" type="button" disabled>載入合成實驗台</button>
+              <button id="analysisJsonBtn" class="secondary-btn" type="button" disabled>匯出分析 JSON</button>
+            </div>
+            <p id="analysisNote" class="note">MVP 只分析近似週期、有清楚基頻的框架；擦音、塞音、混響或多人聲可能不適用。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="validation" class="section shell">
+      <div class="section-heading">
+        <p class="eyebrow">06 / VALIDATION</p>
+        <h2>不變性與量化測試</h2>
+        <p>用數值測試區分「FARHP 理論性質」與「聲音是否好聽」。</p>
+      </div>
+      <div class="validation-grid">
+        <article class="panel test-card">
+          <span class="test-number">A</span>
+          <h3>共同時間平移不變性</h3>
+          <p>將同一個諧波訊號平移一段時間，重新計算絕對相位後，FARHP 應保持不變。</p>
+          <label class="field range-field compact">
+            <span><b>平移量</b><output id="shiftOut">7.30 ms</output></span>
+            <input id="shift" type="range" min="0" max="20" step="0.1" value="7.3">
+          </label>
+          <button id="runShiftTest" class="secondary-btn wide" type="button">執行測試</button>
+          <div id="shiftResult" class="test-result neutral">尚未執行</div>
+        </article>
+
+        <article class="panel test-card">
+          <span class="test-number">B</span>
+          <h3>相位量化誤差</h3>
+          <p>比較連續 FARHP 與目前 $M$ 相量化後的圓周 RMSE，並檢查單座標最壞界。</p>
+          <div class="mini-metrics">
+            <div><small>RMSE</small><strong id="quantRmse">—</strong></div>
+            <div><small>最壞誤差</small><strong id="quantMax">—</strong></div>
+            <div><small>理論界</small><strong id="quantBound">—</strong></div>
+          </div>
+          <button id="runQuantTest" class="secondary-btn wide" type="button">重新計算</button>
+          <div id="quantResult" class="test-result neutral">尚未執行</div>
+        </article>
+
+        <article class="panel test-card">
+          <span class="test-number">C</span>
+          <h3>FARHP-only 證書</h3>
+          <p>比較基準聲音與目前條件，確認 $f_0$、諧波振幅、時長與錨相位是否保持不變。</p>
+          <button id="captureBaseline" class="secondary-btn wide" type="button">捕捉目前狀態為基準</button>
+          <button id="runInvariantTest" class="secondary-btn wide" type="button">比較目前狀態</button>
+          <div id="invariantResult" class="test-result neutral">尚未建立基準</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="section theory-section">
+      <div class="shell theory-grid">
+        <div>
+          <p class="eyebrow">07 / SCOPE</p>
+          <h2>這個 MVP 證明什麼？</h2>
+          <p class="big-copy">它證明 FARHP 能形成具設定指紋、工作階段恢復、預設排除政策與階層摘要的離線研究部署工作流；不代表目前刺激已具真人語音生態效度，也不取代倫理審查、知情同意與正式統計建模。</p>
+        </div>
+        <div class="boundary-list">
+          <article><b>可以測試</b><span>週期波形、相位介入、研究計畫鎖定、多刺激順序、練習／休息、中斷恢復、排除證書與階層摘要。</span></article>
+          <article><b>尚未涵蓋</b><span>真人級共構音、自然語料訓練、正式 IRB／倫理核准、伺服器端身份驗證、跨裝置同步，以及由統計專家審核的確認性模型。</span></article>
+          <article><b>正確定位</b><span>FARHP 是完整發音系統中的相位子系統，而不是單獨的語言、加密或生理真值。</span></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <div><strong>FARHP WebLab MVP v0.8</strong><small>FARHP 研究治理與可稽核分析站</small></div>
+      <div class="footer-links"><a href="#top">回到頂端</a><span>資料僅在瀏覽器本機處理</span></div>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+  <script src="/assets/server_bridge.js"></script>
+</body>
+</html>

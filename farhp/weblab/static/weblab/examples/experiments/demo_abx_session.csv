@@ -1,0 +1,5 @@
+"session_id","trial","a_condition","b_condition","x_condition","correct_answer","response","correct","rt_ms","plays_a","plays_b","plays_x"
+"farhp-abx-example-424242","1","baseline","altered","altered","B","B","true","820","1","1","1"
+"farhp-abx-example-424242","2","altered","baseline","baseline","B","B","true","1130","2","1","1"
+"farhp-abx-example-424242","3","altered","baseline","altered","A","B","false","1440","1","1","2"
+"farhp-abx-example-424242","4","baseline","altered","baseline","A","A","true","1750","2","1","1"

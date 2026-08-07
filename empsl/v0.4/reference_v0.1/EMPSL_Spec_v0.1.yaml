@@ -1,0 +1,205 @@
+spec:
+  name: Enochian–Mandarin Phase Symbol Language
+  short_name: EMPSL
+  namespace: eml.empsl
+  version: '0.1'
+  date: '2026-07-31'
+  status: draft-mother-spec
+principles:
+  canonical_identity: ASCII stable IDs and structured data
+  glyphs_are_presentation: true
+  pua_is_noncanonical: true
+  unicode_normalization: NFC
+  canonical_encoding: UTF-8 JSON/YAML
+  security_claim: not-encryption
+identity_profile:
+  pattern: ^[a-z][a-z0-9]*(\.[a-z][a-z0-9]*)*:[a-z][a-z0-9_-]*:[0-9a-z_-]+$
+  example: eml.empsl:lexeme:000001
+glyph_system:
+  historical_inspiration_seeds:
+  - ENO-01
+  - ENO-02
+  - ENO-03
+  - ENO-04
+  - ENO-05
+  - ENO-06
+  - ENO-07
+  - ENO-08
+  - ENO-09
+  - ENO-10
+  - ENO-11
+  - ENO-12
+  - ENO-13
+  - ENO-14
+  - ENO-15
+  - ENO-16
+  - ENO-17
+  - ENO-18
+  - ENO-19
+  - ENO-20
+  - ENO-21
+  modern_structure_seeds:
+  - STR-01
+  - STR-02
+  - STR-03
+  - STR-04
+  - STR-05
+  - STR-06
+  - STR-07
+  - STR-08
+  - STR-09
+  - STR-10
+  - STR-11
+  slots:
+  - frame
+  - seed
+  - phonology
+  - tone
+  - phase
+  - semantic_operator
+  semantic_frames:
+  - SEM-ENTITY
+  - SEM-PROCESS
+  - SEM-RELATION
+  - SEM-PROPERTY
+  - SEM-QUANTITY
+  - SEM-TIME
+  - SEM-SPACE
+  - SEM-MODALITY
+  - SEM-CAUSALITY
+  - SEM-EVIDENCE
+  - SEM-AGENT
+  - SEM-INFORMATION
+  - SEM-PERMISSION
+  - SEM-NEGATION
+  - SEM-AGGREGATION
+  - SEM-META
+  phase_marks: &id001
+  - PH16-00
+  - PH16-01
+  - PH16-02
+  - PH16-03
+  - PH16-04
+  - PH16-05
+  - PH16-06
+  - PH16-07
+  - PH16-08
+  - PH16-09
+  - PH16-10
+  - PH16-11
+  - PH16-12
+  - PH16-13
+  - PH16-14
+  - PH16-15
+  operator_marks:
+  - OP-NULL
+  - OP-UNARY
+  - OP-BINARY
+  - OP-TERNARY
+  - OP-VARIADIC
+  - OP-BIND
+  - OP-QUOTE
+  - OP-META
+  - OP-TEMP
+  - OP-MODAL
+  - OP-NEG
+  - OP-CAUSE
+  - OP-AGG
+  - OP-MAP
+  - OP-REDUCE
+  - OP-GUARD
+  pua_profile:
+    range: U+E000-U+E7FF
+    canonical: false
+    required_mapping_metadata:
+    - font_id
+    - font_version
+    - mapping_version
+    - recipe_hash
+phonology:
+  system: zhuyin
+  onset_count_modern: 21
+  zero_onset: true
+  medials:
+  - none
+  - ㄧ
+  - ㄨ
+  - ㄩ
+  four_hu:
+  - kaikou
+  - qichi
+  - hekou
+  - cuokou
+  tones:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 0
+  legality_status:
+  - attested
+  - pronounceable
+  - reserved
+  - illegal
+  canonical_syllable_count_range:
+  - 1
+  - 4
+phase:
+  domains:
+  - FARHP-Y
+  - FARHP-G
+  levels:
+    P0: unspecified/default
+    P1: visible 16-class signature
+    P2: codebook reference
+    P3: full circular vector with mask and confidence
+  visible_marks: *id001
+  representations:
+  - none
+  - visible_signature
+  - codebook_ref
+  - discrete_vector
+  - continuous_vector
+  consistency_rule: Signature(exact_phase) == visible_signature
+semantics:
+  classes:
+  - entity
+  - process
+  - relation
+  - property
+  - quantity
+  - time
+  - space
+  - modality
+  - causality
+  - evidence
+  - agent
+  - information
+  - permission
+  - negation
+  - aggregation
+  - meta
+  stable_concept_ids: true
+  glosses_are_nonidentity: true
+  typed_ast: true
+  arity_values:
+  - 0
+  - 1
+  - 2
+  - 3
+  - -1
+serialization:
+  canonical_text: UTF-8
+  unicode_fields: NFC
+  keys: ASCII
+  hash: SHA-256 over canonical JSON
+  binary_future:
+  - CBOR
+implementation_roadmap:
+- 32 SVG glyph primitives
+- six-slot glyph composer
+- 128-primitive chart
+- OpenType GSUB/GPOS font
+- Zhuyin/concept/glyph IME
+- AST parser and type checker
+- FARHP WebLab speech adapter

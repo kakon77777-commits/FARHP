@@ -1,0 +1,145 @@
+{
+  "farhp_weblab_group_version": "0.8",
+  "created_at": "2026-07-31T06:41:57.290Z",
+  "study_ids": [
+    "FARHP-DEPLOY-TEST"
+  ],
+  "source_files": 3,
+  "duplicate_or_invalid_files_ignored": 0,
+  "included_sessions": 2,
+  "excluded_sessions": 1,
+  "excluded_session_log": [
+    {
+      "session_id": "FARHP-DEPLOY-TEST-P-BROWSER-01-424242-1785480116753-FAST",
+      "participant_id": "P-BROWSER-03",
+      "reasons": [
+        "valid_trial_ratio_below_plan"
+      ],
+      "completion_ratio": 1,
+      "valid_trial_ratio": 0
+    }
+  ],
+  "participant_count": 2,
+  "all_participant_count": 3,
+  "main_trials": 4,
+  "excluded_trials": 2,
+  "correct_trials": 3,
+  "accuracy": 0.75,
+  "wilson_95": [
+    0.30064184258240184,
+    0.9544127391902995
+  ],
+  "binomial_two_sided_p": 0.6250000000000001,
+  "chance_probability": 0.5,
+  "by_participant": [
+    {
+      "participant_id": "P-BROWSER-01",
+      "study_id": "FARHP-DEPLOY-TEST",
+      "sessions": 1,
+      "included_sessions": 1,
+      "excluded_sessions": 0,
+      "valid_trials": 2,
+      "correct": 1,
+      "accuracy": 0.5,
+      "median_rt_ms": 750,
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "participant_id": "P-BROWSER-02",
+      "study_id": "FARHP-DEPLOY-TEST",
+      "sessions": 1,
+      "included_sessions": 1,
+      "excluded_sessions": 0,
+      "valid_trials": 2,
+      "correct": 2,
+      "accuracy": 1,
+      "median_rt_ms": 700,
+      "included": true,
+      "exclusion_reasons": []
+    },
+    {
+      "participant_id": "P-BROWSER-03",
+      "study_id": "FARHP-DEPLOY-TEST",
+      "sessions": 1,
+      "included_sessions": 0,
+      "excluded_sessions": 1,
+      "valid_trials": 0,
+      "correct": 0,
+      "accuracy": null,
+      "median_rt_ms": null,
+      "included": false,
+      "exclusion_reasons": [
+        "valid_trial_ratio_below_plan"
+      ]
+    }
+  ],
+  "by_stimulus": [
+    {
+      "stimulus_key": "nihao",
+      "stimulus_label": "你好",
+      "participant_count": 2,
+      "trials": 2,
+      "correct": 2,
+      "accuracy": 1,
+      "wilson_95": [
+        0.34238022750665303,
+        1
+      ],
+      "median_rt_ms": 675
+    },
+    {
+      "stimulus_key": "nihaoma",
+      "stimulus_label": "你好嗎",
+      "participant_count": 2,
+      "trials": 2,
+      "correct": 1,
+      "accuracy": 0.5,
+      "wilson_95": [
+        0.09453120573423074,
+        0.9054687942657693
+      ],
+      "median_rt_ms": 775
+    }
+  ],
+  "by_condition_and_stimulus": [
+    {
+      "stimulus_key": "nihao",
+      "stimulus_label": "你好",
+      "participant_count": 2,
+      "trials": 2,
+      "correct": 2,
+      "accuracy": 1,
+      "wilson_95": [
+        0.34238022750665303,
+        1
+      ],
+      "median_rt_ms": 675,
+      "condition": "zero"
+    },
+    {
+      "stimulus_key": "nihaoma",
+      "stimulus_label": "你好嗎",
+      "participant_count": 2,
+      "trials": 2,
+      "correct": 1,
+      "accuracy": 0.5,
+      "wilson_95": [
+        0.09453120573423074,
+        0.9054687942657693
+      ],
+      "median_rt_ms": 775,
+      "condition": "zero"
+    }
+  ],
+  "warning": "descriptive browser aggregation with pre-specified process exclusions; confirmatory inference still requires an independent statistical analysis plan",
+  "governance_quality": {
+    "pass": true,
+    "files": 3,
+    "missing_consent": 0,
+    "audit_failures": 0,
+    "plan_issues": 0,
+    "invariant_failures": 0,
+    "duplicate_sessions": 0
+  }
+}

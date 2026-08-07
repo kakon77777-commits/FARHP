@@ -1,0 +1,44 @@
+{
+  "completed_sessions": 1,
+  "participants": 1,
+  "formal_trials": 2,
+  "correct": 1,
+  "accuracy": 0.5,
+  "wilson_95": [
+    0.09453120573423074,
+    0.9054687942657693
+  ],
+  "binomial_p_two_sided": 1.0,
+  "governance_failures": 0,
+  "by_stimulus": {
+    "nihao": {
+      "trials": 1,
+      "correct": 1,
+      "accuracy": 1.0,
+      "wilson_95": [
+        0.20654931437723745,
+        1
+      ]
+    },
+    "nihaoma": {
+      "trials": 1,
+      "correct": 0,
+      "accuracy": 0.0,
+      "wilson_95": [
+        0,
+        0.7934506856227626
+      ]
+    }
+  },
+  "by_condition": {
+    "zero": {
+      "trials": 2,
+      "correct": 1,
+      "accuracy": 0.5,
+      "wilson_95": [
+        0.09453120573423074,
+        0.9054687942657693
+      ]
+    }
+  }
+}

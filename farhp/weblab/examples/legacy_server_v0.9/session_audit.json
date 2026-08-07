@@ -1,0 +1,47 @@
+{
+  "verification": {
+    "valid": true,
+    "failed_index": null,
+    "event_count": 3,
+    "head": "136a944c68da77b428a41f1e38175926846ffb7ae32b0d34b40dbc4108583d07"
+  },
+  "events": [
+    {
+      "index": 0,
+      "type": "consent_recorded",
+      "payload": {
+        "participant_pseudonym": "PID-2673b6039b4eca6b0593",
+        "plan_fingerprint": {
+          "algorithm": "SHA-256",
+          "value": "3f16b9795be8dd7278d56e09f067bd5efc879a5bcae55d48b6ea7cdfeebd1a67"
+        }
+      },
+      "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "hash": "8cba831c4f1809245a7fd651d784a2f782175473ca71ac9a3c3e884fb983a109",
+      "created_at": "2026-07-31T07:04:27.975605"
+    },
+    {
+      "index": 1,
+      "type": "checkpoint_saved",
+      "payload": {
+        "current_index": 1,
+        "saved_at": "2026-07-31T06:50:00Z"
+      },
+      "prev_hash": "8cba831c4f1809245a7fd651d784a2f782175473ca71ac9a3c3e884fb983a109",
+      "hash": "cab898cf405355081af3ff13b80c563c97fd6199ed81517fc2efc42ac98c9680",
+      "created_at": "2026-07-31T07:04:27.981910"
+    },
+    {
+      "index": 2,
+      "type": "study_completed",
+      "payload": {
+        "audit_valid": true,
+        "completed_at": "2026-07-31T07:04:27.989220+00:00",
+        "trial_count": 3
+      },
+      "prev_hash": "cab898cf405355081af3ff13b80c563c97fd6199ed81517fc2efc42ac98c9680",
+      "hash": "136a944c68da77b428a41f1e38175926846ffb7ae32b0d34b40dbc4108583d07",
+      "created_at": "2026-07-31T07:04:27.989777"
+    }
+  ]
+}

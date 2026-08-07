@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+<title id="title">許可</title><desc id="desc">許可語義／語法外框。</desc>
+<rect width="256" height="256" fill="none"/>
+<path d="M52 74 H204 V202 H52 Z M52 74 L128 28 L204 74" stroke="#151a24" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+</svg>

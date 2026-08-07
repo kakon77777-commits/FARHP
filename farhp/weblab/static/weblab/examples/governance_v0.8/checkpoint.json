@@ -1,0 +1,217 @@
+{
+  "farhp_weblab_checkpoint_version": "0.8",
+  "saved_at": "2026-07-31T06:41:57.406Z",
+  "plan": {
+    "farhp_weblab_plan_version": "0.8",
+    "study_id": "FARHP-DEPLOY-TEST",
+    "task": "multi_stimulus_ABX_identity_match",
+    "planned_sample_size": 12,
+    "primary_endpoint": "abx_accuracy_vs_0_5",
+    "preregistration_note": "Primary endpoint fixed before collection.",
+    "design": {
+      "selected_stimuli": [
+        "nihao",
+        "nihaoma"
+      ],
+      "altered_condition": "zero",
+      "intervention_strength": 0.75,
+      "repeats_per_stimulus": 1,
+      "practice_trials": 1,
+      "break_every_main_trials": 1,
+      "seed": 424242,
+      "ordering": "participant_indexed_latin_or_cyclic_order_plus_balanced_ABX_cells",
+      "blinding": "formal-trial A/B mapping and correctness hidden until completion"
+    },
+    "exclusion_policy": {
+      "min_rt_ms": 150,
+      "max_rt_ms": 30000,
+      "min_completion_ratio": 1,
+      "min_valid_trial_ratio": 0.8,
+      "min_plays_each_label": 1,
+      "accuracy_based_exclusion": false
+    },
+    "governance": {
+      "research_role": "principal_investigator",
+      "consent_template": {
+        "version": "FARHP-CONSENT-TEST-v0.8",
+        "title": "Test consent",
+        "summary": "Anonymous browser regression study.",
+        "affirmative_consent_required": true,
+        "eligibility_attestation_required": true
+      },
+      "direct_identifiers_forbidden": true,
+      "local_processing_only": true,
+      "audit_policy": {
+        "live_chain": "FNV32x8-live",
+        "sealed_chain": "SHA-256-when-available"
+      },
+      "deidentification_policy": "study-specific one-way pseudonym for analysis export"
+    },
+    "status": "locked",
+    "created_at": "2026-07-31T06:41:53.709Z",
+    "locked_at": "2026-07-31T06:41:55.671Z",
+    "plan_fingerprint": {
+      "algorithm": "FNV32x8-fallback",
+      "value": "66f8276b03394b54114127813cf1e34a5dc2bd0ffa0c0f380827036503d6972e"
+    }
+  },
+  "session": {
+    "session_id": "FARHP-DEPLOY-TEST-P-BROWSER-01-424242-1785480116753",
+    "study_id": "FARHP-DEPLOY-TEST",
+    "participant_id": "P-BROWSER-01",
+    "created_at": "2026-07-31T06:41:56.753Z",
+    "completed_at": "2026-07-31T06:41:57.284Z",
+    "current_index": 2,
+    "on_break": false,
+    "break_count": 1,
+    "governance": {
+      "research_role": "principal_investigator",
+      "consent_record": {
+        "consent_version": "FARHP-CONSENT-TEST-v0.8",
+        "consent_title": "Test consent",
+        "consented_at": "2026-07-31T06:41:56.753Z",
+        "affirmative_consent": true,
+        "eligibility_attested": true,
+        "withdrawal_code": "WD-01S6EWG",
+        "plan_fingerprint": "66f8276b03394b54114127813cf1e34a5dc2bd0ffa0c0f380827036503d6972e"
+      },
+      "direct_identifiers_collected": false
+    },
+    "audit_log": [
+      {
+        "index": 1,
+        "timestamp": "2026-07-31T06:41:56.753Z",
+        "type": "plan_bound",
+        "payload": {
+          "plan_fingerprint": "66f8276b03394b54114127813cf1e34a5dc2bd0ffa0c0f380827036503d6972e"
+        },
+        "prev_hash": "GENESIS",
+        "hash": "7b1bd900a91ef17d3c86f39aca650dd7a1ddda1c00fe1d692400fa56bd9818b3"
+      },
+      {
+        "index": 2,
+        "timestamp": "2026-07-31T06:41:56.763Z",
+        "type": "consent_recorded",
+        "payload": {
+          "consent_version": "FARHP-CONSENT-TEST-v0.8"
+        },
+        "prev_hash": "7b1bd900a91ef17d3c86f39aca650dd7a1ddda1c00fe1d692400fa56bd9818b3",
+        "hash": "ca6e3015d79d542efb6297e33ca9cdf42291fa192912915264921db79d262d98"
+      },
+      {
+        "index": 3,
+        "timestamp": "2026-07-31T06:41:56.763Z",
+        "type": "session_started",
+        "payload": {
+          "session_id": "FARHP-DEPLOY-TEST-P-BROWSER-01-424242-1785480116753"
+        },
+        "prev_hash": "ca6e3015d79d542efb6297e33ca9cdf42291fa192912915264921db79d262d98",
+        "hash": "07392f27857b004cee6d03cdcbbb639281ca7e93c5d3bc688fdf05d903fff5be"
+      },
+      {
+        "index": 4,
+        "timestamp": "2026-07-31T06:41:57.090Z",
+        "type": "response_submitted",
+        "payload": {
+          "sequence_index": 1,
+          "is_practice": true,
+          "answer": "A",
+          "rt_ms": 420
+        },
+        "prev_hash": "07392f27857b004cee6d03cdcbbb639281ca7e93c5d3bc688fdf05d903fff5be",
+        "hash": "8c3b80b851ddacbd9c7f09ce29e7e3035e00a7540cea91a9d02c2c2a6fb498ef"
+      },
+      {
+        "index": 5,
+        "timestamp": "2026-07-31T06:41:57.093Z",
+        "type": "response_submitted",
+        "payload": {
+          "sequence_index": 2,
+          "is_practice": false,
+          "answer": "B",
+          "rt_ms": 650
+        },
+        "prev_hash": "8c3b80b851ddacbd9c7f09ce29e7e3035e00a7540cea91a9d02c2c2a6fb498ef",
+        "hash": "810555594fa635a271e64507a89c3ab8aa91afed24f9f08684ac0f6bcbea9a6c"
+      },
+      {
+        "index": 6,
+        "timestamp": "2026-07-31T06:41:57.094Z",
+        "type": "break_started",
+        "payload": {
+          "break_count": 1
+        },
+        "prev_hash": "810555594fa635a271e64507a89c3ab8aa91afed24f9f08684ac0f6bcbea9a6c",
+        "hash": "7a2909c2a4eb4caf27c45b5ccafacab16836446eedead3fb4368863857f7c28d"
+      },
+      {
+        "index": 7,
+        "timestamp": "2026-07-31T06:41:57.282Z",
+        "type": "response_submitted",
+        "payload": {
+          "sequence_index": 3,
+          "is_practice": false,
+          "answer": "B",
+          "rt_ms": 850
+        },
+        "prev_hash": "7a2909c2a4eb4caf27c45b5ccafacab16836446eedead3fb4368863857f7c28d",
+        "hash": "42bd76d3b790ee203d2ee1c909c5e786afe62b6774701104abd54c7d9a219f9a"
+      },
+      {
+        "index": 8,
+        "timestamp": "2026-07-31T06:41:57.284Z",
+        "type": "session_completed",
+        "payload": {
+          "completed_at": "2026-07-31T06:41:57.284Z"
+        },
+        "prev_hash": "42bd76d3b790ee203d2ee1c909c5e786afe62b6774701104abd54c7d9a219f9a",
+        "hash": "1136ae4ec29a52af6ad5f938c8b0f7a973f0355aac4bd74b150bcff4999edb85"
+      }
+    ],
+    "trials": [
+      {
+        "sequence_index": 1,
+        "play_counts": {
+          "A": 1,
+          "B": 1,
+          "X": 1
+        },
+        "started_at_ms": 1785480116670,
+        "response": {
+          "answer": "A",
+          "rt_ms": 420,
+          "submitted_at": "2026-07-31T06:41:57.090Z"
+        }
+      },
+      {
+        "sequence_index": 2,
+        "play_counts": {
+          "A": 1,
+          "B": 1,
+          "X": 1
+        },
+        "started_at_ms": 1785480116443,
+        "response": {
+          "answer": "B",
+          "rt_ms": 650,
+          "submitted_at": "2026-07-31T06:41:57.093Z"
+        }
+      },
+      {
+        "sequence_index": 3,
+        "play_counts": {
+          "A": 1,
+          "B": 1,
+          "X": 1
+        },
+        "started_at_ms": 1785480116432,
+        "response": {
+          "answer": "B",
+          "rt_ms": 850,
+          "submitted_at": "2026-07-31T06:41:57.282Z"
+        }
+      }
+    ]
+  },
+  "privacy_note": "contains anonymous code and responses only; no audio arrays or direct identifiers"
+}

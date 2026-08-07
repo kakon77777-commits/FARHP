@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://evemisslab.com/spec/farhp-transform-v0.3.schema.json",
+  "title": "FARHP Transform Report v0.3",
+  "type": "object",
+  "required": ["operation", "strength", "changed_coordinates", "mean_geodesic_shift_rad", "max_geodesic_shift_rad", "metadata"],
+  "properties": {
+    "operation": {"type": "string", "minLength": 1},
+    "strength": {"type": "number", "minimum": 0, "maximum": 1},
+    "changed_coordinates": {"type": "integer", "minimum": 0},
+    "mean_geodesic_shift_rad": {"type": "number", "minimum": 0, "maximum": 3.141592653589793},
+    "max_geodesic_shift_rad": {"type": "number", "minimum": 0, "maximum": 3.141592653589793},
+    "metadata": {"type": "object"}
+  },
+  "additionalProperties": false
+}

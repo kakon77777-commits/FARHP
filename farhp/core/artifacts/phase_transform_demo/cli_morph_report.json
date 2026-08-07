@@ -1,0 +1,10 @@
+{
+  "operation": "style_transfer",
+  "strength": 0.5,
+  "changed_coordinates": 1921,
+  "mean_geodesic_shift_rad": 0.45442440529905626,
+  "max_geodesic_shift_rad": 1.309521797729274,
+  "metadata": {
+    "style_frame_count": 83
+  }
+}

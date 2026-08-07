@@ -1,0 +1,52 @@
+spec:
+  name: Enochian–Mandarin Phase Symbol Language Glyph Engineering
+  short_name: EMPSL-Glyph
+  namespace: eml.empsl
+  version: "0.2"
+  date: "2026-07-31"
+  status: engineering-mvp
+canonicality:
+  atom_ids: canonical
+  recipes: canonical
+  svg_renderings: noncanonical-presentation
+  pua: noncanonical
+canvas:
+  atom_viewbox: "0 0 256 256"
+  composed_viewbox: "0 0 512 512"
+slots:
+  - frame
+  - seed
+  - phonology
+  - tone
+  - phase
+  - semantic_operator
+counts:
+  seed: 32
+  semantic_frame: 16
+  phase_mark: 16
+  operator_mark: 16
+  phonology_tone_structure: 48
+  total: 128
+phonology_breakdown:
+  onset: 21
+  four_hu: 4
+  rime_class: 12
+  tone: 5
+  structure: 6
+composition:
+  frame: outer perimeter
+  seed: central core
+  phonology: left and lower cluster, up to 4 marks in v0.2
+  tone: top
+  phase: upper-right / inner ring
+  semantic_operator: lower-right
+hashing:
+  algorithm: SHA-256
+  recipe_canonicalization: sorted-key compact JSON over six slot values
+validation:
+  - all 128 IDs unique
+  - every recipe atom exists in registry
+  - category-slot compatibility
+  - SVG XML parseability
+  - exact raster collision check
+  - recipe hash round-trip

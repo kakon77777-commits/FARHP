@@ -1,0 +1,50 @@
+{
+  "experiment": "FARHP blind phase-only listening pack v0.3",
+  "instructions": [
+    "Use headphones at a comfortable fixed volume.",
+    "Do not inspect the secret key before rating.",
+    "Rate difference, naturalness, sharpness, breathiness, and preference independently.",
+    "All samples preserve the content trajectory's F0 and harmonic amplitudes; only FARHP coordinates differ."
+  ],
+  "rating_scale": {
+    "minimum": 1,
+    "maximum": 7
+  },
+  "fields": [
+    "difference",
+    "naturalness",
+    "sharpness",
+    "breathiness",
+    "preference"
+  ],
+  "samples": [
+    {
+      "trial": 1,
+      "audio": "audio/sample_7259cfdc85.wav"
+    },
+    {
+      "trial": 2,
+      "audio": "audio/sample_5a93e76246.wav"
+    },
+    {
+      "trial": 3,
+      "audio": "audio/sample_66474036c2.wav"
+    },
+    {
+      "trial": 4,
+      "audio": "audio/sample_f3647b9835.wav"
+    },
+    {
+      "trial": 5,
+      "audio": "audio/sample_d3b01bd394.wav"
+    },
+    {
+      "trial": 6,
+      "audio": "audio/sample_8d0ae9f914.wav"
+    },
+    {
+      "trial": 7,
+      "audio": "audio/sample_6c06f2d6f1.wav"
+    }
+  ]
+}

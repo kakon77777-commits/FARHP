@@ -1,0 +1,31 @@
+{
+  "pack": "FARHP_EMPSL_Local_AI_Handoff",
+  "version": "1.0",
+  "date": "2026-08-07",
+  "primary_documents": [
+    "01_FARHP_EMPSL_總索引與當前狀態.md",
+    "02_FARHP_理論工程與WebLab進度總整理.md",
+    "03_EMPSL_統一符號語言與字形系統進度總整理.md",
+    "04_Local_AI_工程交接與操作手冊.md",
+    "05_NEXT_ROADMAP_未完成問題與接續任務.md"
+  ],
+  "reading_order": [
+    "01_FARHP_EMPSL_總索引與當前狀態.md",
+    "02_FARHP_理論工程與WebLab進度總整理.md",
+    "03_EMPSL_統一符號語言與字形系統進度總整理.md",
+    "04_Local_AI_工程交接與操作手冊.md",
+    "05_NEXT_ROADMAP_未完成問題與接續任務.md"
+  ],
+  "reference_artifacts": [
+    "FARHP_系列_v0.7_論文01-07與工程包.zip",
+    "FARHP_WebLab_v1.0.0-rc.1_完整網站與伺服器包.zip",
+    "EMPSL_v0.1_論文與統一編碼規格包.zip",
+    "EMPSL_v0.4_字形語法與合法性驗證包.zip"
+  ],
+  "current_state": {
+    "FARHP_papers": "01-07 complete; 08 pending formal writeback; 09 integrated as EMPSL v0.1",
+    "FARHP_Core": "v0.3",
+    "FARHP_WebLab": "v1.0.0-rc.1",
+    "EMPSL": "v0.4 complete; v0.5 next"
+  }
+}

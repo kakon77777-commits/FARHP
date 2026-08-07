@@ -1,0 +1,122 @@
+farhp_spec:
+  name: "FARHP-Spec"
+  version: "0.1"
+  date: "2026-07-26"
+  status: "research-draft"
+  description: >-
+    Minimum semantic interchange specification for Fundamental-Anchored
+    Relative Harmonic Phase objects, tokens, masks, confidence values,
+    analysis provenance, and codebook identity.
+
+required_semantics:
+  farhp_version: "Specification version used by the object."
+  domain:
+    enum: ["Y", "G"]
+    meanings:
+      Y: "Observed output-waveform FARHP."
+      G: "Glottal-source FARHP estimate produced by a declared inverse-filtering method."
+  anchor:
+    required: ["type", "confidence"]
+    type_enum: ["fundamental", "bezout", "generalized"]
+  analysis:
+    required:
+      - "method"
+      - "method_version"
+      - "sample_rate_hz"
+      - "frame_time_sec"
+      - "f0_hz"
+      - "f0_confidence"
+      - "applicability_grade"
+  phase:
+    required:
+      - "representation"
+      - "harmonic_indices"
+      - "mask"
+      - "confidence"
+    representation_enum:
+      - "angle_rad"
+      - "unit_circle_xy"
+      - "complex_pair"
+      - "scalar_quantized"
+      - "joint_torus_codebook"
+      - "product_codebook"
+      - "joint_plus_residual"
+      - "not_applicable"
+  polarity_policy:
+    enum: ["preserve", "normalize", "separate_bit", "equivariant", "unknown"]
+
+conformance_levels:
+  level_0:
+    name: "continuous_exchange"
+    requirements:
+      - "Continuous angles or unit-circle coordinates"
+      - "Harmonic indices"
+      - "Mask and confidence"
+  level_1:
+    name: "scalar_discrete"
+    requirements:
+      - "Per-harmonic circular quantization"
+      - "Quantizer resolution or codebook identity"
+  level_2:
+    name: "joint_codebook"
+    requirements:
+      - "Joint or product torus codebook"
+      - "Condition domain and OOD distance"
+  level_3:
+    name: "dynamic_tokens"
+    requirements:
+      - "Absolute, delta, synchronization, mask, confidence, and residual tokens"
+  level_4:
+    name: "language_integration"
+    requirements:
+      - "Glyph, reading, phase-class, acoustic codebook, and semantic mappings"
+
+prohibitions:
+  - "Do not encode missing phase as numeric zero without a separate mask."
+  - "Do not omit harmonic indices."
+  - "Do not omit anchor type and anchor confidence."
+  - "Do not label domain G as physiological ground truth."
+  - "Do not reuse a codebook identifier for changed codewords."
+  - "Do not mix incompatible polarity policies without an explicit conversion."
+  - "Do not emit a normal linguistic FARHP token when applicability_grade is 0."
+  - "Do not treat a bare token index as portable across codebooks."
+  - "Do not infer phonological status from clustering alone."
+
+reference_object:
+  farhp_version: "0.1"
+  domain: "Y"
+  anchor:
+    type: "fundamental"
+    harmonic_index: 1
+    confidence: 0.98
+  analysis:
+    method: "harmonic_tracker_reference"
+    method_version: "0.1"
+    sample_rate_hz: 48000
+    frame_time_sec: 1.240
+    frame_length_sec: 0.040
+    f0_hz: 121.7
+    f0_confidence: 0.97
+    applicability_grade: 4
+  phase:
+    representation: "unit_circle_xy"
+    harmonic_indices: [2, 3, 4, 5, 6, 7, 8, 9]
+    values:
+      - [0.0000, 1.0000]
+      - [-0.7071, 0.7071]
+      - [-1.0000, 0.0000]
+      - [-0.3827, -0.9239]
+      - [0.1951, -0.9808]
+      - [0.7071, -0.7071]
+      - [0.9808, -0.1951]
+      - [1.0000, 0.0000]
+    mask: [1, 1, 1, 1, 1, 1, 1, 1]
+    confidence: [0.97, 0.96, 0.94, 0.91, 0.88, 0.80, 0.74, 0.69]
+  codebook:
+    id: "fy-vowel-f0b2-cb03"
+    version: "0.1"
+    kind: "joint_torus"
+    token_type: "ABS"
+    token_index: 187
+    ood_distance: 0.11
+  polarity_policy: "preserve"

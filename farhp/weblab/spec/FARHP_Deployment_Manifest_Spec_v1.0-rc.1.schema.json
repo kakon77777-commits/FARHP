@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://evemisslab.com/spec/FARHP_Deployment_Manifest_Spec_v1.0-rc.1.schema.json",
+  "title": "FARHP Deployment Manifest v1.0 RC1",
+  "type": "object",
+  "required": ["farhp_deployment_manifest_version", "application", "database", "security", "features"],
+  "properties": {
+    "farhp_deployment_manifest_version": {"const": "1.0-rc.1"},
+    "application": {
+      "type": "object",
+      "required": ["name", "version", "migration_head"],
+      "properties": {
+        "name": {"const": "FARHP Research Server"},
+        "version": {"const": "1.0.0-rc.1"},
+        "migration_head": {"const": "0002_v10rc_production"}
+      },
+      "additionalProperties": true
+    },
+    "database": {
+      "type": "object",
+      "required": ["supported_backends"],
+      "properties": {
+        "supported_backends": {"type": "array", "items": {"enum": ["sqlite", "postgresql"]}, "minItems": 2, "uniqueItems": true},
+        "production_recommended": {"const": "postgresql"}
+      },
+      "additionalProperties": true
+    },
+    "security": {
+      "type": "object",
+      "required": ["password_hash", "oidc", "security_headers", "https_termination"],
+      "properties": {
+        "password_hash": {"const": "Argon2"},
+        "oidc": {"type": "boolean"},
+        "security_headers": {"type": "boolean"},
+        "https_termination": {"enum": ["reverse_proxy", "external_platform"]}
+      }
+    },
+    "features": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "limitations": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

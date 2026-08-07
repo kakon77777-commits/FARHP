@@ -1,0 +1,7 @@
+{
+  "id": 1,
+  "plan_id": 1,
+  "archive_digest": "86ee2e1500d9f1bc376b636c2f1cfccdb307f09de986af402fb5ebae959c337c",
+  "archived_at": "2026-07-31T07:04:27.953939",
+  "note": "server-side immutable database record; not an external trusted timestamp"
+}

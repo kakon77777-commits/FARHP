@@ -1,0 +1,3 @@
+PASS docker-compose.yml
+PASS docker-compose.https.yml
+Compose YAML validation PASS

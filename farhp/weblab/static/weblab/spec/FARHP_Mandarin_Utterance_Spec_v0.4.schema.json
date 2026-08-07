@@ -1,0 +1,427 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://evemisslab.example/spec/FARHP_Mandarin_Utterance_Spec_v0.4.schema.json",
+  "title": "FARHP Mandarin Utterance Object v0.4",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "farhp_weblab_utterance_version",
+    "generated_at",
+    "sample_rate_hz",
+    "text",
+    "sentence_type",
+    "lexical_bopomofo",
+    "surface_bopomofo",
+    "rules",
+    "prosodic_groups",
+    "syllables",
+    "acoustics",
+    "decomposition",
+    "warning"
+  ],
+  "properties": {
+    "farhp_weblab_utterance_version": {
+      "const": "0.4"
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "sample_rate_hz": {
+      "type": "integer",
+      "minimum": 8000
+    },
+    "text": {
+      "type": "string"
+    },
+    "sentence_type": {
+      "type": "string",
+      "enum": [
+        "declarative",
+        "question",
+        "exclamation"
+      ]
+    },
+    "lexical_bopomofo": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "surface_bopomofo": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "rules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "third_tone_sandhi",
+        "yi_bu_sandhi",
+        "neutral_tone_context",
+        "prosodic_grouping",
+        "coarticulation_crossfade",
+        "formant_parameter_interpolation",
+        "phrase_declination",
+        "sentence_intonation",
+        "intonation_strength",
+        "speech_rate",
+        "boundary_overlap_ms",
+        "group_pause_ms",
+        "final_lengthening"
+      ],
+      "properties": {
+        "third_tone_sandhi": {
+          "type": "boolean"
+        },
+        "yi_bu_sandhi": {
+          "type": "boolean"
+        },
+        "neutral_tone_context": {
+          "type": "boolean"
+        },
+        "prosodic_grouping": {
+          "type": "boolean"
+        },
+        "coarticulation_crossfade": {
+          "type": "boolean"
+        },
+        "formant_parameter_interpolation": {
+          "type": "boolean"
+        },
+        "phrase_declination": {
+          "type": "boolean"
+        },
+        "sentence_intonation": {
+          "type": "string",
+          "enum": [
+            "declarative",
+            "question",
+            "exclamation"
+          ]
+        },
+        "intonation_strength": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 2
+        },
+        "speech_rate": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "boundary_overlap_ms": {
+          "type": "number",
+          "minimum": 0
+        },
+        "group_pause_ms": {
+          "type": "number",
+          "minimum": 0
+        },
+        "final_lengthening": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "prosodic_groups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "after_index",
+          "pause_samples",
+          "start_sample",
+          "end_sample"
+        ],
+        "properties": {
+          "after_index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "pause_samples": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "start_sample": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "end_sample": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "syllables": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "index",
+          "character",
+          "initial",
+          "final",
+          "lexical_tone",
+          "surface_tone",
+          "lexical_bopomofo",
+          "surface_bopomofo",
+          "sandhi_applied",
+          "sandhi_types",
+          "third_tone_sandhi",
+          "yi_bu_sandhi",
+          "prosodic_group",
+          "boundary_after",
+          "contextual_neutral",
+          "previous_surface_tone",
+          "base_f0_hz",
+          "duration_sec",
+          "sentence_intonation_semitones",
+          "vocal_tract_context",
+          "farhp",
+          "boundary"
+        ],
+        "properties": {
+          "index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "character": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "initial": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "final": {
+            "type": "string"
+          },
+          "lexical_tone": {
+            "type": "integer",
+            "enum": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          "surface_tone": {
+            "type": "integer",
+            "enum": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          "lexical_bopomofo": {
+            "type": "string"
+          },
+          "surface_bopomofo": {
+            "type": "string"
+          },
+          "sandhi_applied": {
+            "type": "boolean"
+          },
+          "sandhi_types": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "三聲變調",
+                "一變調",
+                "不變調"
+              ]
+            }
+          },
+          "third_tone_sandhi": {
+            "type": "boolean"
+          },
+          "yi_bu_sandhi": {
+            "type": "boolean"
+          },
+          "prosodic_group": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "boundary_after": {
+            "type": "boolean"
+          },
+          "contextual_neutral": {
+            "type": "boolean"
+          },
+          "previous_surface_tone": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "enum": [
+              null,
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          "base_f0_hz": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "duration_sec": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "sentence_intonation_semitones": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "start",
+              "end"
+            ],
+            "properties": {
+              "start": {
+                "type": "number"
+              },
+              "end": {
+                "type": "number"
+              }
+            }
+          },
+          "vocal_tract_context": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "left_vowel",
+              "right_vowel",
+              "interpolation_strength"
+            ],
+            "properties": {
+              "left_vowel": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "right_vowel": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "interpolation_strength": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            }
+          },
+          "farhp": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "source",
+              "strength"
+            ],
+            "properties": {
+              "source": {
+                "type": "string",
+                "enum": [
+                  "lab",
+                  "aligned",
+                  "curved",
+                  "alternating",
+                  "random"
+                ]
+              },
+              "strength": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            }
+          },
+          "boundary": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "index",
+              "start_sample",
+              "end_sample",
+              "overlap_samples",
+              "pause_before_samples"
+            ],
+            "properties": {
+              "index": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "start_sample": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "end_sample": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "overlap_samples": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "pause_before_samples": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    "acoustics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "duration_sec",
+        "f0_min_hz",
+        "f0_max_hz",
+        "raw_peak"
+      ],
+      "properties": {
+        "duration_sec": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "f0_min_hz": {
+          "type": "number",
+          "minimum": 0
+        },
+        "f0_max_hz": {
+          "type": "number",
+          "minimum": 0
+        },
+        "raw_peak": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "decomposition": {
+      "type": "string"
+    },
+    "warning": {
+      "type": "string"
+    }
+  }
+}

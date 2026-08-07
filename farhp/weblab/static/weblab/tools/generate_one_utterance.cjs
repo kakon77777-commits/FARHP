@@ -1,0 +1,11 @@
+'use strict';
+const fs=require('fs');const path=require('path');const vm=require('vm');
+const preset=process.argv[2];if(!preset)throw new Error('preset required');
+const root=path.resolve(__dirname,'..');const code=fs.readFileSync(path.join(root,'app.js'),'utf8');
+const c=vm.createContext({console,Math,Number,Array,ArrayBuffer,DataView,Float32Array,Float64Array,Uint8Array,Blob,Date,JSON,setTimeout,clearTimeout,document:{querySelector:()=>null,querySelectorAll:()=>[],addEventListener:()=>{}},window:{},localStorage:{getItem:()=>null,setItem:()=>{}},URL:{createObjectURL:()=>'',revokeObjectURL:()=>{}},location:{hash:''},requestAnimationFrame:()=>0});
+vm.runInContext(code,c,{filename:'app.js'});const run=x=>vm.runInContext(x,c);
+const sentenceType=run(`UTTERANCE_PRESET_META.${preset}.sentenceType`);
+run(`state.K=16;utteranceState.sandhi=true;utteranceState.yiBuSandhi=true;utteranceState.neutralContext=true;utteranceState.prosodicGrouping=true;utteranceState.coarticulation=true;utteranceState.formantCoarticulation=true;utteranceState.declination=true;utteranceState.sentenceType=${JSON.stringify(sentenceType)};utteranceState.intonationStrength=1;utteranceState.speechRate=1;utteranceState.overlapMs=32;utteranceState.groupPauseMs=90;utteranceState.finalLengthening=.18;utteranceState.items=UTTERANCE_PRESETS.${preset}.map(normalizeUtteranceItem);utteranceState.lastMeta=null;`);
+run('synthesizeUtterance()');const manifest=run('utteranceManifest()');
+const outDir=path.join(root,'examples','utterances');fs.mkdirSync(outDir,{recursive:true});fs.writeFileSync(path.join(outDir,`${preset}.json`),JSON.stringify(manifest,null,2));
+(async()=>{const blob=run('encodeWav(utteranceState.audio,SAMPLE_RATE)');fs.writeFileSync(path.join(outDir,`${preset}.wav`),Buffer.from(await blob.arrayBuffer()));console.log('Done',preset);})().catch(e=>{console.error(e);process.exit(1)});

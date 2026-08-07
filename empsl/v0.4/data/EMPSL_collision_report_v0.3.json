@@ -1,0 +1,3822 @@
+{
+  "spec_version": "0.3",
+  "generated_at_utc": "2026-07-31T08:32:00Z",
+  "test_seed": 20260731,
+  "variant_layer": {
+    "raw_geometry_count": 256,
+    "raw_exact_collision_group_count": 40,
+    "raw_exact_collision_variant_count": 104,
+    "raw_exact_groups": [
+      [
+        "ENO-01@ID",
+        "ENO-01@OPEN-R",
+        "ENO-17@MX"
+      ],
+      [
+        "ENO-01@R90",
+        "ENO-09@ID",
+        "ENO-09@OPEN-R"
+      ],
+      [
+        "ENO-01@R180",
+        "ENO-09@R90"
+      ],
+      [
+        "ENO-01@MX",
+        "ENO-17@ID",
+        "ENO-17@OPEN-R"
+      ],
+      [
+        "ENO-02@ID",
+        "ENO-02@OPEN-R"
+      ],
+      [
+        "ENO-02@R90",
+        "ENO-10@ID",
+        "ENO-10@OPEN-R"
+      ],
+      [
+        "ENO-02@R180",
+        "ENO-10@R90",
+        "ENO-18@MX"
+      ],
+      [
+        "ENO-02@MX",
+        "ENO-18@R180"
+      ],
+      [
+        "ENO-03@ID",
+        "ENO-03@OPEN-R"
+      ],
+      [
+        "ENO-03@R90",
+        "ENO-19@ID",
+        "ENO-19@OPEN-R"
+      ],
+      [
+        "ENO-03@R180",
+        "ENO-19@R90"
+      ],
+      [
+        "ENO-04@ID",
+        "ENO-04@OPEN-R",
+        "ENO-12@R180",
+        "ENO-20@MX"
+      ],
+      [
+        "ENO-04@R180",
+        "ENO-12@ID",
+        "ENO-12@OPEN-R"
+      ],
+      [
+        "ENO-04@MX",
+        "ENO-20@ID",
+        "ENO-20@OPEN-R"
+      ],
+      [
+        "ENO-05@ID",
+        "ENO-05@OPEN-R",
+        "ENO-13@MX"
+      ],
+      [
+        "ENO-05@R90",
+        "ENO-21@ID",
+        "ENO-21@OPEN-R"
+      ],
+      [
+        "ENO-05@R180",
+        "ENO-21@R90"
+      ],
+      [
+        "ENO-05@MX",
+        "ENO-13@ID",
+        "ENO-13@OPEN-R"
+      ],
+      [
+        "ENO-06@ID",
+        "ENO-06@OPEN-R",
+        "ENO-14@R180"
+      ],
+      [
+        "ENO-06@R180",
+        "ENO-14@ID",
+        "ENO-14@OPEN-R"
+      ],
+      [
+        "ENO-07@ID",
+        "ENO-07@OPEN-R"
+      ],
+      [
+        "ENO-07@R90",
+        "ENO-15@ID",
+        "ENO-15@OPEN-R"
+      ],
+      [
+        "ENO-07@R180",
+        "ENO-15@R90"
+      ],
+      [
+        "ENO-08@ID",
+        "ENO-08@R180",
+        "ENO-08@OPEN-R"
+      ],
+      [
+        "ENO-10@MX",
+        "ENO-18@R90"
+      ],
+      [
+        "ENO-11@ID",
+        "ENO-11@OPEN-R"
+      ],
+      [
+        "ENO-12@MX",
+        "ENO-20@R180"
+      ],
+      [
+        "ENO-16@ID",
+        "ENO-16@R180",
+        "ENO-16@OPEN-R"
+      ],
+      [
+        "ENO-18@ID",
+        "ENO-18@OPEN-R"
+      ],
+      [
+        "STR-01@ID",
+        "STR-01@R180",
+        "STR-01@MX",
+        "STR-01@OPEN-R"
+      ],
+      [
+        "STR-02@ID",
+        "STR-02@R180",
+        "STR-02@OPEN-R"
+      ],
+      [
+        "STR-03@ID",
+        "STR-03@OPEN-R"
+      ],
+      [
+        "STR-04@ID",
+        "STR-04@R180",
+        "STR-04@OPEN-R"
+      ],
+      [
+        "STR-05@ID",
+        "STR-05@OPEN-R"
+      ],
+      [
+        "STR-06@ID",
+        "STR-06@OPEN-R"
+      ],
+      [
+        "STR-07@ID",
+        "STR-07@OPEN-R"
+      ],
+      [
+        "STR-08@ID",
+        "STR-08@OPEN-R"
+      ],
+      [
+        "STR-09@ID",
+        "STR-09@OPEN-R"
+      ],
+      [
+        "STR-10@ID",
+        "STR-10@R180",
+        "STR-10@MX",
+        "STR-10@OPEN-R"
+      ],
+      [
+        "STR-11@ID",
+        "STR-11@OPEN-R"
+      ]
+    ],
+    "canonical_variant_count": 256,
+    "canonical_exact_collision_group_count": 0,
+    "canonical_exact_collision_variant_count": 0,
+    "canonical_exact_groups": [],
+    "policy": "Pure geometry collisions are diagnostic; canonical witness-bearing variants are normative."
+  },
+  "composite_layer": {
+    "sample_count": 8192,
+    "unique_recipe_count": 8192,
+    "raster_size": [
+      64,
+      64
+    ],
+    "exact_collision_group_count": 0,
+    "exact_collision_recipe_count": 0,
+    "exact_collision_groups": [],
+    "near_metric": "64-bit dHash",
+    "near_threshold": 4,
+    "near_pairs_recorded": 400,
+    "near_pairs": [
+      {
+        "distance": 0,
+        "a": "eml.empsl:glyph:test-00020",
+        "b": "eml.empsl:glyph:test-00244",
+        "a_seed_variant": "ENO-03@OPEN-R",
+        "b_seed_variant": "STR-10@OPEN-R",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 0,
+        "a": "eml.empsl:glyph:test-00060",
+        "b": "eml.empsl:glyph:test-00313",
+        "a_seed_variant": "ENO-08@OPEN-R",
+        "b_seed_variant": "ENO-08@R90",
+        "same_base_seed": true,
+        "same_transform": false
+      },
+      {
+        "distance": 0,
+        "a": "eml.empsl:glyph:test-00076",
+        "b": "eml.empsl:glyph:test-00265",
+        "a_seed_variant": "ENO-10@OPEN-R",
+        "b_seed_variant": "ENO-02@R90",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 0,
+        "a": "eml.empsl:glyph:test-00102",
+        "b": "eml.empsl:glyph:test-00150",
+        "a_seed_variant": "ENO-13@INSET",
+        "b_seed_variant": "ENO-19@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 0,
+        "a": "eml.empsl:glyph:test-00120",
+        "b": "eml.empsl:glyph:test-00168",
+        "a_seed_variant": "ENO-16@ID",
+        "b_seed_variant": "STR-01@ID",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 0,
+        "a": "eml.empsl:glyph:test-00126",
+        "b": "eml.empsl:glyph:test-00174",
+        "a_seed_variant": "ENO-16@INSET",
+        "b_seed_variant": "STR-01@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 0,
+        "a": "eml.empsl:glyph:test-00164",
+        "b": "eml.empsl:glyph:test-00289",
+        "a_seed_variant": "ENO-21@OPEN-R",
+        "b_seed_variant": "ENO-05@R90",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 0,
+        "a": "eml.empsl:glyph:test-00182",
+        "b": "eml.empsl:glyph:test-00230",
+        "a_seed_variant": "STR-02@INSET",
+        "b_seed_variant": "STR-08@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 0,
+        "a": "eml.empsl:glyph:test-00270",
+        "b": "eml.empsl:glyph:test-00318",
+        "a_seed_variant": "ENO-02@INSET",
+        "b_seed_variant": "ENO-08@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 0,
+        "a": "eml.empsl:glyph:test-00286",
+        "b": "eml.empsl:glyph:test-00350",
+        "a_seed_variant": "ENO-04@INSET",
+        "b_seed_variant": "ENO-12@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 1,
+        "a": "eml.empsl:glyph:test-00006",
+        "b": "eml.empsl:glyph:test-00246",
+        "a_seed_variant": "ENO-01@INSET",
+        "b_seed_variant": "STR-10@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 1,
+        "a": "eml.empsl:glyph:test-00014",
+        "b": "eml.empsl:glyph:test-00254",
+        "a_seed_variant": "ENO-02@INSET",
+        "b_seed_variant": "STR-11@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 1,
+        "a": "eml.empsl:glyph:test-00016",
+        "b": "eml.empsl:glyph:test-00240",
+        "a_seed_variant": "ENO-03@ID",
+        "b_seed_variant": "STR-10@ID",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 1,
+        "a": "eml.empsl:glyph:test-00022",
+        "b": "eml.empsl:glyph:test-00102",
+        "a_seed_variant": "ENO-03@INSET",
+        "b_seed_variant": "ENO-13@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 1,
+        "a": "eml.empsl:glyph:test-00022",
+        "b": "eml.empsl:glyph:test-00150",
+        "a_seed_variant": "ENO-03@INSET",
+        "b_seed_variant": "ENO-19@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 1,
+        "a": "eml.empsl:glyph:test-00023",
+        "b": "eml.empsl:glyph:test-00247",
+        "a_seed_variant": "ENO-03@CROSS",
+        "b_seed_variant": "STR-10@CROSS",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 1,
+        "a": "eml.empsl:glyph:test-00030",
+        "b": "eml.empsl:glyph:test-00254",
+        "a_seed_variant": "ENO-04@INSET",
+        "b_seed_variant": "STR-11@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 1,
+        "a": "eml.empsl:glyph:test-00031",
+        "b": "eml.empsl:glyph:test-00047",
+        "a_seed_variant": "ENO-04@CROSS",
+        "b_seed_variant": "ENO-06@CROSS",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 1,
+        "a": "eml.empsl:glyph:test-00046",
+        "b": "eml.empsl:glyph:test-00094",
+        "a_seed_variant": "ENO-06@INSET",
+        "b_seed_variant": "ENO-12@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 1,
+        "a": "eml.empsl:glyph:test-00046",
+        "b": "eml.empsl:glyph:test-00110",
+        "a_seed_variant": "ENO-06@INSET",
+        "b_seed_variant": "ENO-14@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 1,
+        "a": "eml.empsl:glyph:test-00048",
+        "b": "eml.empsl:glyph:test-00176",
+        "a_seed_variant": "ENO-07@ID",
+        "b_seed_variant": "STR-02@ID",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 1,
+        "a": "eml.empsl:glyph:test-00059",
+        "b": "eml.empsl:glyph:test-00312",
+        "a_seed_variant": "ENO-08@MX",
+        "b_seed_variant": "ENO-08@ID",
+        "same_base_seed": true,
+        "same_transform": false
+      },
+      {
+        "distance": 1,
+        "a": "eml.empsl:glyph:test-00068",
+        "b": "eml.empsl:glyph:test-00257",
+        "a_seed_variant": "ENO-09@OPEN-R",
+        "b_seed_variant": "ENO-01@R90",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 1,
+        "a": "eml.empsl:glyph:test-00094",
+        "b": "eml.empsl:glyph:test-00190",
+        "a_seed_variant": "ENO-12@INSET",
+        "b_seed_variant": "STR-03@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 1,
+        "a": "eml.empsl:glyph:test-00102",
+        "b": "eml.empsl:glyph:test-00246",
+        "a_seed_variant": "ENO-13@INSET",
+        "b_seed_variant": "STR-10@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 1,
+        "a": "eml.empsl:glyph:test-00110",
+        "b": "eml.empsl:glyph:test-00206",
+        "a_seed_variant": "ENO-14@INSET",
+        "b_seed_variant": "STR-05@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 1,
+        "a": "eml.empsl:glyph:test-00110",
+        "b": "eml.empsl:glyph:test-00254",
+        "a_seed_variant": "ENO-14@INSET",
+        "b_seed_variant": "STR-11@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 1,
+        "a": "eml.empsl:glyph:test-00112",
+        "b": "eml.empsl:glyph:test-00176",
+        "a_seed_variant": "ENO-15@ID",
+        "b_seed_variant": "STR-02@ID",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 1,
+        "a": "eml.empsl:glyph:test-00116",
+        "b": "eml.empsl:glyph:test-00305",
+        "a_seed_variant": "ENO-15@OPEN-R",
+        "b_seed_variant": "ENO-07@R90",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 1,
+        "a": "eml.empsl:glyph:test-00122",
+        "b": "eml.empsl:glyph:test-00170",
+        "a_seed_variant": "ENO-16@R180",
+        "b_seed_variant": "STR-01@R180",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 1,
+        "a": "eml.empsl:glyph:test-00123",
+        "b": "eml.empsl:glyph:test-00171",
+        "a_seed_variant": "ENO-16@MX",
+        "b_seed_variant": "STR-01@MX",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 1,
+        "a": "eml.empsl:glyph:test-00142",
+        "b": "eml.empsl:glyph:test-00190",
+        "a_seed_variant": "ENO-18@INSET",
+        "b_seed_variant": "STR-03@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 1,
+        "a": "eml.empsl:glyph:test-00150",
+        "b": "eml.empsl:glyph:test-00246",
+        "a_seed_variant": "ENO-19@INSET",
+        "b_seed_variant": "STR-10@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 1,
+        "a": "eml.empsl:glyph:test-00176",
+        "b": "eml.empsl:glyph:test-00192",
+        "a_seed_variant": "STR-02@ID",
+        "b_seed_variant": "STR-04@ID",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 1,
+        "a": "eml.empsl:glyph:test-00180",
+        "b": "eml.empsl:glyph:test-00305",
+        "a_seed_variant": "STR-02@OPEN-R",
+        "b_seed_variant": "ENO-07@R90",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 1,
+        "a": "eml.empsl:glyph:test-00270",
+        "b": "eml.empsl:glyph:test-00302",
+        "a_seed_variant": "ENO-02@INSET",
+        "b_seed_variant": "ENO-06@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 1,
+        "a": "eml.empsl:glyph:test-00278",
+        "b": "eml.empsl:glyph:test-00342",
+        "a_seed_variant": "ENO-03@INSET",
+        "b_seed_variant": "ENO-11@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 1,
+        "a": "eml.empsl:glyph:test-00301",
+        "b": "eml.empsl:glyph:test-00365",
+        "a_seed_variant": "ENO-06@CLOSED",
+        "b_seed_variant": "ENO-14@CLOSED",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 1,
+        "a": "eml.empsl:glyph:test-00302",
+        "b": "eml.empsl:glyph:test-00318",
+        "a_seed_variant": "ENO-06@INSET",
+        "b_seed_variant": "ENO-08@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 1,
+        "a": "eml.empsl:glyph:test-00319",
+        "b": "eml.empsl:glyph:test-00335",
+        "a_seed_variant": "ENO-08@CROSS",
+        "b_seed_variant": "ENO-10@CROSS",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00004",
+        "b": "eml.empsl:glyph:test-00020",
+        "a_seed_variant": "ENO-01@OPEN-R",
+        "b_seed_variant": "ENO-03@OPEN-R",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00004",
+        "b": "eml.empsl:glyph:test-00244",
+        "a_seed_variant": "ENO-01@OPEN-R",
+        "b_seed_variant": "STR-10@OPEN-R",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00006",
+        "b": "eml.empsl:glyph:test-00102",
+        "a_seed_variant": "ENO-01@INSET",
+        "b_seed_variant": "ENO-13@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00006",
+        "b": "eml.empsl:glyph:test-00150",
+        "a_seed_variant": "ENO-01@INSET",
+        "b_seed_variant": "ENO-19@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00006",
+        "b": "eml.empsl:glyph:test-00214",
+        "a_seed_variant": "ENO-01@INSET",
+        "b_seed_variant": "STR-06@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00010",
+        "b": "eml.empsl:glyph:test-00026",
+        "a_seed_variant": "ENO-02@R180",
+        "b_seed_variant": "ENO-04@R180",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00012",
+        "b": "eml.empsl:glyph:test-00028",
+        "a_seed_variant": "ENO-02@OPEN-R",
+        "b_seed_variant": "ENO-04@OPEN-R",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00014",
+        "b": "eml.empsl:glyph:test-00030",
+        "a_seed_variant": "ENO-02@INSET",
+        "b_seed_variant": "ENO-04@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00014",
+        "b": "eml.empsl:glyph:test-00062",
+        "a_seed_variant": "ENO-02@INSET",
+        "b_seed_variant": "ENO-08@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00014",
+        "b": "eml.empsl:glyph:test-00094",
+        "a_seed_variant": "ENO-02@INSET",
+        "b_seed_variant": "ENO-12@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00014",
+        "b": "eml.empsl:glyph:test-00110",
+        "a_seed_variant": "ENO-02@INSET",
+        "b_seed_variant": "ENO-14@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00020",
+        "b": "eml.empsl:glyph:test-00273",
+        "a_seed_variant": "ENO-03@OPEN-R",
+        "b_seed_variant": "ENO-03@R90",
+        "same_base_seed": true,
+        "same_transform": false
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00022",
+        "b": "eml.empsl:glyph:test-00070",
+        "a_seed_variant": "ENO-03@INSET",
+        "b_seed_variant": "ENO-09@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00022",
+        "b": "eml.empsl:glyph:test-00182",
+        "a_seed_variant": "ENO-03@INSET",
+        "b_seed_variant": "STR-02@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00022",
+        "b": "eml.empsl:glyph:test-00230",
+        "a_seed_variant": "ENO-03@INSET",
+        "b_seed_variant": "STR-08@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00022",
+        "b": "eml.empsl:glyph:test-00246",
+        "a_seed_variant": "ENO-03@INSET",
+        "b_seed_variant": "STR-10@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00030",
+        "b": "eml.empsl:glyph:test-00110",
+        "a_seed_variant": "ENO-04@INSET",
+        "b_seed_variant": "ENO-14@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00046",
+        "b": "eml.empsl:glyph:test-00190",
+        "a_seed_variant": "ENO-06@INSET",
+        "b_seed_variant": "STR-03@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00046",
+        "b": "eml.empsl:glyph:test-00206",
+        "a_seed_variant": "ENO-06@INSET",
+        "b_seed_variant": "STR-05@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00046",
+        "b": "eml.empsl:glyph:test-00254",
+        "a_seed_variant": "ENO-06@INSET",
+        "b_seed_variant": "STR-11@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00048",
+        "b": "eml.empsl:glyph:test-00112",
+        "a_seed_variant": "ENO-07@ID",
+        "b_seed_variant": "ENO-15@ID",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00048",
+        "b": "eml.empsl:glyph:test-00192",
+        "a_seed_variant": "ENO-07@ID",
+        "b_seed_variant": "STR-04@ID",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00051",
+        "b": "eml.empsl:glyph:test-00179",
+        "a_seed_variant": "ENO-07@MX",
+        "b_seed_variant": "STR-02@MX",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00054",
+        "b": "eml.empsl:glyph:test-00246",
+        "a_seed_variant": "ENO-07@INSET",
+        "b_seed_variant": "STR-10@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00062",
+        "b": "eml.empsl:glyph:test-00126",
+        "a_seed_variant": "ENO-08@INSET",
+        "b_seed_variant": "ENO-16@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00062",
+        "b": "eml.empsl:glyph:test-00142",
+        "a_seed_variant": "ENO-08@INSET",
+        "b_seed_variant": "ENO-18@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00062",
+        "b": "eml.empsl:glyph:test-00174",
+        "a_seed_variant": "ENO-08@INSET",
+        "b_seed_variant": "STR-01@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00070",
+        "b": "eml.empsl:glyph:test-00182",
+        "a_seed_variant": "ENO-09@INSET",
+        "b_seed_variant": "STR-02@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00070",
+        "b": "eml.empsl:glyph:test-00230",
+        "a_seed_variant": "ENO-09@INSET",
+        "b_seed_variant": "STR-08@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00086",
+        "b": "eml.empsl:glyph:test-00134",
+        "a_seed_variant": "ENO-11@INSET",
+        "b_seed_variant": "ENO-17@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00094",
+        "b": "eml.empsl:glyph:test-00110",
+        "a_seed_variant": "ENO-12@INSET",
+        "b_seed_variant": "ENO-14@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00094",
+        "b": "eml.empsl:glyph:test-00142",
+        "a_seed_variant": "ENO-12@INSET",
+        "b_seed_variant": "ENO-18@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00108",
+        "b": "eml.empsl:glyph:test-00140",
+        "a_seed_variant": "ENO-14@OPEN-R",
+        "b_seed_variant": "ENO-18@OPEN-R",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00110",
+        "b": "eml.empsl:glyph:test-00158",
+        "a_seed_variant": "ENO-14@INSET",
+        "b_seed_variant": "ENO-20@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00112",
+        "b": "eml.empsl:glyph:test-00192",
+        "a_seed_variant": "ENO-15@ID",
+        "b_seed_variant": "STR-04@ID",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00116",
+        "b": "eml.empsl:glyph:test-00180",
+        "a_seed_variant": "ENO-15@OPEN-R",
+        "b_seed_variant": "STR-02@OPEN-R",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00118",
+        "b": "eml.empsl:glyph:test-00198",
+        "a_seed_variant": "ENO-15@INSET",
+        "b_seed_variant": "STR-04@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00121",
+        "b": "eml.empsl:glyph:test-00169",
+        "a_seed_variant": "ENO-16@R90",
+        "b_seed_variant": "STR-01@R90",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00134",
+        "b": "eml.empsl:glyph:test-00214",
+        "a_seed_variant": "ENO-17@INSET",
+        "b_seed_variant": "STR-06@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00144",
+        "b": "eml.empsl:glyph:test-00240",
+        "a_seed_variant": "ENO-19@ID",
+        "b_seed_variant": "STR-10@ID",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00183",
+        "b": "eml.empsl:glyph:test-00247",
+        "a_seed_variant": "STR-02@CROSS",
+        "b_seed_variant": "STR-10@CROSS",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00190",
+        "b": "eml.empsl:glyph:test-00206",
+        "a_seed_variant": "STR-03@INSET",
+        "b_seed_variant": "STR-05@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00206",
+        "b": "eml.empsl:glyph:test-00222",
+        "a_seed_variant": "STR-05@INSET",
+        "b_seed_variant": "STR-07@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00206",
+        "b": "eml.empsl:glyph:test-00254",
+        "a_seed_variant": "STR-05@INSET",
+        "b_seed_variant": "STR-11@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00244",
+        "b": "eml.empsl:glyph:test-00273",
+        "a_seed_variant": "STR-10@OPEN-R",
+        "b_seed_variant": "ENO-03@R90",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00262",
+        "b": "eml.empsl:glyph:test-00278",
+        "a_seed_variant": "ENO-01@INSET",
+        "b_seed_variant": "ENO-03@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00269",
+        "b": "eml.empsl:glyph:test-00285",
+        "a_seed_variant": "ENO-02@CLOSED",
+        "b_seed_variant": "ENO-04@CLOSED",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00271",
+        "b": "eml.empsl:glyph:test-00303",
+        "a_seed_variant": "ENO-02@CROSS",
+        "b_seed_variant": "ENO-06@CROSS",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00286",
+        "b": "eml.empsl:glyph:test-00302",
+        "a_seed_variant": "ENO-04@INSET",
+        "b_seed_variant": "ENO-06@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00302",
+        "b": "eml.empsl:glyph:test-00350",
+        "a_seed_variant": "ENO-06@INSET",
+        "b_seed_variant": "ENO-12@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00303",
+        "b": "eml.empsl:glyph:test-00335",
+        "a_seed_variant": "ENO-06@CROSS",
+        "b_seed_variant": "ENO-10@CROSS",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 2,
+        "a": "eml.empsl:glyph:test-00310",
+        "b": "eml.empsl:glyph:test-00342",
+        "a_seed_variant": "ENO-07@INSET",
+        "b_seed_variant": "ENO-11@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00000",
+        "b": "eml.empsl:glyph:test-00096",
+        "a_seed_variant": "ENO-01@ID",
+        "b_seed_variant": "ENO-13@ID",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00006",
+        "b": "eml.empsl:glyph:test-00022",
+        "a_seed_variant": "ENO-01@INSET",
+        "b_seed_variant": "ENO-03@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00006",
+        "b": "eml.empsl:glyph:test-00054",
+        "a_seed_variant": "ENO-01@INSET",
+        "b_seed_variant": "ENO-07@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00014",
+        "b": "eml.empsl:glyph:test-00046",
+        "a_seed_variant": "ENO-02@INSET",
+        "b_seed_variant": "ENO-06@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00014",
+        "b": "eml.empsl:glyph:test-00190",
+        "a_seed_variant": "ENO-02@INSET",
+        "b_seed_variant": "STR-03@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00014",
+        "b": "eml.empsl:glyph:test-00206",
+        "a_seed_variant": "ENO-02@INSET",
+        "b_seed_variant": "STR-05@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00015",
+        "b": "eml.empsl:glyph:test-00031",
+        "a_seed_variant": "ENO-02@CROSS",
+        "b_seed_variant": "ENO-04@CROSS",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00016",
+        "b": "eml.empsl:glyph:test-00144",
+        "a_seed_variant": "ENO-03@ID",
+        "b_seed_variant": "ENO-19@ID",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00016",
+        "b": "eml.empsl:glyph:test-00208",
+        "a_seed_variant": "ENO-03@ID",
+        "b_seed_variant": "STR-06@ID",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00019",
+        "b": "eml.empsl:glyph:test-00243",
+        "a_seed_variant": "ENO-03@MX",
+        "b_seed_variant": "STR-10@MX",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00019",
+        "b": "eml.empsl:glyph:test-00272",
+        "a_seed_variant": "ENO-03@MX",
+        "b_seed_variant": "ENO-03@ID",
+        "same_base_seed": true,
+        "same_transform": false
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00020",
+        "b": "eml.empsl:glyph:test-00036",
+        "a_seed_variant": "ENO-03@OPEN-R",
+        "b_seed_variant": "ENO-05@OPEN-R",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00020",
+        "b": "eml.empsl:glyph:test-00100",
+        "a_seed_variant": "ENO-03@OPEN-R",
+        "b_seed_variant": "ENO-13@OPEN-R",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00020",
+        "b": "eml.empsl:glyph:test-00180",
+        "a_seed_variant": "ENO-03@OPEN-R",
+        "b_seed_variant": "STR-02@OPEN-R",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00022",
+        "b": "eml.empsl:glyph:test-00038",
+        "a_seed_variant": "ENO-03@INSET",
+        "b_seed_variant": "ENO-05@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00022",
+        "b": "eml.empsl:glyph:test-00086",
+        "a_seed_variant": "ENO-03@INSET",
+        "b_seed_variant": "ENO-11@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00022",
+        "b": "eml.empsl:glyph:test-00134",
+        "a_seed_variant": "ENO-03@INSET",
+        "b_seed_variant": "ENO-17@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00022",
+        "b": "eml.empsl:glyph:test-00214",
+        "a_seed_variant": "ENO-03@INSET",
+        "b_seed_variant": "STR-06@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00023",
+        "b": "eml.empsl:glyph:test-00151",
+        "a_seed_variant": "ENO-03@CROSS",
+        "b_seed_variant": "ENO-19@CROSS",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00023",
+        "b": "eml.empsl:glyph:test-00183",
+        "a_seed_variant": "ENO-03@CROSS",
+        "b_seed_variant": "STR-02@CROSS",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00027",
+        "b": "eml.empsl:glyph:test-00155",
+        "a_seed_variant": "ENO-04@MX",
+        "b_seed_variant": "ENO-20@MX",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00030",
+        "b": "eml.empsl:glyph:test-00046",
+        "a_seed_variant": "ENO-04@INSET",
+        "b_seed_variant": "ENO-06@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00030",
+        "b": "eml.empsl:glyph:test-00206",
+        "a_seed_variant": "ENO-04@INSET",
+        "b_seed_variant": "STR-05@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00030",
+        "b": "eml.empsl:glyph:test-00222",
+        "a_seed_variant": "ENO-04@INSET",
+        "b_seed_variant": "STR-07@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00032",
+        "b": "eml.empsl:glyph:test-00128",
+        "a_seed_variant": "ENO-05@ID",
+        "b_seed_variant": "ENO-17@ID",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00034",
+        "b": "eml.empsl:glyph:test-00271",
+        "a_seed_variant": "ENO-05@R180",
+        "b_seed_variant": "ENO-02@CROSS",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00034",
+        "b": "eml.empsl:glyph:test-00335",
+        "a_seed_variant": "ENO-05@R180",
+        "b_seed_variant": "ENO-10@CROSS",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00036",
+        "b": "eml.empsl:glyph:test-00244",
+        "a_seed_variant": "ENO-05@OPEN-R",
+        "b_seed_variant": "STR-10@OPEN-R",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00036",
+        "b": "eml.empsl:glyph:test-00321",
+        "a_seed_variant": "ENO-05@OPEN-R",
+        "b_seed_variant": "ENO-09@R90",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00038",
+        "b": "eml.empsl:glyph:test-00118",
+        "a_seed_variant": "ENO-05@INSET",
+        "b_seed_variant": "ENO-15@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00038",
+        "b": "eml.empsl:glyph:test-00182",
+        "a_seed_variant": "ENO-05@INSET",
+        "b_seed_variant": "STR-02@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00038",
+        "b": "eml.empsl:glyph:test-00230",
+        "a_seed_variant": "ENO-05@INSET",
+        "b_seed_variant": "STR-08@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00039",
+        "b": "eml.empsl:glyph:test-00087",
+        "a_seed_variant": "ENO-05@CROSS",
+        "b_seed_variant": "ENO-11@CROSS",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00039",
+        "b": "eml.empsl:glyph:test-00231",
+        "a_seed_variant": "ENO-05@CROSS",
+        "b_seed_variant": "STR-08@CROSS",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00046",
+        "b": "eml.empsl:glyph:test-00142",
+        "a_seed_variant": "ENO-06@INSET",
+        "b_seed_variant": "ENO-18@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00046",
+        "b": "eml.empsl:glyph:test-00158",
+        "a_seed_variant": "ENO-06@INSET",
+        "b_seed_variant": "ENO-20@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00049",
+        "b": "eml.empsl:glyph:test-00241",
+        "a_seed_variant": "ENO-07@R90",
+        "b_seed_variant": "STR-10@R90",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00050",
+        "b": "eml.empsl:glyph:test-00178",
+        "a_seed_variant": "ENO-07@R180",
+        "b_seed_variant": "STR-02@R180",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00051",
+        "b": "eml.empsl:glyph:test-00115",
+        "a_seed_variant": "ENO-07@MX",
+        "b_seed_variant": "ENO-15@MX",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00054",
+        "b": "eml.empsl:glyph:test-00102",
+        "a_seed_variant": "ENO-07@INSET",
+        "b_seed_variant": "ENO-13@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00054",
+        "b": "eml.empsl:glyph:test-00150",
+        "a_seed_variant": "ENO-07@INSET",
+        "b_seed_variant": "ENO-19@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00058",
+        "b": "eml.empsl:glyph:test-00359",
+        "a_seed_variant": "ENO-08@R180",
+        "b_seed_variant": "ENO-13@CROSS",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00062",
+        "b": "eml.empsl:glyph:test-00190",
+        "a_seed_variant": "ENO-08@INSET",
+        "b_seed_variant": "STR-03@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00062",
+        "b": "eml.empsl:glyph:test-00206",
+        "a_seed_variant": "ENO-08@INSET",
+        "b_seed_variant": "STR-05@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00062",
+        "b": "eml.empsl:glyph:test-00222",
+        "a_seed_variant": "ENO-08@INSET",
+        "b_seed_variant": "STR-07@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00062",
+        "b": "eml.empsl:glyph:test-00254",
+        "a_seed_variant": "ENO-08@INSET",
+        "b_seed_variant": "STR-11@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00066",
+        "b": "eml.empsl:glyph:test-00303",
+        "a_seed_variant": "ENO-09@R180",
+        "b_seed_variant": "ENO-06@CROSS",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00066",
+        "b": "eml.empsl:glyph:test-00335",
+        "a_seed_variant": "ENO-09@R180",
+        "b_seed_variant": "ENO-10@CROSS",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00070",
+        "b": "eml.empsl:glyph:test-00102",
+        "a_seed_variant": "ENO-09@INSET",
+        "b_seed_variant": "ENO-13@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00070",
+        "b": "eml.empsl:glyph:test-00150",
+        "a_seed_variant": "ENO-09@INSET",
+        "b_seed_variant": "ENO-19@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00074",
+        "b": "eml.empsl:glyph:test-00186",
+        "a_seed_variant": "ENO-10@R180",
+        "b_seed_variant": "STR-03@R180",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00076",
+        "b": "eml.empsl:glyph:test-00281",
+        "a_seed_variant": "ENO-10@OPEN-R",
+        "b_seed_variant": "ENO-04@R90",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00086",
+        "b": "eml.empsl:glyph:test-00166",
+        "a_seed_variant": "ENO-11@INSET",
+        "b_seed_variant": "ENO-21@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00086",
+        "b": "eml.empsl:glyph:test-00182",
+        "a_seed_variant": "ENO-11@INSET",
+        "b_seed_variant": "STR-02@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00086",
+        "b": "eml.empsl:glyph:test-00230",
+        "a_seed_variant": "ENO-11@INSET",
+        "b_seed_variant": "STR-08@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00086",
+        "b": "eml.empsl:glyph:test-00246",
+        "a_seed_variant": "ENO-11@INSET",
+        "b_seed_variant": "STR-10@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00091",
+        "b": "eml.empsl:glyph:test-00107",
+        "a_seed_variant": "ENO-12@MX",
+        "b_seed_variant": "ENO-14@MX",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00091",
+        "b": "eml.empsl:glyph:test-00344",
+        "a_seed_variant": "ENO-12@MX",
+        "b_seed_variant": "ENO-12@ID",
+        "same_base_seed": true,
+        "same_transform": false
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00094",
+        "b": "eml.empsl:glyph:test-00206",
+        "a_seed_variant": "ENO-12@INSET",
+        "b_seed_variant": "STR-05@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00094",
+        "b": "eml.empsl:glyph:test-00254",
+        "a_seed_variant": "ENO-12@INSET",
+        "b_seed_variant": "STR-11@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00095",
+        "b": "eml.empsl:glyph:test-00111",
+        "a_seed_variant": "ENO-12@CROSS",
+        "b_seed_variant": "ENO-14@CROSS",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00096",
+        "b": "eml.empsl:glyph:test-00240",
+        "a_seed_variant": "ENO-13@ID",
+        "b_seed_variant": "STR-10@ID",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00099",
+        "b": "eml.empsl:glyph:test-00288",
+        "a_seed_variant": "ENO-13@MX",
+        "b_seed_variant": "ENO-05@ID",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00100",
+        "b": "eml.empsl:glyph:test-00244",
+        "a_seed_variant": "ENO-13@OPEN-R",
+        "b_seed_variant": "STR-10@OPEN-R",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00102",
+        "b": "eml.empsl:glyph:test-00182",
+        "a_seed_variant": "ENO-13@INSET",
+        "b_seed_variant": "STR-02@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00102",
+        "b": "eml.empsl:glyph:test-00230",
+        "a_seed_variant": "ENO-13@INSET",
+        "b_seed_variant": "STR-08@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00110",
+        "b": "eml.empsl:glyph:test-00190",
+        "a_seed_variant": "ENO-14@INSET",
+        "b_seed_variant": "STR-03@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00110",
+        "b": "eml.empsl:glyph:test-00222",
+        "a_seed_variant": "ENO-14@INSET",
+        "b_seed_variant": "STR-07@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00111",
+        "b": "eml.empsl:glyph:test-00143",
+        "a_seed_variant": "ENO-14@CROSS",
+        "b_seed_variant": "ENO-18@CROSS",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00113",
+        "b": "eml.empsl:glyph:test-00177",
+        "a_seed_variant": "ENO-15@R90",
+        "b_seed_variant": "STR-02@R90",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00114",
+        "b": "eml.empsl:glyph:test-00242",
+        "a_seed_variant": "ENO-15@R180",
+        "b_seed_variant": "STR-10@R180",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00115",
+        "b": "eml.empsl:glyph:test-00179",
+        "a_seed_variant": "ENO-15@MX",
+        "b_seed_variant": "STR-02@MX",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00115",
+        "b": "eml.empsl:glyph:test-00195",
+        "a_seed_variant": "ENO-15@MX",
+        "b_seed_variant": "STR-04@MX",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00115",
+        "b": "eml.empsl:glyph:test-00304",
+        "a_seed_variant": "ENO-15@MX",
+        "b_seed_variant": "ENO-07@ID",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00125",
+        "b": "eml.empsl:glyph:test-00173",
+        "a_seed_variant": "ENO-16@CLOSED",
+        "b_seed_variant": "STR-01@CLOSED",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00126",
+        "b": "eml.empsl:glyph:test-00222",
+        "a_seed_variant": "ENO-16@INSET",
+        "b_seed_variant": "STR-07@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00127",
+        "b": "eml.empsl:glyph:test-00175",
+        "a_seed_variant": "ENO-16@CROSS",
+        "b_seed_variant": "STR-01@CROSS",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00128",
+        "b": "eml.empsl:glyph:test-00240",
+        "a_seed_variant": "ENO-17@ID",
+        "b_seed_variant": "STR-10@ID",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00134",
+        "b": "eml.empsl:glyph:test-00166",
+        "a_seed_variant": "ENO-17@INSET",
+        "b_seed_variant": "ENO-21@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00134",
+        "b": "eml.empsl:glyph:test-00182",
+        "a_seed_variant": "ENO-17@INSET",
+        "b_seed_variant": "STR-02@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00134",
+        "b": "eml.empsl:glyph:test-00230",
+        "a_seed_variant": "ENO-17@INSET",
+        "b_seed_variant": "STR-08@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00134",
+        "b": "eml.empsl:glyph:test-00246",
+        "a_seed_variant": "ENO-17@INSET",
+        "b_seed_variant": "STR-10@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00135",
+        "b": "eml.empsl:glyph:test-00183",
+        "a_seed_variant": "ENO-17@CROSS",
+        "b_seed_variant": "STR-02@CROSS",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00135",
+        "b": "eml.empsl:glyph:test-00231",
+        "a_seed_variant": "ENO-17@CROSS",
+        "b_seed_variant": "STR-08@CROSS",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00142",
+        "b": "eml.empsl:glyph:test-00206",
+        "a_seed_variant": "ENO-18@INSET",
+        "b_seed_variant": "STR-05@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00142",
+        "b": "eml.empsl:glyph:test-00222",
+        "a_seed_variant": "ENO-18@INSET",
+        "b_seed_variant": "STR-07@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00148",
+        "b": "eml.empsl:glyph:test-00273",
+        "a_seed_variant": "ENO-19@OPEN-R",
+        "b_seed_variant": "ENO-03@R90",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00148",
+        "b": "eml.empsl:glyph:test-00321",
+        "a_seed_variant": "ENO-19@OPEN-R",
+        "b_seed_variant": "ENO-09@R90",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00150",
+        "b": "eml.empsl:glyph:test-00182",
+        "a_seed_variant": "ENO-19@INSET",
+        "b_seed_variant": "STR-02@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00150",
+        "b": "eml.empsl:glyph:test-00230",
+        "a_seed_variant": "ENO-19@INSET",
+        "b_seed_variant": "STR-08@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00158",
+        "b": "eml.empsl:glyph:test-00206",
+        "a_seed_variant": "ENO-20@INSET",
+        "b_seed_variant": "STR-05@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00158",
+        "b": "eml.empsl:glyph:test-00222",
+        "a_seed_variant": "ENO-20@INSET",
+        "b_seed_variant": "STR-07@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00158",
+        "b": "eml.empsl:glyph:test-00238",
+        "a_seed_variant": "ENO-20@INSET",
+        "b_seed_variant": "STR-09@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00158",
+        "b": "eml.empsl:glyph:test-00254",
+        "a_seed_variant": "ENO-20@INSET",
+        "b_seed_variant": "STR-11@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00162",
+        "b": "eml.empsl:glyph:test-00194",
+        "a_seed_variant": "ENO-21@R180",
+        "b_seed_variant": "STR-04@R180",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00162",
+        "b": "eml.empsl:glyph:test-00335",
+        "a_seed_variant": "ENO-21@R180",
+        "b_seed_variant": "ENO-10@CROSS",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00174",
+        "b": "eml.empsl:glyph:test-00222",
+        "a_seed_variant": "STR-01@INSET",
+        "b_seed_variant": "STR-07@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00176",
+        "b": "eml.empsl:glyph:test-00208",
+        "a_seed_variant": "STR-02@ID",
+        "b_seed_variant": "STR-06@ID",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00178",
+        "b": "eml.empsl:glyph:test-00242",
+        "a_seed_variant": "STR-02@R180",
+        "b_seed_variant": "STR-10@R180",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00180",
+        "b": "eml.empsl:glyph:test-00244",
+        "a_seed_variant": "STR-02@OPEN-R",
+        "b_seed_variant": "STR-10@OPEN-R",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00180",
+        "b": "eml.empsl:glyph:test-00273",
+        "a_seed_variant": "STR-02@OPEN-R",
+        "b_seed_variant": "ENO-03@R90",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00214",
+        "b": "eml.empsl:glyph:test-00246",
+        "a_seed_variant": "STR-06@INSET",
+        "b_seed_variant": "STR-10@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00228",
+        "b": "eml.empsl:glyph:test-00305",
+        "a_seed_variant": "STR-08@OPEN-R",
+        "b_seed_variant": "ENO-07@R90",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00257",
+        "b": "eml.empsl:glyph:test-00353",
+        "a_seed_variant": "ENO-01@R90",
+        "b_seed_variant": "ENO-13@R90",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00262",
+        "b": "eml.empsl:glyph:test-00310",
+        "a_seed_variant": "ENO-01@INSET",
+        "b_seed_variant": "ENO-07@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00262",
+        "b": "eml.empsl:glyph:test-00342",
+        "a_seed_variant": "ENO-01@INSET",
+        "b_seed_variant": "ENO-11@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00262",
+        "b": "eml.empsl:glyph:test-00358",
+        "a_seed_variant": "ENO-01@INSET",
+        "b_seed_variant": "ENO-13@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00265",
+        "b": "eml.empsl:glyph:test-00281",
+        "a_seed_variant": "ENO-02@R90",
+        "b_seed_variant": "ENO-04@R90",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00267",
+        "b": "eml.empsl:glyph:test-00283",
+        "a_seed_variant": "ENO-02@MX",
+        "b_seed_variant": "ENO-04@MX",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00270",
+        "b": "eml.empsl:glyph:test-00286",
+        "a_seed_variant": "ENO-02@INSET",
+        "b_seed_variant": "ENO-04@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00270",
+        "b": "eml.empsl:glyph:test-00350",
+        "a_seed_variant": "ENO-02@INSET",
+        "b_seed_variant": "ENO-12@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00278",
+        "b": "eml.empsl:glyph:test-00310",
+        "a_seed_variant": "ENO-03@INSET",
+        "b_seed_variant": "ENO-07@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00286",
+        "b": "eml.empsl:glyph:test-00318",
+        "a_seed_variant": "ENO-04@INSET",
+        "b_seed_variant": "ENO-08@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00286",
+        "b": "eml.empsl:glyph:test-00366",
+        "a_seed_variant": "ENO-04@INSET",
+        "b_seed_variant": "ENO-14@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00287",
+        "b": "eml.empsl:glyph:test-00319",
+        "a_seed_variant": "ENO-04@CROSS",
+        "b_seed_variant": "ENO-08@CROSS",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00299",
+        "b": "eml.empsl:glyph:test-00300",
+        "a_seed_variant": "ENO-06@MX",
+        "b_seed_variant": "ENO-06@OPEN-R",
+        "same_base_seed": true,
+        "same_transform": false
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00302",
+        "b": "eml.empsl:glyph:test-00366",
+        "a_seed_variant": "ENO-06@INSET",
+        "b_seed_variant": "ENO-14@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00303",
+        "b": "eml.empsl:glyph:test-00319",
+        "a_seed_variant": "ENO-06@CROSS",
+        "b_seed_variant": "ENO-08@CROSS",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00318",
+        "b": "eml.empsl:glyph:test-00350",
+        "a_seed_variant": "ENO-08@INSET",
+        "b_seed_variant": "ENO-12@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00327",
+        "b": "eml.empsl:glyph:test-00359",
+        "a_seed_variant": "ENO-09@CROSS",
+        "b_seed_variant": "ENO-13@CROSS",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 3,
+        "a": "eml.empsl:glyph:test-00350",
+        "b": "eml.empsl:glyph:test-00366",
+        "a_seed_variant": "ENO-12@INSET",
+        "b_seed_variant": "ENO-14@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00000",
+        "b": "eml.empsl:glyph:test-00240",
+        "a_seed_variant": "ENO-01@ID",
+        "b_seed_variant": "STR-10@ID",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00002",
+        "b": "eml.empsl:glyph:test-00098",
+        "a_seed_variant": "ENO-01@R180",
+        "b_seed_variant": "ENO-13@R180",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00003",
+        "b": "eml.empsl:glyph:test-00083",
+        "a_seed_variant": "ENO-01@MX",
+        "b_seed_variant": "ENO-11@MX",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00003",
+        "b": "eml.empsl:glyph:test-00243",
+        "a_seed_variant": "ENO-01@MX",
+        "b_seed_variant": "STR-10@MX",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00004",
+        "b": "eml.empsl:glyph:test-00273",
+        "a_seed_variant": "ENO-01@OPEN-R",
+        "b_seed_variant": "ENO-03@R90",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00006",
+        "b": "eml.empsl:glyph:test-00086",
+        "a_seed_variant": "ENO-01@INSET",
+        "b_seed_variant": "ENO-11@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00006",
+        "b": "eml.empsl:glyph:test-00134",
+        "a_seed_variant": "ENO-01@INSET",
+        "b_seed_variant": "ENO-17@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00010",
+        "b": "eml.empsl:glyph:test-00042",
+        "a_seed_variant": "ENO-02@R180",
+        "b_seed_variant": "ENO-06@R180",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00010",
+        "b": "eml.empsl:glyph:test-00154",
+        "a_seed_variant": "ENO-02@R180",
+        "b_seed_variant": "ENO-20@R180",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00011",
+        "b": "eml.empsl:glyph:test-00043",
+        "a_seed_variant": "ENO-02@MX",
+        "b_seed_variant": "ENO-06@MX",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00011",
+        "b": "eml.empsl:glyph:test-00155",
+        "a_seed_variant": "ENO-02@MX",
+        "b_seed_variant": "ENO-20@MX",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00012",
+        "b": "eml.empsl:glyph:test-00044",
+        "a_seed_variant": "ENO-02@OPEN-R",
+        "b_seed_variant": "ENO-06@OPEN-R",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00014",
+        "b": "eml.empsl:glyph:test-00126",
+        "a_seed_variant": "ENO-02@INSET",
+        "b_seed_variant": "ENO-16@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00014",
+        "b": "eml.empsl:glyph:test-00142",
+        "a_seed_variant": "ENO-02@INSET",
+        "b_seed_variant": "ENO-18@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00014",
+        "b": "eml.empsl:glyph:test-00158",
+        "a_seed_variant": "ENO-02@INSET",
+        "b_seed_variant": "ENO-20@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00014",
+        "b": "eml.empsl:glyph:test-00174",
+        "a_seed_variant": "ENO-02@INSET",
+        "b_seed_variant": "STR-01@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00015",
+        "b": "eml.empsl:glyph:test-00047",
+        "a_seed_variant": "ENO-02@CROSS",
+        "b_seed_variant": "ENO-06@CROSS",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00015",
+        "b": "eml.empsl:glyph:test-00159",
+        "a_seed_variant": "ENO-02@CROSS",
+        "b_seed_variant": "ENO-20@CROSS",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00015",
+        "b": "eml.empsl:glyph:test-00255",
+        "a_seed_variant": "ENO-02@CROSS",
+        "b_seed_variant": "STR-11@CROSS",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00016",
+        "b": "eml.empsl:glyph:test-00096",
+        "a_seed_variant": "ENO-03@ID",
+        "b_seed_variant": "ENO-13@ID",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00016",
+        "b": "eml.empsl:glyph:test-00128",
+        "a_seed_variant": "ENO-03@ID",
+        "b_seed_variant": "ENO-17@ID",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00018",
+        "b": "eml.empsl:glyph:test-00242",
+        "a_seed_variant": "ENO-03@R180",
+        "b_seed_variant": "STR-10@R180",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00019",
+        "b": "eml.empsl:glyph:test-00035",
+        "a_seed_variant": "ENO-03@MX",
+        "b_seed_variant": "ENO-05@MX",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00019",
+        "b": "eml.empsl:glyph:test-00131",
+        "a_seed_variant": "ENO-03@MX",
+        "b_seed_variant": "ENO-17@MX",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00020",
+        "b": "eml.empsl:glyph:test-00132",
+        "a_seed_variant": "ENO-03@OPEN-R",
+        "b_seed_variant": "ENO-17@OPEN-R",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00020",
+        "b": "eml.empsl:glyph:test-00305",
+        "a_seed_variant": "ENO-03@OPEN-R",
+        "b_seed_variant": "ENO-07@R90",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00020",
+        "b": "eml.empsl:glyph:test-00321",
+        "a_seed_variant": "ENO-03@OPEN-R",
+        "b_seed_variant": "ENO-09@R90",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00020",
+        "b": "eml.empsl:glyph:test-00337",
+        "a_seed_variant": "ENO-03@OPEN-R",
+        "b_seed_variant": "ENO-11@R90",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00022",
+        "b": "eml.empsl:glyph:test-00054",
+        "a_seed_variant": "ENO-03@INSET",
+        "b_seed_variant": "ENO-07@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00022",
+        "b": "eml.empsl:glyph:test-00118",
+        "a_seed_variant": "ENO-03@INSET",
+        "b_seed_variant": "ENO-15@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00022",
+        "b": "eml.empsl:glyph:test-00166",
+        "a_seed_variant": "ENO-03@INSET",
+        "b_seed_variant": "ENO-21@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00028",
+        "b": "eml.empsl:glyph:test-00156",
+        "a_seed_variant": "ENO-04@OPEN-R",
+        "b_seed_variant": "ENO-20@OPEN-R",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00030",
+        "b": "eml.empsl:glyph:test-00062",
+        "a_seed_variant": "ENO-04@INSET",
+        "b_seed_variant": "ENO-08@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00030",
+        "b": "eml.empsl:glyph:test-00094",
+        "a_seed_variant": "ENO-04@INSET",
+        "b_seed_variant": "ENO-12@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00030",
+        "b": "eml.empsl:glyph:test-00126",
+        "a_seed_variant": "ENO-04@INSET",
+        "b_seed_variant": "ENO-16@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00030",
+        "b": "eml.empsl:glyph:test-00158",
+        "a_seed_variant": "ENO-04@INSET",
+        "b_seed_variant": "ENO-20@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00030",
+        "b": "eml.empsl:glyph:test-00174",
+        "a_seed_variant": "ENO-04@INSET",
+        "b_seed_variant": "STR-01@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00032",
+        "b": "eml.empsl:glyph:test-00240",
+        "a_seed_variant": "ENO-05@ID",
+        "b_seed_variant": "STR-10@ID",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00034",
+        "b": "eml.empsl:glyph:test-00066",
+        "a_seed_variant": "ENO-05@R180",
+        "b_seed_variant": "ENO-09@R180",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00034",
+        "b": "eml.empsl:glyph:test-00130",
+        "a_seed_variant": "ENO-05@R180",
+        "b_seed_variant": "ENO-17@R180",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00034",
+        "b": "eml.empsl:glyph:test-00162",
+        "a_seed_variant": "ENO-05@R180",
+        "b_seed_variant": "ENO-21@R180",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00034",
+        "b": "eml.empsl:glyph:test-00210",
+        "a_seed_variant": "ENO-05@R180",
+        "b_seed_variant": "STR-06@R180",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00034",
+        "b": "eml.empsl:glyph:test-00319",
+        "a_seed_variant": "ENO-05@R180",
+        "b_seed_variant": "ENO-08@CROSS",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00035",
+        "b": "eml.empsl:glyph:test-00352",
+        "a_seed_variant": "ENO-05@MX",
+        "b_seed_variant": "ENO-13@ID",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00038",
+        "b": "eml.empsl:glyph:test-00086",
+        "a_seed_variant": "ENO-05@INSET",
+        "b_seed_variant": "ENO-11@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00038",
+        "b": "eml.empsl:glyph:test-00102",
+        "a_seed_variant": "ENO-05@INSET",
+        "b_seed_variant": "ENO-13@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00038",
+        "b": "eml.empsl:glyph:test-00134",
+        "a_seed_variant": "ENO-05@INSET",
+        "b_seed_variant": "ENO-17@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00038",
+        "b": "eml.empsl:glyph:test-00150",
+        "a_seed_variant": "ENO-05@INSET",
+        "b_seed_variant": "ENO-19@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00042",
+        "b": "eml.empsl:glyph:test-00106",
+        "a_seed_variant": "ENO-06@R180",
+        "b_seed_variant": "ENO-14@R180",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00043",
+        "b": "eml.empsl:glyph:test-00155",
+        "a_seed_variant": "ENO-06@MX",
+        "b_seed_variant": "ENO-20@MX",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00043",
+        "b": "eml.empsl:glyph:test-00296",
+        "a_seed_variant": "ENO-06@MX",
+        "b_seed_variant": "ENO-06@ID",
+        "same_base_seed": true,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00046",
+        "b": "eml.empsl:glyph:test-00222",
+        "a_seed_variant": "ENO-06@INSET",
+        "b_seed_variant": "STR-07@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00046",
+        "b": "eml.empsl:glyph:test-00238",
+        "a_seed_variant": "ENO-06@INSET",
+        "b_seed_variant": "STR-09@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00046",
+        "b": "eml.empsl:glyph:test-00283",
+        "a_seed_variant": "ENO-06@INSET",
+        "b_seed_variant": "ENO-04@MX",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00046",
+        "b": "eml.empsl:glyph:test-00299",
+        "a_seed_variant": "ENO-06@INSET",
+        "b_seed_variant": "ENO-06@MX",
+        "same_base_seed": true,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00046",
+        "b": "eml.empsl:glyph:test-00363",
+        "a_seed_variant": "ENO-06@INSET",
+        "b_seed_variant": "ENO-14@MX",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00047",
+        "b": "eml.empsl:glyph:test-00159",
+        "a_seed_variant": "ENO-06@CROSS",
+        "b_seed_variant": "ENO-20@CROSS",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00047",
+        "b": "eml.empsl:glyph:test-00255",
+        "a_seed_variant": "ENO-06@CROSS",
+        "b_seed_variant": "STR-11@CROSS",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00048",
+        "b": "eml.empsl:glyph:test-00144",
+        "a_seed_variant": "ENO-07@ID",
+        "b_seed_variant": "ENO-19@ID",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00048",
+        "b": "eml.empsl:glyph:test-00208",
+        "a_seed_variant": "ENO-07@ID",
+        "b_seed_variant": "STR-06@ID",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00050",
+        "b": "eml.empsl:glyph:test-00242",
+        "a_seed_variant": "ENO-07@R180",
+        "b_seed_variant": "STR-10@R180",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00051",
+        "b": "eml.empsl:glyph:test-00147",
+        "a_seed_variant": "ENO-07@MX",
+        "b_seed_variant": "ENO-19@MX",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00051",
+        "b": "eml.empsl:glyph:test-00195",
+        "a_seed_variant": "ENO-07@MX",
+        "b_seed_variant": "STR-04@MX",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00051",
+        "b": "eml.empsl:glyph:test-00227",
+        "a_seed_variant": "ENO-07@MX",
+        "b_seed_variant": "STR-08@MX",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00051",
+        "b": "eml.empsl:glyph:test-00304",
+        "a_seed_variant": "ENO-07@MX",
+        "b_seed_variant": "ENO-07@ID",
+        "same_base_seed": true,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00052",
+        "b": "eml.empsl:glyph:test-00116",
+        "a_seed_variant": "ENO-07@OPEN-R",
+        "b_seed_variant": "ENO-15@OPEN-R",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00052",
+        "b": "eml.empsl:glyph:test-00212",
+        "a_seed_variant": "ENO-07@OPEN-R",
+        "b_seed_variant": "STR-06@OPEN-R",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00054",
+        "b": "eml.empsl:glyph:test-00070",
+        "a_seed_variant": "ENO-07@INSET",
+        "b_seed_variant": "ENO-09@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00054",
+        "b": "eml.empsl:glyph:test-00166",
+        "a_seed_variant": "ENO-07@INSET",
+        "b_seed_variant": "ENO-21@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00054",
+        "b": "eml.empsl:glyph:test-00182",
+        "a_seed_variant": "ENO-07@INSET",
+        "b_seed_variant": "STR-02@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00054",
+        "b": "eml.empsl:glyph:test-00230",
+        "a_seed_variant": "ENO-07@INSET",
+        "b_seed_variant": "STR-08@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00055",
+        "b": "eml.empsl:glyph:test-00308",
+        "a_seed_variant": "ENO-07@CROSS",
+        "b_seed_variant": "ENO-07@OPEN-R",
+        "same_base_seed": true,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00058",
+        "b": "eml.empsl:glyph:test-00343",
+        "a_seed_variant": "ENO-08@R180",
+        "b_seed_variant": "ENO-11@CROSS",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00062",
+        "b": "eml.empsl:glyph:test-00094",
+        "a_seed_variant": "ENO-08@INSET",
+        "b_seed_variant": "ENO-12@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00062",
+        "b": "eml.empsl:glyph:test-00110",
+        "a_seed_variant": "ENO-08@INSET",
+        "b_seed_variant": "ENO-14@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00062",
+        "b": "eml.empsl:glyph:test-00158",
+        "a_seed_variant": "ENO-08@INSET",
+        "b_seed_variant": "ENO-20@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00066",
+        "b": "eml.empsl:glyph:test-00098",
+        "a_seed_variant": "ENO-09@R180",
+        "b_seed_variant": "ENO-13@R180",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00066",
+        "b": "eml.empsl:glyph:test-00162",
+        "a_seed_variant": "ENO-09@R180",
+        "b_seed_variant": "ENO-21@R180",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00066",
+        "b": "eml.empsl:glyph:test-00319",
+        "a_seed_variant": "ENO-09@R180",
+        "b_seed_variant": "ENO-08@CROSS",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00068",
+        "b": "eml.empsl:glyph:test-00164",
+        "a_seed_variant": "ENO-09@OPEN-R",
+        "b_seed_variant": "ENO-21@OPEN-R",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00068",
+        "b": "eml.empsl:glyph:test-00289",
+        "a_seed_variant": "ENO-09@OPEN-R",
+        "b_seed_variant": "ENO-05@R90",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00068",
+        "b": "eml.empsl:glyph:test-00353",
+        "a_seed_variant": "ENO-09@OPEN-R",
+        "b_seed_variant": "ENO-13@R90",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00070",
+        "b": "eml.empsl:glyph:test-00118",
+        "a_seed_variant": "ENO-09@INSET",
+        "b_seed_variant": "ENO-15@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00070",
+        "b": "eml.empsl:glyph:test-00198",
+        "a_seed_variant": "ENO-09@INSET",
+        "b_seed_variant": "STR-04@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00070",
+        "b": "eml.empsl:glyph:test-00246",
+        "a_seed_variant": "ENO-09@INSET",
+        "b_seed_variant": "STR-10@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00074",
+        "b": "eml.empsl:glyph:test-00122",
+        "a_seed_variant": "ENO-10@R180",
+        "b_seed_variant": "ENO-16@R180",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00074",
+        "b": "eml.empsl:glyph:test-00202",
+        "a_seed_variant": "ENO-10@R180",
+        "b_seed_variant": "STR-05@R180",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00075",
+        "b": "eml.empsl:glyph:test-00235",
+        "a_seed_variant": "ENO-10@MX",
+        "b_seed_variant": "STR-09@MX",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00078",
+        "b": "eml.empsl:glyph:test-00126",
+        "a_seed_variant": "ENO-10@INSET",
+        "b_seed_variant": "ENO-16@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00078",
+        "b": "eml.empsl:glyph:test-00174",
+        "a_seed_variant": "ENO-10@INSET",
+        "b_seed_variant": "STR-01@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00086",
+        "b": "eml.empsl:glyph:test-00102",
+        "a_seed_variant": "ENO-11@INSET",
+        "b_seed_variant": "ENO-13@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00086",
+        "b": "eml.empsl:glyph:test-00150",
+        "a_seed_variant": "ENO-11@INSET",
+        "b_seed_variant": "ENO-19@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00086",
+        "b": "eml.empsl:glyph:test-00214",
+        "a_seed_variant": "ENO-11@INSET",
+        "b_seed_variant": "STR-06@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00087",
+        "b": "eml.empsl:glyph:test-00231",
+        "a_seed_variant": "ENO-11@CROSS",
+        "b_seed_variant": "STR-08@CROSS",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00092",
+        "b": "eml.empsl:glyph:test-00108",
+        "a_seed_variant": "ENO-12@OPEN-R",
+        "b_seed_variant": "ENO-14@OPEN-R",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00094",
+        "b": "eml.empsl:glyph:test-00158",
+        "a_seed_variant": "ENO-12@INSET",
+        "b_seed_variant": "ENO-20@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00096",
+        "b": "eml.empsl:glyph:test-00128",
+        "a_seed_variant": "ENO-13@ID",
+        "b_seed_variant": "ENO-17@ID",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00102",
+        "b": "eml.empsl:glyph:test-00134",
+        "a_seed_variant": "ENO-13@INSET",
+        "b_seed_variant": "ENO-17@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00102",
+        "b": "eml.empsl:glyph:test-00214",
+        "a_seed_variant": "ENO-13@INSET",
+        "b_seed_variant": "STR-06@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00107",
+        "b": "eml.empsl:glyph:test-00139",
+        "a_seed_variant": "ENO-14@MX",
+        "b_seed_variant": "ENO-18@MX",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00107",
+        "b": "eml.empsl:glyph:test-00344",
+        "a_seed_variant": "ENO-14@MX",
+        "b_seed_variant": "ENO-12@ID",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00107",
+        "b": "eml.empsl:glyph:test-00360",
+        "a_seed_variant": "ENO-14@MX",
+        "b_seed_variant": "ENO-14@ID",
+        "same_base_seed": true,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00110",
+        "b": "eml.empsl:glyph:test-00142",
+        "a_seed_variant": "ENO-14@INSET",
+        "b_seed_variant": "ENO-18@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00112",
+        "b": "eml.empsl:glyph:test-00208",
+        "a_seed_variant": "ENO-15@ID",
+        "b_seed_variant": "STR-06@ID",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00113",
+        "b": "eml.empsl:glyph:test-00193",
+        "a_seed_variant": "ENO-15@R90",
+        "b_seed_variant": "STR-04@R90",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00114",
+        "b": "eml.empsl:glyph:test-00178",
+        "a_seed_variant": "ENO-15@R180",
+        "b_seed_variant": "STR-02@R180",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00116",
+        "b": "eml.empsl:glyph:test-00228",
+        "a_seed_variant": "ENO-15@OPEN-R",
+        "b_seed_variant": "STR-08@OPEN-R",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00123",
+        "b": "eml.empsl:glyph:test-00219",
+        "a_seed_variant": "ENO-16@MX",
+        "b_seed_variant": "STR-07@MX",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00126",
+        "b": "eml.empsl:glyph:test-00142",
+        "a_seed_variant": "ENO-16@INSET",
+        "b_seed_variant": "ENO-18@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00130",
+        "b": "eml.empsl:glyph:test-00242",
+        "a_seed_variant": "ENO-17@R180",
+        "b_seed_variant": "STR-10@R180",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00132",
+        "b": "eml.empsl:glyph:test-00244",
+        "a_seed_variant": "ENO-17@OPEN-R",
+        "b_seed_variant": "STR-10@OPEN-R",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00132",
+        "b": "eml.empsl:glyph:test-00257",
+        "a_seed_variant": "ENO-17@OPEN-R",
+        "b_seed_variant": "ENO-01@R90",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00132",
+        "b": "eml.empsl:glyph:test-00337",
+        "a_seed_variant": "ENO-17@OPEN-R",
+        "b_seed_variant": "ENO-11@R90",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00134",
+        "b": "eml.empsl:glyph:test-00150",
+        "a_seed_variant": "ENO-17@INSET",
+        "b_seed_variant": "ENO-19@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00139",
+        "b": "eml.empsl:glyph:test-00344",
+        "a_seed_variant": "ENO-18@MX",
+        "b_seed_variant": "ENO-12@ID",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00139",
+        "b": "eml.empsl:glyph:test-00360",
+        "a_seed_variant": "ENO-18@MX",
+        "b_seed_variant": "ENO-14@ID",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00142",
+        "b": "eml.empsl:glyph:test-00158",
+        "a_seed_variant": "ENO-18@INSET",
+        "b_seed_variant": "ENO-20@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00142",
+        "b": "eml.empsl:glyph:test-00174",
+        "a_seed_variant": "ENO-18@INSET",
+        "b_seed_variant": "STR-01@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00144",
+        "b": "eml.empsl:glyph:test-00208",
+        "a_seed_variant": "ENO-19@ID",
+        "b_seed_variant": "STR-06@ID",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00147",
+        "b": "eml.empsl:glyph:test-00179",
+        "a_seed_variant": "ENO-19@MX",
+        "b_seed_variant": "STR-02@MX",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00148",
+        "b": "eml.empsl:glyph:test-00212",
+        "a_seed_variant": "ENO-19@OPEN-R",
+        "b_seed_variant": "STR-06@OPEN-R",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00148",
+        "b": "eml.empsl:glyph:test-00228",
+        "a_seed_variant": "ENO-19@OPEN-R",
+        "b_seed_variant": "STR-08@OPEN-R",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00150",
+        "b": "eml.empsl:glyph:test-00214",
+        "a_seed_variant": "ENO-19@INSET",
+        "b_seed_variant": "STR-06@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00151",
+        "b": "eml.empsl:glyph:test-00183",
+        "a_seed_variant": "ENO-19@CROSS",
+        "b_seed_variant": "STR-02@CROSS",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00151",
+        "b": "eml.empsl:glyph:test-00247",
+        "a_seed_variant": "ENO-19@CROSS",
+        "b_seed_variant": "STR-10@CROSS",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00155",
+        "b": "eml.empsl:glyph:test-00251",
+        "a_seed_variant": "ENO-20@MX",
+        "b_seed_variant": "STR-11@MX",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00155",
+        "b": "eml.empsl:glyph:test-00280",
+        "a_seed_variant": "ENO-20@MX",
+        "b_seed_variant": "ENO-04@ID",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00155",
+        "b": "eml.empsl:glyph:test-00296",
+        "a_seed_variant": "ENO-20@MX",
+        "b_seed_variant": "ENO-06@ID",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00159",
+        "b": "eml.empsl:glyph:test-00255",
+        "a_seed_variant": "ENO-20@CROSS",
+        "b_seed_variant": "STR-11@CROSS",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00160",
+        "b": "eml.empsl:glyph:test-00269",
+        "a_seed_variant": "ENO-21@ID",
+        "b_seed_variant": "ENO-02@CLOSED",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00162",
+        "b": "eml.empsl:glyph:test-00210",
+        "a_seed_variant": "ENO-21@R180",
+        "b_seed_variant": "STR-06@R180",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00162",
+        "b": "eml.empsl:glyph:test-00319",
+        "a_seed_variant": "ENO-21@R180",
+        "b_seed_variant": "ENO-08@CROSS",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00165",
+        "b": "eml.empsl:glyph:test-00197",
+        "a_seed_variant": "ENO-21@CLOSED",
+        "b_seed_variant": "STR-04@CLOSED",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00166",
+        "b": "eml.empsl:glyph:test-00182",
+        "a_seed_variant": "ENO-21@INSET",
+        "b_seed_variant": "STR-02@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00166",
+        "b": "eml.empsl:glyph:test-00230",
+        "a_seed_variant": "ENO-21@INSET",
+        "b_seed_variant": "STR-08@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00166",
+        "b": "eml.empsl:glyph:test-00246",
+        "a_seed_variant": "ENO-21@INSET",
+        "b_seed_variant": "STR-10@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00170",
+        "b": "eml.empsl:glyph:test-00279",
+        "a_seed_variant": "STR-01@R180",
+        "b_seed_variant": "ENO-03@CROSS",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00176",
+        "b": "eml.empsl:glyph:test-00224",
+        "a_seed_variant": "STR-02@ID",
+        "b_seed_variant": "STR-08@ID",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00179",
+        "b": "eml.empsl:glyph:test-00195",
+        "a_seed_variant": "STR-02@MX",
+        "b_seed_variant": "STR-04@MX",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00179",
+        "b": "eml.empsl:glyph:test-00227",
+        "a_seed_variant": "STR-02@MX",
+        "b_seed_variant": "STR-08@MX",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00179",
+        "b": "eml.empsl:glyph:test-00304",
+        "a_seed_variant": "STR-02@MX",
+        "b_seed_variant": "ENO-07@ID",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00180",
+        "b": "eml.empsl:glyph:test-00228",
+        "a_seed_variant": "STR-02@OPEN-R",
+        "b_seed_variant": "STR-08@OPEN-R",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00182",
+        "b": "eml.empsl:glyph:test-00246",
+        "a_seed_variant": "STR-02@INSET",
+        "b_seed_variant": "STR-10@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00190",
+        "b": "eml.empsl:glyph:test-00222",
+        "a_seed_variant": "STR-03@INSET",
+        "b_seed_variant": "STR-07@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00190",
+        "b": "eml.empsl:glyph:test-00254",
+        "a_seed_variant": "STR-03@INSET",
+        "b_seed_variant": "STR-11@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00190",
+        "b": "eml.empsl:glyph:test-00331",
+        "a_seed_variant": "STR-03@INSET",
+        "b_seed_variant": "ENO-10@MX",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00192",
+        "b": "eml.empsl:glyph:test-00208",
+        "a_seed_variant": "STR-04@ID",
+        "b_seed_variant": "STR-06@ID",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00194",
+        "b": "eml.empsl:glyph:test-00226",
+        "a_seed_variant": "STR-04@R180",
+        "b_seed_variant": "STR-08@R180",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00194",
+        "b": "eml.empsl:glyph:test-00303",
+        "a_seed_variant": "STR-04@R180",
+        "b_seed_variant": "ENO-06@CROSS",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00196",
+        "b": "eml.empsl:glyph:test-00228",
+        "a_seed_variant": "STR-04@OPEN-R",
+        "b_seed_variant": "STR-08@OPEN-R",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00207",
+        "b": "eml.empsl:glyph:test-00223",
+        "a_seed_variant": "STR-05@CROSS",
+        "b_seed_variant": "STR-07@CROSS",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00208",
+        "b": "eml.empsl:glyph:test-00240",
+        "a_seed_variant": "STR-06@ID",
+        "b_seed_variant": "STR-10@ID",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00212",
+        "b": "eml.empsl:glyph:test-00228",
+        "a_seed_variant": "STR-06@OPEN-R",
+        "b_seed_variant": "STR-08@OPEN-R",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00222",
+        "b": "eml.empsl:glyph:test-00254",
+        "a_seed_variant": "STR-07@INSET",
+        "b_seed_variant": "STR-11@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00230",
+        "b": "eml.empsl:glyph:test-00246",
+        "a_seed_variant": "STR-08@INSET",
+        "b_seed_variant": "STR-10@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00238",
+        "b": "eml.empsl:glyph:test-00254",
+        "a_seed_variant": "STR-09@INSET",
+        "b_seed_variant": "STR-11@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00238",
+        "b": "eml.empsl:glyph:test-00283",
+        "a_seed_variant": "STR-09@INSET",
+        "b_seed_variant": "ENO-04@MX",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00239",
+        "b": "eml.empsl:glyph:test-00363",
+        "a_seed_variant": "STR-09@CROSS",
+        "b_seed_variant": "ENO-14@MX",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00243",
+        "b": "eml.empsl:glyph:test-00272",
+        "a_seed_variant": "STR-10@MX",
+        "b_seed_variant": "ENO-03@ID",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00244",
+        "b": "eml.empsl:glyph:test-00305",
+        "a_seed_variant": "STR-10@OPEN-R",
+        "b_seed_variant": "ENO-07@R90",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00244",
+        "b": "eml.empsl:glyph:test-00321",
+        "a_seed_variant": "STR-10@OPEN-R",
+        "b_seed_variant": "ENO-09@R90",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00244",
+        "b": "eml.empsl:glyph:test-00337",
+        "a_seed_variant": "STR-10@OPEN-R",
+        "b_seed_variant": "ENO-11@R90",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00251",
+        "b": "eml.empsl:glyph:test-00264",
+        "a_seed_variant": "STR-11@MX",
+        "b_seed_variant": "ENO-02@ID",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00254",
+        "b": "eml.empsl:glyph:test-00283",
+        "a_seed_variant": "STR-11@INSET",
+        "b_seed_variant": "ENO-04@MX",
+        "same_base_seed": false,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00257",
+        "b": "eml.empsl:glyph:test-00337",
+        "a_seed_variant": "ENO-01@R90",
+        "b_seed_variant": "ENO-11@R90",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00263",
+        "b": "eml.empsl:glyph:test-00279",
+        "a_seed_variant": "ENO-01@CROSS",
+        "b_seed_variant": "ENO-03@CROSS",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00264",
+        "b": "eml.empsl:glyph:test-00280",
+        "a_seed_variant": "ENO-02@ID",
+        "b_seed_variant": "ENO-04@ID",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00268",
+        "b": "eml.empsl:glyph:test-00284",
+        "a_seed_variant": "ENO-02@OPEN-R",
+        "b_seed_variant": "ENO-04@OPEN-R",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00270",
+        "b": "eml.empsl:glyph:test-00334",
+        "a_seed_variant": "ENO-02@INSET",
+        "b_seed_variant": "ENO-10@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00270",
+        "b": "eml.empsl:glyph:test-00366",
+        "a_seed_variant": "ENO-02@INSET",
+        "b_seed_variant": "ENO-14@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00271",
+        "b": "eml.empsl:glyph:test-00287",
+        "a_seed_variant": "ENO-02@CROSS",
+        "b_seed_variant": "ENO-04@CROSS",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00271",
+        "b": "eml.empsl:glyph:test-00335",
+        "a_seed_variant": "ENO-02@CROSS",
+        "b_seed_variant": "ENO-10@CROSS",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00273",
+        "b": "eml.empsl:glyph:test-00305",
+        "a_seed_variant": "ENO-03@R90",
+        "b_seed_variant": "ENO-07@R90",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00273",
+        "b": "eml.empsl:glyph:test-00337",
+        "a_seed_variant": "ENO-03@R90",
+        "b_seed_variant": "ENO-11@R90",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00280",
+        "b": "eml.empsl:glyph:test-00296",
+        "a_seed_variant": "ENO-04@ID",
+        "b_seed_variant": "ENO-06@ID",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00283",
+        "b": "eml.empsl:glyph:test-00299",
+        "a_seed_variant": "ENO-04@MX",
+        "b_seed_variant": "ENO-06@MX",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00287",
+        "b": "eml.empsl:glyph:test-00303",
+        "a_seed_variant": "ENO-04@CROSS",
+        "b_seed_variant": "ENO-06@CROSS",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00287",
+        "b": "eml.empsl:glyph:test-00335",
+        "a_seed_variant": "ENO-04@CROSS",
+        "b_seed_variant": "ENO-10@CROSS",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00295",
+        "b": "eml.empsl:glyph:test-00343",
+        "a_seed_variant": "ENO-05@CROSS",
+        "b_seed_variant": "ENO-11@CROSS",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00303",
+        "b": "eml.empsl:glyph:test-00367",
+        "a_seed_variant": "ENO-06@CROSS",
+        "b_seed_variant": "ENO-14@CROSS",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00305",
+        "b": "eml.empsl:glyph:test-00337",
+        "a_seed_variant": "ENO-07@R90",
+        "b_seed_variant": "ENO-11@R90",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00306",
+        "b": "eml.empsl:glyph:test-00308",
+        "a_seed_variant": "ENO-07@R180",
+        "b_seed_variant": "ENO-07@OPEN-R",
+        "same_base_seed": true,
+        "same_transform": false
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00311",
+        "b": "eml.empsl:glyph:test-00359",
+        "a_seed_variant": "ENO-07@CROSS",
+        "b_seed_variant": "ENO-13@CROSS",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00318",
+        "b": "eml.empsl:glyph:test-00334",
+        "a_seed_variant": "ENO-08@INSET",
+        "b_seed_variant": "ENO-10@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00318",
+        "b": "eml.empsl:glyph:test-00366",
+        "a_seed_variant": "ENO-08@INSET",
+        "b_seed_variant": "ENO-14@INSET",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00344",
+        "b": "eml.empsl:glyph:test-00360",
+        "a_seed_variant": "ENO-12@ID",
+        "b_seed_variant": "ENO-14@ID",
+        "same_base_seed": false,
+        "same_transform": true
+      },
+      {
+        "distance": 4,
+        "a": "eml.empsl:glyph:test-00363",
+        "b": "eml.empsl:glyph:test-00364",
+        "a_seed_variant": "ENO-14@MX",
+        "b_seed_variant": "ENO-14@OPEN-R",
+        "same_base_seed": true,
+        "same_transform": false
+      }
+    ]
+  },
+  "interpretation": {
+    "exact_collision": "identical normalized grayscale raster at 64x64",
+    "near_collision": "dHash Hamming distance <=4; candidate for human review, not proof of ambiguity",
+    "canonical_identity": "recipe SHA-256 remains authoritative even when visual near-collision exists"
+  }
+}

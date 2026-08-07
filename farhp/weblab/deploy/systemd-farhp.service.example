@@ -1,0 +1,22 @@
+[Unit]
+Description=FARHP Research Server v1.0 RC
+After=network-online.target postgresql.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=farhp
+Group=farhp
+WorkingDirectory=/opt/farhp
+EnvironmentFile=/etc/farhp.env
+ExecStart=/opt/farhp/start.sh
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/farhp/data /opt/farhp/backups
+
+[Install]
+WantedBy=multi-user.target

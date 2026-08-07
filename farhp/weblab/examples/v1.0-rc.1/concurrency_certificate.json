@@ -1,0 +1,11 @@
+{
+  "certificate_version": "1.0-rc.1",
+  "scenario": "12 concurrent consent requests competing for an invite with max_uses=5",
+  "attempts": 12,
+  "capacity": 5,
+  "successful_sessions": 5,
+  "exhausted_responses": 7,
+  "over_issued": 0,
+  "result": "PASS",
+  "mechanism": "atomic SQL UPDATE where uses < max_uses inside the session creation transaction"
+}

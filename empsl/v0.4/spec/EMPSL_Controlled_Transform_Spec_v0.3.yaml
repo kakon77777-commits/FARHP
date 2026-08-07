@@ -1,0 +1,78 @@
+spec_id: eml.empsl:spec:glyph-transform-v0_3
+version: '0.3'
+title: EMPSL Controlled Glyph Transform and Collision Spec
+base_seed_count: 32
+transform_count: 8
+canonical_variant_count: 256
+identity:
+  variant_id: '{base_seed}@{transform_id}'
+  raw_geometry: may collide under symmetry
+  canonical_geometry: includes 3-bit transform witness
+transforms:
+- id: ID
+  kind: identity
+  label: 原形
+  description: 保持基礎種子幾何。
+  index: 0
+  witness_bits: '000'
+- id: R90
+  kind: rotate_90
+  label: 順時針旋轉 90°
+  description: 繞字形中心旋轉 90°。
+  index: 1
+  witness_bits: '001'
+- id: R180
+  kind: rotate_180
+  label: 旋轉 180°
+  description: 繞字形中心旋轉 180°。
+  index: 2
+  witness_bits: '010'
+- id: MX
+  kind: mirror_x
+  label: 水平鏡像
+  description: 沿垂直中軸左右鏡像。
+  index: 3
+  witness_bits: '011'
+- id: OPEN-R
+  kind: open_right
+  label: 右側開口
+  description: 以可逆遮罩移除右側中段，形成開口。
+  index: 4
+  witness_bits: '100'
+- id: CLOSED
+  kind: closed_ring
+  label: 外圈閉合
+  description: 加上外部閉合環，標示封閉變體。
+  index: 5
+  witness_bits: '101'
+- id: INSET
+  kind: inset_diamond
+  label: 菱框內嵌
+  description: 縮放基礎種子並嵌入菱形框。
+  index: 6
+  witness_bits: '110'
+- id: CROSS
+  kind: cross_overlay
+  label: 交叉覆合
+  description: 疊加對角交叉骨架。
+  index: 7
+  witness_bits: '111'
+composition_slots:
+- frame
+- seed_variant
+- phonology[0..3]
+- tone
+- phase
+- operator
+collision_testing:
+  sample_count: 8192
+  raster_size:
+  - 64
+  - 64
+  exact_metric: sha256(grayscale pixels)
+  near_metric: 64-bit dHash
+  near_threshold: 4
+  seed: 20260731
+compatibility:
+  v0.2_seed: maps to @ID
+  v0.2_recipe: upgrade by seed_base=seed, seed_transform=ID, seed_variant=seed@ID

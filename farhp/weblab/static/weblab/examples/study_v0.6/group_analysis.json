@@ -1,0 +1,52 @@
+{
+  "farhp_weblab_group_version": "0.6",
+  "created_at": "2026-07-31T03:09:01.146Z",
+  "study_ids": [
+    "FARHP-DEMO-v0.6"
+  ],
+  "source_files": 3,
+  "duplicate_sessions_ignored": 0,
+  "participant_count": 3,
+  "main_trials": 9,
+  "correct_trials": 6,
+  "accuracy": 0.6666666666666666,
+  "wilson_95": [
+    0.3542021355803963,
+    0.879416181613089
+  ],
+  "binomial_two_sided_p": 0.5078125000000001,
+  "chance_probability": 0.5,
+  "by_condition_and_stimulus": [
+    {
+      "condition": "alternating",
+      "stimulus_key": "nihao",
+      "stimulus_label": "你好",
+      "participant_count": 3,
+      "trials": 3,
+      "correct": 3,
+      "accuracy": 1,
+      "median_rt_ms": 570
+    },
+    {
+      "condition": "alternating",
+      "stimulus_key": "yitianbuqu",
+      "stimulus_label": "一天不去",
+      "participant_count": 3,
+      "trials": 3,
+      "correct": 2,
+      "accuracy": 0.6666666666666666,
+      "median_rt_ms": 570
+    },
+    {
+      "condition": "alternating",
+      "stimulus_key": "nihaoma",
+      "stimulus_label": "你好嗎",
+      "participant_count": 3,
+      "trials": 3,
+      "correct": 1,
+      "accuracy": 0.3333333333333333,
+      "median_rt_ms": 570
+    }
+  ],
+  "warning": "descriptive browser aggregation; independence, recruitment quality and multiplicity require separate research review"
+}

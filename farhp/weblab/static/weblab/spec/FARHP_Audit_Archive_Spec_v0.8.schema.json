@@ -1,0 +1,189 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://evemisslab.com/spec/FARHP_Audit_Archive_Spec_v0.8.schema.json",
+  "title": "FARHP Audit Archive v0.8",
+  "type": "object",
+  "required": [
+    "farhp_audit_archive_version",
+    "created_at",
+    "study_id",
+    "session_id",
+    "plan_fingerprint",
+    "consent_record",
+    "study_manifest_digest",
+    "event_chain",
+    "archive_digest"
+  ],
+  "properties": {
+    "farhp_audit_archive_version": {
+      "const": "0.8"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "study_id": {
+      "type": "string"
+    },
+    "session_id": {
+      "type": "string"
+    },
+    "plan_fingerprint": {
+      "type": "object",
+      "required": [
+        "algorithm",
+        "value"
+      ],
+      "properties": {
+        "algorithm": {
+          "type": "string",
+          "minLength": 1
+        },
+        "value": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "consent_record": {
+      "type": "object",
+      "required": [
+        "consent_version",
+        "consent_title",
+        "consented_at",
+        "affirmative_consent",
+        "eligibility_attested",
+        "plan_fingerprint"
+      ],
+      "properties": {
+        "consent_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "consent_title": {
+          "type": "string"
+        },
+        "consented_at": {
+          "type": "string"
+        },
+        "affirmative_consent": {
+          "const": true
+        },
+        "eligibility_attested": {
+          "const": true
+        },
+        "withdrawal_code": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "participant_pseudonym": {
+          "type": "string"
+        },
+        "plan_fingerprint": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "additionalProperties": true
+    },
+    "study_manifest_digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "event_chain": {
+      "type": "object",
+      "required": [
+        "algorithm",
+        "valid",
+        "event_count",
+        "head",
+        "events"
+      ],
+      "properties": {
+        "algorithm": {
+          "type": "string"
+        },
+        "valid": {
+          "const": true
+        },
+        "event_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "head": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "events": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "index",
+              "timestamp",
+              "type",
+              "payload",
+              "prev_hash",
+              "hash"
+            ],
+            "properties": {
+              "index": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "timestamp": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "minLength": 1
+              },
+              "payload": {
+                "type": "object"
+              },
+              "prev_hash": {
+                "type": "string",
+                "minLength": 1
+              },
+              "hash": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "privacy_note": {
+      "type": "string"
+    },
+    "archive_digest": {
+      "type": "object",
+      "required": [
+        "algorithm",
+        "value"
+      ],
+      "properties": {
+        "algorithm": {
+          "type": "string",
+          "minLength": 1
+        },
+        "value": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

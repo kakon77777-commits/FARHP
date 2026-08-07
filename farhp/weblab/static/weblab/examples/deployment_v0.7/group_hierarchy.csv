@@ -1,0 +1,6 @@
+﻿layer,key,study_id,included,sessions,trials,correct,accuracy,median_rt_ms,reasons
+participant,P-BROWSER-01,FARHP-DEPLOY-TEST,True,1,2,1,0.5,750,
+participant,P-BROWSER-02,FARHP-DEPLOY-TEST,True,1,2,2,1,700,
+participant,P-BROWSER-03,FARHP-DEPLOY-TEST,False,1,0,0,,,valid_trial_ratio_below_plan
+stimulus,nihao,,True,2,2,2,1,675,
+stimulus,nihaoma,,True,2,2,1,0.5,775,

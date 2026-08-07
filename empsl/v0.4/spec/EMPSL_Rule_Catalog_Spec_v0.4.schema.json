@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://evemisslab.com/spec/empsl-rule-catalog-v0.4.schema.json",
+  "title": "EMPSL Rule Catalog v0.4",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "spec_version",
+    "title",
+    "rule_count",
+    "rules",
+    "ruleset_sha256"
+  ],
+  "properties": {
+    "spec_version": {
+      "const": "0.4"
+    },
+    "title": {
+      "type": "string"
+    },
+    "rule_count": {
+      "const": 30
+    },
+    "ruleset_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "rules": {
+      "type": "array",
+      "minItems": 30,
+      "maxItems": 30,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "domain",
+          "severity",
+          "title",
+          "description"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[GPTSA]-[0-9]{3}$"
+          },
+          "domain": {
+            "enum": [
+              "glyph",
+              "phonology",
+              "transform",
+              "semantics",
+              "acoustics"
+            ]
+          },
+          "severity": {
+            "enum": [
+              "error",
+              "warning"
+            ]
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

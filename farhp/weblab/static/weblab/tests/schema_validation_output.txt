@@ -1,0 +1,11 @@
+PASS study_P-DEMO-01.json
+PASS study_P-DEMO-02.json
+PASS study_P-DEMO-03.json
+PASS group_analysis.json
+PASS plan.json
+PASS checkpoint.json
+PASS study.json
+PASS deidentified.json
+PASS audit.json
+PASS group.json
+FARHP WebLab schema validation: 10 files PASS

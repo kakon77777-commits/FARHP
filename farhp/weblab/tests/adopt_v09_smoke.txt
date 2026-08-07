@@ -1,0 +1,1 @@
+FARHP v0.9 database adopted and upgraded: {'current': '0002_v10rc_production', 'head': '0002_v10rc_production', 'up_to_date': True}

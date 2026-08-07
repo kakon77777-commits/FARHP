@@ -1,0 +1,85 @@
+{
+  "spec_version": "0.3",
+  "recipes": [
+    {
+      "id": "eml.empsl:glyph:sample-01",
+      "version": "0.3",
+      "frame": "SEM-ENTITY",
+      "seed_base": "ENO-07",
+      "seed_transform": "ID",
+      "seed_variant": "ENO-07@ID",
+      "phonology": [
+        "ONSET-B",
+        "HU-KAIKOU",
+        "RIME-A"
+      ],
+      "tone": "T1",
+      "phase": "PH16-00",
+      "operator": "OP-NULL",
+      "reading": "ㄍㄨㄤ",
+      "gloss": "光",
+      "concept_id": "eml.concept:item:sample-1",
+      "recipe_sha256": "fd84ee2f658d54e888a752c708c45909ef6380ddebad292099af7d90d65aeb36"
+    },
+    {
+      "id": "eml.empsl:glyph:sample-02",
+      "version": "0.3",
+      "frame": "SEM-PROCESS",
+      "seed_base": "ENO-07",
+      "seed_transform": "OPEN-R",
+      "seed_variant": "ENO-07@OPEN-R",
+      "phonology": [
+        "ONSET-P",
+        "HU-QICHI",
+        "RIME-O"
+      ],
+      "tone": "T2",
+      "phase": "PH16-05",
+      "operator": "OP-TERNARY",
+      "reading": "ㄎㄞ",
+      "gloss": "開",
+      "concept_id": "eml.concept:item:sample-2",
+      "recipe_sha256": "79b654ccbe0d696cd547cb07397080cf338ae1d88b2d0d38c09b75736aa72054"
+    },
+    {
+      "id": "eml.empsl:glyph:sample-03",
+      "version": "0.3",
+      "frame": "SEM-RELATION",
+      "seed_base": "STR-04",
+      "seed_transform": "INSET",
+      "seed_variant": "STR-04@INSET",
+      "phonology": [
+        "ONSET-M",
+        "HU-HEKOU",
+        "RIME-E"
+      ],
+      "tone": "T3",
+      "phase": "PH16-10",
+      "operator": "OP-QUOTE",
+      "reading": "ㄒㄧㄣ",
+      "gloss": "內嵌",
+      "concept_id": "eml.concept:item:sample-3",
+      "recipe_sha256": "26361e97fe9cc27d75b5ed4b26fc197d5ec8300306ac371da56656811309340d"
+    },
+    {
+      "id": "eml.empsl:glyph:sample-04",
+      "version": "0.3",
+      "frame": "SEM-PROPERTY",
+      "seed_base": "ENO-12",
+      "seed_transform": "CROSS",
+      "seed_variant": "ENO-12@CROSS",
+      "phonology": [
+        "ONSET-F",
+        "HU-CUOKOU",
+        "RIME-AI"
+      ],
+      "tone": "T4",
+      "phase": "PH16-15",
+      "operator": "OP-MODAL",
+      "reading": "ㄅㄧㄢˋ",
+      "gloss": "交叉",
+      "concept_id": "eml.concept:item:sample-4",
+      "recipe_sha256": "89a042ee9e116e9990693e0fd4bd449906240e60de5c676f06772b2a9a917be3"
+    }
+  ]
+}

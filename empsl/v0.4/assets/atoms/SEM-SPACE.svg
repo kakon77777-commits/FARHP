@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+<title id="title">空間</title><desc id="desc">空間語義／語法外框。</desc>
+<rect width="256" height="256" fill="none"/>
+<path d="M44 82 Q128 20 212 82 M44 174 Q128 236 212 174" stroke="#151a24" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+</svg>

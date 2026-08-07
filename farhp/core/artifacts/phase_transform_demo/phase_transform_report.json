@@ -1,0 +1,155 @@
+{
+  "core_version": "0.3.0",
+  "content_frames": 113,
+  "style_frames": 83,
+  "content_voiced_ratio": 1.0,
+  "style_voiced_ratio": 1.0,
+  "style_preparation": {
+    "operation": "condition:alternating",
+    "strength": 0.85,
+    "changed_coordinates": 1155,
+    "mean_geodesic_shift_rad": 0.8481122060840737,
+    "max_geodesic_shift_rad": 2.0146099263450363,
+    "metadata": {
+      "seed": 7
+    }
+  },
+  "invariant_certificate": {
+    "f0_exactly_preserved": true,
+    "maximum_harmonic_amplitude_difference": 0.0,
+    "maximum_anchor_phase_difference_rad": 0.0,
+    "mean_style_transfer_phase_shift_rad": 0.9088488105981125,
+    "max_style_transfer_phase_shift_rad": 2.619043595458548
+  },
+  "conditions": {
+    "identity": {
+      "rms": 0.3592448075884896,
+      "crest_factor": 17.05561789658908,
+      "correlation_to_identity": 1.0,
+      "log_spectral_distance_db": 0.0,
+      "operation": "condition:identity",
+      "strength": 1.0,
+      "changed_coordinates": 0,
+      "mean_geodesic_shift_rad": 0.0,
+      "max_geodesic_shift_rad": 0.0,
+      "metadata": {
+        "seed": 7
+      }
+    },
+    "zero": {
+      "rms": 0.3550827169334844,
+      "crest_factor": 10.674873441600406,
+      "correlation_to_identity": 0.6324737534265921,
+      "log_spectral_distance_db": 5.404131157799649,
+      "operation": "condition:zero",
+      "strength": 1.0,
+      "changed_coordinates": 1921,
+      "mean_geodesic_shift_rad": 1.0900011913932448,
+      "max_geodesic_shift_rad": 2.235803094409629,
+      "metadata": {
+        "seed": 7
+      }
+    },
+    "alternating": {
+      "rms": 0.36631905527951536,
+      "crest_factor": 14.575979429036042,
+      "correlation_to_identity": 0.03798921301431324,
+      "log_spectral_distance_db": 6.851739461360134,
+      "operation": "condition:alternating",
+      "strength": 1.0,
+      "changed_coordinates": 1921,
+      "mean_geodesic_shift_rad": 1.0547558416512064,
+      "max_geodesic_shift_rad": 2.905060174212407,
+      "metadata": {
+        "seed": 7
+      }
+    },
+    "random_static": {
+      "rms": 0.3737384587629968,
+      "crest_factor": 17.855043231950074,
+      "correlation_to_identity": 0.11386036412911467,
+      "log_spectral_distance_db": 6.442078768088186,
+      "operation": "condition:random_static",
+      "strength": 1.0,
+      "changed_coordinates": 1921,
+      "mean_geodesic_shift_rad": 1.5244810855215654,
+      "max_geodesic_shift_rad": 3.140459248679697,
+      "metadata": {
+        "seed": 51
+      }
+    },
+    "random_smooth": {
+      "rms": 0.36232953245873084,
+      "crest_factor": 14.35940371235702,
+      "correlation_to_identity": 0.4437690288220232,
+      "log_spectral_distance_db": 5.878620872071458,
+      "operation": "condition:random_smooth",
+      "strength": 1.0,
+      "changed_coordinates": 1921,
+      "mean_geodesic_shift_rad": 1.3000479901644424,
+      "max_geodesic_shift_rad": 3.140843489074136,
+      "metadata": {
+        "seed": 52
+      }
+    },
+    "style_morph_025": {
+      "rms": 0.35874434358579627,
+      "crest_factor": 18.19382165842781,
+      "correlation_to_identity": 0.9350723377091851,
+      "log_spectral_distance_db": 3.370066149659199,
+      "operation": "style_transfer",
+      "strength": 0.25,
+      "changed_coordinates": 1921,
+      "mean_geodesic_shift_rad": 0.22721220264952813,
+      "max_geodesic_shift_rad": 0.6547608988646374,
+      "metadata": {
+        "style_frame_count": 83
+      }
+    },
+    "style_morph_050": {
+      "rms": 0.35967946891639174,
+      "crest_factor": 18.58062500330914,
+      "correlation_to_identity": 0.7550046970748876,
+      "log_spectral_distance_db": 4.818818227430963,
+      "operation": "style_transfer",
+      "strength": 0.5,
+      "changed_coordinates": 1921,
+      "mean_geodesic_shift_rad": 0.45442440529905626,
+      "max_geodesic_shift_rad": 1.309521797729274,
+      "metadata": {
+        "style_frame_count": 83
+      }
+    },
+    "style_morph_075": {
+      "rms": 0.3614354297610731,
+      "crest_factor": 17.072720857592117,
+      "correlation_to_identity": 0.49855209939781364,
+      "log_spectral_distance_db": 5.854798891559213,
+      "operation": "style_transfer",
+      "strength": 0.75,
+      "changed_coordinates": 1921,
+      "mean_geodesic_shift_rad": 0.6816366079485844,
+      "max_geodesic_shift_rad": 1.9642826965939104,
+      "metadata": {
+        "style_frame_count": 83
+      }
+    },
+    "style_transfer_100": {
+      "rms": 0.363903375845433,
+      "crest_factor": 16.009312587182702,
+      "correlation_to_identity": 0.21847679898347397,
+      "log_spectral_distance_db": 6.70150813525637,
+      "operation": "style_transfer",
+      "strength": 1.0,
+      "changed_coordinates": 1921,
+      "mean_geodesic_shift_rad": 0.9088488105981125,
+      "max_geodesic_shift_rad": 2.619043595458548,
+      "metadata": {
+        "style_frame_count": 83
+      }
+    }
+  },
+  "automated_tests": "20/20 passed",
+  "blind_samples": 7,
+  "scope_warning": "Synthetic harmonic regression material; no natural-speech perceptual claim."
+}

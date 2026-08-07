@@ -1,0 +1,8 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://evemisslab.com/spec/FARHP_Server_Archive_Spec_v1.0-rc.1.schema.json",
+  "title":"FARHP Server Preregistration Archive v1.0 RC1","type":"object",
+  "required":["farhp_server_archive_version","plan","plan_id","study_id","revision","archived_at","server_note"],
+  "properties":{"farhp_server_archive_version":{"const":"1.0-rc.1"},"plan":{"type":"object"},"plan_id":{"type":"integer"},"study_id":{"type":"string"},"revision":{"type":"integer"},"archived_at":{"type":"string"},"server_note":{"type":"string"}},
+  "additionalProperties":true
+}

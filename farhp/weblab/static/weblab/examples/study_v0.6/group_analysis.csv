@@ -1,0 +1,4 @@
+"condition","stimulus_key","stimulus_label","participant_count","trials","correct","accuracy","median_rt_ms"
+"alternating","nihao","你好","3","3","3","1","570"
+"alternating","yitianbuqu","一天不去","3","3","2","0.6666666666666666","570"
+"alternating","nihaoma","你好嗎","3","3","1","0.3333333333333333","570"

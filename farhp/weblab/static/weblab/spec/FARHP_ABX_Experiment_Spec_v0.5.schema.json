@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://evemisslab.com/spec/FARHP_ABX_Experiment_Spec_v0.5.schema.json",
+  "title": "FARHP WebLab ABX Experiment v0.5",
+  "type": "object",
+  "required": [
+    "farhp_weblab_experiment_version",
+    "session_id",
+    "created_at",
+    "task",
+    "setup",
+    "invariant_certificate",
+    "source_utterance",
+    "trials",
+    "summary",
+    "warning"
+  ],
+  "properties": {
+    "farhp_weblab_experiment_version": {"const": "0.5"},
+    "session_id": {"type": "string", "minLength": 1},
+    "created_at": {"type": "string", "format": "date-time"},
+    "completed_at": {"type": ["string", "null"], "format": "date-time"},
+    "task": {"const": "ABX_identity_match"},
+    "setup": {
+      "type": "object",
+      "required": ["seed", "trial_count", "baseline_condition", "altered_condition", "intervention_strength", "randomization", "blinding"],
+      "properties": {
+        "seed": {"type": "integer", "minimum": 1},
+        "trial_count": {"type": "integer", "minimum": 4, "maximum": 1000},
+        "baseline_condition": {"const": "current_utterance_farhp"},
+        "altered_condition": {"enum": ["zero", "alternating", "random", "curved"]},
+        "altered_condition_label": {"type": "string"},
+        "intervention_strength": {"type": "number", "minimum": 0, "maximum": 1},
+        "randomization": {"type": "string"},
+        "blinding": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "invariant_certificate": {
+      "type": "object",
+      "required": ["same_sample_count", "same_duration", "max_f0_track_difference_hz", "same_lexical_bopomofo", "same_surface_bopomofo", "waveform_rms_difference", "pass"],
+      "properties": {
+        "same_sample_count": {"type": "boolean"},
+        "same_duration": {"type": "boolean"},
+        "max_f0_track_difference_hz": {"type": "number", "minimum": 0},
+        "same_lexical_bopomofo": {"type": "boolean"},
+        "same_surface_bopomofo": {"type": "boolean"},
+        "waveform_rms_difference": {"type": "number", "minimum": 0},
+        "pass": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "source_utterance": {"type": "object"},
+    "trials": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["trial", "a_condition", "b_condition", "x_condition", "correct_answer", "play_counts", "response"],
+        "properties": {
+          "trial": {"type": "integer", "minimum": 1},
+          "a_condition": {"enum": ["baseline", "altered"]},
+          "b_condition": {"enum": ["baseline", "altered"]},
+          "x_condition": {"enum": ["baseline", "altered"]},
+          "correct_answer": {"enum": ["A", "B"]},
+          "play_counts": {
+            "type": "object",
+            "required": ["A", "B", "X"],
+            "properties": {
+              "A": {"type": "integer", "minimum": 0},
+              "B": {"type": "integer", "minimum": 0},
+              "X": {"type": "integer", "minimum": 0}
+            },
+            "additionalProperties": false
+          },
+          "response": {
+            "oneOf": [
+              {"type": "null"},
+              {
+                "type": "object",
+                "required": ["answer", "correct", "rt_ms", "submitted_at"],
+                "properties": {
+                  "answer": {"enum": ["A", "B"]},
+                  "correct": {"type": "boolean"},
+                  "rt_ms": {"type": "number", "minimum": 0},
+                  "submitted_at": {"type": "string", "format": "date-time"}
+                },
+                "additionalProperties": false
+              }
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": ["answered_trials", "correct_trials", "accuracy", "median_response_time_ms", "total_replays"],
+      "properties": {
+        "answered_trials": {"type": "integer", "minimum": 0},
+        "correct_trials": {"type": "integer", "minimum": 0},
+        "accuracy": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "median_response_time_ms": {"type": ["number", "null"], "minimum": 0},
+        "total_replays": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "warning": {"type": "string"}
+  },
+  "additionalProperties": false
+}

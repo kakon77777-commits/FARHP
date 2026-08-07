@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://evemisslab.com/spec/empsl-validation-case-v0.4.schema.json",
+  "title": "EMPSL Validation Case v0.4",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "case_id",
+    "generator",
+    "expected_valid",
+    "recipe"
+  ],
+  "properties": {
+    "case_id": {
+      "type": "string"
+    },
+    "generator": {
+      "enum": [
+        "valid",
+        "mutated-invalid",
+        "fuzz"
+      ]
+    },
+    "expected_valid": {
+      "type": "boolean"
+    },
+    "recipe": {
+      "type": "object"
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://evemisslab.com/spec/empsl-atom-registry-v0.2.schema.json",
+  "title": "EMPSL Atom Registry v0.2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "spec_version",
+    "count",
+    "atoms"
+  ],
+  "properties": {
+    "spec_version": {
+      "const": "0.2"
+    },
+    "count": {
+      "const": 128
+    },
+    "atoms": {
+      "type": "array",
+      "minItems": 128,
+      "maxItems": 128,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "category",
+          "subtype",
+          "label",
+          "description",
+          "body",
+          "version",
+          "view_box",
+          "canonical_index",
+          "svg_sha256"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "category": {
+            "enum": [
+              "seed",
+              "semantic_frame",
+              "phase_mark",
+              "operator_mark",
+              "phonology_tone_structure"
+            ]
+          },
+          "subtype": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "version": {
+            "const": "0.2"
+          },
+          "view_box": {
+            "const": "0 0 256 256"
+          },
+          "canonical_index": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 127
+          },
+          "svg_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "phase_index": {
+            "type": "integer"
+          },
+          "zhuyin": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://evemisslab.com/spec/empsl-seed-variant-registry-v0.3.schema.json",
+  "title": "EMPSL Seed Variant Registry v0.3",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "spec_version",
+    "count",
+    "base_seed_count",
+    "transform_count",
+    "identity_model",
+    "witness_policy",
+    "transforms",
+    "variants"
+  ],
+  "properties": {
+    "spec_version": {
+      "const": "0.3"
+    },
+    "count": {
+      "const": 256
+    },
+    "base_seed_count": {
+      "const": 32
+    },
+    "transform_count": {
+      "const": 8
+    },
+    "identity_model": {
+      "type": "string"
+    },
+    "witness_policy": {
+      "type": "string"
+    },
+    "transforms": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "type": "object"
+      }
+    },
+    "variants": {
+      "type": "array",
+      "minItems": 256,
+      "maxItems": 256,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "base_seed",
+          "transform_id",
+          "transform_index",
+          "variant_index",
+          "body",
+          "raw_body",
+          "svg_sha256",
+          "raw_svg_sha256",
+          "version"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^(ENO|STR)-[0-9]{2}@[A-Z0-9-]+$"
+          },
+          "base_seed": {
+            "type": "string",
+            "pattern": "^(ENO|STR)-[0-9]{2}$"
+          },
+          "transform_id": {
+            "enum": [
+              "ID",
+              "R90",
+              "R180",
+              "MX",
+              "OPEN-R",
+              "CLOSED",
+              "INSET",
+              "CROSS"
+            ]
+          },
+          "transform_kind": {
+            "type": "string"
+          },
+          "transform_label": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "transform_index": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 7
+          },
+          "base_seed_index": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 31
+          },
+          "variant_index": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 255
+          },
+          "view_box": {
+            "const": "0 0 256 256"
+          },
+          "raw_body": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "raw_svg_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "svg_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "witness_bits": {
+            "type": "string",
+            "pattern": "^[01]{3}$"
+          },
+          "version": {
+            "const": "0.3"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

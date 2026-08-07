@@ -1,0 +1,649 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://evemisslab.com/spec/FARHP_MultiStimulus_Study_Spec_v0.7.schema.json",
+  "title": "FARHP WebLab Multi-Stimulus Study v0.7",
+  "type": "object",
+  "required": [
+    "farhp_weblab_study_version",
+    "session_id",
+    "study_id",
+    "participant_id",
+    "created_at",
+    "task",
+    "plan_fingerprint",
+    "plan",
+    "exclusion_policy",
+    "setup",
+    "invariant_certificates",
+    "stimuli",
+    "trials",
+    "summary",
+    "exclusion_certificate"
+  ],
+  "properties": {
+    "farhp_weblab_study_version": {
+      "const": "0.7"
+    },
+    "session_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "study_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "participant_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "completed_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "task": {
+      "const": "multi_stimulus_ABX_identity_match"
+    },
+    "plan_fingerprint": {
+      "type": "object",
+      "required": [
+        "algorithm",
+        "value"
+      ],
+      "properties": {
+        "algorithm": {
+          "type": "string",
+          "minLength": 1
+        },
+        "value": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "plan": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "https://evemisslab.com/spec/FARHP_Research_Plan_Spec_v0.7.schema.json",
+      "title": "FARHP WebLab Research Plan v0.7",
+      "type": "object",
+      "required": [
+        "farhp_weblab_plan_version",
+        "study_id",
+        "task",
+        "planned_sample_size",
+        "primary_endpoint",
+        "design",
+        "exclusion_policy",
+        "status",
+        "created_at",
+        "locked_at",
+        "plan_fingerprint"
+      ],
+      "properties": {
+        "farhp_weblab_plan_version": {
+          "const": "0.7"
+        },
+        "study_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64
+        },
+        "task": {
+          "const": "multi_stimulus_ABX_identity_match"
+        },
+        "planned_sample_size": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "primary_endpoint": {
+          "const": "abx_accuracy_vs_0_5"
+        },
+        "preregistration_note": {
+          "type": "string",
+          "maxLength": 1200
+        },
+        "design": {
+          "type": "object",
+          "required": [
+            "selected_stimuli",
+            "altered_condition",
+            "intervention_strength",
+            "repeats_per_stimulus",
+            "practice_trials",
+            "break_every_main_trials",
+            "seed",
+            "ordering",
+            "blinding"
+          ],
+          "properties": {
+            "selected_stimuli": {
+              "type": "array",
+              "minItems": 2,
+              "uniqueItems": true,
+              "items": {
+                "type": "string"
+              }
+            },
+            "altered_condition": {
+              "enum": [
+                "zero",
+                "alternating",
+                "random",
+                "curved"
+              ]
+            },
+            "intervention_strength": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "repeats_per_stimulus": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "practice_trials": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "break_every_main_trials": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "seed": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "ordering": {
+              "type": "string"
+            },
+            "blinding": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": true
+        },
+        "exclusion_policy": {
+          "type": "object",
+          "required": [
+            "min_rt_ms",
+            "max_rt_ms",
+            "min_completion_ratio",
+            "min_valid_trial_ratio",
+            "min_plays_each_label",
+            "accuracy_based_exclusion"
+          ],
+          "properties": {
+            "min_rt_ms": {
+              "type": "number",
+              "minimum": 0
+            },
+            "max_rt_ms": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "min_completion_ratio": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "min_valid_trial_ratio": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "min_plays_each_label": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "accuracy_based_exclusion": {
+              "const": false
+            }
+          },
+          "additionalProperties": true
+        },
+        "status": {
+          "enum": [
+            "draft",
+            "locked"
+          ]
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "locked_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "plan_fingerprint": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "required": [
+                "algorithm",
+                "value"
+              ],
+              "properties": {
+                "algorithm": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "value": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                }
+              },
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "exclusion_policy": {
+      "type": "object",
+      "required": [
+        "min_rt_ms",
+        "max_rt_ms",
+        "min_completion_ratio",
+        "min_valid_trial_ratio",
+        "min_plays_each_label",
+        "accuracy_based_exclusion"
+      ],
+      "properties": {
+        "min_rt_ms": {
+          "type": "number",
+          "minimum": 0
+        },
+        "max_rt_ms": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "min_completion_ratio": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "min_valid_trial_ratio": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "min_plays_each_label": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "accuracy_based_exclusion": {
+          "const": false
+        }
+      },
+      "additionalProperties": true
+    },
+    "setup": {
+      "type": "object"
+    },
+    "invariant_certificates": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": [
+          "stimulus_key",
+          "same_sample_count",
+          "same_duration",
+          "max_f0_track_difference_hz",
+          "same_lexical_bopomofo",
+          "same_surface_bopomofo",
+          "waveform_rms_difference",
+          "pass"
+        ],
+        "properties": {
+          "stimulus_key": {
+            "type": "string"
+          },
+          "same_sample_count": {
+            "type": "boolean"
+          },
+          "same_duration": {
+            "type": "boolean"
+          },
+          "max_f0_track_difference_hz": {
+            "type": "number",
+            "minimum": 0
+          },
+          "same_lexical_bopomofo": {
+            "type": "boolean"
+          },
+          "same_surface_bopomofo": {
+            "type": "boolean"
+          },
+          "waveform_rms_difference": {
+            "type": "number",
+            "minimum": 0
+          },
+          "pass": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "stimuli": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": [
+          "stimulus_key",
+          "label",
+          "bopomofo",
+          "duration_seconds",
+          "source_utterance",
+          "invariant_certificate"
+        ],
+        "properties": {
+          "stimulus_key": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "bopomofo": {
+            "type": "string"
+          },
+          "duration_seconds": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "source_utterance": {
+            "type": "object"
+          },
+          "invariant_certificate": {
+            "type": "object",
+            "required": [
+              "stimulus_key",
+              "same_sample_count",
+              "same_duration",
+              "max_f0_track_difference_hz",
+              "same_lexical_bopomofo",
+              "same_surface_bopomofo",
+              "waveform_rms_difference",
+              "pass"
+            ],
+            "properties": {
+              "stimulus_key": {
+                "type": "string"
+              },
+              "same_sample_count": {
+                "type": "boolean"
+              },
+              "same_duration": {
+                "type": "boolean"
+              },
+              "max_f0_track_difference_hz": {
+                "type": "number",
+                "minimum": 0
+              },
+              "same_lexical_bopomofo": {
+                "type": "boolean"
+              },
+              "same_surface_bopomofo": {
+                "type": "boolean"
+              },
+              "waveform_rms_difference": {
+                "type": "number",
+                "minimum": 0
+              },
+              "pass": {
+                "type": "boolean"
+              }
+            },
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "trials": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "sequence_index",
+          "trial",
+          "is_practice",
+          "stimulus_key",
+          "a_condition",
+          "b_condition",
+          "x_condition",
+          "correct_answer",
+          "play_counts",
+          "response"
+        ],
+        "properties": {
+          "sequence_index": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "trial": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "is_practice": {
+            "type": "boolean"
+          },
+          "practice_ordinal": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1
+          },
+          "main_ordinal": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1
+          },
+          "stimulus_key": {
+            "type": "string"
+          },
+          "a_condition": {
+            "enum": [
+              "baseline",
+              "altered"
+            ]
+          },
+          "b_condition": {
+            "enum": [
+              "baseline",
+              "altered"
+            ]
+          },
+          "x_condition": {
+            "enum": [
+              "baseline",
+              "altered"
+            ]
+          },
+          "correct_answer": {
+            "enum": [
+              "A",
+              "B"
+            ]
+          },
+          "play_counts": {
+            "type": "object",
+            "required": [
+              "A",
+              "B",
+              "X"
+            ],
+            "properties": {
+              "A": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "B": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "X": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "additionalProperties": false
+          },
+          "response": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "required": [
+                  "answer",
+                  "correct",
+                  "rt_ms",
+                  "submitted_at"
+                ],
+                "properties": {
+                  "answer": {
+                    "enum": [
+                      "A",
+                      "B"
+                    ]
+                  },
+                  "correct": {
+                    "type": "boolean"
+                  },
+                  "rt_ms": {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "submitted_at": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": true
+              }
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "summary": {
+      "type": "object"
+    },
+    "exclusion_certificate": {
+      "type": "object",
+      "required": [
+        "included",
+        "reasons",
+        "completion_ratio",
+        "valid_trial_ratio",
+        "main_trials",
+        "answered_trials",
+        "valid_trials",
+        "trial_certificates",
+        "policy"
+      ],
+      "properties": {
+        "included": {
+          "type": "boolean"
+        },
+        "reasons": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "completion_ratio": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "valid_trial_ratio": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "main_trials": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "answered_trials": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "valid_trials": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "trial_certificates": {
+          "type": "array"
+        },
+        "policy": {
+          "type": "object",
+          "required": [
+            "min_rt_ms",
+            "max_rt_ms",
+            "min_completion_ratio",
+            "min_valid_trial_ratio",
+            "min_plays_each_label",
+            "accuracy_based_exclusion"
+          ],
+          "properties": {
+            "min_rt_ms": {
+              "type": "number",
+              "minimum": 0
+            },
+            "max_rt_ms": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "min_completion_ratio": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "min_valid_trial_ratio": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "min_plays_each_label": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "accuracy_based_exclusion": {
+              "const": false
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "privacy_note": {
+      "type": "string"
+    },
+    "warning": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

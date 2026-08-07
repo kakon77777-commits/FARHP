@@ -1,0 +1,7 @@
+.git
+__pycache__
+.pytest_cache
+*.pyc
+data/*.sqlite3
+backups/*
+assets/preview*.png

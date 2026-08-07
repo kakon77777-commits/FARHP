@@ -1,0 +1,8 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://evemisslab.com/spec/FARHP_Server_Session_Resource_Spec_v1.0-rc.1.schema.json",
+  "title":"FARHP Server Session Resource v1.0 RC1","type":"object",
+  "required":["session_id","plan_id","participant_code","status","created_at","updated_at"],
+  "properties":{"session_id":{"type":"string"},"plan_id":{"type":"integer"},"participant_code":{"type":"string"},"status":{"enum":["consented","in_progress","completed"]},"created_at":{"type":"string"},"updated_at":{"type":"string"},"completed_at":{"type":["string","null"]}},
+  "additionalProperties":true
+}

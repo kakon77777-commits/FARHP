@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+<title id="title">聚合</title><desc id="desc">聚合算子附標。</desc>
+<rect width="256" height="256" fill="none"/>
+<circle cx="98" cy="128" r="38" stroke="#151a24" stroke-width="7" fill="none" /><circle cx="158" cy="128" r="38" stroke="#151a24" stroke-width="7" fill="none" /><circle cx="128" cy="96" r="38" stroke="#151a24" stroke-width="7" fill="none" />
+</svg>

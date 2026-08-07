@@ -1,0 +1,19 @@
+usage: farhp [-h]
+             {demo,demo-track,analyze,track,reconstruct,reconstruct-track,validate,inspect} ...
+
+FARHP-Core v0.2 research prototype
+
+positional arguments:
+  {demo,demo-track,analyze,track,reconstruct,reconstruct-track,validate,inspect}
+    demo                run the stationary synthetic-vowel closed-loop
+                        demonstration
+    demo-track          run the nonstationary trajectory demonstration
+    analyze             analyze the center frame of a WAV file
+    track               analyze an entire WAV file as a FARHP trajectory
+    reconstruct         reconstruct a harmonic frame from FARHP JSON
+    reconstruct-track   reconstruct a harmonic trajectory
+    validate            validate frame JSON against FARHP-Spec schema
+    inspect             render a diagnostic PNG from FARHP frame JSON
+
+options:
+  -h, --help            show this help message and exit

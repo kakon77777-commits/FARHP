@@ -1,0 +1,2 @@
+PASS examples/v1.0-rc.1/deployment_manifest.json
+Schema validation PASS 1

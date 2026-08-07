@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "farhp-core"
+version = "0.3.0"
+description = "Phase-transformation research prototype for Fundamental-Anchored Relative Harmonic Phase"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+  {name = "Neo.K / EveMissLab"},
+  {name = "Aletheia / GPT-5.6 Thinking"}
+]
+dependencies = [
+  "numpy>=1.24",
+  "scipy>=1.10",
+  "matplotlib>=3.7",
+  "PyYAML>=6.0",
+  "jsonschema>=4.18"
+]
+
+[project.scripts]
+farhp = "farhp.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

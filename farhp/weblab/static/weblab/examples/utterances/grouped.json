@@ -1,0 +1,258 @@
+{
+  "farhp_weblab_utterance_version": "0.5",
+  "generated_at": "2026-07-27T03:25:54.827Z",
+  "sample_rate_hz": 24000,
+  "text": "我很好你呢",
+  "sentence_type": "question",
+  "lexical_bopomofo": [
+    "ㄨㄛˇ",
+    "ㄏㄣˇ",
+    "ㄏㄠˇ",
+    "ㄋㄧˇ",
+    "˙ㄋㄜ"
+  ],
+  "surface_bopomofo": [
+    "ㄨㄛˊ",
+    "ㄏㄣˊ",
+    "ㄏㄠˇ",
+    "ㄋㄧˇ",
+    "˙ㄋㄜ"
+  ],
+  "rules": {
+    "third_tone_sandhi": true,
+    "yi_bu_sandhi": true,
+    "neutral_tone_context": true,
+    "prosodic_grouping": true,
+    "coarticulation_crossfade": true,
+    "formant_parameter_interpolation": true,
+    "phrase_declination": true,
+    "sentence_intonation": "question",
+    "intonation_strength": 1,
+    "speech_rate": 1,
+    "boundary_overlap_ms": 32,
+    "group_pause_ms": 90,
+    "final_lengthening": 0.18
+  },
+  "prosodic_groups": [
+    {
+      "after_index": 2,
+      "pause_samples": 2160,
+      "start_sample": 57994,
+      "end_sample": 60154
+    }
+  ],
+  "syllables": [
+    {
+      "index": 0,
+      "character": "我",
+      "initial": null,
+      "final": "uo",
+      "lexical_tone": 3,
+      "surface_tone": 2,
+      "lexical_bopomofo": "ㄨㄛˇ",
+      "surface_bopomofo": "ㄨㄛˊ",
+      "sandhi_applied": true,
+      "sandhi_types": [
+        "三聲變調"
+      ],
+      "third_tone_sandhi": true,
+      "yi_bu_sandhi": false,
+      "prosodic_group": 0,
+      "boundary_after": false,
+      "contextual_neutral": false,
+      "previous_surface_tone": null,
+      "base_f0_hz": 132,
+      "duration_sec": 0.78,
+      "sentence_intonation_semitones": {
+        "start": 0,
+        "end": 0
+      },
+      "vocal_tract_context": {
+        "left_vowel": null,
+        "right_vowel": "e",
+        "interpolation_strength": 0.62
+      },
+      "farhp": {
+        "source": "lab",
+        "strength": 1
+      },
+      "boundary": {
+        "index": 0,
+        "start_sample": 0,
+        "end_sample": 18720,
+        "overlap_samples": 0,
+        "pause_before_samples": 0
+      }
+    },
+    {
+      "index": 1,
+      "character": "很",
+      "initial": "ㄏ",
+      "final": "en",
+      "lexical_tone": 3,
+      "surface_tone": 2,
+      "lexical_bopomofo": "ㄏㄣˇ",
+      "surface_bopomofo": "ㄏㄣˊ",
+      "sandhi_applied": true,
+      "sandhi_types": [
+        "三聲變調"
+      ],
+      "third_tone_sandhi": true,
+      "yi_bu_sandhi": false,
+      "prosodic_group": 0,
+      "boundary_after": false,
+      "contextual_neutral": false,
+      "previous_surface_tone": null,
+      "base_f0_hz": 125.31315996546853,
+      "duration_sec": 0.78,
+      "sentence_intonation_semitones": {
+        "start": 0,
+        "end": 0
+      },
+      "vocal_tract_context": {
+        "left_vowel": "o",
+        "right_vowel": "a",
+        "interpolation_strength": 0.62
+      },
+      "farhp": {
+        "source": "lab",
+        "strength": 1
+      },
+      "boundary": {
+        "index": 1,
+        "start_sample": 17952,
+        "end_sample": 36672,
+        "overlap_samples": 768,
+        "pause_before_samples": 0
+      }
+    },
+    {
+      "index": 2,
+      "character": "好",
+      "initial": "ㄏ",
+      "final": "ao",
+      "lexical_tone": 3,
+      "surface_tone": 3,
+      "lexical_bopomofo": "ㄏㄠˇ",
+      "surface_bopomofo": "ㄏㄠˇ",
+      "sandhi_applied": false,
+      "sandhi_types": [],
+      "third_tone_sandhi": false,
+      "yi_bu_sandhi": false,
+      "prosodic_group": 0,
+      "boundary_after": true,
+      "contextual_neutral": false,
+      "previous_surface_tone": null,
+      "base_f0_hz": 118.96506106462958,
+      "duration_sec": 0.9204,
+      "sentence_intonation_semitones": {
+        "start": 0,
+        "end": 0
+      },
+      "vocal_tract_context": {
+        "left_vowel": "e",
+        "right_vowel": null,
+        "interpolation_strength": 0.62
+      },
+      "farhp": {
+        "source": "lab",
+        "strength": 1
+      },
+      "boundary": {
+        "index": 2,
+        "start_sample": 35904,
+        "end_sample": 57994,
+        "overlap_samples": 768,
+        "pause_before_samples": 0
+      }
+    },
+    {
+      "index": 3,
+      "character": "你",
+      "initial": "ㄋ",
+      "final": "i",
+      "lexical_tone": 3,
+      "surface_tone": 3,
+      "lexical_bopomofo": "ㄋㄧˇ",
+      "surface_bopomofo": "ㄋㄧˇ",
+      "sandhi_applied": false,
+      "sandhi_types": [],
+      "third_tone_sandhi": false,
+      "yi_bu_sandhi": false,
+      "prosodic_group": 1,
+      "boundary_after": false,
+      "contextual_neutral": false,
+      "previous_surface_tone": null,
+      "base_f0_hz": 132,
+      "duration_sec": 0.78,
+      "sentence_intonation_semitones": {
+        "start": 0,
+        "end": 0.7
+      },
+      "vocal_tract_context": {
+        "left_vowel": null,
+        "right_vowel": "e",
+        "interpolation_strength": 0.62
+      },
+      "farhp": {
+        "source": "lab",
+        "strength": 1
+      },
+      "boundary": {
+        "index": 3,
+        "start_sample": 60154,
+        "end_sample": 78874,
+        "overlap_samples": 0,
+        "pause_before_samples": 2160
+      }
+    },
+    {
+      "index": 4,
+      "character": "呢",
+      "initial": "ㄋ",
+      "final": "e",
+      "lexical_tone": 0,
+      "surface_tone": 0,
+      "lexical_bopomofo": "˙ㄋㄜ",
+      "surface_bopomofo": "˙ㄋㄜ",
+      "sandhi_applied": false,
+      "sandhi_types": [],
+      "third_tone_sandhi": false,
+      "yi_bu_sandhi": false,
+      "prosodic_group": 1,
+      "boundary_after": false,
+      "contextual_neutral": true,
+      "previous_surface_tone": 3,
+      "base_f0_hz": 118.96506106462958,
+      "duration_sec": 0.52,
+      "sentence_intonation_semitones": {
+        "start": 0.4,
+        "end": 4.8
+      },
+      "vocal_tract_context": {
+        "left_vowel": "i",
+        "right_vowel": null,
+        "interpolation_strength": 0.62
+      },
+      "farhp": {
+        "source": "lab",
+        "strength": 1
+      },
+      "boundary": {
+        "index": 4,
+        "start_sample": 78106,
+        "end_sample": 86592,
+        "overlap_samples": 768,
+        "pause_before_samples": 0
+      }
+    }
+  ],
+  "acoustics": {
+    "duration_sec": 3.608,
+    "f0_min_hz": 84.12147521972656,
+    "f0_max_hz": 177.80531311035156,
+    "raw_peak": 0.800000011920929
+  },
+  "decomposition": "lexical phonology -> prosodic grouping -> tone sandhi -> contextual neutral tone -> phrase/sentence intonation -> vocal-tract interpolation -> syllable FARHP -> boundary rendering",
+  "warning": "MVP prosody and formant-interpolation model; not a natural-speech TTS or full syntactic/physiological parser"
+}

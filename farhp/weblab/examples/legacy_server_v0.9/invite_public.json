@@ -1,0 +1,32 @@
+{
+  "study_id": "FARHP-DEPLOY-TEST",
+  "plan_id": 1,
+  "revision": 1,
+  "fingerprint": {
+    "algorithm": "SHA-256",
+    "value": "3f16b9795be8dd7278d56e09f067bd5efc879a5bcae55d48b6ea7cdfeebd1a67"
+  },
+  "planned_sample_size": 12,
+  "design": {
+    "altered_condition": "zero",
+    "blinding": "formal-trial A/B mapping and correctness hidden until completion",
+    "break_every_main_trials": 1,
+    "intervention_strength": 0.75,
+    "ordering": "participant_indexed_latin_or_cyclic_order_plus_balanced_ABX_cells",
+    "practice_trials": 1,
+    "repeats_per_stimulus": 1,
+    "seed": 424242,
+    "selected_stimuli": [
+      "nihao",
+      "nihaoma"
+    ]
+  },
+  "consent_template": {
+    "affirmative_consent_required": true,
+    "eligibility_attestation_required": true,
+    "summary": "Anonymous browser regression study.",
+    "title": "Test consent",
+    "version": "FARHP-CONSENT-TEST-v0.8"
+  },
+  "remaining_uses": 5
+}

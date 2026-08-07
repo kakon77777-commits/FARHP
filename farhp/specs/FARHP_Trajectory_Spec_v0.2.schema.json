@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://evemisslab.com/spec/farhp-trajectory-0.2.schema.json",
+  "title": "FARHP Trajectory Spec v0.2",
+  "type": "object",
+  "required": [
+    "farhp_trajectory_version",
+    "sample_rate_hz",
+    "frame_length_sec",
+    "hop_length_sec",
+    "frame_times_sec",
+    "f0_hz",
+    "voiced",
+    "track_confidence",
+    "frames",
+    "anchor_unwrapped_rad",
+    "anchor_residual_rad",
+    "farhp_unwrapped_rad",
+    "phase_velocity_rad_per_sec",
+    "method",
+    "method_version",
+    "metadata"
+  ],
+  "properties": {
+    "farhp_trajectory_version": {"const": "0.2"},
+    "sample_rate_hz": {"type": "integer", "minimum": 1000},
+    "frame_length_sec": {"type": "number", "exclusiveMinimum": 0},
+    "hop_length_sec": {"type": "number", "exclusiveMinimum": 0},
+    "frame_times_sec": {"type": "array", "items": {"type": "number", "minimum": 0}},
+    "f0_hz": {"type": "array", "items": {"type": ["number", "null"], "exclusiveMinimum": 0}},
+    "voiced": {"type": "array", "items": {"type": "boolean"}},
+    "track_confidence": {"type": "array", "items": {"type": "number", "minimum": 0, "maximum": 1}},
+    "frames": {"type": "array", "items": {"type": ["object", "null"]}},
+    "anchor_unwrapped_rad": {"type": "array", "items": {"type": ["number", "null"]}},
+    "anchor_residual_rad": {"type": "array", "items": {"type": ["number", "null"]}},
+    "farhp_unwrapped_rad": {
+      "type": "array",
+      "items": {"type": "array", "items": {"type": ["number", "null"]}}
+    },
+    "phase_velocity_rad_per_sec": {
+      "type": "array",
+      "items": {"type": "array", "items": {"type": ["number", "null"]}}
+    },
+    "method": {"type": "string", "minLength": 1},
+    "method_version": {"type": "string", "minLength": 1},
+    "metadata": {"type": "object"}
+  },
+  "additionalProperties": true
+}

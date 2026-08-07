@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+<title id="title">時態</title><desc id="desc">時態算子附標。</desc>
+<rect width="256" height="256" fill="none"/>
+<path d="M64 174 Q128 70 192 174" stroke="#151a24" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none" /><line x1="128" y1="66" x2="128" y2="188" stroke="#151a24" stroke-width="7" stroke-linecap="round" />
+</svg>

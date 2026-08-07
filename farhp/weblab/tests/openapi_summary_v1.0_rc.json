@@ -1,0 +1,31 @@
+{
+  "title": "FARHP Research Server",
+  "version": "1.0.0-rc.1",
+  "path_count": 24,
+  "paths": [
+    "/api/analysis/summary",
+    "/api/auth/config",
+    "/api/auth/login",
+    "/api/auth/oidc/callback",
+    "/api/auth/oidc/login",
+    "/api/health",
+    "/api/health/live",
+    "/api/health/ready",
+    "/api/invites/{code}/public",
+    "/api/invites/{code}/sessions",
+    "/api/me",
+    "/api/participant/sessions/{session_id}",
+    "/api/participant/sessions/{session_id}/checkpoint",
+    "/api/participant/sessions/{session_id}/complete",
+    "/api/plans",
+    "/api/plans/{plan_id}",
+    "/api/plans/{plan_id}/archive",
+    "/api/plans/{plan_id}/audit",
+    "/api/plans/{plan_id}/invites",
+    "/api/plans/{plan_id}/lock",
+    "/api/sessions",
+    "/api/sessions/{session_id}",
+    "/api/sessions/{session_id}/audit",
+    "/api/users"
+  ]
+}

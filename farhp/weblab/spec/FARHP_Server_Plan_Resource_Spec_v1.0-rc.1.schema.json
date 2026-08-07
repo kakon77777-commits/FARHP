@@ -1,0 +1,8 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://evemisslab.com/spec/FARHP_Server_Plan_Resource_Spec_v1.0-rc.1.schema.json",
+  "title":"FARHP Server Plan Resource v1.0 RC1","type":"object",
+  "required":["id","study_id","revision","status","created_at","payload"],
+  "properties":{"id":{"type":"integer","minimum":1},"study_id":{"type":"string","minLength":1},"revision":{"type":"integer","minimum":1},"status":{"enum":["draft","locked"]},"fingerprint":{"type":["object","null"]},"created_at":{"type":"string"},"locked_at":{"type":["string","null"]},"payload":{"type":"object"},"previous_plan_id":{"type":["integer","null"]}},
+  "additionalProperties":true
+}

@@ -1,0 +1,497 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://evemisslab.example/spec/EMPSL_Unified_Encoding_Spec_v0.1.schema.json",
+  "title": "EMPSL Unified Encoding v0.1",
+  "type": "object",
+  "required": [
+    "spec_version",
+    "namespace",
+    "document_id",
+    "entries"
+  ],
+  "properties": {
+    "spec_version": {
+      "const": "0.1"
+    },
+    "namespace": {
+      "const": "eml.empsl"
+    },
+    "document_id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9]*)*:[a-z][a-z0-9_-]*:[0-9a-z_-]+$"
+    },
+    "normalization": {
+      "const": "NFC"
+    },
+    "direction": {
+      "enum": [
+        "ltr",
+        "rtl",
+        "auto"
+      ]
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/entry"
+      }
+    },
+    "expressions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/expression"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "glyphRecipe": {
+      "type": "object",
+      "required": [
+        "recipe_version",
+        "seed",
+        "frame",
+        "phonology_marks",
+        "tone_mark",
+        "phase_mark",
+        "operator_marks"
+      ],
+      "properties": {
+        "recipe_version": {
+          "type": "string"
+        },
+        "seed": {
+          "type": "string",
+          "pattern": "^(ENO-(0[1-9]|1[0-9]|2[01])|STR-(0[1-9]|1[01]))$"
+        },
+        "frame": {
+          "type": "string"
+        },
+        "phonology_marks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "tone_mark": {
+          "enum": [
+            "T1",
+            "T2",
+            "T3",
+            "T4",
+            "T0"
+          ]
+        },
+        "phase_mark": {
+          "enum": [
+            "PH16-00",
+            "PH16-01",
+            "PH16-02",
+            "PH16-03",
+            "PH16-04",
+            "PH16-05",
+            "PH16-06",
+            "PH16-07",
+            "PH16-08",
+            "PH16-09",
+            "PH16-10",
+            "PH16-11",
+            "PH16-12",
+            "PH16-13",
+            "PH16-14",
+            "PH16-15"
+          ]
+        },
+        "operator_marks": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "OP-NULL",
+              "OP-UNARY",
+              "OP-BINARY",
+              "OP-TERNARY",
+              "OP-VARIADIC",
+              "OP-BIND",
+              "OP-QUOTE",
+              "OP-META",
+              "OP-TEMP",
+              "OP-MODAL",
+              "OP-NEG",
+              "OP-CAUSE",
+              "OP-AGG",
+              "OP-MAP",
+              "OP-REDUCE",
+              "OP-GUARD"
+            ]
+          }
+        },
+        "pua_hint": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^U\\+[0-9A-F]{4,6}$"
+        },
+        "recipe_hash": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "pronunciation": {
+      "type": "object",
+      "required": [
+        "system",
+        "canonical_reading",
+        "four_hu",
+        "legality"
+      ],
+      "properties": {
+        "system": {
+          "const": "zhuyin"
+        },
+        "canonical_reading": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "four_hu": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {
+            "enum": [
+              "kaikou",
+              "qichi",
+              "hekou",
+              "cuokou"
+            ]
+          }
+        },
+        "legality": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {
+            "enum": [
+              "attested",
+              "pronounceable",
+              "reserved",
+              "illegal"
+            ]
+          }
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "phase": {
+      "type": "object",
+      "required": [
+        "domain",
+        "representation",
+        "visible_signature"
+      ],
+      "properties": {
+        "domain": {
+          "enum": [
+            "FARHP-Y",
+            "FARHP-G"
+          ]
+        },
+        "representation": {
+          "enum": [
+            "none",
+            "visible_signature",
+            "codebook_ref",
+            "discrete_vector",
+            "continuous_vector"
+          ]
+        },
+        "visible_signature": {
+          "enum": [
+            "PH16-00",
+            "PH16-01",
+            "PH16-02",
+            "PH16-03",
+            "PH16-04",
+            "PH16-05",
+            "PH16-06",
+            "PH16-07",
+            "PH16-08",
+            "PH16-09",
+            "PH16-10",
+            "PH16-11",
+            "PH16-12",
+            "PH16-13",
+            "PH16-14",
+            "PH16-15"
+          ]
+        },
+        "profile_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "quantization": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "enum": [
+            null,
+            8,
+            16,
+            32,
+            64
+          ]
+        },
+        "strength": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "cos_sin": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "array",
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "minItems": 2,
+            "maxItems": 2
+          }
+        },
+        "mask": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "boolean"
+          }
+        },
+        "confidence": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "syntax": {
+      "type": "object",
+      "required": [
+        "kind",
+        "type",
+        "arity"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "arity": {
+          "type": "integer",
+          "minimum": -1,
+          "maximum": 16
+        },
+        "input_types": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "output_type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "semantics": {
+      "type": "object",
+      "required": [
+        "concept_id",
+        "semantic_class",
+        "glosses"
+      ],
+      "properties": {
+        "concept_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9]*)*:[a-z][a-z0-9_-]*:[0-9a-z_-]+$"
+        },
+        "semantic_class": {
+          "enum": [
+            "entity",
+            "process",
+            "relation",
+            "property",
+            "quantity",
+            "time",
+            "space",
+            "modality",
+            "causality",
+            "evidence",
+            "agent",
+            "information",
+            "permission",
+            "negation",
+            "aggregation",
+            "meta"
+          ]
+        },
+        "glosses": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "constraints": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "entry": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind",
+        "glyph_recipe",
+        "pronunciation",
+        "phase",
+        "syntax",
+        "semantics",
+        "version"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9]*)*:[a-z][a-z0-9_-]*:[0-9a-z_-]+$"
+        },
+        "kind": {
+          "enum": [
+            "lexeme",
+            "operator",
+            "modifier",
+            "structural"
+          ]
+        },
+        "glyph_recipe": {
+          "$ref": "#/$defs/glyphRecipe"
+        },
+        "pronunciation": {
+          "$ref": "#/$defs/pronunciation"
+        },
+        "phase": {
+          "$ref": "#/$defs/phase"
+        },
+        "syntax": {
+          "$ref": "#/$defs/syntax"
+        },
+        "semantics": {
+          "$ref": "#/$defs/semantics"
+        },
+        "version": {
+          "type": "object",
+          "required": [
+            "spec",
+            "entry"
+          ],
+          "properties": {
+            "spec": {
+              "const": "0.1"
+            },
+            "entry": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "expression": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "target"
+          ],
+          "properties": {
+            "kind": {
+              "const": "reference"
+            },
+            "target": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9]*)*:[a-z][a-z0-9_-]*:[0-9a-z_-]+$"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "operator",
+            "arguments"
+          ],
+          "properties": {
+            "kind": {
+              "const": "application"
+            },
+            "operator": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9]*)*:[a-z][a-z0-9_-]*:[0-9a-z_-]+$"
+            },
+            "arguments": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/expression"
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    }
+  }
+}

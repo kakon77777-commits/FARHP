@@ -1,0 +1,25 @@
+services:
+  farhp:
+    ports: []
+    environment:
+      FARHP_ALLOWED_HOSTS: ${FARHP_DOMAIN}
+      FARHP_FORWARDED_ALLOW_IPS: "*"
+      FARHP_FORCE_HTTPS: "1"
+  caddy:
+    image: caddy:2-alpine
+    environment:
+      FARHP_DOMAIN: ${FARHP_DOMAIN:?set FARHP_DOMAIN}
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      farhp:
+        condition: service_healthy
+    restart: unless-stopped
+volumes:
+  caddy_data:
+  caddy_config:

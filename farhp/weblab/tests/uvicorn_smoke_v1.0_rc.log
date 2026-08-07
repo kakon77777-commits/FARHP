@@ -1,0 +1,10 @@
+INFO:     Started server process [32556]
+INFO:     Waiting for application startup.
+INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+INFO  [alembic.runtime.migration] Running upgrade  -> 0001_v09_baseline, FARHP v0.9 baseline schema.
+INFO  [alembic.runtime.migration] Running upgrade 0001_v09_baseline -> 0002_v10rc_production, FARHP v1.0 RC productionization fields and audit heads.
+INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+INFO  [alembic.runtime.migration] Will assume non-transactional DDL.

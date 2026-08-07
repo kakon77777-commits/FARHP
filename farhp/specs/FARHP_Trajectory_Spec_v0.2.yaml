@@ -1,0 +1,37 @@
+name: FARHP-Trajectory-Spec
+version: "0.2"
+status: research-draft
+purpose: >-
+  Exchange format for multi-frame Fundamental-Anchored Relative Harmonic Phase
+  trajectories with F0 tracking, voicing, anchor-phase propagation, masks,
+  confidence, unwrapped torus coordinates, and optional frame-level FARHP-Spec objects.
+required_top_level_fields:
+  - farhp_trajectory_version
+  - sample_rate_hz
+  - frame_length_sec
+  - hop_length_sec
+  - frame_times_sec
+  - f0_hz
+  - voiced
+  - track_confidence
+  - frames
+  - anchor_unwrapped_rad
+  - anchor_residual_rad
+  - farhp_unwrapped_rad
+  - phase_velocity_rad_per_sec
+invariants:
+  - All time-indexed arrays have identical length T.
+  - Null values denote unavailable or unvoiced estimates; they are not numeric zero.
+  - FARHP frame objects remain in the Y or G domain declared by FARHP-Spec-v0.1.
+  - Unwrapped coordinates are local trajectory representatives, not globally unique phase truths.
+  - Consumers must preserve masks, confidence, method version, and provenance.
+phase_tracking:
+  anchor_prediction: "Phi_1[t-1] + 2*pi*mean(f0[t-1], f0[t])*Delta_t"
+  branch_selection: nearest wrapped residual
+  farhp_unwrapping: nearest valid branch per harmonic coordinate
+  discontinuity_policy: reset after unvoiced gaps unless an explicit bridge model is declared
+compatibility_levels:
+  T0: F0, voiced flag, confidence, and frame times
+  T1: frame-level FARHP objects
+  T2: unwrapped anchor and FARHP trajectories
+  T3: phase velocities, uncertainty, gap and provenance policies

@@ -1,0 +1,710 @@
+{
+  "farhp_weblab_study_version": "0.6",
+  "session_id": "FARHP-DEMO-v0.6-P-DEMO-02-20260731-1785467338700",
+  "study_id": "FARHP-DEMO-v0.6",
+  "participant_id": "P-DEMO-02",
+  "created_at": "2026-07-31T03:08:58.700Z",
+  "completed_at": "2026-07-31T03:08:58.871Z",
+  "task": "multi_stimulus_ABX_identity_match",
+  "setup": {
+    "seed": 20260731,
+    "repeats_per_stimulus": 1,
+    "practice_trials": 1,
+    "break_every_main_trials": 0,
+    "selected_stimuli": [
+      "nihao",
+      "nihaoma",
+      "yitianbuqu"
+    ],
+    "participant_latin_row": 2,
+    "ordering_method": "participant_indexed_cyclic_latin_row",
+    "baseline_condition": "current_utterance_farhp",
+    "altered_condition": "alternating",
+    "altered_condition_label": "奇偶交替相位",
+    "intervention_strength": 0.8,
+    "randomization": "balanced_ABX_cells_plus_participant_indexed_stimulus_order",
+    "blinding": "formal-trial A/B mapping and correctness hidden until completion"
+  },
+  "invariant_certificates": [
+    {
+      "stimulus_key": "nihao",
+      "same_sample_count": true,
+      "same_duration": true,
+      "max_f0_track_difference_hz": 0,
+      "same_lexical_bopomofo": true,
+      "same_surface_bopomofo": true,
+      "waveform_rms_difference": 0.1726891345536405,
+      "pass": true
+    },
+    {
+      "stimulus_key": "nihaoma",
+      "same_sample_count": true,
+      "same_duration": true,
+      "max_f0_track_difference_hz": 0,
+      "same_lexical_bopomofo": true,
+      "same_surface_bopomofo": true,
+      "waveform_rms_difference": 0.15050730159942402,
+      "pass": true
+    },
+    {
+      "stimulus_key": "yitianbuqu",
+      "same_sample_count": true,
+      "same_duration": true,
+      "max_f0_track_difference_hz": 0,
+      "same_lexical_bopomofo": true,
+      "same_surface_bopomofo": true,
+      "waveform_rms_difference": 0.16791632038557416,
+      "pass": true
+    }
+  ],
+  "stimuli": [
+    {
+      "stimulus_key": "nihao",
+      "label": "你好",
+      "bopomofo": "ㄋㄧˇ ㄏㄠˇ",
+      "duration_seconds": 0.186,
+      "source_utterance": {
+        "farhp_weblab_utterance_version": "0.6",
+        "generated_at": "2026-07-31T03:08:58.370Z",
+        "sample_rate_hz": 24000,
+        "text": "你好嗎",
+        "sentence_type": "declarative",
+        "lexical_bopomofo": [
+          "ㄋㄧˇ",
+          "ㄏㄠˇ",
+          "˙ㄇㄚ"
+        ],
+        "surface_bopomofo": [
+          "ㄋㄧˊ",
+          "ㄏㄠˇ",
+          "˙ㄇㄚ"
+        ],
+        "rules": {
+          "third_tone_sandhi": true,
+          "yi_bu_sandhi": true,
+          "neutral_tone_context": true,
+          "prosodic_grouping": true,
+          "coarticulation_crossfade": true,
+          "formant_parameter_interpolation": true,
+          "phrase_declination": true,
+          "sentence_intonation": "declarative",
+          "intonation_strength": 1,
+          "speech_rate": 1.8,
+          "boundary_overlap_ms": 32,
+          "group_pause_ms": 90,
+          "final_lengthening": 0.18
+        },
+        "prosodic_groups": [],
+        "syllables": [
+          {
+            "index": 0,
+            "character": "你",
+            "initial": "ㄋ",
+            "final": "i",
+            "lexical_tone": 3,
+            "surface_tone": 2,
+            "lexical_bopomofo": "ㄋㄧˇ",
+            "surface_bopomofo": "ㄋㄧˊ",
+            "sandhi_applied": true,
+            "sandhi_types": [
+              "三聲變調"
+            ],
+            "third_tone_sandhi": true,
+            "yi_bu_sandhi": false,
+            "prosodic_group": 0,
+            "boundary_after": false,
+            "contextual_neutral": false,
+            "previous_surface_tone": null,
+            "base_f0_hz": 132,
+            "duration_sec": 0.78,
+            "sentence_intonation_semitones": {
+              "start": 0,
+              "end": 0
+            },
+            "vocal_tract_context": {
+              "left_vowel": null,
+              "right_vowel": "a",
+              "interpolation_strength": 0.62
+            },
+            "farhp": {
+              "source": "lab",
+              "strength": 1
+            },
+            "boundary": {
+              "index": 0,
+              "start_sample": 0,
+              "end_sample": 18720,
+              "overlap_samples": 0,
+              "pause_before_samples": 0
+            }
+          },
+          {
+            "index": 1,
+            "character": "好",
+            "initial": "ㄏ",
+            "final": "ao",
+            "lexical_tone": 3,
+            "surface_tone": 3,
+            "lexical_bopomofo": "ㄏㄠˇ",
+            "surface_bopomofo": "ㄏㄠˇ",
+            "sandhi_applied": false,
+            "sandhi_types": [],
+            "third_tone_sandhi": false,
+            "yi_bu_sandhi": false,
+            "prosodic_group": 0,
+            "boundary_after": false,
+            "contextual_neutral": false,
+            "previous_surface_tone": null,
+            "base_f0_hz": 125.31315996546853,
+            "duration_sec": 0.78,
+            "sentence_intonation_semitones": {
+              "start": 0,
+              "end": 0.7
+            },
+            "vocal_tract_context": {
+              "left_vowel": "i",
+              "right_vowel": "a",
+              "interpolation_strength": 0.62
+            },
+            "farhp": {
+              "source": "lab",
+              "strength": 1
+            },
+            "boundary": {
+              "index": 1,
+              "start_sample": 17952,
+              "end_sample": 36672,
+              "overlap_samples": 768,
+              "pause_before_samples": 0
+            }
+          },
+          {
+            "index": 2,
+            "character": "嗎",
+            "initial": "ㄇ",
+            "final": "a",
+            "lexical_tone": 0,
+            "surface_tone": 0,
+            "lexical_bopomofo": "˙ㄇㄚ",
+            "surface_bopomofo": "˙ㄇㄚ",
+            "sandhi_applied": false,
+            "sandhi_types": [],
+            "third_tone_sandhi": false,
+            "yi_bu_sandhi": false,
+            "prosodic_group": 0,
+            "boundary_after": false,
+            "contextual_neutral": true,
+            "previous_surface_tone": 3,
+            "base_f0_hz": 118.96506106462958,
+            "duration_sec": 0.52,
+            "sentence_intonation_semitones": {
+              "start": 0.4,
+              "end": 4.8
+            },
+            "vocal_tract_context": {
+              "left_vowel": "o",
+              "right_vowel": null,
+              "interpolation_strength": 0.62
+            },
+            "farhp": {
+              "source": "lab",
+              "strength": 1
+            },
+            "boundary": {
+              "index": 2,
+              "start_sample": 35904,
+              "end_sample": 44390,
+              "overlap_samples": 768,
+              "pause_before_samples": 0
+            }
+          }
+        ],
+        "acoustics": {
+          "duration_sec": 1.8495833333333334,
+          "f0_min_hz": 90.74819946289062,
+          "f0_max_hz": 177.80531311035156,
+          "raw_peak": 0.800000011920929
+        },
+        "decomposition": "lexical phonology -> prosodic grouping -> tone sandhi -> contextual neutral tone -> phrase/sentence intonation -> vocal-tract interpolation -> syllable FARHP -> boundary rendering",
+        "warning": "MVP prosody and formant-interpolation model; not a natural-speech TTS or full syntactic/physiological parser"
+      },
+      "invariant_certificate": {
+        "stimulus_key": "nihao",
+        "same_sample_count": true,
+        "same_duration": true,
+        "max_f0_track_difference_hz": 0,
+        "same_lexical_bopomofo": true,
+        "same_surface_bopomofo": true,
+        "waveform_rms_difference": 0.1726891345536405,
+        "pass": true
+      }
+    },
+    {
+      "stimulus_key": "nihaoma",
+      "label": "你好嗎",
+      "bopomofo": "ㄋㄧˇ ㄏㄠˇ ˙ㄇㄚ",
+      "duration_seconds": 0.19058333333333333,
+      "source_utterance": {
+        "farhp_weblab_utterance_version": "0.6",
+        "generated_at": "2026-07-31T03:08:58.451Z",
+        "sample_rate_hz": 24000,
+        "text": "你好嗎",
+        "sentence_type": "question",
+        "lexical_bopomofo": [
+          "ㄋㄧˇ",
+          "ㄏㄠˇ",
+          "˙ㄇㄚ"
+        ],
+        "surface_bopomofo": [
+          "ㄋㄧˊ",
+          "ㄏㄠˇ",
+          "˙ㄇㄚ"
+        ],
+        "rules": {
+          "third_tone_sandhi": true,
+          "yi_bu_sandhi": true,
+          "neutral_tone_context": true,
+          "prosodic_grouping": true,
+          "coarticulation_crossfade": true,
+          "formant_parameter_interpolation": true,
+          "phrase_declination": true,
+          "sentence_intonation": "question",
+          "intonation_strength": 1,
+          "speech_rate": 1.8,
+          "boundary_overlap_ms": 32,
+          "group_pause_ms": 90,
+          "final_lengthening": 0.18
+        },
+        "prosodic_groups": [],
+        "syllables": [
+          {
+            "index": 0,
+            "character": "你",
+            "initial": "ㄋ",
+            "final": "i",
+            "lexical_tone": 3,
+            "surface_tone": 2,
+            "lexical_bopomofo": "ㄋㄧˇ",
+            "surface_bopomofo": "ㄋㄧˊ",
+            "sandhi_applied": true,
+            "sandhi_types": [
+              "三聲變調"
+            ],
+            "third_tone_sandhi": true,
+            "yi_bu_sandhi": false,
+            "prosodic_group": 0,
+            "boundary_after": false,
+            "contextual_neutral": false,
+            "previous_surface_tone": null,
+            "base_f0_hz": 132,
+            "duration_sec": 0.78,
+            "sentence_intonation_semitones": {
+              "start": 0,
+              "end": 0
+            },
+            "vocal_tract_context": {
+              "left_vowel": null,
+              "right_vowel": "a",
+              "interpolation_strength": 0.62
+            },
+            "farhp": {
+              "source": "lab",
+              "strength": 1
+            },
+            "boundary": {
+              "index": 0,
+              "start_sample": 0,
+              "end_sample": 18720,
+              "overlap_samples": 0,
+              "pause_before_samples": 0
+            }
+          },
+          {
+            "index": 1,
+            "character": "好",
+            "initial": "ㄏ",
+            "final": "ao",
+            "lexical_tone": 3,
+            "surface_tone": 3,
+            "lexical_bopomofo": "ㄏㄠˇ",
+            "surface_bopomofo": "ㄏㄠˇ",
+            "sandhi_applied": false,
+            "sandhi_types": [],
+            "third_tone_sandhi": false,
+            "yi_bu_sandhi": false,
+            "prosodic_group": 0,
+            "boundary_after": false,
+            "contextual_neutral": false,
+            "previous_surface_tone": null,
+            "base_f0_hz": 125.31315996546853,
+            "duration_sec": 0.78,
+            "sentence_intonation_semitones": {
+              "start": 0,
+              "end": 0.7
+            },
+            "vocal_tract_context": {
+              "left_vowel": "i",
+              "right_vowel": "a",
+              "interpolation_strength": 0.62
+            },
+            "farhp": {
+              "source": "lab",
+              "strength": 1
+            },
+            "boundary": {
+              "index": 1,
+              "start_sample": 17952,
+              "end_sample": 36672,
+              "overlap_samples": 768,
+              "pause_before_samples": 0
+            }
+          },
+          {
+            "index": 2,
+            "character": "嗎",
+            "initial": "ㄇ",
+            "final": "a",
+            "lexical_tone": 0,
+            "surface_tone": 0,
+            "lexical_bopomofo": "˙ㄇㄚ",
+            "surface_bopomofo": "˙ㄇㄚ",
+            "sandhi_applied": false,
+            "sandhi_types": [],
+            "third_tone_sandhi": false,
+            "yi_bu_sandhi": false,
+            "prosodic_group": 0,
+            "boundary_after": false,
+            "contextual_neutral": true,
+            "previous_surface_tone": 3,
+            "base_f0_hz": 118.96506106462958,
+            "duration_sec": 0.52,
+            "sentence_intonation_semitones": {
+              "start": 0.4,
+              "end": 4.8
+            },
+            "vocal_tract_context": {
+              "left_vowel": "o",
+              "right_vowel": null,
+              "interpolation_strength": 0.62
+            },
+            "farhp": {
+              "source": "lab",
+              "strength": 1
+            },
+            "boundary": {
+              "index": 2,
+              "start_sample": 35904,
+              "end_sample": 44390,
+              "overlap_samples": 768,
+              "pause_before_samples": 0
+            }
+          }
+        ],
+        "acoustics": {
+          "duration_sec": 1.8495833333333334,
+          "f0_min_hz": 90.74819946289062,
+          "f0_max_hz": 177.80531311035156,
+          "raw_peak": 0.800000011920929
+        },
+        "decomposition": "lexical phonology -> prosodic grouping -> tone sandhi -> contextual neutral tone -> phrase/sentence intonation -> vocal-tract interpolation -> syllable FARHP -> boundary rendering",
+        "warning": "MVP prosody and formant-interpolation model; not a natural-speech TTS or full syntactic/physiological parser"
+      },
+      "invariant_certificate": {
+        "stimulus_key": "nihaoma",
+        "same_sample_count": true,
+        "same_duration": true,
+        "max_f0_track_difference_hz": 0,
+        "same_lexical_bopomofo": true,
+        "same_surface_bopomofo": true,
+        "waveform_rms_difference": 0.15050730159942402,
+        "pass": true
+      }
+    },
+    {
+      "stimulus_key": "yitianbuqu",
+      "label": "一天不去",
+      "bopomofo": "ㄧ ㄊㄧㄢ ㄅㄨˋ ㄑㄩˋ",
+      "duration_seconds": 0.322,
+      "source_utterance": {
+        "farhp_weblab_utterance_version": "0.6",
+        "generated_at": "2026-07-31T03:08:58.550Z",
+        "sample_rate_hz": 24000,
+        "text": "你好嗎",
+        "sentence_type": "declarative",
+        "lexical_bopomofo": [
+          "ㄋㄧˇ",
+          "ㄏㄠˇ",
+          "˙ㄇㄚ"
+        ],
+        "surface_bopomofo": [
+          "ㄋㄧˊ",
+          "ㄏㄠˇ",
+          "˙ㄇㄚ"
+        ],
+        "rules": {
+          "third_tone_sandhi": true,
+          "yi_bu_sandhi": true,
+          "neutral_tone_context": true,
+          "prosodic_grouping": true,
+          "coarticulation_crossfade": true,
+          "formant_parameter_interpolation": true,
+          "phrase_declination": true,
+          "sentence_intonation": "declarative",
+          "intonation_strength": 1,
+          "speech_rate": 1.8,
+          "boundary_overlap_ms": 32,
+          "group_pause_ms": 90,
+          "final_lengthening": 0.18
+        },
+        "prosodic_groups": [],
+        "syllables": [
+          {
+            "index": 0,
+            "character": "你",
+            "initial": "ㄋ",
+            "final": "i",
+            "lexical_tone": 3,
+            "surface_tone": 2,
+            "lexical_bopomofo": "ㄋㄧˇ",
+            "surface_bopomofo": "ㄋㄧˊ",
+            "sandhi_applied": true,
+            "sandhi_types": [
+              "三聲變調"
+            ],
+            "third_tone_sandhi": true,
+            "yi_bu_sandhi": false,
+            "prosodic_group": 0,
+            "boundary_after": false,
+            "contextual_neutral": false,
+            "previous_surface_tone": null,
+            "base_f0_hz": 132,
+            "duration_sec": 0.78,
+            "sentence_intonation_semitones": {
+              "start": 0,
+              "end": 0
+            },
+            "vocal_tract_context": {
+              "left_vowel": null,
+              "right_vowel": "a",
+              "interpolation_strength": 0.62
+            },
+            "farhp": {
+              "source": "lab",
+              "strength": 1
+            },
+            "boundary": {
+              "index": 0,
+              "start_sample": 0,
+              "end_sample": 18720,
+              "overlap_samples": 0,
+              "pause_before_samples": 0
+            }
+          },
+          {
+            "index": 1,
+            "character": "好",
+            "initial": "ㄏ",
+            "final": "ao",
+            "lexical_tone": 3,
+            "surface_tone": 3,
+            "lexical_bopomofo": "ㄏㄠˇ",
+            "surface_bopomofo": "ㄏㄠˇ",
+            "sandhi_applied": false,
+            "sandhi_types": [],
+            "third_tone_sandhi": false,
+            "yi_bu_sandhi": false,
+            "prosodic_group": 0,
+            "boundary_after": false,
+            "contextual_neutral": false,
+            "previous_surface_tone": null,
+            "base_f0_hz": 125.31315996546853,
+            "duration_sec": 0.78,
+            "sentence_intonation_semitones": {
+              "start": 0,
+              "end": 0.7
+            },
+            "vocal_tract_context": {
+              "left_vowel": "i",
+              "right_vowel": "a",
+              "interpolation_strength": 0.62
+            },
+            "farhp": {
+              "source": "lab",
+              "strength": 1
+            },
+            "boundary": {
+              "index": 1,
+              "start_sample": 17952,
+              "end_sample": 36672,
+              "overlap_samples": 768,
+              "pause_before_samples": 0
+            }
+          },
+          {
+            "index": 2,
+            "character": "嗎",
+            "initial": "ㄇ",
+            "final": "a",
+            "lexical_tone": 0,
+            "surface_tone": 0,
+            "lexical_bopomofo": "˙ㄇㄚ",
+            "surface_bopomofo": "˙ㄇㄚ",
+            "sandhi_applied": false,
+            "sandhi_types": [],
+            "third_tone_sandhi": false,
+            "yi_bu_sandhi": false,
+            "prosodic_group": 0,
+            "boundary_after": false,
+            "contextual_neutral": true,
+            "previous_surface_tone": 3,
+            "base_f0_hz": 118.96506106462958,
+            "duration_sec": 0.52,
+            "sentence_intonation_semitones": {
+              "start": 0.4,
+              "end": 4.8
+            },
+            "vocal_tract_context": {
+              "left_vowel": "o",
+              "right_vowel": null,
+              "interpolation_strength": 0.62
+            },
+            "farhp": {
+              "source": "lab",
+              "strength": 1
+            },
+            "boundary": {
+              "index": 2,
+              "start_sample": 35904,
+              "end_sample": 44390,
+              "overlap_samples": 768,
+              "pause_before_samples": 0
+            }
+          }
+        ],
+        "acoustics": {
+          "duration_sec": 1.8495833333333334,
+          "f0_min_hz": 90.74819946289062,
+          "f0_max_hz": 177.80531311035156,
+          "raw_peak": 0.800000011920929
+        },
+        "decomposition": "lexical phonology -> prosodic grouping -> tone sandhi -> contextual neutral tone -> phrase/sentence intonation -> vocal-tract interpolation -> syllable FARHP -> boundary rendering",
+        "warning": "MVP prosody and formant-interpolation model; not a natural-speech TTS or full syntactic/physiological parser"
+      },
+      "invariant_certificate": {
+        "stimulus_key": "yitianbuqu",
+        "same_sample_count": true,
+        "same_duration": true,
+        "max_f0_track_difference_hz": 0,
+        "same_lexical_bopomofo": true,
+        "same_surface_bopomofo": true,
+        "waveform_rms_difference": 0.16791632038557416,
+        "pass": true
+      }
+    }
+  ],
+  "trials": [
+    {
+      "sequence_index": 1,
+      "trial": 1,
+      "is_practice": true,
+      "practice_ordinal": 1,
+      "main_ordinal": null,
+      "stimulus_key": "nihao",
+      "a_condition": "baseline",
+      "b_condition": "altered",
+      "x_condition": "baseline",
+      "correct_answer": "A",
+      "play_counts": {
+        "A": 1,
+        "B": 1,
+        "X": 1
+      },
+      "response": {
+        "answer": "A",
+        "correct": true,
+        "rt_ms": 450,
+        "submitted_at": "2026-07-31T03:08:58.870Z"
+      }
+    },
+    {
+      "sequence_index": 2,
+      "trial": 1,
+      "is_practice": false,
+      "practice_ordinal": null,
+      "main_ordinal": 1,
+      "stimulus_key": "yitianbuqu",
+      "a_condition": "baseline",
+      "b_condition": "altered",
+      "x_condition": "baseline",
+      "correct_answer": "A",
+      "play_counts": {
+        "A": 1,
+        "B": 1,
+        "X": 1
+      },
+      "response": {
+        "answer": "A",
+        "correct": true,
+        "rt_ms": 450,
+        "submitted_at": "2026-07-31T03:08:58.870Z"
+      }
+    },
+    {
+      "sequence_index": 3,
+      "trial": 2,
+      "is_practice": false,
+      "practice_ordinal": null,
+      "main_ordinal": 2,
+      "stimulus_key": "nihaoma",
+      "a_condition": "baseline",
+      "b_condition": "altered",
+      "x_condition": "altered",
+      "correct_answer": "B",
+      "play_counts": {
+        "A": 1,
+        "B": 1,
+        "X": 1
+      },
+      "response": {
+        "answer": "A",
+        "correct": false,
+        "rt_ms": 570,
+        "submitted_at": "2026-07-31T03:08:58.871Z"
+      }
+    },
+    {
+      "sequence_index": 4,
+      "trial": 3,
+      "is_practice": false,
+      "practice_ordinal": null,
+      "main_ordinal": 3,
+      "stimulus_key": "nihao",
+      "a_condition": "altered",
+      "b_condition": "baseline",
+      "x_condition": "baseline",
+      "correct_answer": "B",
+      "play_counts": {
+        "A": 1,
+        "B": 1,
+        "X": 1
+      },
+      "response": {
+        "answer": "B",
+        "correct": true,
+        "rt_ms": 690,
+        "submitted_at": "2026-07-31T03:08:58.871Z"
+      }
+    }
+  ],
+  "summary": {
+    "practice_answered": 1,
+    "answered_main_trials": 3,
+    "correct_main_trials": 2,
+    "main_accuracy": 0.6666666666666666,
+    "median_main_response_time_ms": 570,
+    "total_replays": 0,
+    "breaks_taken": 0
+  },
+  "privacy_note": "participant_id must be an anonymous research code; do not store names, emails or contact details",
+  "warning": "offline synthetic-speech research MVP; not a substitute for ethics review, informed consent or population-level validation"
+}

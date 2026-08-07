@@ -1,0 +1,683 @@
+{
+  "frames": [
+    "SEM-ENTITY",
+    "SEM-PROCESS",
+    "SEM-RELATION",
+    "SEM-PROPERTY",
+    "SEM-QUANTITY",
+    "SEM-TIME",
+    "SEM-SPACE",
+    "SEM-MODALITY",
+    "SEM-CAUSALITY",
+    "SEM-EVIDENCE",
+    "SEM-AGENT",
+    "SEM-INFORMATION",
+    "SEM-PERMISSION",
+    "SEM-NEGATION",
+    "SEM-AGGREGATION",
+    "SEM-META"
+  ],
+  "seeds": [
+    "ENO-01",
+    "ENO-02",
+    "ENO-03",
+    "ENO-04",
+    "ENO-05",
+    "ENO-06",
+    "ENO-07",
+    "ENO-08",
+    "ENO-09",
+    "ENO-10",
+    "ENO-11",
+    "ENO-12",
+    "ENO-13",
+    "ENO-14",
+    "ENO-15",
+    "ENO-16",
+    "ENO-17",
+    "ENO-18",
+    "ENO-19",
+    "ENO-20",
+    "ENO-21",
+    "STR-01",
+    "STR-02",
+    "STR-03",
+    "STR-04",
+    "STR-05",
+    "STR-06",
+    "STR-07",
+    "STR-08",
+    "STR-09",
+    "STR-10",
+    "STR-11"
+  ],
+  "trans": [
+    "ID",
+    "R90",
+    "R180",
+    "MX",
+    "OPEN-R",
+    "CLOSED",
+    "INSET",
+    "CROSS"
+  ],
+  "phases": [
+    "PH16-00",
+    "PH16-01",
+    "PH16-02",
+    "PH16-03",
+    "PH16-04",
+    "PH16-05",
+    "PH16-06",
+    "PH16-07",
+    "PH16-08",
+    "PH16-09",
+    "PH16-10",
+    "PH16-11",
+    "PH16-12",
+    "PH16-13",
+    "PH16-14",
+    "PH16-15"
+  ],
+  "ops": [
+    "OP-NULL",
+    "OP-UNARY",
+    "OP-BINARY",
+    "OP-TERNARY",
+    "OP-VARIADIC",
+    "OP-BIND",
+    "OP-QUOTE",
+    "OP-META",
+    "OP-TEMP",
+    "OP-MODAL",
+    "OP-NEG",
+    "OP-CAUSE",
+    "OP-AGG",
+    "OP-MAP",
+    "OP-REDUCE",
+    "OP-GUARD"
+  ],
+  "onsets": [
+    "ONSET-B",
+    "ONSET-P",
+    "ONSET-M",
+    "ONSET-F",
+    "ONSET-D",
+    "ONSET-T",
+    "ONSET-N",
+    "ONSET-L",
+    "ONSET-G",
+    "ONSET-K",
+    "ONSET-H",
+    "ONSET-J",
+    "ONSET-Q",
+    "ONSET-X",
+    "ONSET-ZH",
+    "ONSET-CH",
+    "ONSET-SH",
+    "ONSET-R",
+    "ONSET-Z",
+    "ONSET-C",
+    "ONSET-S"
+  ],
+  "hus": [
+    "HU-KAIKOU",
+    "HU-QICHI",
+    "HU-HEKOU",
+    "HU-CUOKOU"
+  ],
+  "rimes": [
+    "RIME-A",
+    "RIME-O",
+    "RIME-E",
+    "RIME-AI",
+    "RIME-EI",
+    "RIME-AO",
+    "RIME-OU",
+    "RIME-AN",
+    "RIME-EN",
+    "RIME-ANG",
+    "RIME-ENG",
+    "RIME-ER"
+  ],
+  "tones": [
+    "T1",
+    "T2",
+    "T3",
+    "T4",
+    "T0"
+  ],
+  "structs": [
+    "ST-ZERO",
+    "ST-NASAL",
+    "ST-RHOTIC",
+    "ST-LIGHT",
+    "ST-LONG",
+    "ST-BOUNDARY"
+  ],
+  "types": [
+    "Any",
+    "Entity",
+    "Event",
+    "Relation",
+    "Property",
+    "Quantity",
+    "Time",
+    "Space",
+    "Modality",
+    "Evidence",
+    "Agent",
+    "Information",
+    "Permission",
+    "Boolean",
+    "Collection",
+    "Meta"
+  ],
+  "kinds": [
+    "item",
+    "predicate",
+    "operator",
+    "binder",
+    "delimiter",
+    "meta"
+  ],
+  "roles": [
+    "identity",
+    "allographic",
+    "semantic_modifier",
+    "structural"
+  ],
+  "sources": [
+    "NONE",
+    "FARHP-Y",
+    "FARHP-G"
+  ],
+  "classes": [
+    "voiced_harmonic",
+    "mixed",
+    "noise_dominant",
+    "silent"
+  ],
+  "op_arity": {
+    "OP-NULL": [
+      "fixed",
+      0
+    ],
+    "OP-UNARY": [
+      "fixed",
+      1
+    ],
+    "OP-BINARY": [
+      "fixed",
+      2
+    ],
+    "OP-TERNARY": [
+      "fixed",
+      3
+    ],
+    "OP-VARIADIC": [
+      "variadic",
+      1
+    ],
+    "OP-BIND": [
+      "fixed",
+      2
+    ],
+    "OP-QUOTE": [
+      "fixed",
+      1
+    ],
+    "OP-META": [
+      "fixed",
+      1
+    ],
+    "OP-TEMP": [
+      "fixed",
+      1
+    ],
+    "OP-MODAL": [
+      "fixed",
+      1
+    ],
+    "OP-NEG": [
+      "fixed",
+      1
+    ],
+    "OP-CAUSE": [
+      "fixed",
+      2
+    ],
+    "OP-AGG": [
+      "variadic",
+      1
+    ],
+    "OP-MAP": [
+      "fixed",
+      2
+    ],
+    "OP-REDUCE": [
+      "fixed",
+      2
+    ],
+    "OP-GUARD": [
+      "fixed",
+      2
+    ]
+  },
+  "op_kind": {
+    "OP-NULL": [
+      "delimiter",
+      "item"
+    ],
+    "OP-BIND": [
+      "binder"
+    ],
+    "OP-QUOTE": [
+      "meta"
+    ],
+    "OP-META": [
+      "meta"
+    ],
+    "OP-UNARY": [
+      "operator",
+      "predicate"
+    ],
+    "OP-BINARY": [
+      "operator",
+      "predicate"
+    ],
+    "OP-TERNARY": [
+      "operator",
+      "predicate"
+    ],
+    "OP-VARIADIC": [
+      "operator",
+      "predicate"
+    ],
+    "OP-TEMP": [
+      "operator",
+      "predicate"
+    ],
+    "OP-MODAL": [
+      "operator",
+      "predicate"
+    ],
+    "OP-NEG": [
+      "operator",
+      "predicate"
+    ],
+    "OP-CAUSE": [
+      "operator",
+      "predicate"
+    ],
+    "OP-AGG": [
+      "operator",
+      "predicate"
+    ],
+    "OP-MAP": [
+      "operator",
+      "predicate"
+    ],
+    "OP-REDUCE": [
+      "operator",
+      "predicate"
+    ],
+    "OP-GUARD": [
+      "operator",
+      "predicate"
+    ]
+  },
+  "op_frames": {
+    "OP-NULL": [
+      "SEM-AGENT",
+      "SEM-AGGREGATION",
+      "SEM-CAUSALITY",
+      "SEM-ENTITY",
+      "SEM-EVIDENCE",
+      "SEM-INFORMATION",
+      "SEM-META",
+      "SEM-MODALITY",
+      "SEM-NEGATION",
+      "SEM-PERMISSION",
+      "SEM-PROCESS",
+      "SEM-PROPERTY",
+      "SEM-QUANTITY",
+      "SEM-RELATION",
+      "SEM-SPACE",
+      "SEM-TIME"
+    ],
+    "OP-UNARY": [
+      "SEM-META",
+      "SEM-PROCESS",
+      "SEM-PROPERTY",
+      "SEM-RELATION"
+    ],
+    "OP-BINARY": [
+      "SEM-META",
+      "SEM-PROCESS",
+      "SEM-RELATION"
+    ],
+    "OP-TERNARY": [
+      "SEM-META",
+      "SEM-PROCESS",
+      "SEM-RELATION"
+    ],
+    "OP-VARIADIC": [
+      "SEM-AGGREGATION",
+      "SEM-META",
+      "SEM-RELATION"
+    ],
+    "OP-BIND": [
+      "SEM-META",
+      "SEM-RELATION"
+    ],
+    "OP-QUOTE": [
+      "SEM-INFORMATION",
+      "SEM-META"
+    ],
+    "OP-META": [
+      "SEM-INFORMATION",
+      "SEM-META"
+    ],
+    "OP-TEMP": [
+      "SEM-PROCESS",
+      "SEM-TIME"
+    ],
+    "OP-MODAL": [
+      "SEM-MODALITY",
+      "SEM-PERMISSION"
+    ],
+    "OP-NEG": [
+      "SEM-MODALITY",
+      "SEM-NEGATION"
+    ],
+    "OP-CAUSE": [
+      "SEM-CAUSALITY",
+      "SEM-PROCESS",
+      "SEM-RELATION"
+    ],
+    "OP-AGG": [
+      "SEM-AGGREGATION",
+      "SEM-QUANTITY"
+    ],
+    "OP-MAP": [
+      "SEM-META",
+      "SEM-PROCESS"
+    ],
+    "OP-REDUCE": [
+      "SEM-AGGREGATION",
+      "SEM-META",
+      "SEM-PROCESS"
+    ],
+    "OP-GUARD": [
+      "SEM-MODALITY",
+      "SEM-PERMISSION",
+      "SEM-RELATION"
+    ]
+  },
+  "frame_out": {
+    "SEM-ENTITY": "Entity",
+    "SEM-PROCESS": "Event",
+    "SEM-RELATION": "Relation",
+    "SEM-PROPERTY": "Property",
+    "SEM-QUANTITY": "Quantity",
+    "SEM-TIME": "Time",
+    "SEM-SPACE": "Space",
+    "SEM-MODALITY": "Modality",
+    "SEM-CAUSALITY": "Relation",
+    "SEM-EVIDENCE": "Evidence",
+    "SEM-AGENT": "Agent",
+    "SEM-INFORMATION": "Information",
+    "SEM-PERMISSION": "Permission",
+    "SEM-NEGATION": "Boolean",
+    "SEM-AGGREGATION": "Collection",
+    "SEM-META": "Meta"
+  },
+  "trans_roles": {
+    "ID": [
+      "allographic",
+      "identity"
+    ],
+    "R90": [
+      "allographic",
+      "semantic_modifier"
+    ],
+    "R180": [
+      "allographic",
+      "semantic_modifier"
+    ],
+    "MX": [
+      "allographic",
+      "semantic_modifier"
+    ],
+    "OPEN-R": [
+      "semantic_modifier"
+    ],
+    "CLOSED": [
+      "semantic_modifier",
+      "structural"
+    ],
+    "INSET": [
+      "semantic_modifier",
+      "structural"
+    ],
+    "CROSS": [
+      "semantic_modifier"
+    ]
+  },
+  "trans_kinds": {
+    "ID": [
+      "binder",
+      "delimiter",
+      "item",
+      "meta",
+      "operator",
+      "predicate"
+    ],
+    "R90": [
+      "binder",
+      "item",
+      "meta",
+      "operator",
+      "predicate"
+    ],
+    "R180": [
+      "binder",
+      "item",
+      "meta",
+      "operator",
+      "predicate"
+    ],
+    "MX": [
+      "binder",
+      "item",
+      "meta",
+      "operator",
+      "predicate"
+    ],
+    "OPEN-R": [
+      "meta",
+      "operator",
+      "predicate"
+    ],
+    "CLOSED": [
+      "item",
+      "meta",
+      "operator",
+      "predicate"
+    ],
+    "INSET": [
+      "binder",
+      "meta",
+      "operator"
+    ],
+    "CROSS": [
+      "operator",
+      "predicate"
+    ]
+  },
+  "hu_rimes": {
+    "HU-KAIKOU": [
+      "RIME-A",
+      "RIME-AI",
+      "RIME-AN",
+      "RIME-ANG",
+      "RIME-AO",
+      "RIME-E",
+      "RIME-EI",
+      "RIME-EN",
+      "RIME-ENG",
+      "RIME-ER",
+      "RIME-O",
+      "RIME-OU"
+    ],
+    "HU-QICHI": [
+      "RIME-A",
+      "RIME-AN",
+      "RIME-ANG",
+      "RIME-AO",
+      "RIME-E",
+      "RIME-EN",
+      "RIME-ENG",
+      "RIME-O",
+      "RIME-OU"
+    ],
+    "HU-HEKOU": [
+      "RIME-A",
+      "RIME-AI",
+      "RIME-AN",
+      "RIME-ANG",
+      "RIME-E",
+      "RIME-EI",
+      "RIME-EN",
+      "RIME-ENG",
+      "RIME-O"
+    ],
+    "HU-CUOKOU": [
+      "RIME-AN",
+      "RIME-E",
+      "RIME-EN"
+    ]
+  },
+  "onset_hus": {
+    "ONSET-B": [
+      "HU-KAIKOU",
+      "HU-QICHI"
+    ],
+    "ONSET-P": [
+      "HU-KAIKOU",
+      "HU-QICHI"
+    ],
+    "ONSET-M": [
+      "HU-KAIKOU",
+      "HU-QICHI"
+    ],
+    "ONSET-F": [
+      "HU-KAIKOU",
+      "HU-QICHI"
+    ],
+    "ONSET-D": [
+      "HU-HEKOU",
+      "HU-KAIKOU",
+      "HU-QICHI"
+    ],
+    "ONSET-T": [
+      "HU-HEKOU",
+      "HU-KAIKOU",
+      "HU-QICHI"
+    ],
+    "ONSET-N": [
+      "HU-CUOKOU",
+      "HU-HEKOU",
+      "HU-KAIKOU",
+      "HU-QICHI"
+    ],
+    "ONSET-L": [
+      "HU-CUOKOU",
+      "HU-HEKOU",
+      "HU-KAIKOU",
+      "HU-QICHI"
+    ],
+    "ONSET-G": [
+      "HU-HEKOU",
+      "HU-KAIKOU"
+    ],
+    "ONSET-K": [
+      "HU-HEKOU",
+      "HU-KAIKOU"
+    ],
+    "ONSET-H": [
+      "HU-HEKOU",
+      "HU-KAIKOU"
+    ],
+    "ONSET-J": [
+      "HU-CUOKOU",
+      "HU-QICHI"
+    ],
+    "ONSET-Q": [
+      "HU-CUOKOU",
+      "HU-QICHI"
+    ],
+    "ONSET-X": [
+      "HU-CUOKOU",
+      "HU-QICHI"
+    ],
+    "ONSET-ZH": [
+      "HU-HEKOU",
+      "HU-KAIKOU"
+    ],
+    "ONSET-CH": [
+      "HU-HEKOU",
+      "HU-KAIKOU"
+    ],
+    "ONSET-SH": [
+      "HU-HEKOU",
+      "HU-KAIKOU"
+    ],
+    "ONSET-R": [
+      "HU-HEKOU",
+      "HU-KAIKOU"
+    ],
+    "ONSET-Z": [
+      "HU-HEKOU",
+      "HU-KAIKOU"
+    ],
+    "ONSET-C": [
+      "HU-HEKOU",
+      "HU-KAIKOU"
+    ],
+    "ONSET-S": [
+      "HU-HEKOU",
+      "HU-KAIKOU"
+    ]
+  },
+  "noise": [
+    "ONSET-F",
+    "ONSET-H",
+    "ONSET-S",
+    "ONSET-SH",
+    "ONSET-X"
+  ],
+  "mixed": [
+    "ONSET-C",
+    "ONSET-CH",
+    "ONSET-F",
+    "ONSET-H",
+    "ONSET-J",
+    "ONSET-K",
+    "ONSET-P",
+    "ONSET-Q",
+    "ONSET-S",
+    "ONSET-SH",
+    "ONSET-T",
+    "ONSET-X",
+    "ONSET-Z",
+    "ONSET-ZH"
+  ],
+  "nasal": [
+    "RIME-AN",
+    "RIME-ANG",
+    "RIME-EN",
+    "RIME-ENG"
+  ]
+}

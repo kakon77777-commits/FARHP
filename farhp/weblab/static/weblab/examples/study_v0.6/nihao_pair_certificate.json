@@ -1,0 +1,13 @@
+{
+  "duration_seconds": 0.186,
+  "invariant_certificate": {
+    "stimulus_key": "nihao",
+    "same_sample_count": true,
+    "same_duration": true,
+    "max_f0_track_difference_hz": 0,
+    "same_lexical_bopomofo": true,
+    "same_surface_bopomofo": true,
+    "waveform_rms_difference": 0.1726891345536405,
+    "pass": true
+  }
+}

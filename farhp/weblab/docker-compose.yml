@@ -1,0 +1,45 @@
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-farhp}
+      POSTGRES_USER: ${POSTGRES_USER:-farhp}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD}
+    volumes:
+      - farhp_postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-farhp} -d ${POSTGRES_DB:-farhp}"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    restart: unless-stopped
+
+  farhp:
+    build: .
+    environment:
+      FARHP_ENV: production
+      FARHP_DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-farhp}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB:-farhp}
+      FARHP_SECRET_KEY: ${FARHP_SECRET_KEY:?set FARHP_SECRET_KEY}
+      FARHP_DEIDENTIFICATION_SALT: ${FARHP_DEIDENTIFICATION_SALT:?set FARHP_DEIDENTIFICATION_SALT}
+      FARHP_DEMO_MODE: "0"
+      FARHP_AUTO_MIGRATE: "1"
+      FARHP_ALLOWED_HOSTS: ${FARHP_ALLOWED_HOSTS:-localhost,127.0.0.1}
+      FARHP_WORKERS: ${FARHP_WORKERS:-1}
+      FARHP_FORWARDED_ALLOW_IPS: ${FARHP_FORWARDED_ALLOW_IPS:-127.0.0.1}
+      FARHP_OIDC_ENABLED: ${FARHP_OIDC_ENABLED:-0}
+      FARHP_OIDC_ISSUER: ${FARHP_OIDC_ISSUER:-}
+      FARHP_OIDC_CLIENT_ID: ${FARHP_OIDC_CLIENT_ID:-}
+      FARHP_OIDC_CLIENT_SECRET: ${FARHP_OIDC_CLIENT_SECRET:-}
+      FARHP_OIDC_REDIRECT_URI: ${FARHP_OIDC_REDIRECT_URI:-http://localhost:8000/api/auth/oidc/callback}
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "${FARHP_PORT:-8000}:8000"
+    volumes:
+      - farhp_backups:/app/backups
+    restart: unless-stopped
+
+volumes:
+  farhp_postgres:
+  farhp_backups:

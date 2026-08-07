@@ -1,0 +1,11 @@
+{
+  "status": "ready",
+  "version": "1.0.0-rc.1",
+  "database": "sqlite",
+  "migrations": {
+    "current": "0002_v10rc_production",
+    "head": "0002_v10rc_production",
+    "up_to_date": true
+  },
+  "users": 3
+}

@@ -1,0 +1,7 @@
+{$FARHP_DOMAIN} {
+    encode zstd gzip
+    reverse_proxy farhp:8000
+    header {
+        -Server
+    }
+}

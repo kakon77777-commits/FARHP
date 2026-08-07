@@ -1,0 +1,4 @@
+﻿session_id,participant_id,sequence_index,is_practice,stimulus_key,a_condition,b_condition,x_condition,answer,correct,rt_ms,play_A,play_B,play_X,valid,exclusion_reasons
+FARHP-DEPLOY-TEST-P-BROWSER-01-424242-1785469023082,P-BROWSER-01,1,True,nihao,baseline,altered,baseline,A,True,420,1,1,1,,
+FARHP-DEPLOY-TEST-P-BROWSER-01-424242-1785469023082,P-BROWSER-01,2,False,nihao,baseline,altered,altered,B,True,650,1,1,1,,
+FARHP-DEPLOY-TEST-P-BROWSER-01-424242-1785469023082,P-BROWSER-01,3,False,nihaoma,baseline,altered,baseline,B,False,850,1,1,1,,

@@ -1,0 +1,11 @@
+{
+  "frame_count": 113,
+  "voiced_ratio": 1.0,
+  "mean_track_confidence": 0.9069441608717619,
+  "median_anchor_prediction_residual_rad": 0.10838938889979843,
+  "f0_min_hz": 110.81584040151138,
+  "f0_max_hz": 165.83136461953552,
+  "f0_mae_hz": 0.2790594047344794,
+  "f0_rmse_hz": 0.33074025232851867,
+  "note": "Dynamic synthetic-vowel regression fixture. The reconstruction is harmonic-only and is not a natural-speech quality claim."
+}

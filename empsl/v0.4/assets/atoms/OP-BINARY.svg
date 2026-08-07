@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+<title id="title">二元</title><desc id="desc">二元算子附標。</desc>
+<rect width="256" height="256" fill="none"/>
+<circle cx="94" cy="128" r="16" stroke="#151a24" stroke-width="7" fill="none" /><circle cx="162" cy="128" r="16" stroke="#151a24" stroke-width="7" fill="none" /><line x1="110" y1="128" x2="146" y2="128" stroke="#151a24" stroke-width="12" stroke-linecap="round" />
+</svg>

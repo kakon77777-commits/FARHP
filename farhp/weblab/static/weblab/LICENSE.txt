@@ -1,0 +1,7 @@
+FARHP WebLab MVP v0.1
+Copyright (c) 2026 EveMissLab / EVEMISS Technology Co., Ltd.
+
+This MVP package may be used, studied, modified, and redistributed for research,
+demonstration, and non-misleading technical evaluation. The FARHP name and any
+associated research claims must not be used to imply completed natural-speech,
+clinical, cryptographic, or physiological validation.

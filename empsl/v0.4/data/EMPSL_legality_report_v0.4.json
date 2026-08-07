@@ -1,0 +1,60 @@
+{
+  "spec_version": "0.4",
+  "ruleset_sha256": "84fecd66f230f4c52fd125e45a4164c96c7afc8fad5c6f40fa47c9f67f3cb689",
+  "sample_count": 4096,
+  "generated_valid_count": 1024,
+  "mutated_invalid_count": 1024,
+  "fuzz_count": 2048,
+  "validator_valid_count": 1024,
+  "validator_invalid_count": 3072,
+  "total_errors": 23360,
+  "total_warnings": 3947,
+  "rule_hit_counts": {
+    "A-001": 2007,
+    "A-002": 1774,
+    "A-003": 837,
+    "A-004": 852,
+    "A-005": 396,
+    "A-006": 523,
+    "A-007": 685,
+    "G-002": 2091,
+    "G-003": 356,
+    "G-004": 1003,
+    "P-001": 1063,
+    "P-002": 242,
+    "P-003": 147,
+    "P-004": 86,
+    "P-005": 600,
+    "P-006": 93,
+    "P-007": 84,
+    "P-008": 188,
+    "P-009": 4,
+    "P-010": 1328,
+    "S-001": 1106,
+    "S-002": 1468,
+    "S-003": 2861,
+    "S-004": 1502,
+    "S-005": 1667,
+    "S-006": 1889,
+    "T-001": 1215,
+    "T-002": 721,
+    "T-003": 519
+  },
+  "generator_breakdown": {
+    "valid": {
+      "count": 1024,
+      "valid": 1024,
+      "invalid": 0
+    },
+    "mutated-invalid": {
+      "count": 1024,
+      "valid": 0,
+      "invalid": 1024
+    },
+    "fuzz": {
+      "count": 2048,
+      "valid": 0,
+      "invalid": 2048
+    }
+  }
+}

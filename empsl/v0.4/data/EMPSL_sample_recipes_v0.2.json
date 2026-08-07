@@ -1,0 +1,59 @@
+{
+  "version": "0.2",
+  "recipes": [
+    {
+      "id": "eml.empsl:glyph:light-v01",
+      "version": "0.2",
+      "frame": "SEM-ENTITY",
+      "seed": "ENO-07",
+      "phonology": [
+        "ONSET-G",
+        "HU-HEKOU",
+        "RIME-ANG"
+      ],
+      "tone": "T1",
+      "phase": "PH16-05",
+      "operator": "OP-NULL",
+      "reading": "ㄍㄨㄤ",
+      "gloss": "光",
+      "concept_id": "eml.concept:item:physical-light",
+      "recipe_sha256": "ab2c2254fabcba0687c90ad44f58d36a3c5032fb2eacd7c1a40e786b03e9984b"
+    },
+    {
+      "id": "eml.empsl:glyph:change-v01",
+      "version": "0.2",
+      "frame": "SEM-PROCESS",
+      "seed": "ENO-12",
+      "phonology": [
+        "ONSET-B",
+        "HU-QICHI",
+        "RIME-AN"
+      ],
+      "tone": "T4",
+      "phase": "PH16-11",
+      "operator": "OP-UNARY",
+      "reading": "ㄅㄧㄢˋ",
+      "gloss": "變化",
+      "concept_id": "eml.concept:item:change-process",
+      "recipe_sha256": "9f1aa66920ee6f30e849eb7f8c8b770664a44c6e9b8e68477fa37c7ba44d1b25"
+    },
+    {
+      "id": "eml.empsl:glyph:cause-v01",
+      "version": "0.2",
+      "frame": "SEM-CAUSALITY",
+      "seed": "STR-05",
+      "phonology": [
+        "ONSET-J",
+        "HU-QICHI",
+        "RIME-AO"
+      ],
+      "tone": "T4",
+      "phase": "PH16-02",
+      "operator": "OP-CAUSE",
+      "reading": "ㄐㄧㄠˋ",
+      "gloss": "致使／因果算子",
+      "concept_id": "eml.concept:operator:cause",
+      "recipe_sha256": "67ec1649b861544af68323a143c6eb78b5e70f0856dbfcffe1254731ec91537e"
+    }
+  ]
+}

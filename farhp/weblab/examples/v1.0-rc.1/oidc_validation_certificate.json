@@ -1,0 +1,16 @@
+{
+  "certificate_version": "1.0-rc.1",
+  "test_type": "local mocked OIDC authorization code flow",
+  "result": "PASS",
+  "validated": [
+    "discovery issuer exact match",
+    "RSA/JWKS signature",
+    "iss claim",
+    "aud claim",
+    "exp and iat claims",
+    "nonce",
+    "external subject binding",
+    "group to FARHP role mapping"
+  ],
+  "boundary": "This is a cryptographic flow regression test, not certification against an external identity provider."
+}

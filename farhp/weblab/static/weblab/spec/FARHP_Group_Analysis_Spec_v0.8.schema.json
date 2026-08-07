@@ -1,0 +1,389 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://evemisslab.com/spec/FARHP_Group_Analysis_Spec_v0.8.schema.json",
+  "title": "FARHP WebLab Group Analysis v0.8",
+  "type": "object",
+  "required": [
+    "farhp_weblab_group_version",
+    "created_at",
+    "source_files",
+    "included_sessions",
+    "excluded_sessions",
+    "participant_count",
+    "all_participant_count",
+    "main_trials",
+    "excluded_trials",
+    "correct_trials",
+    "accuracy",
+    "wilson_95",
+    "binomial_two_sided_p",
+    "chance_probability",
+    "by_participant",
+    "by_stimulus",
+    "by_condition_and_stimulus",
+    "governance_quality"
+  ],
+  "properties": {
+    "farhp_weblab_group_version": {
+      "const": "0.8"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "study_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_files": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "duplicate_or_invalid_files_ignored": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "included_sessions": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "excluded_sessions": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "excluded_session_log": {
+      "type": "array"
+    },
+    "participant_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "all_participant_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "main_trials": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "excluded_trials": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "correct_trials": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "accuracy": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "wilson_95": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        }
+      ]
+    },
+    "binomial_two_sided_p": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "chance_probability": {
+      "const": 0.5
+    },
+    "by_participant": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "participant_id",
+          "sessions",
+          "included_sessions",
+          "excluded_sessions",
+          "valid_trials",
+          "correct",
+          "accuracy",
+          "median_rt_ms",
+          "included",
+          "exclusion_reasons"
+        ],
+        "properties": {
+          "participant_id": {
+            "type": "string"
+          },
+          "sessions": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "included_sessions": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "excluded_sessions": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "valid_trials": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "correct": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "accuracy": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1
+          },
+          "median_rt_ms": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "included": {
+            "type": "boolean"
+          },
+          "exclusion_reasons": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "by_stimulus": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "stimulus_key",
+          "stimulus_label",
+          "participant_count",
+          "trials",
+          "correct",
+          "accuracy",
+          "wilson_95",
+          "median_rt_ms"
+        ],
+        "properties": {
+          "stimulus_key": {
+            "type": "string"
+          },
+          "stimulus_label": {
+            "type": "string"
+          },
+          "participant_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "trials": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "correct": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "accuracy": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1
+          },
+          "wilson_95": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "prefixItems": [
+              {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 1
+              },
+              {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 1
+              }
+            ]
+          },
+          "median_rt_ms": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "by_condition_and_stimulus": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "stimulus_key",
+          "stimulus_label",
+          "participant_count",
+          "trials",
+          "correct",
+          "accuracy",
+          "wilson_95",
+          "median_rt_ms",
+          "condition"
+        ],
+        "properties": {
+          "stimulus_key": {
+            "type": "string"
+          },
+          "stimulus_label": {
+            "type": "string"
+          },
+          "participant_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "trials": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "correct": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "accuracy": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1
+          },
+          "wilson_95": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "prefixItems": [
+              {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 1
+              },
+              {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 1
+              }
+            ]
+          },
+          "median_rt_ms": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "condition": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "warning": {
+      "type": "string"
+    },
+    "governance_quality": {
+      "type": "object",
+      "required": [
+        "pass",
+        "files",
+        "missing_consent",
+        "audit_failures",
+        "plan_issues",
+        "invariant_failures",
+        "duplicate_sessions"
+      ],
+      "properties": {
+        "files": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "missing_consent": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "audit_failures": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "plan_issues": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "invariant_failures": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "duplicate_sessions": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "pass": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true
+}

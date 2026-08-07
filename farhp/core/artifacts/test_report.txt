@@ -1,0 +1,18 @@
+test_f0_estimation_on_synthetic_vowel (test_core.TestFARHPCore.test_f0_estimation_on_synthetic_vowel) ... ok
+test_harmonic_round_trip (test_core.TestFARHPCore.test_harmonic_round_trip) ... ok
+test_scalar_quantizer_bound (test_core.TestFARHPCore.test_scalar_quantizer_bound) ... ok
+test_time_shift_invariance_exact_harmonics (test_core.TestFARHPCore.test_time_shift_invariance_exact_harmonics) ... ok
+test_torus_codebook (test_core.TestFARHPCore.test_torus_codebook) ... ok
+test_wrap_and_circular_distance (test_core.TestFARHPCore.test_wrap_and_circular_distance) ... ok
+test_reference_output_validates (test_schema.TestSchema.test_reference_output_validates) ... ok
+test_anchor_tracking_is_locally_continuous (test_tracking.TestFARHPTrajectory.test_anchor_tracking_is_locally_continuous) ... ok
+test_dynamic_f0_tracking (test_tracking.TestFARHPTrajectory.test_dynamic_f0_tracking) ... ok
+test_farhp_unwrapped_tracks_without_boundary_spikes (test_tracking.TestFARHPTrajectory.test_farhp_unwrapped_tracks_without_boundary_spikes) ... ok
+test_trajectory_schema (test_tracking.TestFARHPTrajectory.test_trajectory_schema) ... ok
+test_trajectory_serialization_and_reconstruction (test_tracking.TestFARHPTrajectory.test_trajectory_serialization_and_reconstruction) ... ok
+test_unvoiced_gap_resets_phase_track (test_tracking.TestFARHPTrajectory.test_unvoiced_gap_resets_phase_track) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.848s
+
+OK

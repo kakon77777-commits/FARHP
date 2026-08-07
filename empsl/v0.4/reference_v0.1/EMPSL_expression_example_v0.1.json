@@ -1,0 +1,228 @@
+{
+  "spec_version": "0.1",
+  "namespace": "eml.empsl",
+  "document_id": "eml.empsl:document:example-expression-001",
+  "normalization": "NFC",
+  "direction": "ltr",
+  "entries": [
+    {
+      "id": "eml.empsl:lexeme:000001",
+      "kind": "lexeme",
+      "glyph_recipe": {
+        "recipe_version": "0.1",
+        "seed": "ENO-07",
+        "frame": "SEM-ENTITY",
+        "phonology_marks": [
+          "ONSET-G",
+          "MEDIAL-U",
+          "RIME-ANG"
+        ],
+        "tone_mark": "T1",
+        "phase_mark": "PH16-05",
+        "operator_marks": [
+          "OP-NULL"
+        ],
+        "pua_hint": "U+E101",
+        "recipe_hash": "9029dced6e1e63ea8310e64050dae21a1159345a868ed5d839fb255141fe4d7c"
+      },
+      "pronunciation": {
+        "system": "zhuyin",
+        "canonical_reading": [
+          "ㄍㄨㄤ"
+        ],
+        "four_hu": [
+          "hekou"
+        ],
+        "legality": [
+          "attested"
+        ],
+        "aliases": []
+      },
+      "phase": {
+        "domain": "FARHP-Y",
+        "representation": "codebook_ref",
+        "visible_signature": "PH16-05",
+        "profile_id": "FARHP-Y:CB-v0.1:0042",
+        "quantization": 16,
+        "strength": 1.0,
+        "cos_sin": null,
+        "mask": null,
+        "confidence": null
+      },
+      "syntax": {
+        "kind": "noun",
+        "type": "PhysicalPhenomenon",
+        "arity": 0,
+        "input_types": [],
+        "output_type": "PhysicalPhenomenon"
+      },
+      "semantics": {
+        "concept_id": "eml.concept:item:physical-light",
+        "semantic_class": "entity",
+        "glosses": {
+          "zh-Hant": "光",
+          "en": "physical light"
+        },
+        "constraints": []
+      },
+      "version": {
+        "spec": "0.1",
+        "entry": "1.0.0"
+      }
+    },
+    {
+      "id": "eml.empsl:lexeme:000002",
+      "kind": "lexeme",
+      "glyph_recipe": {
+        "recipe_version": "0.1",
+        "seed": "ENO-12",
+        "frame": "SEM-PROCESS",
+        "phonology_marks": [
+          "ONSET-B",
+          "MEDIAL-I",
+          "RIME-AN"
+        ],
+        "tone_mark": "T4",
+        "phase_mark": "PH16-09",
+        "operator_marks": [
+          "OP-NULL"
+        ],
+        "pua_hint": "U+E102",
+        "recipe_hash": "bfe63e64ba6ae49797b68728fda39d4c34745b66827ef5c6448561a2cb71adaf"
+      },
+      "pronunciation": {
+        "system": "zhuyin",
+        "canonical_reading": [
+          "ㄅㄧㄢˋ"
+        ],
+        "four_hu": [
+          "qichi"
+        ],
+        "legality": [
+          "attested"
+        ],
+        "aliases": []
+      },
+      "phase": {
+        "domain": "FARHP-Y",
+        "representation": "visible_signature",
+        "visible_signature": "PH16-09",
+        "profile_id": null,
+        "quantization": 16,
+        "strength": 1.0,
+        "cos_sin": null,
+        "mask": null,
+        "confidence": null
+      },
+      "syntax": {
+        "kind": "verb",
+        "type": "Event",
+        "arity": 1,
+        "input_types": [
+          "State"
+        ],
+        "output_type": "Event"
+      },
+      "semantics": {
+        "concept_id": "eml.concept:item:state-change",
+        "semantic_class": "process",
+        "glosses": {
+          "zh-Hant": "變化",
+          "en": "state change"
+        },
+        "constraints": []
+      },
+      "version": {
+        "spec": "0.1",
+        "entry": "1.0.0"
+      }
+    },
+    {
+      "id": "eml.empsl:operator:cause",
+      "kind": "operator",
+      "glyph_recipe": {
+        "recipe_version": "0.1",
+        "seed": "ENO-19",
+        "frame": "SEM-CAUSALITY",
+        "phonology_marks": [
+          "ZERO-ONSET",
+          "MEDIAL-I",
+          "RIME-N"
+        ],
+        "tone_mark": "T1",
+        "phase_mark": "PH16-00",
+        "operator_marks": [
+          "OP-CAUSE",
+          "OP-BINARY"
+        ],
+        "pua_hint": "U+E180",
+        "recipe_hash": "5478efe49e10fb3290a03879dd8046179c6a9b0edd92718fd1b1f9d622defe25"
+      },
+      "pronunciation": {
+        "system": "zhuyin",
+        "canonical_reading": [
+          "ㄧㄣ"
+        ],
+        "four_hu": [
+          "qichi"
+        ],
+        "legality": [
+          "attested"
+        ],
+        "aliases": []
+      },
+      "phase": {
+        "domain": "FARHP-Y",
+        "representation": "none",
+        "visible_signature": "PH16-00",
+        "profile_id": null,
+        "quantization": null,
+        "strength": 0.0,
+        "cos_sin": null,
+        "mask": null,
+        "confidence": null
+      },
+      "syntax": {
+        "kind": "operator",
+        "type": "CausalRelation",
+        "arity": 2,
+        "input_types": [
+          "Event",
+          "Event"
+        ],
+        "output_type": "Proposition"
+      },
+      "semantics": {
+        "concept_id": "eml.concept:item:causation",
+        "semantic_class": "causality",
+        "glosses": {
+          "zh-Hant": "導致",
+          "en": "causes"
+        },
+        "constraints": [
+          "argument-1 precedes or sustains argument-2 under the selected causal model"
+        ]
+      },
+      "version": {
+        "spec": "0.1",
+        "entry": "1.0.0"
+      }
+    }
+  ],
+  "expressions": [
+    {
+      "kind": "application",
+      "operator": "eml.empsl:operator:cause",
+      "arguments": [
+        {
+          "kind": "reference",
+          "target": "eml.empsl:lexeme:000001"
+        },
+        {
+          "kind": "reference",
+          "target": "eml.empsl:lexeme:000002"
+        }
+      ]
+    }
+  ]
+}

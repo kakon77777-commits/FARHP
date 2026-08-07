@@ -1,0 +1,31 @@
+{
+  "farhp_deployment_manifest_version": "1.0-rc.1",
+  "application": {
+    "name": "FARHP Research Server",
+    "version": "1.0.0-rc.1",
+    "migration_head": "0002_v10rc_production"
+  },
+  "database": {
+    "supported_backends": ["sqlite", "postgresql"],
+    "production_recommended": "postgresql"
+  },
+  "security": {
+    "password_hash": "Argon2",
+    "oidc": true,
+    "security_headers": true,
+    "https_termination": "reverse_proxy"
+  },
+  "features": [
+    "Alembic migrations",
+    "OIDC authorization code flow",
+    "atomic invite capacity",
+    "SQLite and PostgreSQL backup paths",
+    "liveness and readiness probes",
+    "CSP and HSTS support"
+  ],
+  "limitations": [
+    "PostgreSQL and Docker could not be executed in the artifact build environment",
+    "external identity provider interoperability requires deployment-specific verification",
+    "release candidate is not a security certification"
+  ]
+}

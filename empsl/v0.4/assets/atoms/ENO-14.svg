@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+<title id="title">以諾式種子 14</title><desc id="desc">現代重構的以諾式視覺種子；非歷史字母一對一復原。</desc>
+<rect width="256" height="256" fill="none"/>
+<g transform="rotate(180 128 128)"><path d="M70 202 L70 72 Q70 50 92 50 L168 50 Q188 50 188 72 L188 128 Q188 152 166 152 L108 152" stroke="#151a24" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none" /><path d="M108 152 Q72 158 72 202" stroke="#151a24" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none" /><line x1="112" y1="96" x2="190" y2="208" stroke="#151a24" stroke-width="12" stroke-linecap="round" /></g>
+</svg>

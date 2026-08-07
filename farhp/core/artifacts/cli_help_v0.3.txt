@@ -1,0 +1,23 @@
+usage: farhp [-h]
+             {demo,demo-track,analyze,track,reconstruct,reconstruct-track,transform-track,morph-track,blind-pack,validate,inspect} ...
+
+FARHP-Core v0.3 research prototype
+
+positional arguments:
+  {demo,demo-track,analyze,track,reconstruct,reconstruct-track,transform-track,morph-track,blind-pack,validate,inspect}
+    demo                run the stationary synthetic-vowel closed-loop
+                        demonstration
+    demo-track          run the nonstationary trajectory demonstration
+    analyze             analyze the center frame of a WAV file
+    track               analyze an entire WAV file as a FARHP trajectory
+    reconstruct         reconstruct a harmonic frame from FARHP JSON
+    reconstruct-track   reconstruct a harmonic trajectory
+    transform-track     apply a controlled FARHP-only phase condition
+    morph-track         transfer or interpolate FARHP style onto a content
+                        trajectory
+    blind-pack          create a randomized blind-listening pack
+    validate            validate frame JSON against FARHP-Spec schema
+    inspect             render a diagnostic PNG from FARHP frame JSON
+
+options:
+  -h, --help            show this help message and exit

@@ -1,0 +1,10 @@
+{
+  "operation": "condition:zero",
+  "strength": 1.0,
+  "changed_coordinates": 1921,
+  "mean_geodesic_shift_rad": 1.0900011913932448,
+  "max_geodesic_shift_rad": 2.235803094409629,
+  "metadata": {
+    "seed": 7
+  }
+}

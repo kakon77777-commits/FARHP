@@ -1,0 +1,108 @@
+{
+  "version": "0.2",
+  "atom_count": 128,
+  "exact_raster_collisions": [],
+  "nearest_pairs": [
+    {
+      "distance": 0.000692,
+      "a": "RIME-ANG",
+      "b": "ST-NASAL"
+    },
+    {
+      "distance": 0.001314,
+      "a": "OP-REDUCE",
+      "b": "RIME-EI"
+    },
+    {
+      "distance": 0.001474,
+      "a": "RIME-A",
+      "b": "RIME-ANG"
+    },
+    {
+      "distance": 0.001532,
+      "a": "OP-TEMP",
+      "b": "RIME-AN"
+    },
+    {
+      "distance": 0.00168,
+      "a": "OP-CAUSE",
+      "b": "T1"
+    },
+    {
+      "distance": 0.001694,
+      "a": "HU-KAIKOU",
+      "b": "T1"
+    },
+    {
+      "distance": 0.001753,
+      "a": "RIME-A",
+      "b": "ST-NASAL"
+    },
+    {
+      "distance": 0.001879,
+      "a": "RIME-A",
+      "b": "RIME-AN"
+    },
+    {
+      "distance": 0.002057,
+      "a": "PH16-02",
+      "b": "PH16-06"
+    },
+    {
+      "distance": 0.002061,
+      "a": "PH16-06",
+      "b": "PH16-14"
+    },
+    {
+      "distance": 0.002064,
+      "a": "PH16-02",
+      "b": "PH16-14"
+    },
+    {
+      "distance": 0.002068,
+      "a": "PH16-06",
+      "b": "PH16-10"
+    },
+    {
+      "distance": 0.002071,
+      "a": "PH16-02",
+      "b": "PH16-10"
+    },
+    {
+      "distance": 0.002075,
+      "a": "HU-HEKOU",
+      "b": "HU-CUOKOU"
+    },
+    {
+      "distance": 0.002075,
+      "a": "PH16-10",
+      "b": "PH16-14"
+    },
+    {
+      "distance": 0.002151,
+      "a": "ONSET-SH",
+      "b": "ONSET-C"
+    },
+    {
+      "distance": 0.002157,
+      "a": "RIME-AN",
+      "b": "RIME-ANG"
+    },
+    {
+      "distance": 0.002206,
+      "a": "ONSET-SH",
+      "b": "ONSET-R"
+    },
+    {
+      "distance": 0.002212,
+      "a": "ONSET-CH",
+      "b": "ONSET-SH"
+    },
+    {
+      "distance": 0.002216,
+      "a": "ONSET-Z",
+      "b": "ONSET-C"
+    }
+  ],
+  "threshold_note": "Distance is normalized mean absolute pixel distance after 64×64 bbox normalization; it is a diagnostic, not perceptual proof."
+}

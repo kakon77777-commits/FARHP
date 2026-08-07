@@ -1,0 +1,69 @@
+{
+  "listener_id": "",
+  "device": "",
+  "samples": [
+    {
+      "trial": 1,
+      "difference": null,
+      "naturalness": null,
+      "sharpness": null,
+      "breathiness": null,
+      "preference": null,
+      "notes": ""
+    },
+    {
+      "trial": 2,
+      "difference": null,
+      "naturalness": null,
+      "sharpness": null,
+      "breathiness": null,
+      "preference": null,
+      "notes": ""
+    },
+    {
+      "trial": 3,
+      "difference": null,
+      "naturalness": null,
+      "sharpness": null,
+      "breathiness": null,
+      "preference": null,
+      "notes": ""
+    },
+    {
+      "trial": 4,
+      "difference": null,
+      "naturalness": null,
+      "sharpness": null,
+      "breathiness": null,
+      "preference": null,
+      "notes": ""
+    },
+    {
+      "trial": 5,
+      "difference": null,
+      "naturalness": null,
+      "sharpness": null,
+      "breathiness": null,
+      "preference": null,
+      "notes": ""
+    },
+    {
+      "trial": 6,
+      "difference": null,
+      "naturalness": null,
+      "sharpness": null,
+      "breathiness": null,
+      "preference": null,
+      "notes": ""
+    },
+    {
+      "trial": 7,
+      "difference": null,
+      "naturalness": null,
+      "sharpness": null,
+      "breathiness": null,
+      "preference": null,
+      "notes": ""
+    }
+  ]
+}

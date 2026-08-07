@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+<title id="title">綁定</title><desc id="desc">綁定算子附標。</desc>
+<rect width="256" height="256" fill="none"/>
+<path d="M74 70 Q128 34 182 70 V186 Q128 222 74 186 Z" stroke="#151a24" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none" /><line x1="128" y1="68" x2="128" y2="188" stroke="#151a24" stroke-width="6" stroke-linecap="round" />
+</svg>

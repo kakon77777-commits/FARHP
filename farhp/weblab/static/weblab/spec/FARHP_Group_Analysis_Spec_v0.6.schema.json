@@ -1,0 +1,155 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://evemisslab.com/spec/FARHP_Group_Analysis_Spec_v0.6.schema.json",
+  "title": "FARHP WebLab Group Analysis v0.6",
+  "type": "object",
+  "required": [
+    "farhp_weblab_group_version",
+    "created_at",
+    "source_files",
+    "participant_count",
+    "main_trials",
+    "correct_trials",
+    "accuracy",
+    "wilson_95",
+    "binomial_two_sided_p",
+    "chance_probability",
+    "by_condition_and_stimulus"
+  ],
+  "properties": {
+    "farhp_weblab_group_version": {
+      "const": "0.6"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "source_files": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "participant_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "main_trials": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "correct_trials": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "accuracy": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "wilson_95": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        }
+      ],
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "binomial_two_sided_p": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "chance_probability": {
+      "const": 0.5
+    },
+    "by_condition_and_stimulus": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "condition",
+          "stimulus_key",
+          "stimulus_label",
+          "participant_count",
+          "trials",
+          "correct",
+          "accuracy",
+          "median_rt_ms"
+        ],
+        "properties": {
+          "condition": {
+            "type": "string"
+          },
+          "stimulus_key": {
+            "type": "string"
+          },
+          "stimulus_label": {
+            "type": "string"
+          },
+          "participant_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "trials": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "correct": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "accuracy": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1
+          },
+          "median_rt_ms": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "warning": {
+      "type": "string"
+    },
+    "study_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "duplicate_sessions_ignored": {
+      "type": "integer",
+      "minimum": 0
+    }
+  },
+  "additionalProperties": true
+}
