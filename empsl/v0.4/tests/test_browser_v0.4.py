@@ -70,6 +70,41 @@ with local_site() as base_url, sync_playwright() as playwright:
     assert page.locator("#ruleGrid .rule").count() == 30
     assert page.locator("#variantGallery .atom-card").count() == 8
     assert page.locator("#activityStatus").get_attribute("aria-live") == "polite"
+    assert page.locator("#soundStatus").inner_text().startswith("可以播放")
+    assert page.locator("#soundPhase").inner_text().startswith("PH16-")
+
+    page.click('[data-voice="male"]')
+    assert page.locator('[data-voice="male"]').get_attribute("aria-pressed") == "true"
+    assert "男聲" in page.locator("#soundVoice").inner_text()
+
+    page.click("#playSound")
+    page.wait_for_timeout(120)
+    assert "播放" in page.locator("#soundStatus").inner_text()
+    page.click("#stopSound")
+    assert "停止" in page.locator("#soundStatus").inner_text()
+
+    page.click("#autoSoundDemo")
+    page.wait_for_function(
+        "document.querySelector('#soundStatus').textContent.includes('自動示範完成')",
+        timeout=10_000,
+    )
+
+    page.click("#randomSoundDemo")
+    page.wait_for_function(
+        "document.querySelector('#soundSeed').textContent !== '—'",
+        timeout=5_000,
+    )
+    random_seed = page.locator("#soundSeed").inner_text()
+    assert page.locator("#replayRandomSound").is_enabled()
+    page.click("#replayRandomSound")
+    assert page.locator("#soundSeed").inner_text() == random_seed
+    page.click("#stopSound")
+
+    with page.expect_download() as wav_download:
+        page.click("#exportSoundWav")
+    assert wav_download.value.suggested_filename.startswith("axioglyph_")
+    assert wav_download.value.suggested_filename.endswith(".wav")
+    assert "WAV" in page.locator("#soundStatus").inner_text()
 
     page.click("#invalidExample")
     page.wait_for_timeout(200)
@@ -114,4 +149,4 @@ with local_site() as base_url, sync_playwright() as playwright:
     assert not errors, errors
     browser.close()
 
-print("PASS browser v0.4 · HTTP · rules=30 · variants=8 · downloads=2 · console_errors=0")
+print("PASS browser v0.4 · HTTP · rules=30 · variants=8 · audio demos · downloads=3 · console_errors=0")
