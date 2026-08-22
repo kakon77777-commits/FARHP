@@ -91,6 +91,23 @@ REQUIRED_LABELED_CONTROLS = {
     "rawMode",
 }
 
+REQUIRED_SOUND_IDS = {
+    "soundStudio",
+    "soundStatus",
+    "playSound",
+    "stopSound",
+    "exportSoundWav",
+    "autoSoundDemo",
+    "randomSoundDemo",
+    "replayRandomSound",
+    "soundWaveCanvas",
+    "soundReading",
+    "soundVoice",
+    "soundPhase",
+    "soundDomain",
+    "soundSeed",
+}
+
 
 class SiteParser(HTMLParser):
     def __init__(self):
@@ -102,6 +119,7 @@ class SiteParser(HTMLParser):
         self.aria_live_count = 0
         self.status_role_count = 0
         self.meta_names = set()
+        self.voice_button_count = 0
         self.title_parts = []
         self._in_title = False
 
@@ -120,6 +138,8 @@ class SiteParser(HTMLParser):
             self.status_role_count += 1
         if tag == "script" and values.get("src"):
             self.resource_urls.append(values["src"])
+        if tag == "button" and values.get("data-voice"):
+            self.voice_button_count += 1
         if tag == "link" and values.get("href"):
             self.resource_urls.append(values["href"])
         if tag == "meta":
@@ -169,6 +189,15 @@ class SiteContractTests(unittest.TestCase):
 
     def test_form_controls_have_explicit_labels(self):
         self.assertTrue(REQUIRED_LABELED_CONTROLS <= PARSER.labels_for)
+
+    def test_sound_studio_is_accessible_and_loaded_before_the_controller(self):
+        self.assertTrue(REQUIRED_SOUND_IDS <= PARSER.ids)
+        self.assertEqual(3, PARSER.voice_button_count)
+        self.assertIn("合成聲線，不代表生理分類", HTML)
+        self.assertIn("PH16 代表性合成", HTML)
+        audio_index = PARSER.resource_urls.index("assets/farhp_audio.js?v=20260822")
+        app_index = PARSER.resource_urls.index("assets/app.js?v=20260822")
+        self.assertLess(audio_index, app_index)
 
     def test_desktop_hero_type_keeps_the_spoken_headline_readable(self):
         self.assertIn("font-size: clamp(50px, 5.3vw, 82px);", CSS)

@@ -233,6 +233,56 @@
           </details>
         </section>
       </div>
+
+      <div class="sound-studio" id="soundStudio" data-reveal>
+        <div class="sound-heading">
+          <div>
+            <p class="control-index">03B / FARHP SOUND</p>
+            <h3>讓這個符號發出聲音。</h3>
+            <p>目前配方會直接送進瀏覽器合成器。聲調、聲母、韻尾和 FARHP 各做自己的工作，不用上傳任何資料。</p>
+          </div>
+          <span class="sound-badge">PH16 代表性合成</span>
+        </div>
+
+        <div class="sound-grid">
+          <div class="sound-controls">
+            <fieldset class="voice-fieldset">
+              <legend>選一條合成聲線</legend>
+              <div class="voice-buttons" role="group" aria-label="合成聲線">
+                <button type="button" data-voice="neutral" aria-pressed="true">中性聲</button>
+                <button type="button" data-voice="male" aria-pressed="false">男聲 <small>低域合成</small></button>
+                <button type="button" data-voice="female" aria-pressed="false">女聲 <small>高域合成</small></button>
+              </div>
+              <p>合成聲線，不代表生理分類。</p>
+            </fieldset>
+
+            <div class="sound-actions" aria-label="聲音播放與示範">
+              <button id="playSound" class="button button-copper" type="button">▶ 播放目前聲音</button>
+              <button id="stopSound" class="button button-outline" type="button">■ 停止</button>
+              <button id="autoSoundDemo" class="button button-signal" type="button">自動示範</button>
+              <button id="randomSoundDemo" class="button button-dark" type="button">隨機示範</button>
+              <button id="replayRandomSound" class="button button-dark" type="button" disabled>重播這次隨機</button>
+              <button id="exportSoundWav" class="button button-dark" type="button">匯出 WAV</button>
+            </div>
+
+            <p id="soundStatus" class="sound-status" role="status" aria-live="polite">音訊模組準備中…</p>
+
+            <dl class="sound-meta">
+              <div><dt>讀法</dt><dd id="soundReading">—</dd></div>
+              <div><dt>聲線</dt><dd id="soundVoice">—</dd></div>
+              <div><dt>相位</dt><dd id="soundPhase">—</dd></div>
+              <div><dt>來源</dt><dd id="soundDomain">—</dd></div>
+              <div><dt>隨機 seed</dt><dd id="soundSeed">—</dd></div>
+            </dl>
+          </div>
+
+          <div class="sound-visual">
+            <div class="sound-canvas-label"><span>SYNTHESIZED WAVEFORM</span><span>24 kHz / MONO</span></div>
+            <canvas id="soundWaveCanvas" width="1200" height="320" aria-label="目前 FARHP 代表性合成波形"></canvas>
+            <p>PH16 只保存可視簽名，所以這裡播放的是固定、可重現的代表聲音，不是唯一正確的發音。</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="section section-light" id="evidence" aria-labelledby="evidence-title">
@@ -362,6 +412,7 @@
   <script src="data/EMPSL_legality_report_v0.4.js"></script>
   <script src="examples/EMPSL_legality_examples_v0.4.js"></script>
   <script src="assets/empsl_core.js"></script>
+  <script src="assets/farhp_audio.js?v=20260822"></script>
   <script src="assets/app.js?v=20260822"></script>
   <script src="assets/site.js?v=20260822"></script>
 </body>
