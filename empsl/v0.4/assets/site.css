@@ -55,6 +55,13 @@ body::before {
   mix-blend-mode: overlay;
 }
 
+.top-anchor {
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 1px;
+}
+
 a {
   color: inherit;
 }

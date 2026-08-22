@@ -145,6 +145,8 @@ class SiteContractTests(unittest.TestCase):
     def test_brand_and_dual_entry_exist(self):
         self.assertIn("Axioglyph｜理符", HTML)
         self.assertIn("Built on EMPSL v0.4", HTML)
+        self.assertIn('<div class="top-anchor" id="top"', HTML)
+        self.assertNotIn('<header class="site-header" id="top">', HTML)
         self.assertIn('href="#overview"', HTML)
         self.assertIn('href="#lab"', HTML)
         self.assertIn("符號，不只是被畫出來。", HTML)
@@ -161,8 +163,9 @@ class SiteContractTests(unittest.TestCase):
     def test_resources_are_relative_and_feedback_is_accessible(self):
         for url in PARSER.resource_urls:
             self.assertFalse(url.startswith("/"), url)
-        self.assertIn("assets/site.css", PARSER.resource_urls)
-        self.assertIn("assets/site.js", PARSER.resource_urls)
+        self.assertIn("assets/site.css?v=20260822", PARSER.resource_urls)
+        self.assertIn("assets/app.js?v=20260822", PARSER.resource_urls)
+        self.assertIn("assets/site.js?v=20260822", PARSER.resource_urls)
         self.assertGreaterEqual(PARSER.aria_live_count, 1)
         self.assertGreaterEqual(PARSER.status_role_count, 1)
 
