@@ -5,6 +5,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 HTML = (ROOT / "index.html").read_text(encoding="utf-8")
+CSS = (ROOT / "assets" / "site.css").read_text(encoding="utf-8")
 
 REQUIRED_SECTIONS = {
     "overview",
@@ -169,10 +170,13 @@ class SiteContractTests(unittest.TestCase):
     def test_form_controls_have_explicit_labels(self):
         self.assertTrue(REQUIRED_LABELED_CONTROLS <= PARSER.labels_for)
 
+    def test_desktop_hero_type_keeps_the_spoken_headline_readable(self):
+        self.assertIn("font-size: clamp(52px, 6vw, 90px);", CSS)
+
     def test_resources_are_relative_and_feedback_is_accessible(self):
         for url in PARSER.resource_urls:
             self.assertFalse(url.startswith("/"), url)
-        self.assertIn("assets/site.css?v=20260822", PARSER.resource_urls)
+        self.assertIn("assets/site.css?v=20260822b", PARSER.resource_urls)
         self.assertIn("assets/app.js?v=20260822", PARSER.resource_urls)
         self.assertIn("assets/site.js?v=20260822", PARSER.resource_urls)
         self.assertGreaterEqual(PARSER.aria_live_count, 1)
