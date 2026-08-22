@@ -149,8 +149,17 @@ class SiteContractTests(unittest.TestCase):
         self.assertNotIn('<header class="site-header" id="top">', HTML)
         self.assertIn('href="#overview"', HTML)
         self.assertIn('href="#lab"', HTML)
-        self.assertIn("符號，不只是被畫出來。", HTML)
-        self.assertIn("它可以被證明。", HTML)
+        for phrase in (
+            "畫一個符號不難。",
+            "先不講規格。你只要想一件事。",
+            "別只看，直接動手改。",
+            "不是「我這邊有跑過」就算數。",
+            "現在先把字做好；下一步才是把語言跑起來。",
+        ):
+            self.assertIn(phrase, HTML)
+
+        for phrase in ("可稽核", "目前權威節點", "形式符號語言工程"):
+            self.assertNotIn(phrase, HTML)
 
     def test_required_sections_and_lab_controls_exist(self):
         self.assertTrue(REQUIRED_SECTIONS <= PARSER.ids)
@@ -172,6 +181,8 @@ class SiteContractTests(unittest.TestCase):
     def test_metadata_and_research_boundaries_are_present(self):
         self.assertIn("Axioglyph", "".join(PARSER.title_parts))
         self.assertTrue({"description", "og:title", "og:description"} <= PARSER.meta_names)
+        self.assertIn('href="https://axioglyph.evemisslab.com/"', HTML)
+        self.assertIn('content="https://axioglyph.evemisslab.com/"', HTML)
         for phrase in (
             "128",
             "256",

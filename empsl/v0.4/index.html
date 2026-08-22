@@ -3,12 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Axioglyph｜理符是一座可驗證的字形語言實驗室：把字形、華語音系、型別語義與 FARHP 聲學整合成可稽核的符號配方。">
+  <meta name="description" content="畫一個符號不難；難的是說清楚它怎麼讀、代表什麼，改了一筆之後還是不是同一個東西。Axioglyph 讓你直接動手試。">
   <meta name="theme-color" content="#0a0d12">
   <meta property="og:title" content="Axioglyph｜理符 — 可驗證的字形語言實驗室">
-  <meta property="og:description" content="先看懂一套符號如何被組成、驗證與追溯，再親手進入 EMPSL v0.4 實驗室。">
+  <meta property="og:description" content="把字形、讀音、意思和 FARHP 聲學放在一起。直接改、故意弄錯，再看它為什麼通過或失敗。">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://axioglyph.evemisslab.com/">
   <title>Axioglyph｜理符 — 可驗證的字形語言實驗室</title>
+  <link rel="canonical" href="https://axioglyph.evemisslab.com/">
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="assets/site.css?v=20260822">
 </head>
@@ -28,11 +30,11 @@
       <span>選單</span><i aria-hidden="true"></i>
     </button>
     <nav class="site-nav" id="siteNavLinks" aria-label="主要導覽">
-      <a href="#overview">概念</a>
-      <a href="#system">系統</a>
-      <a href="#evidence">證據</a>
-      <a href="#roadmap">路線圖</a>
-      <a class="nav-cta" href="#lab">進入實驗室</a>
+      <a href="#overview">先看懂</a>
+      <a href="#system">怎麼組</a>
+      <a href="#evidence">測過什麼</a>
+      <a href="#roadmap">接下來</a>
+      <a class="nav-cta" href="#lab">直接動手</a>
     </nav>
   </header>
 
@@ -40,14 +42,14 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-grid">
         <div class="hero-copy" data-reveal>
-          <p class="eyebrow"><span>AXG / 0001</span> 可驗證的形式符號語言</p>
-          <h1 id="hero-title">符號，不只是被畫出來。<em>它可以被證明。</em></h1>
-          <p class="hero-lead">Axioglyph 將字形、華語音系、型別語義與 FARHP 聲學放進同一份可檢查的配方。每一個符號都有穩定身份、組成規則與可稽核證書。</p>
+          <p class="eyebrow"><span>AXG / 0001</span> 字形、讀音和意思，放在一起看</p>
+          <h1 id="hero-title">畫一個符號不難。<em>難的是把它說清楚。</em></h1>
+          <p class="hero-lead">畫一個符號不難。難的是說清楚：它怎麼讀、代表什麼，改了一筆之後還是不是同一個東西。Axioglyph 就是拿來做這件事的。</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#overview">先理解系統 <span aria-hidden="true">↓</span></a>
-            <a class="button button-ghost" href="#lab">直接進入實驗室 <span aria-hidden="true">↘</span></a>
+            <a class="button button-primary" href="#overview">先看看它在做什麼 <span aria-hidden="true">↓</span></a>
+            <a class="button button-ghost" href="#lab">直接動手 <span aria-hidden="true">↘</span></a>
           </div>
-          <p class="hero-boundary"><b>研究邊界</b>　這是現代設計的形式符號語言工程，不是歷史語言復原、神秘學字體或加密系統。</p>
+          <p class="hero-boundary"><b>先說清楚</b>　這不是歷史語言復原，也不是神秘學字體或加密系統。它是一套正在發展中的現代符號工具。</p>
         </div>
 
         <div class="hero-figure" aria-hidden="true" data-reveal>
@@ -69,7 +71,7 @@
           <div class="hero-index"><span>01</span><span>06 SLOT MODEL</span><span>SHA-256</span></div>
         </div>
       </div>
-      <div class="hero-ledger" aria-label="目前研究節點摘要">
+      <div class="hero-ledger" aria-label="目前放進系統的內容">
         <span><b>128</b> 字形原子</span>
         <span><b>256</b> 受控變體</span>
         <span><b>30</b> 合法性規則</span>
@@ -81,37 +83,37 @@
       <div class="section-heading" data-reveal>
         <p class="section-index">01 / ORIENTATION</p>
         <div>
-          <h2 id="overview-title">先別急著讀規格。<br>從一個問題開始。</h2>
-          <p>如果一個符號能被任意旋轉、加線、改音、換義，它還是同一個符號嗎？Axioglyph 的答案不是「看起來像」，而是一條可以重跑的證據鏈。</p>
+          <h2 id="overview-title">先不講規格。你只要想一件事。</h2>
+          <p>同一個符號，轉個方向、加一筆、換個讀音之後，還算不算原來那一個？光靠「看起來很像」不夠，所以 Axioglyph 會把每次改動都記下來，再重新檢查一次。</p>
         </div>
       </div>
 
       <div class="concept-grid">
         <article class="concept-card" data-reveal>
           <span>01</span><p class="card-kicker">IDENTITY</p>
-          <h3>身份先於外觀</h3>
-          <p>Stable ID 是配方的身份。PUA 碼位、SVG 輪廓與字型檔只是呈現載體，不能取代它。</p>
+          <h3>先有名字，才談長相</h3>
+          <p>Stable ID 才是符號的身分。PUA 碼位、SVG 和字型檔都只是它穿出去的衣服。</p>
         </article>
         <article class="concept-card" data-reveal>
           <span>02</span><p class="card-kicker">COMPOSITION</p>
-          <h3>每一筆都有槽位</h3>
-          <p>外框、種子、音系、相位與算子各自有角色。組合不是貼圖，而是受約束的結構。</p>
+          <h3>每個位置都有工作</h3>
+          <p>外框、種子、音系、相位和算子不是隨便疊上去的。放錯位置，系統就會告訴你哪裡不對。</p>
         </article>
         <article class="concept-card" data-reveal>
           <span>03</span><p class="card-kicker">MEANING</p>
-          <h3>語義帶著型別</h3>
-          <p>一元、二元、綁定與否定等算子，必須符合輸入數量、輸出型別與語義外框。</p>
+          <h3>意思不能只靠感覺</h3>
+          <p>一元、二元、綁定或否定，各自能接什麼、會產生什麼，都要講得出來。</p>
         </article>
         <article class="concept-card" data-reveal>
           <span>04</span><p class="card-kicker">EVIDENCE</p>
-          <h3>結果附上證書</h3>
-          <p>Schema 先確認結構；規則引擎再檢查跨欄位關係，留下錯誤、警告與雜湊。</p>
+          <h3>做完要能重跑</h3>
+          <p>系統會留下錯誤、警告和雜湊。以後再打開，不必猜當時到底做了什麼。</p>
         </article>
       </div>
 
       <div class="definition-strip" data-reveal>
-        <p>一句話定義</p>
-        <blockquote>Axioglyph 是一套把「畫出符號」提升為「編譯並驗證符號」的研究工具。</blockquote>
+        <p>簡單講</p>
+        <blockquote>Axioglyph 不只幫你畫字。它還會記住這個字怎麼組，順手檢查有沒有自相矛盾。</blockquote>
       </div>
     </section>
 
@@ -119,8 +121,8 @@
       <div class="section-heading" data-reveal>
         <p class="section-index">02 / THE SIX-SLOT MODEL</p>
         <div>
-          <h2 id="system-title">一個字形，六個彼此制約的槽。</h2>
-          <p>六槽不是排版格線，而是配方的介面。改動其中一槽，合法性、讀法、語義或聲學證書可能一起改變。</p>
+          <h2 id="system-title">一個字，六個位置。動一個，其他也可能跟著變。</h2>
+          <p>這六個位置不是排版格線。它們分別管形狀、讀音、意思和聲音。你改了其中一個，整份配方就會再檢查一次。</p>
         </div>
       </div>
 
@@ -134,10 +136,10 @@
           <div class="slot slot-acoustic"><b>06</b><span>FARHP 物件</span><small>ACOUSTIC</small></div>
         </div>
         <ol class="system-notes">
-          <li><span>構形</span><p>從 128 個原子與 256 個受控變體選出可追溯組件。</p></li>
-          <li><span>驗證</span><p>檢查音系、變換、語義、算子與聲學的跨欄位一致性。</p></li>
-          <li><span>證書</span><p>輸出 PASS／FAIL、規則命中、ruleset SHA-256 與 recipe SHA-256。</p></li>
-          <li><span>交換</span><p>匯出 SVG 作視覺呈現，匯出 JSON 保存完整機器可讀配方。</p></li>
+          <li><span>先組起來</span><p>從 128 個原子和 256 個變體裡，挑出這個字要用的東西。</p></li>
+          <li><span>再檢查</span><p>讀音、變形、意思和聲學資料會一起檢查，不是各看各的。</p></li>
+          <li><span>留下結果</span><p>PASS／FAIL、命中哪條規則、兩種 SHA-256，都會保留下來。</p></li>
+          <li><span>帶出去用</span><p>SVG 留住畫面，JSON 留住整份配方。兩個都可以直接下載。</p></li>
         </ol>
       </div>
     </section>
@@ -146,8 +148,8 @@
       <div class="section-heading lab-heading" data-reveal>
         <p class="section-index">03 / GLYPH GRAMMAR LAB</p>
         <div>
-          <h2 id="lab-title">現在，親手改一個符號。</h2>
-          <p>從合法案例開始，或載入一個刻意破壞的案例。每次變動都會重新產生字形、完整配方與規則證書。</p>
+          <h2 id="lab-title">別只看，直接動手改。</h2>
+          <p>你可以先載入正常案例，也可以故意挑一個有問題的。每改一次，字形、配方和檢查結果都會跟著更新。</p>
         </div>
       </div>
 
@@ -237,8 +239,8 @@
       <div class="section-heading" data-reveal>
         <p class="section-index">04 / EVIDENCE LEDGER</p>
         <div>
-          <h2 id="evidence-title">不是一句「它能跑」。<br>而是一組可重現的證據。</h2>
-          <p>下面的數字來自 v0.4 規則目錄與批次報告。工程測試證明規則引擎的一致性；它不等同真人知覺實驗或自然語音結論。</p>
+          <h2 id="evidence-title">不是「我這邊有跑過」就算數。</h2>
+          <p>下面這些數字都能重跑。不過先說好：它們證明的是程式有照規則工作，不代表真人一定會這樣聽，也不代表自然語音已經被解釋完了。</p>
         </div>
       </div>
 
@@ -248,13 +250,13 @@
       </div>
 
       <div class="evidence-grid">
-        <article data-reveal><span>REGISTRY</span><h3>128 原子／256 變體</h3><p>原子註冊表與受控變體表提供穩定、可查驗的構形來源。</p></article>
-        <article data-reveal><span>CROSS-CHECK</span><h3>Node × Python</h3><p>核心規則與批次工具從兩條執行路徑交叉檢查同一份資料。</p></article>
-        <article data-reveal><span>TRACEABILITY</span><h3>兩層 SHA-256</h3><p>ruleset 雜湊固定規則版本；recipe 雜湊固定配方內容。</p></article>
+        <article data-reveal><span>REGISTRY</span><h3>128 原子／256 變體</h3><p>每個零件都有登記，不會今天叫這個、明天又變成另一個。</p></article>
+        <article data-reveal><span>CROSS-CHECK</span><h3>Node × Python</h3><p>同一份資料走兩條不同的程式路線，結果要能對得起來。</p></article>
+        <article data-reveal><span>TRACEABILITY</span><h3>兩層 SHA-256</h3><p>一個記規則版本，一個記目前配方。哪邊變了，一看就知道。</p></article>
       </div>
 
       <div class="evidence-callout" data-reveal>
-        <p>PASS 的精確含義</p>
+        <p>PASS 到底代表什麼</p>
         <code>error_count === 0</code>
         <span>警告仍保留在證書中，不會被成功狀態隱藏。</span>
       </div>
@@ -265,7 +267,7 @@
         <p class="section-index">05 / METHOD &amp; RULES</p>
         <div>
           <h2 id="method-title">同一個外觀，不保證是同一個東西。</h2>
-          <p>Schema 只回答「資料形狀正不正確」；規則引擎進一步回答「這些欄位放在一起是否有意義」。兩者缺一不可。</p>
+          <p>Schema 先看欄位有沒有填對；規則引擎再看這些東西放在一起合不合理。前者通過，不代表後者一定沒問題。</p>
         </div>
       </div>
 
@@ -281,7 +283,7 @@
         </article>
         <div class="method-operator" aria-hidden="true">＝</div>
         <article class="method-result" data-reveal>
-          <p class="card-kicker">CERTIFICATE</p><h3>可稽核證書</h3>
+          <p class="card-kicker">CERTIFICATE</p><h3>檢查結果</h3>
           <ul><li>PASS／FAIL</li><li>錯誤與警告清單</li><li>規則與配方雜湊</li></ul>
         </article>
       </div>
@@ -289,13 +291,13 @@
       <div class="registry-block">
         <div class="registry-heading">
           <div><p class="section-index">CONTROLLED VARIANTS</p><h3>目前種子的八個變體</h3></div>
-          <p>點選變體會同步更新變換角色、驗證狀態與配方雜湊。</p>
+          <p>點一個變體，畫面和檢查結果馬上跟著變。你不用自己猜它有沒有真的換成功。</p>
         </div>
         <div id="variantGallery" class="atom-grid"></div>
       </div>
 
       <details class="rule-catalog">
-        <summary><span>展開完整規則目錄</span><b>30 條跨欄位規則</b></summary>
+        <summary><span>看看完整規則</span><b>30 條跨欄位規則</b></summary>
         <div id="ruleGrid" class="rule-grid"></div>
       </details>
     </section>
@@ -304,8 +306,8 @@
       <div class="section-heading" data-reveal>
         <p class="section-index">06 / VERSION LINE</p>
         <div>
-          <h2 id="roadmap-title">現在可驗證；下一步可編譯。</h2>
-          <p>v0.4 是目前可工作的字形語法與合法性層。v0.5 是研究方向，不把尚未完成的能力提前算進成果。</p>
+          <h2 id="roadmap-title">現在先把字做好；下一步才是把語言跑起來。</h2>
+          <p>v0.4 已經可以組字、找錯和匯出。v0.5 才會往詞庫、型別推論和編譯器走；還沒做完的，我們不先算進來。</p>
         </div>
       </div>
 
@@ -313,7 +315,7 @@
         <article class="version-now" data-reveal>
           <span>NOW / v0.4</span><h3>Glyph Grammar &amp; Legality</h3>
           <p>六槽字形、華語音系、受控變換、型別語義、FARHP 聲學、30 條規則與驗證證書。</p>
-          <b>目前權威節點</b>
+          <b>目前可用版本</b>
         </article>
         <article data-reveal>
           <span>NEXT / v0.5</span><h3>Language Toolchain</h3>
@@ -326,15 +328,15 @@
     <section class="section faq-section" id="faq" aria-labelledby="faq-title">
       <div class="section-heading" data-reveal>
         <p class="section-index">07 / QUESTIONS</p>
-        <div><h2 id="faq-title">你可能先想問。</h2><p>把界線說清楚，比把名稱說得神祕重要。</p></div>
+        <div><h2 id="faq-title">先把幾個容易誤會的地方講清楚。</h2><p>名字可以很酷，但它到底是什麼，還是直接說比較快。</p></div>
       </div>
       <div class="faq-list">
-        <details><summary>這是一套字型嗎？</summary><p>不是。字型或 SVG 是視覺載體；Axioglyph 管理的是穩定身份、結構配方、規則與證書。</p></details>
-        <details><summary>這是一種可以直接說的自然語言嗎？</summary><p>不是現成自然語言。它是形式符號語言工程，目前整合華語音系欄位以研究跨模態結構。</p></details>
-        <details><summary>它是歷史以諾語或神秘文字的復原嗎？</summary><p>不是歷史語言復原。ENO 種子是現代設計資產，不構成歷史真實性主張。</p></details>
-        <details><summary>它能用來加密嗎？</summary><p>不把它當加密系統。穩定 ID、雜湊與驗證證書服務的是一致性和追溯，不是機密性。</p></details>
-        <details><summary>我能拿走產生的符號嗎？</summary><p>可以從實驗室匯出 SVG 與完整 JSON 配方；兩者分別保存外觀與機器可讀結構。</p></details>
-        <details><summary>如何知道規則真的有被執行？</summary><p>可載入錯誤案例觀察規則命中，再用自動修正回到 PASS；批次工具也會交叉檢查 4,096 筆語料。</p></details>
+        <details><summary>這是一套字型嗎？</summary><p>不是。SVG 和字型只管它看起來怎樣；Axioglyph 還會記住它是誰、怎麼組，以及檢查結果。</p></details>
+        <details><summary>這是一種可以直接說的自然語言嗎？</summary><p>現在還不是。它先把字形、讀音和意思接起來，讓後面的語言工具有東西可以接著做。</p></details>
+        <details><summary>它是歷史以諾語或神秘文字的復原嗎？</summary><p>不是。ENO 種子是現代設計出來的素材，沒有宣稱自己還原了哪一種古代文字。</p></details>
+        <details><summary>它能用來加密嗎？</summary><p>不是拿來保密的。Stable ID 和雜湊的用途，是讓你知道眼前這份東西有沒有被改過。</p></details>
+        <details><summary>我能把做好的符號帶走嗎？</summary><p>可以。SVG 是畫面，JSON 是完整配方，兩個按鈕都在上面的實驗室裡。</p></details>
+        <details><summary>怎麼知道規則真的有在跑？</summary><p>載入錯誤案例就看得到哪條規則被撞到；按自動修正，它會回到 PASS。批次工具另外跑過 4,096 筆資料。</p></details>
       </div>
     </section>
   </main>
@@ -345,10 +347,10 @@
         <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
         <span class="brand-copy"><b>Axioglyph <span>理符</span></b><small>Built on EMPSL v0.4</small></span>
       </a>
-      <p>符號語言、型別語義與相位聲學的可驗證研究介面。</p>
+      <p>把字形、讀音、意思和聲學資料放在一起，讓你直接改，也看得懂哪裡出了問題。</p>
     </div>
     <div class="footer-links">
-      <a href="#overview">理解系統</a><a href="#lab">互動實驗室</a><a href="#evidence">研究證據</a><a href="#faq">研究邊界</a>
+      <a href="#overview">先看懂</a><a href="#lab">直接動手</a><a href="#evidence">測過什麼</a><a href="#faq">先說清楚</a>
     </div>
     <p class="footer-note">Axioglyph / EMPSL v0.4 · Research interface · <span id="siteYear">2026</span></p>
   </footer>
