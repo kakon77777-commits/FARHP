@@ -1164,6 +1164,12 @@ pre {
   width: 100%;
 }
 
+.sound-actions .button-outline {
+  border-color: var(--line-dark);
+  color: var(--paper-50);
+  background: transparent;
+}
+
 .sound-actions button:disabled,
 .voice-buttons button:disabled {
   cursor: not-allowed;

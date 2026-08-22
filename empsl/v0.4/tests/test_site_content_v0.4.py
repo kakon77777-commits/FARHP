@@ -202,10 +202,16 @@ class SiteContractTests(unittest.TestCase):
     def test_desktop_hero_type_keeps_the_spoken_headline_readable(self):
         self.assertIn("font-size: clamp(50px, 5.3vw, 82px);", CSS)
 
+    def test_sound_stop_button_has_light_text_on_the_dark_panel(self):
+        self.assertIn(
+            ".sound-actions .button-outline {\n  border-color: var(--line-dark);\n  color: var(--paper-50);",
+            CSS,
+        )
+
     def test_resources_are_relative_and_feedback_is_accessible(self):
         for url in PARSER.resource_urls:
             self.assertFalse(url.startswith("/"), url)
-        self.assertIn("assets/site.css?v=20260822-audio1", PARSER.resource_urls)
+        self.assertIn("assets/site.css?v=20260822-audio2", PARSER.resource_urls)
         self.assertIn("assets/app.js?v=20260822-audio2", PARSER.resource_urls)
         self.assertIn("assets/site.js?v=20260822", PARSER.resource_urls)
         self.assertGreaterEqual(PARSER.aria_live_count, 1)
