@@ -171,12 +171,12 @@ class SiteContractTests(unittest.TestCase):
         self.assertTrue(REQUIRED_LABELED_CONTROLS <= PARSER.labels_for)
 
     def test_desktop_hero_type_keeps_the_spoken_headline_readable(self):
-        self.assertIn("font-size: clamp(52px, 6vw, 90px);", CSS)
+        self.assertIn("font-size: clamp(50px, 5.3vw, 82px);", CSS)
 
     def test_resources_are_relative_and_feedback_is_accessible(self):
         for url in PARSER.resource_urls:
             self.assertFalse(url.startswith("/"), url)
-        self.assertIn("assets/site.css?v=20260822b", PARSER.resource_urls)
+        self.assertIn("assets/site.css?v=20260822c", PARSER.resource_urls)
         self.assertIn("assets/app.js?v=20260822", PARSER.resource_urls)
         self.assertIn("assets/site.js?v=20260822", PARSER.resource_urls)
         self.assertGreaterEqual(PARSER.aria_live_count, 1)
