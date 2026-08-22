@@ -1,9 +1,364 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>EMPSL Grammar Lab v0.4</title><style>
-:root{--ink:#121722;--muted:#706657;--gold:#9a6124;--paper:#fbf5e8;--card:#fffdf8;--line:#d8cbb8;--red:#a42828;--green:#16653b;--amber:#a56a05;--blue:#28598a}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 12% 8%,#fffdf4,#efe3cc 56%,#dac5a2);color:var(--ink);font-family:Inter,"Noto Sans TC",system-ui,sans-serif}.hero{padding:54px max(24px,5vw) 32px}.kicker{letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:900}.hero h1{font-family:Georgia,"Noto Serif TC",serif;font-size:clamp(40px,6vw,76px);line-height:.96;margin:.18em 0}.hero p{max-width:1050px;color:var(--muted);font-size:18px;line-height:1.7}.layout{display:grid;grid-template-columns:minmax(380px,540px) minmax(400px,1fr);gap:24px;padding:0 max(24px,5vw) 50px}.panel{background:rgba(255,253,248,.9);border:1px solid var(--line);border-radius:28px;box-shadow:0 24px 72px #5b3e1622;padding:24px}.sticky{position:sticky;top:16px;align-self:start}.glyph-stage{background:var(--paper);border:1px solid var(--line);border-radius:24px;min-height:410px;display:grid;place-items:center}.glyph-stage svg{width:min(100%,450px)}.controls{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}.field{display:flex;flex-direction:column;gap:5px}.field.wide{grid-column:1/-1}.field.triple{grid-column:span 1}label{font-size:11px;font-weight:900;color:var(--muted);letter-spacing:.06em}select,input{width:100%;padding:10px 11px;border:1px solid var(--line);border-radius:11px;background:white;color:var(--ink)}.check{display:flex;align-items:center;gap:8px}.check input{width:auto}.actions{display:flex;flex-wrap:wrap;gap:9px;margin:16px 0}button{border:0;border-radius:999px;padding:11px 15px;background:var(--ink);color:#fff;font-weight:850;cursor:pointer}button.alt{background:var(--gold)}button.soft{background:#ece2cf;color:var(--ink)}pre{white-space:pre-wrap;word-break:break-word;background:#161a20;color:#efe6d8;padding:16px;border-radius:16px;max-height:420px;overflow:auto;font-size:11px}.ok{color:var(--green);font-weight:900}.bad{color:var(--red);font-weight:900}.note{border-left:4px solid var(--gold);padding:12px 16px;background:#f7ead4;border-radius:0 12px 12px 0;color:#5b4d39;line-height:1.65}.section-title{font-family:Georgia,"Noto Serif TC",serif;font-size:30px;margin:30px 0 12px}.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:16px 0 24px}.stat{background:#f8ecd7;border:1px solid #decdb0;border-radius:16px;padding:14px}.stat b{display:block;font-size:28px;font-family:Georgia,serif}.stat span{color:var(--muted);font-size:12px}.issues{display:grid;gap:8px}.issue{border:1px solid var(--line);border-left-width:5px;border-radius:14px;padding:11px 13px;background:#fff}.issue.error{border-left-color:var(--red)}.issue.warning{border-left-color:var(--amber)}.issue b{display:block;font-size:13px}.issue span,.issue small{display:block;color:var(--muted);margin-top:4px}.empty{padding:14px;border:1px dashed var(--line);border-radius:12px;color:var(--green)}.rule-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:11px}.rule{border:1px solid var(--line);background:#fff;border-radius:16px;padding:14px}.rule header{display:flex;justify-content:space-between;gap:8px;color:var(--gold);font-size:11px}.rule h3{font-size:15px;margin:9px 0 5px}.rule p{font-size:12px;color:var(--muted);line-height:1.5}.rule em{font-size:10px;color:var(--blue);font-style:normal}.atom-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.atom-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:8px;text-align:center;cursor:pointer}.atom-card:hover{outline:3px solid #9a612433}.atom-svg{height:88px;display:grid;place-items:center}.atom-svg svg{width:84px;height:84px}.atom-card b,.atom-card span{display:block;font-size:9px}.atom-card span{color:var(--muted)}#variantMeta{font-weight:850;color:var(--gold);margin:10px 0}.subhead{grid-column:1/-1;border-top:1px solid var(--line);padding-top:12px;margin-top:4px;font-weight:900;color:var(--gold)}.inline-meta{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--muted)}@media(max-width:1050px){.layout{grid-template-columns:1fr}.sticky{position:static}}@media(max-width:620px){.controls{grid-template-columns:1fr}.atom-grid{grid-template-columns:repeat(2,1fr)}}
-</style></head><body><header class="hero"><div class="kicker">EveMissLab · EMPSL v0.4</div><h1>Glyph Grammar Lab<br>字形語法與合法性層</h1><p>字形不再只是「能組合就算合法」。v0.4 同時檢查華語音系、受控變換、型別化語義、算子參數數量與 FARHP 聲學相容性，並為每個配方產生可稽核的規則證書。</p></header><main class="layout"><section class="panel sticky"><div id="glyph" class="glyph-stage"></div><div id="variantMeta"></div><div class="inline-meta"><span>推導聲學類別：<b id="inferredClass"></b></span><span>規則集：<b>v0.4</b></span></div><div class="controls">
-<div class="field wide"><label>穩定字形 ID</label><input id="gid"></div><div class="field"><label>語義外框</label><select id="frame"></select></div><div class="field"><label>基礎種子</label><select id="seedBase"></select></div><div class="field"><label>受控變換</label><select id="seedTransform"></select></div><div class="field"><label>變換角色</label><select id="transformRole"></select></div>
-<div class="subhead">華語音系與相位</div><div class="field"><label>聲母</label><select id="onset"></select></div><div class="field"><label>四呼</label><select id="hu"></select></div><div class="field"><label>韻類</label><select id="rime"></select></div><div class="field"><label>結構附標</label><select id="structure"></select></div><div class="field"><label>詞典聲調</label><select id="tone"></select></div><div class="field"><label>可視 FARHP 相位</label><select id="phase"></select></div>
-<div class="subhead">型別化語義</div><div class="field"><label>語義／算子附標</label><select id="operator"></select></div><div class="field"><label>語義種類</label><select id="semanticKind"></select></div><div class="field wide"><label>概念 ID</label><input id="concept"></div><div class="field"><label>參數模式</label><select id="arityMode"><option value="fixed">fixed</option><option value="variadic">variadic</option></select></div><div class="field"><label>固定數量／最小數量</label><input id="arityValue" type="number" min="0" max="8"></div><div class="field wide"><label>輸入型別（逗號分隔）</label><input id="inputTypes"></div><div class="field"><label>輸出型別</label><select id="outputType"></select></div><div class="field"><label>讀法</label><input id="reading"></div><div class="field wide"><label>義項</label><input id="gloss"></div>
-<div class="subhead">FARHP 聲學物件</div><div class="field"><label>來源</label><select id="acousticSource"></select></div><div class="field"><label>宣告聲學類別</label><select id="acousticClass"></select></div><div class="field"><label>聲學相位簽名</label><select id="phaseSignature"></select></div><div class="field"><label>信心度 <span id="confidenceValue"></span></label><input id="confidence" type="range" min="0" max="1" step="0.01"></div><div class="field wide"><label>FARHP profile ID</label><input id="profileId"></div><div class="field wide check"><input id="rawMode" type="checkbox"><label for="rawMode">顯示純幾何變體</label></div></div>
-<div class="actions"><button id="legalExample" class="alt">載入合法案例</button><button id="invalidExample" class="soft">載入錯誤案例</button><button id="repair">自動修正</button><button id="exportSvg">匯出 SVG</button><button id="exportJson">匯出 JSON</button></div><p id="status"></p><div id="issues" class="issues"></div><h3>完整配方</h3><pre id="json"></pre></section><section class="panel"><p class="note">JSON Schema 負責結構正確；v0.4 規則引擎負責跨欄位語法。通過 Schema 並不代表音系、算子參數或 FARHP 相位一定合法。</p><h2 class="section-title">批次驗證證書</h2><div id="stats" class="stats"></div><h2 class="section-title">目前種子的八個變體</h2><div id="variantGallery" class="atom-grid"></div><h2 class="section-title">30 條合法性規則</h2><div id="ruleGrid" class="rule-grid"></div></section></main>
-<script src="data/EMPSL_atom_registry_v0.2.js"></script><script src="data/EMPSL_seed_variant_registry_v0.3.js"></script><script src="rules/EMPSL_grammar_tables_v0.4.js"></script><script src="rules/EMPSL_rule_catalog_v0.4.js"></script><script src="data/EMPSL_legality_report_v0.4.js"></script><script src="examples/EMPSL_legality_examples_v0.4.js"></script><script src="assets/empsl_core.js"></script><script src="assets/app.js"></script></body></html>
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Axioglyph｜理符是一座可驗證的字形語言實驗室：把字形、華語音系、型別語義與 FARHP 聲學整合成可稽核的符號配方。">
+  <meta name="theme-color" content="#0a0d12">
+  <meta property="og:title" content="Axioglyph｜理符 — 可驗證的字形語言實驗室">
+  <meta property="og:description" content="先看懂一套符號如何被組成、驗證與追溯，再親手進入 EMPSL v0.4 實驗室。">
+  <meta property="og:type" content="website">
+  <title>Axioglyph｜理符 — 可驗證的字形語言實驗室</title>
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳至主要內容</a>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="Axioglyph 理符首頁">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="brand-copy">
+        <b>Axioglyph <span>理符</span></b>
+        <small>Built on EMPSL v0.4</small>
+      </span>
+    </a>
+    <button class="nav-toggle" id="siteNavToggle" type="button" aria-controls="siteNavLinks" aria-expanded="false">
+      <span>選單</span><i aria-hidden="true"></i>
+    </button>
+    <nav class="site-nav" id="siteNavLinks" aria-label="主要導覽">
+      <a href="#overview">概念</a>
+      <a href="#system">系統</a>
+      <a href="#evidence">證據</a>
+      <a href="#roadmap">路線圖</a>
+      <a class="nav-cta" href="#lab">進入實驗室</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-grid">
+        <div class="hero-copy" data-reveal>
+          <p class="eyebrow"><span>AXG / 0001</span> 可驗證的形式符號語言</p>
+          <h1 id="hero-title">符號，不只是被畫出來。<em>它可以被證明。</em></h1>
+          <p class="hero-lead">Axioglyph 將字形、華語音系、型別語義與 FARHP 聲學放進同一份可檢查的配方。每一個符號都有穩定身份、組成規則與可稽核證書。</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#overview">先理解系統 <span aria-hidden="true">↓</span></a>
+            <a class="button button-ghost" href="#lab">直接進入實驗室 <span aria-hidden="true">↘</span></a>
+          </div>
+          <p class="hero-boundary"><b>研究邊界</b>　這是現代設計的形式符號語言工程，不是歷史語言復原、神秘學字體或加密系統。</p>
+        </div>
+
+        <div class="hero-figure" aria-hidden="true" data-reveal>
+          <div class="construct-label label-a">STABLE ID</div>
+          <div class="construct-label label-b">RULESET 0.4</div>
+          <div class="construct-label label-c">CERT / PASS</div>
+          <div class="construct">
+            <span class="construct-ring ring-a"></span>
+            <span class="construct-ring ring-b"></span>
+            <span class="construct-ring ring-c"></span>
+            <span class="construct-axis axis-x"></span>
+            <span class="construct-axis axis-y"></span>
+            <span class="construct-seed"></span>
+            <span class="construct-node node-a"></span>
+            <span class="construct-node node-b"></span>
+            <span class="construct-node node-c"></span>
+            <span class="construct-node node-d"></span>
+          </div>
+          <div class="hero-index"><span>01</span><span>06 SLOT MODEL</span><span>SHA-256</span></div>
+        </div>
+      </div>
+      <div class="hero-ledger" aria-label="目前研究節點摘要">
+        <span><b>128</b> 字形原子</span>
+        <span><b>256</b> 受控變體</span>
+        <span><b>30</b> 合法性規則</span>
+        <span><b>4,096</b> 驗證語料</span>
+      </div>
+    </section>
+
+    <section class="section section-light" id="overview" aria-labelledby="overview-title">
+      <div class="section-heading" data-reveal>
+        <p class="section-index">01 / ORIENTATION</p>
+        <div>
+          <h2 id="overview-title">先別急著讀規格。<br>從一個問題開始。</h2>
+          <p>如果一個符號能被任意旋轉、加線、改音、換義，它還是同一個符號嗎？Axioglyph 的答案不是「看起來像」，而是一條可以重跑的證據鏈。</p>
+        </div>
+      </div>
+
+      <div class="concept-grid">
+        <article class="concept-card" data-reveal>
+          <span>01</span><p class="card-kicker">IDENTITY</p>
+          <h3>身份先於外觀</h3>
+          <p>Stable ID 是配方的身份。PUA 碼位、SVG 輪廓與字型檔只是呈現載體，不能取代它。</p>
+        </article>
+        <article class="concept-card" data-reveal>
+          <span>02</span><p class="card-kicker">COMPOSITION</p>
+          <h3>每一筆都有槽位</h3>
+          <p>外框、種子、音系、相位與算子各自有角色。組合不是貼圖，而是受約束的結構。</p>
+        </article>
+        <article class="concept-card" data-reveal>
+          <span>03</span><p class="card-kicker">MEANING</p>
+          <h3>語義帶著型別</h3>
+          <p>一元、二元、綁定與否定等算子，必須符合輸入數量、輸出型別與語義外框。</p>
+        </article>
+        <article class="concept-card" data-reveal>
+          <span>04</span><p class="card-kicker">EVIDENCE</p>
+          <h3>結果附上證書</h3>
+          <p>Schema 先確認結構；規則引擎再檢查跨欄位關係，留下錯誤、警告與雜湊。</p>
+        </article>
+      </div>
+
+      <div class="definition-strip" data-reveal>
+        <p>一句話定義</p>
+        <blockquote>Axioglyph 是一套把「畫出符號」提升為「編譯並驗證符號」的研究工具。</blockquote>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="system" aria-labelledby="system-title">
+      <div class="section-heading" data-reveal>
+        <p class="section-index">02 / THE SIX-SLOT MODEL</p>
+        <div>
+          <h2 id="system-title">一個字形，六個彼此制約的槽。</h2>
+          <p>六槽不是排版格線，而是配方的介面。改動其中一槽，合法性、讀法、語義或聲學證書可能一起改變。</p>
+        </div>
+      </div>
+
+      <div class="slot-composition" data-reveal>
+        <div class="slot-diagram" aria-label="六槽字形模型示意">
+          <div class="slot slot-frame"><b>01</b><span>語義外框</span><small>FRAME</small></div>
+          <div class="slot slot-seed"><b>02</b><span>基礎種子</span><small>SEED</small></div>
+          <div class="slot slot-phon"><b>03</b><span>華語音系</span><small>PHONOLOGY</small></div>
+          <div class="slot slot-tone"><b>04</b><span>聲調／相位</span><small>PHASE</small></div>
+          <div class="slot slot-op"><b>05</b><span>語義算子</span><small>OPERATOR</small></div>
+          <div class="slot slot-acoustic"><b>06</b><span>FARHP 物件</span><small>ACOUSTIC</small></div>
+        </div>
+        <ol class="system-notes">
+          <li><span>構形</span><p>從 128 個原子與 256 個受控變體選出可追溯組件。</p></li>
+          <li><span>驗證</span><p>檢查音系、變換、語義、算子與聲學的跨欄位一致性。</p></li>
+          <li><span>證書</span><p>輸出 PASS／FAIL、規則命中、ruleset SHA-256 與 recipe SHA-256。</p></li>
+          <li><span>交換</span><p>匯出 SVG 作視覺呈現，匯出 JSON 保存完整機器可讀配方。</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section lab-section" id="lab" aria-labelledby="lab-title">
+      <div class="section-heading lab-heading" data-reveal>
+        <p class="section-index">03 / GLYPH GRAMMAR LAB</p>
+        <div>
+          <h2 id="lab-title">現在，親手改一個符號。</h2>
+          <p>從合法案例開始，或載入一個刻意破壞的案例。每次變動都會重新產生字形、完整配方與規則證書。</p>
+        </div>
+      </div>
+
+      <noscript><p class="noscript-note">實驗室需要 JavaScript；其餘研究內容仍可閱讀。</p></noscript>
+      <div class="lab-workspace">
+        <section class="lab-preview" aria-label="字形預覽與驗證結果">
+          <div class="lab-panel-label"><span>LIVE COMPOSITION</span><span>EMPSL / 0.4</span></div>
+          <div id="glyph" class="glyph-stage" aria-label="目前字形預覽"></div>
+          <div id="variantMeta" class="variant-meta"></div>
+          <div class="inline-meta">
+            <span>推導聲學類別 <b id="inferredClass"></b></span>
+            <span>規則集 <b>v0.4</b></span>
+          </div>
+          <p id="status" class="validation-status" role="status" aria-live="polite">正在初始化驗證器…</p>
+          <p id="activityStatus" class="activity-status" role="status" aria-live="polite">實驗室準備中。</p>
+          <div id="issues" class="issues" aria-label="合法性問題"></div>
+        </section>
+
+        <section class="lab-controls" aria-label="字形配方控制器">
+          <div class="controls-group">
+            <p class="control-index">A / IDENTITY &amp; FORM</p>
+            <div class="controls">
+              <div class="field wide"><label for="gid">穩定字形 ID</label><input id="gid" autocomplete="off"></div>
+              <div class="field"><label for="frame">語義外框</label><select id="frame"></select></div>
+              <div class="field"><label for="seedBase">基礎種子</label><select id="seedBase"></select></div>
+              <div class="field"><label for="seedTransform">受控變換</label><select id="seedTransform"></select></div>
+              <div class="field"><label for="transformRole">變換角色</label><select id="transformRole"></select></div>
+            </div>
+          </div>
+
+          <div class="controls-group">
+            <p class="control-index">B / PHONOLOGY &amp; PHASE</p>
+            <div class="controls controls-three">
+              <div class="field"><label for="onset">聲母</label><select id="onset"></select></div>
+              <div class="field"><label for="hu">四呼</label><select id="hu"></select></div>
+              <div class="field"><label for="rime">韻類</label><select id="rime"></select></div>
+              <div class="field"><label for="structure">結構附標</label><select id="structure"></select></div>
+              <div class="field"><label for="tone">詞典聲調</label><select id="tone"></select></div>
+              <div class="field"><label for="phase">可視 FARHP 相位</label><select id="phase"></select></div>
+            </div>
+          </div>
+
+          <div class="controls-group">
+            <p class="control-index">C / TYPED SEMANTICS</p>
+            <div class="controls controls-three">
+              <div class="field"><label for="operator">語義／算子附標</label><select id="operator"></select></div>
+              <div class="field"><label for="semanticKind">語義種類</label><select id="semanticKind"></select></div>
+              <div class="field"><label for="arityMode">參數模式</label><select id="arityMode"><option value="fixed">fixed</option><option value="variadic">variadic</option></select></div>
+              <div class="field wide"><label for="concept">概念 ID</label><input id="concept" autocomplete="off"></div>
+              <div class="field"><label for="arityValue">固定數量／最小數量</label><input id="arityValue" type="number" min="0" max="8"></div>
+              <div class="field wide"><label for="inputTypes">輸入型別（逗號分隔）</label><input id="inputTypes" autocomplete="off"></div>
+              <div class="field"><label for="outputType">輸出型別</label><select id="outputType"></select></div>
+              <div class="field"><label for="reading">讀法</label><input id="reading" autocomplete="off"></div>
+              <div class="field wide"><label for="gloss">義項</label><input id="gloss" autocomplete="off"></div>
+            </div>
+          </div>
+
+          <div class="controls-group">
+            <p class="control-index">D / FARHP ACOUSTIC OBJECT</p>
+            <div class="controls controls-three">
+              <div class="field"><label for="acousticSource">來源</label><select id="acousticSource"></select></div>
+              <div class="field"><label for="acousticClass">宣告聲學類別</label><select id="acousticClass"></select></div>
+              <div class="field"><label for="phaseSignature">聲學相位簽名</label><select id="phaseSignature"></select></div>
+              <div class="field"><label for="confidence">信心度 <span id="confidenceValue"></span></label><input id="confidence" type="range" min="0" max="1" step="0.01"></div>
+              <div class="field wide"><label for="profileId">FARHP profile ID</label><input id="profileId" autocomplete="off"></div>
+              <div class="field wide check"><input id="rawMode" type="checkbox"><label for="rawMode">顯示純幾何變體</label></div>
+            </div>
+          </div>
+
+          <div class="actions" aria-label="案例與匯出動作">
+            <button id="legalExample" class="button button-copper" type="button">載入合法案例</button>
+            <button id="invalidExample" class="button button-outline" type="button">載入錯誤案例</button>
+            <button id="repair" class="button button-signal" type="button">自動修正</button>
+            <button id="exportSvg" class="button button-dark" type="button">匯出 SVG</button>
+            <button id="exportJson" class="button button-dark" type="button">匯出 JSON</button>
+          </div>
+
+          <details class="recipe-details">
+            <summary>查看完整配方 JSON</summary>
+            <pre id="json"></pre>
+          </details>
+        </section>
+      </div>
+    </section>
+
+    <section class="section section-light" id="evidence" aria-labelledby="evidence-title">
+      <div class="section-heading" data-reveal>
+        <p class="section-index">04 / EVIDENCE LEDGER</p>
+        <div>
+          <h2 id="evidence-title">不是一句「它能跑」。<br>而是一組可重現的證據。</h2>
+          <p>下面的數字來自 v0.4 規則目錄與批次報告。工程測試證明規則引擎的一致性；它不等同真人知覺實驗或自然語音結論。</p>
+        </div>
+      </div>
+
+      <div id="stats" class="stats" aria-label="批次驗證統計">
+        <div class="stat"><b>30</b><span>合法性規則</span></div>
+        <div class="stat"><b>4,096</b><span>驗證語料</span></div>
+      </div>
+
+      <div class="evidence-grid">
+        <article data-reveal><span>REGISTRY</span><h3>128 原子／256 變體</h3><p>原子註冊表與受控變體表提供穩定、可查驗的構形來源。</p></article>
+        <article data-reveal><span>CROSS-CHECK</span><h3>Node × Python</h3><p>核心規則與批次工具從兩條執行路徑交叉檢查同一份資料。</p></article>
+        <article data-reveal><span>TRACEABILITY</span><h3>兩層 SHA-256</h3><p>ruleset 雜湊固定規則版本；recipe 雜湊固定配方內容。</p></article>
+      </div>
+
+      <div class="evidence-callout" data-reveal>
+        <p>PASS 的精確含義</p>
+        <code>error_count === 0</code>
+        <span>警告仍保留在證書中，不會被成功狀態隱藏。</span>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="method" aria-labelledby="method-title">
+      <div class="section-heading" data-reveal>
+        <p class="section-index">05 / METHOD &amp; RULES</p>
+        <div>
+          <h2 id="method-title">同一個外觀，不保證是同一個東西。</h2>
+          <p>Schema 只回答「資料形狀正不正確」；規則引擎進一步回答「這些欄位放在一起是否有意義」。兩者缺一不可。</p>
+        </div>
+      </div>
+
+      <div class="method-split">
+        <article data-reveal>
+          <p class="card-kicker">STRUCTURE</p><h3>JSON Schema</h3>
+          <ul><li>欄位是否存在</li><li>值的資料型別</li><li>格式與列舉範圍</li></ul>
+        </article>
+        <div class="method-operator" aria-hidden="true">＋</div>
+        <article data-reveal>
+          <p class="card-kicker">RELATION</p><h3>Rule Engine</h3>
+          <ul><li>聲母與四呼是否相容</li><li>算子與參數數量是否一致</li><li>可視相位與聲學簽名是否一致</li></ul>
+        </article>
+        <div class="method-operator" aria-hidden="true">＝</div>
+        <article class="method-result" data-reveal>
+          <p class="card-kicker">CERTIFICATE</p><h3>可稽核證書</h3>
+          <ul><li>PASS／FAIL</li><li>錯誤與警告清單</li><li>規則與配方雜湊</li></ul>
+        </article>
+      </div>
+
+      <div class="registry-block">
+        <div class="registry-heading">
+          <div><p class="section-index">CONTROLLED VARIANTS</p><h3>目前種子的八個變體</h3></div>
+          <p>點選變體會同步更新變換角色、驗證狀態與配方雜湊。</p>
+        </div>
+        <div id="variantGallery" class="atom-grid"></div>
+      </div>
+
+      <details class="rule-catalog">
+        <summary><span>展開完整規則目錄</span><b>30 條跨欄位規則</b></summary>
+        <div id="ruleGrid" class="rule-grid"></div>
+      </details>
+    </section>
+
+    <section class="section section-light" id="roadmap" aria-labelledby="roadmap-title">
+      <div class="section-heading" data-reveal>
+        <p class="section-index">06 / VERSION LINE</p>
+        <div>
+          <h2 id="roadmap-title">現在可驗證；下一步可編譯。</h2>
+          <p>v0.4 是目前可工作的字形語法與合法性層。v0.5 是研究方向，不把尚未完成的能力提前算進成果。</p>
+        </div>
+      </div>
+
+      <div class="version-line">
+        <article class="version-now" data-reveal>
+          <span>NOW / v0.4</span><h3>Glyph Grammar &amp; Legality</h3>
+          <p>六槽字形、華語音系、受控變換、型別語義、FARHP 聲學、30 條規則與驗證證書。</p>
+          <b>目前權威節點</b>
+        </article>
+        <article data-reveal>
+          <span>NEXT / v0.5</span><h3>Language Toolchain</h3>
+          <p>Versioned Lexicon、Typed AST、Type Inference、Compiler 與 Decompiler。</p>
+          <b>規劃中，尚未交付</b>
+        </article>
+      </div>
+    </section>
+
+    <section class="section faq-section" id="faq" aria-labelledby="faq-title">
+      <div class="section-heading" data-reveal>
+        <p class="section-index">07 / QUESTIONS</p>
+        <div><h2 id="faq-title">你可能先想問。</h2><p>把界線說清楚，比把名稱說得神祕重要。</p></div>
+      </div>
+      <div class="faq-list">
+        <details><summary>這是一套字型嗎？</summary><p>不是。字型或 SVG 是視覺載體；Axioglyph 管理的是穩定身份、結構配方、規則與證書。</p></details>
+        <details><summary>這是一種可以直接說的自然語言嗎？</summary><p>不是現成自然語言。它是形式符號語言工程，目前整合華語音系欄位以研究跨模態結構。</p></details>
+        <details><summary>它是歷史以諾語或神秘文字的復原嗎？</summary><p>不是歷史語言復原。ENO 種子是現代設計資產，不構成歷史真實性主張。</p></details>
+        <details><summary>它能用來加密嗎？</summary><p>不把它當加密系統。穩定 ID、雜湊與驗證證書服務的是一致性和追溯，不是機密性。</p></details>
+        <details><summary>我能拿走產生的符號嗎？</summary><p>可以從實驗室匯出 SVG 與完整 JSON 配方；兩者分別保存外觀與機器可讀結構。</p></details>
+        <details><summary>如何知道規則真的有被執行？</summary><p>可載入錯誤案例觀察規則命中，再用自動修正回到 PASS；批次工具也會交叉檢查 4,096 筆語料。</p></details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <a class="brand brand-footer" href="#top">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="brand-copy"><b>Axioglyph <span>理符</span></b><small>Built on EMPSL v0.4</small></span>
+      </a>
+      <p>符號語言、型別語義與相位聲學的可驗證研究介面。</p>
+    </div>
+    <div class="footer-links">
+      <a href="#overview">理解系統</a><a href="#lab">互動實驗室</a><a href="#evidence">研究證據</a><a href="#faq">研究邊界</a>
+    </div>
+    <p class="footer-note">Axioglyph / EMPSL v0.4 · Research interface · <span id="siteYear">2026</span></p>
+  </footer>
+
+  <script src="data/EMPSL_atom_registry_v0.2.js"></script>
+  <script src="data/EMPSL_seed_variant_registry_v0.3.js"></script>
+  <script src="rules/EMPSL_grammar_tables_v0.4.js"></script>
+  <script src="rules/EMPSL_rule_catalog_v0.4.js"></script>
+  <script src="data/EMPSL_legality_report_v0.4.js"></script>
+  <script src="examples/EMPSL_legality_examples_v0.4.js"></script>
+  <script src="assets/empsl_core.js"></script>
+  <script src="assets/app.js"></script>
+  <script src="assets/site.js"></script>
+</body>
+</html>

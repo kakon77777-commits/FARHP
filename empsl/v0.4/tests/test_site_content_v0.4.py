@@ -7,7 +7,7 @@ ROOT = Path(__file__).resolve().parents[1]
 HTML = (ROOT / "index.html").read_text(encoding="utf-8")
 
 REQUIRED_SECTIONS = {
-    "concept",
+    "overview",
     "system",
     "lab",
     "evidence",
@@ -145,9 +145,10 @@ class SiteContractTests(unittest.TestCase):
     def test_brand_and_dual_entry_exist(self):
         self.assertIn("Axioglyph｜理符", HTML)
         self.assertIn("Built on EMPSL v0.4", HTML)
-        self.assertIn('href="#concept"', HTML)
+        self.assertIn('href="#overview"', HTML)
         self.assertIn('href="#lab"', HTML)
-        self.assertIn("符號，不只是被畫出來。它可以被證明。", HTML)
+        self.assertIn("符號，不只是被畫出來。", HTML)
+        self.assertIn("它可以被證明。", HTML)
 
     def test_required_sections_and_lab_controls_exist(self):
         self.assertTrue(REQUIRED_SECTIONS <= PARSER.ids)

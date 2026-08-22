@@ -38,7 +38,7 @@ Create a `unittest` suite using `html.parser.HTMLParser`. Track headings, IDs, a
 
 ```python
 REQUIRED_SECTIONS = {
-    "concept", "system", "lab", "evidence", "method", "roadmap", "faq"
+    "overview", "system", "lab", "evidence", "method", "roadmap", "faq"
 }
 REQUIRED_LAB_IDS = {
     "glyph", "variantMeta", "gid", "frame", "seedBase", "seedTransform",
@@ -54,7 +54,7 @@ class SiteContractTests(unittest.TestCase):
     def test_brand_and_dual_entry_exist(self):
         self.assertIn("Axioglyph｜理符", HTML)
         self.assertIn("Built on EMPSL v0.4", HTML)
-        self.assertIn('href="#concept"', HTML)
+        self.assertIn('href="#overview"', HTML)
         self.assertIn('href="#lab"', HTML)
 
     def test_required_sections_and_lab_controls_exist(self):
@@ -93,7 +93,7 @@ git commit -m "test: define Axioglyph site contract"
 
 **Interfaces:**
 - Consumes: existing global registries loaded from `data/*.js`, `rules/*.js`, and `examples/*.js`.
-- Produces: the section anchors `#concept`, `#system`, `#lab`, `#evidence`, `#method`, `#roadmap`, and `#faq`; all existing Lab IDs; `#siteNavToggle` and `#siteNavLinks` for navigation enhancement.
+- Produces: the section anchors `#overview`, `#system`, `#lab`, `#evidence`, `#method`, `#roadmap`, and `#faq`; all existing Lab IDs; `#siteNavToggle` and `#siteNavLinks` for navigation enhancement.
 
 - [ ] **Step 1: Replace the one-line page with semantic content**
 
@@ -103,7 +103,7 @@ Build the document in this order:
 <header class="site-header">...</header>
 <main>
   <section class="hero" aria-labelledby="hero-title">...</section>
-  <section id="concept" class="section section-light">...</section>
+  <section id="overview" class="section section-light">...</section>
   <section id="system" class="section section-dark">...</section>
   <section id="lab" class="section lab-section">...</section>
   <section id="evidence" class="section section-light">...</section>
