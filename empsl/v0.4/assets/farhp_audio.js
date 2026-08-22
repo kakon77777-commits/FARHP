@@ -80,6 +80,16 @@
     'HU-CUOKOU': 'y'
   });
 
+  const MEDIAL_SYMBOLS = Object.freeze({
+    'HU-KAIKOU':'', 'HU-QICHI':'ㄧ', 'HU-HEKOU':'ㄨ', 'HU-CUOKOU':'ㄩ'
+  });
+
+  const RIME_SYMBOLS = Object.freeze({
+    'RIME-A':'ㄚ', 'RIME-O':'ㄛ', 'RIME-E':'ㄜ', 'RIME-AI':'ㄞ',
+    'RIME-EI':'ㄟ', 'RIME-AO':'ㄠ', 'RIME-OU':'ㄡ', 'RIME-AN':'ㄢ',
+    'RIME-EN':'ㄣ', 'RIME-ANG':'ㄤ', 'RIME-ENG':'ㄥ', 'RIME-ER':'ㄦ'
+  });
+
   const TONES = Object.freeze({T0:0, T1:1, T2:2, T3:3, T4:4});
 
   const clamp = (value, low, high) => Math.max(low, Math.min(high, value));
@@ -162,6 +172,13 @@
     return path;
   }
 
+  function derivedReading(onset, huId, rimeId, tone) {
+    const core = `${onset.symbol}${MEDIAL_SYMBOLS[huId] ?? ''}${RIME_SYMBOLS[rimeId] ?? ''}`;
+    if (tone === 0) return `˙${core}`;
+    const mark = tone === 2 ? 'ˊ' : tone === 3 ? 'ˇ' : tone === 4 ? 'ˋ' : '';
+    return `${core}${mark}`;
+  }
+
   function recipeToPlan(recipe, voiceKey = 'neutral') {
     const voice = voiceProfile(voiceKey);
     if (!recipe || recipe.validation_certificate?.valid === false) {
@@ -200,7 +217,7 @@
       playable:true,
       reason:null,
       id:recipe.id || 'eml.empsl:glyph:draft',
-      reading:recipe.reading || '',
+      reading:recipe.reading || derivedReading(onset, huId, rimeId, tone),
       onsetId,
       onset,
       huId,

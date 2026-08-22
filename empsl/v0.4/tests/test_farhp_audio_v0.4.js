@@ -21,6 +21,10 @@ assert.equal(plan.coda, 'ng');
 assert.equal(plan.tone, 1);
 assert.equal(plan.voice.key, 'neutral');
 
+const noReading = JSON.parse(JSON.stringify(legal));
+noReading.reading = '';
+assert.equal(A.recipeToPlan(noReading, 'neutral').reading, 'ㄍㄨㄤ');
+
 for (let index = 0; index < 16; index += 1) {
   const phaseId = `PH16-${String(index).padStart(2, '0')}`;
   const vector = A.phaseSignatureVector(phaseId, 24);

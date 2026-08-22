@@ -403,6 +403,7 @@
       }
 
       const plan = Audio.recipeToPlan(current, selectedVoice);
+      $('#soundReading').textContent = plan.reading || current.reading || '—';
       $('#playSound').disabled = !plan.playable;
       $('#exportSoundWav').disabled = !plan.playable;
       $('#autoSoundDemo').disabled = false;
