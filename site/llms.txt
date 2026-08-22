@@ -1,0 +1,25 @@
+# Axioglyph | 理符
+
+Canonical URL: https://axioglyph.evemisslab.com/
+Technical foundation: EMPSL v0.4
+Source repository: https://github.com/kakon77777-commits/FARHP
+
+Axioglyph is an interactive glyph grammar lab. A visitor can change a glyph's
+form, Mandarin phonology, typed semantics, and FARHP acoustic fields, then read
+the resulting PASS/FAIL status, rule hits, warnings, and recipe hash.
+
+Current public evidence:
+- 128 registered atoms
+- 256 controlled seed variants
+- 30 cross-field legality rules
+- 4,096 batch-validation cases
+- SVG and JSON export
+
+Boundaries:
+- This is a modern designed symbol system, not a reconstruction of a historical language.
+- It is not an encryption system.
+- Engineering regression evidence does not establish human perception or natural-speech conclusions.
+- EMPSL v0.5 features are roadmap items, not current capabilities.
+
+There is no public write API or MCP endpoint on this site. The interactive lab
+runs in the browser and does not upload the visitor's recipe.
