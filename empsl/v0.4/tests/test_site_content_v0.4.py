@@ -195,8 +195,8 @@ class SiteContractTests(unittest.TestCase):
         self.assertEqual(3, PARSER.voice_button_count)
         self.assertIn("合成聲線，不代表生理分類", HTML)
         self.assertIn("PH16 代表性合成", HTML)
-        audio_index = PARSER.resource_urls.index("assets/farhp_audio.js?v=20260822")
-        app_index = PARSER.resource_urls.index("assets/app.js?v=20260822")
+        audio_index = PARSER.resource_urls.index("assets/farhp_audio.js?v=20260822-audio1")
+        app_index = PARSER.resource_urls.index("assets/app.js?v=20260822-audio1")
         self.assertLess(audio_index, app_index)
 
     def test_desktop_hero_type_keeps_the_spoken_headline_readable(self):
@@ -205,8 +205,8 @@ class SiteContractTests(unittest.TestCase):
     def test_resources_are_relative_and_feedback_is_accessible(self):
         for url in PARSER.resource_urls:
             self.assertFalse(url.startswith("/"), url)
-        self.assertIn("assets/site.css?v=20260822c", PARSER.resource_urls)
-        self.assertIn("assets/app.js?v=20260822", PARSER.resource_urls)
+        self.assertIn("assets/site.css?v=20260822-audio1", PARSER.resource_urls)
+        self.assertIn("assets/app.js?v=20260822-audio1", PARSER.resource_urls)
         self.assertIn("assets/site.js?v=20260822", PARSER.resource_urls)
         self.assertGreaterEqual(PARSER.aria_live_count, 1)
         self.assertGreaterEqual(PARSER.status_role_count, 1)

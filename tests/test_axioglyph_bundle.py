@@ -18,6 +18,7 @@ REQUIRED_FILES = {
     "assets/site.js",
     "assets/app.js",
     "assets/empsl_core.js",
+    "assets/farhp_audio.js",
     "data/EMPSL_atom_registry_v0.2.js",
     "data/EMPSL_seed_variant_registry_v0.3.js",
     "data/EMPSL_legality_report_v0.4.js",
@@ -56,6 +57,15 @@ class AxioglyphBundleTests(unittest.TestCase):
         self.assertIn(origin, (DIST / "sitemap.xml").read_text(encoding="utf-8"))
         self.assertIn(origin, (DIST / "llms.txt").read_text(encoding="utf-8"))
         self.assertIn("noindex", (DIST / "404.html").read_text(encoding="utf-8"))
+        llms = (DIST / "llms.txt").read_text(encoding="utf-8")
+        for phrase in (
+            "browser audio",
+            "neutral, male, and female",
+            "PH16 representative synthesis",
+            "does not upload",
+            "not natural-speech",
+        ):
+            self.assertIn(phrase, llms)
 
     def test_wrangler_uses_the_expected_assets_route(self):
         config = json.loads((ROOT / "wrangler.jsonc").read_text(encoding="utf-8"))

@@ -14,11 +14,20 @@ Current public evidence:
 - 30 cross-field legality rules
 - 4,096 batch-validation cases
 - SVG and JSON export
+- deterministic browser audio with neutral, male, and female synthetic voice presets
+- current, automatic, seeded-random, replay, stop, and WAV controls
+
+Audio notes:
+- PH16 representative synthesis uses a deterministic vector whose circular mean stays inside the visible PH16 bin.
+- The three voices change fundamental range, formant scale, and spectral tilt; they are synthetic presets, not physiological classifications.
+- Browser audio begins only after a user gesture.
+- The audio path runs locally and does not upload the recipe or synthesized samples.
 
 Boundaries:
 - This is a modern designed symbol system, not a reconstruction of a historical language.
 - It is not an encryption system.
-- Engineering regression evidence does not establish human perception or natural-speech conclusions.
+- Engineering regression evidence does not establish human perception and is not natural-speech or a TTS quality claim.
+- FARHP-G is not synthesized without the inverse-filtering metadata and full phase data needed for that estimate.
 - EMPSL v0.5 features are roadmap items, not current capabilities.
 
 There is no public write API or MCP endpoint on this site. The interactive lab

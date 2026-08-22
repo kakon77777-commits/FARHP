@@ -22,6 +22,7 @@ RUNTIME_FILES = (
     "assets/site.js",
     "assets/app.js",
     "assets/empsl_core.js",
+    "assets/farhp_audio.js",
     "data/EMPSL_atom_registry_v0.2.js",
     "data/EMPSL_seed_variant_registry_v0.3.js",
     "data/EMPSL_legality_report_v0.4.js",
