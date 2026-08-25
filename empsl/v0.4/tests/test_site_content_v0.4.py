@@ -234,6 +234,10 @@ class SiteContractTests(unittest.TestCase):
         ):
             self.assertIn(phrase, HTML)
 
+    def test_wse_sibling_link_is_public_and_reciprocal(self):
+        self.assertIn('href="https://wse.evemisstechnology.com/"', HTML)
+        self.assertIn("姊妹專案", HTML)
+
 
 if __name__ == "__main__":
     unittest.main()

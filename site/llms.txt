@@ -3,6 +3,7 @@
 Canonical URL: https://axioglyph.evemisslab.com/
 Technical foundation: EMPSL v0.4
 Source repository: https://github.com/kakon77777-commits/FARHP
+Sibling public project: https://wse.evemisstechnology.com/
 
 Axioglyph is an interactive glyph grammar lab. A visitor can change a glyph's
 form, Mandarin phonology, typed semantics, and FARHP acoustic fields, then read
@@ -32,3 +33,7 @@ Boundaries:
 
 There is no public write API or MCP endpoint on this site. The interactive lab
 runs in the browser and does not upload the visitor's recipe.
+
+The WSE relationship is public navigation only: Axioglyph and WSE are related
+sound/research projects, with no shared runtime, storage, authentication, or
+telemetry path.
