@@ -45,6 +45,14 @@ required_semantics:
   polarity_policy:
     enum: ["preserve", "normalize", "separate_bit", "equivariant", "unknown"]
 
+domain_rules:
+  Y:
+    required_fields: []
+    meaning: "Observed output-waveform FARHP."
+  G:
+    required_fields: ["inverse_filter"]
+    meaning: "Estimated glottal-source FARHP; inverse filtering must be declared and is not physiological ground truth."
+
 conformance_levels:
   level_0:
     name: "continuous_exchange"
