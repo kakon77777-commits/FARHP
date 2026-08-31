@@ -14,5 +14,8 @@ from .contracts import (
     RevisionRecord,
     ValueRecord,
 )
+from .registry import MethodRegistry, RegionRegistry
+from .routing import RoutingDecision
+from .runtime import SignalObservation, WorldSolveEngine, WorldSolveResult
 
 __all__ = [name for name in globals() if not name.startswith("_")]
