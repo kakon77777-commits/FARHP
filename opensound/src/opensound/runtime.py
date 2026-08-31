@@ -28,6 +28,27 @@ class SignalObservation:
 
 
 @dataclass(frozen=True, slots=True)
+class DomainExpansionRequest:
+    observation_ref: str
+    status: str = "open"
+    triggers: tuple[str, ...] = ()
+    candidate_regions: tuple[str, ...] = ()
+
+
+@dataclass(frozen=True, slots=True)
+class CouplingPort:
+    source_module: str
+    target_module: str
+    quantity: str
+    mandatory: bool = False
+
+
+@dataclass(slots=True)
+class CouplingGraph:
+    ports: list[CouplingPort] = field(default_factory=list)
+
+
+@dataclass(frozen=True, slots=True)
 class WorldCheckpoint:
     observation_id: str
     replay_token: str
@@ -52,6 +73,8 @@ class WorldSolveResult:
     branches: list[dict[str, Any]] = field(default_factory=list)
     ledger_events: list[dict[str, Any]] = field(default_factory=list)
     failure: dict[str, Any] | None = None
+    domain_expansion_request: DomainExpansionRequest | None = None
+    coupling_graph: CouplingGraph = field(default_factory=CouplingGraph)
 
     @property
     def residual_energy_ratio(self) -> float:
@@ -107,8 +130,10 @@ class WorldSolveEngine:
         model_reconstruction: np.ndarray | None = None,
         residual: np.ndarray | None = None,
         domain_expansion_requested: bool = False,
+        domain_expansion_request: DomainExpansionRequest | None = None,
         branches: list[dict[str, Any]] | None = None,
         failure: dict[str, Any] | None = None,
+        coupling_graph: CouplingGraph | None = None,
     ) -> WorldSolveResult:
         x = np.asarray(observation.waveform, dtype=float)
         model = np.zeros_like(x) if model_reconstruction is None else np.asarray(model_reconstruction, dtype=float)
@@ -132,7 +157,24 @@ class WorldSolveEngine:
             branches=branches or [],
             ledger_events=events,
             failure=failure,
+            domain_expansion_request=domain_expansion_request,
+            coupling_graph=coupling_graph or CouplingGraph(),
         )
+
+    @staticmethod
+    def _coupling_graph(routing: RoutingDecision) -> CouplingGraph:
+        graph = CouplingGraph()
+        selected = set(routing.selected_methods)
+        if {"transient-detector", "farhp"}.issubset(selected):
+            graph.ports.append(
+                CouplingPort(
+                    source_module="transient-detector",
+                    target_module="farhp",
+                    quantity="transient_cleaned_waveform",
+                    mandatory=False,
+                )
+            )
+        return graph
 
     def solve(self, observation: SignalObservation) -> WorldSolveResult:
         events: list[dict[str, Any]] = []
@@ -140,8 +182,16 @@ class WorldSolveEngine:
         self._event(events, "route", routing=routing.to_dict())
         x = np.asarray(observation.waveform, dtype=float)
         token = self._token(observation)
+        coupling_graph = self._coupling_graph(routing)
 
         if observation.metadata.get("unsupported_component"):
+            request = DomainExpansionRequest(
+                observation_ref=observation.observation_id,
+                status="open",
+                triggers=("unsupported_component",),
+                candidate_regions=tuple(routing.region_refs),
+            )
+            self._event(events, "domain_expansion_request", triggers=list(request.triggers))
             return self._terminal_result(
                 observation,
                 routing,
@@ -150,6 +200,8 @@ class WorldSolveEngine:
                 status="abstained",
                 residual=x.copy(),
                 domain_expansion_requested=True,
+                domain_expansion_request=request,
+                coupling_graph=coupling_graph,
             )
 
         if routing.method_states.get("farhp") == "abstain":
@@ -167,15 +219,51 @@ class WorldSolveEngine:
                 status="branched",
                 residual=x.copy(),
                 branches=branches,
+                coupling_graph=coupling_graph,
             )
 
         components: dict[str, np.ndarray] = {}
+
+        # The transient solver runs before FARHP when both are selected.  Its
+        # reconstructed event component is subtracted and the cleaned waveform
+        # is explicitly transferred through a coupling port to FARHP.
+        transient = np.zeros_like(x)
+        farhp_input = x.copy()
+        if "transient-detector" in routing.selected_methods:
+            self._event(events, "module_start", module="transient-detector")
+            try:
+                transient = self.transient.analyze_and_reconstruct(x)
+                if np.any(np.abs(transient) > 0):
+                    components["transient"] = transient
+                self._event(events, "module_finish", module="transient-detector")
+                if "farhp" in routing.selected_methods:
+                    farhp_input = x - transient
+                    self._event(
+                        events,
+                        "port_exchange",
+                        source_module="transient-detector",
+                        target_module="farhp",
+                        quantity="transient_cleaned_waveform",
+                    )
+            except Exception as exc:
+                self._event(events, "module_fail", module="transient-detector", error_type=type(exc).__name__, message=str(exc))
+                return self._terminal_result(
+                    observation,
+                    routing,
+                    token,
+                    events,
+                    status="failed",
+                    residual=x.copy(),
+                    failure={"module": "transient-detector", "error_type": type(exc).__name__, "message": str(exc)},
+                    coupling_graph=coupling_graph,
+                )
+
         farhp_frame = None
         harmonic = np.zeros_like(x)
         if "farhp" in routing.selected_methods:
             self._event(events, "module_start", module="farhp")
             try:
-                farhp_frame = self.farhp.analyze(x, observation.sample_rate_hz)
+                farhp_frame = self.farhp.analyze(farhp_input, observation.sample_rate_hz)
                 if farhp_frame.applicability_grade > 0:
                     harmonic = self.farhp.synthesize(farhp_frame, x.size)
                     components["harmonic"] = harmonic
@@ -200,31 +288,30 @@ class WorldSolveEngine:
                     status="failed",
                     residual=x.copy(),
                     failure={"module": "farhp", "error_type": type(exc).__name__, "message": str(exc)},
+                    coupling_graph=coupling_graph,
                 )
 
-        after_harmonic = x - harmonic
-        transient = np.zeros_like(x)
-        if "transient-detector" in routing.selected_methods:
-            try:
-                transient = self.transient.analyze_and_reconstruct(after_harmonic)
-                if np.any(np.abs(transient) > 0):
-                    components["transient"] = transient
-                self._event(events, "module_finish", module="transient-detector")
-            except Exception as exc:
-                self._event(events, "module_fail", module="transient-detector", error_type=type(exc).__name__, message=str(exc))
-                return self._terminal_result(observation, routing, token, events, status="failed", residual=x.copy(), failure={"module": "transient-detector", "error_type": type(exc).__name__, "message": str(exc)})
-
-        after_transient = after_harmonic - transient
+        after_modeled_structure = x - transient - harmonic
         noise = np.zeros_like(x)
         if "noise-estimator" in routing.selected_methods:
+            self._event(events, "module_start", module="noise-estimator")
             try:
-                noise_estimate = self.noise.analyze_and_reconstruct(after_transient, key=token)
+                noise_estimate = self.noise.analyze_and_reconstruct(after_modeled_structure, key=token)
                 noise = noise_estimate.reconstruction
                 components["noise"] = noise
                 self._event(events, "module_finish", module="noise-estimator")
             except Exception as exc:
                 self._event(events, "module_fail", module="noise-estimator", error_type=type(exc).__name__, message=str(exc))
-                return self._terminal_result(observation, routing, token, events, status="failed", residual=x.copy(), failure={"module": "noise-estimator", "error_type": type(exc).__name__, "message": str(exc)})
+                return self._terminal_result(
+                    observation,
+                    routing,
+                    token,
+                    events,
+                    status="failed",
+                    residual=x.copy(),
+                    failure={"module": "noise-estimator", "error_type": type(exc).__name__, "message": str(exc)},
+                    coupling_graph=coupling_graph,
+                )
 
         model = harmonic + transient + noise
         self._event(events, "reconstruct", component_count=len(components))
@@ -242,6 +329,7 @@ class WorldSolveEngine:
             model_reconstruction=model,
             residual=residual,
             domain_expansion_requested=routing.domain_expansion_requested,
+            coupling_graph=coupling_graph,
         )
 
     def create_checkpoint(self, result: WorldSolveResult) -> WorldCheckpoint:

@@ -3,9 +3,21 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Any
 
+import numpy as np
+
 from .benchmark import BenchmarkCase, BenchmarkRegistry, FixtureArtifact, FixtureGenerator, farhp_circular_error, waveform_nrmse
 from .contracts import EvidenceLevel, EvidenceRecord, EvidenceType
 from .runtime import SignalObservation, WorldSolveEngine, WorldSolveResult
+
+
+_HIDDEN_LABEL_KEYS = frozenset({
+    "private_label",
+    "class_label",
+    "source_name",
+    "filename",
+    "directory_label",
+    "text_description",
+})
 
 
 class EvidenceLedger:
@@ -18,6 +30,17 @@ class EvidenceLedger:
             evidence_type=EvidenceType.SYNTHETIC_RECONSTRUCTION,
             evidence_level=EvidenceLevel.L2,
             direction=direction,
+            strength=strength,
+        )
+        self._records[evidence_id] = record
+        return record
+
+    def record_reopening(self, evidence_id: str, *, strength: float | None = None) -> EvidenceRecord:
+        record = EvidenceRecord(
+            evidence_id=evidence_id,
+            evidence_type=EvidenceType.RESIDUAL_REOPENING,
+            evidence_level=EvidenceLevel.L2,
+            direction="support",
             strength=strength,
         )
         self._records[evidence_id] = record
@@ -78,6 +101,15 @@ class ResearchRun:
 
 
 @dataclass(slots=True)
+class ReopeningResult:
+    observation_id: str
+    old_residual: np.ndarray
+    new_residual: np.ndarray
+    reopening_gain: float
+    evidence_record: EvidenceRecord
+
+
+@dataclass(slots=True)
 class ResearchCIReport:
     results: dict[str, bool]
 
@@ -105,8 +137,15 @@ class ResearchHarness:
 
     def run_fixture(self, fixture: FixtureArtifact, *, hidden_label: bool, benchmark: BenchmarkCase | None = None) -> ResearchRun:
         runtime_metadata = dict(fixture.metadata)
+        # Private labels are never runtime inputs.  Hidden-label mode additionally
+        # strips common filename/source/class/text hints so the analysis has to
+        # operate on the observation rather than metadata leakage.
         runtime_metadata.pop("private_label", None)
-        metadata_leak = "private_label" in runtime_metadata
+        if hidden_label:
+            for key in _HIDDEN_LABEL_KEYS:
+                runtime_metadata.pop(key, None)
+        metadata_leak = bool(_HIDDEN_LABEL_KEYS.intersection(runtime_metadata)) if hidden_label else "private_label" in runtime_metadata
+
         observation = SignalObservation(
             observation_id=fixture.fixture_id,
             waveform=fixture.waveform,
@@ -134,6 +173,32 @@ class ResearchHarness:
             evidence_records=[evidence],
             runtime_observation_metadata=runtime_metadata,
             metadata_leak_detected=metadata_leak,
+        )
+
+    def reopen_with_reference_solver(self, initial: ResearchRun) -> ReopeningResult:
+        """Reopen an unresolved synthetic residual with an explicit oracle fixture solver.
+
+        This is a controlled L2 lineage/reopening reference, not a general sound
+        solver.  The reference solver deliberately models the preserved residual
+        exactly so the benchmark can test identity/evidence/reopen semantics.
+        """
+        old_residual = np.asarray(initial.world_result.residual, dtype=float).copy()
+        old_norm = float(np.linalg.norm(old_residual))
+        if old_norm <= 0.0:
+            raise ValueError("reopening reference requires a non-zero preserved residual")
+        new_residual = np.zeros_like(old_residual)
+        new_norm = float(np.linalg.norm(new_residual))
+        gain = old_norm - new_norm
+        evidence = self.evidence.record_reopening(
+            f"ev-reopen-{initial.run_id}",
+            strength=1.0 if gain > 0.0 else 0.0,
+        )
+        return ReopeningResult(
+            observation_id=initial.world_result.observation_id,
+            old_residual=old_residual,
+            new_residual=new_residual,
+            reopening_gain=gain,
+            evidence_record=evidence,
         )
 
     def _metrics(self, fixture: FixtureArtifact, world: WorldSolveResult, benchmark: BenchmarkCase | None) -> dict[str, float]:
