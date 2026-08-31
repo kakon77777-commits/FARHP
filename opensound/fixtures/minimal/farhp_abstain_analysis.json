@@ -1,0 +1,12 @@
+{
+  "object_type": "analysis_attempt",
+  "schema_version": "opensound-analysis-0.1",
+  "analysis_id": "ana-minimal-farhp-abstain-001",
+  "method_id": "farhp",
+  "method_version": "0.3",
+  "status": "abstained",
+  "outputs": {
+    "applicability": {"state": "abstain", "confidence": 0.90, "reason": "competing_fundamentals"}
+  },
+  "provenance": {"fixture": true}
+}

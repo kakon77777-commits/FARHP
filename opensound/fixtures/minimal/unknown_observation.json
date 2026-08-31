@@ -1,0 +1,16 @@
+{
+  "object_type": "observation",
+  "schema_version": "opensound-observation-0.1",
+  "observation_id": "obs-minimal-unknown-001",
+  "created_at": "2026-08-31T15:00:00+08:00",
+  "created_by": "opensound-p0-fixture",
+  "native_assets": [],
+  "region_refs": [],
+  "provenance": {"fixture": true},
+  "analysis_attempt_refs": [],
+  "hypothesis_refs": [],
+  "reconstruction_refs": [],
+  "residual_refs": [],
+  "evidence_refs": [],
+  "revision_refs": []
+}

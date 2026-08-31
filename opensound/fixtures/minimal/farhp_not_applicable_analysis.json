@@ -1,0 +1,12 @@
+{
+  "object_type": "analysis_attempt",
+  "schema_version": "opensound-analysis-0.1",
+  "analysis_id": "ana-minimal-farhp-na-001",
+  "method_id": "farhp",
+  "method_version": "0.3",
+  "status": "not_applicable",
+  "outputs": {
+    "applicability": {"state": "not_applicable", "confidence": 0.98, "reason": "broadband_noise_dominant"}
+  },
+  "provenance": {"fixture": true}
+}

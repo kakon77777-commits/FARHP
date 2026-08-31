@@ -10,6 +10,7 @@ from jsonschema import Draft202012Validator
 
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA_ROOT = ROOT / "schemas"
+FIXTURE_ROOT = ROOT / "fixtures" / "minimal"
 PRIMARY_SCHEMAS = (
     "OpenSound_Observation_v0.1.schema.json",
     "OpenSound_AnalysisAttempt_v0.1.schema.json",
@@ -39,6 +40,28 @@ class TestOpenSoundContracts(unittest.TestCase):
             schema = json.loads(path.read_text(encoding="utf-8"))
             Draft202012Validator.check_schema(schema)
             self.assertTrue(schema["$id"].startswith("https://unboundedaxiom.org/spec/opensound/0.1/"))
+
+    def test_minimal_fixture_pack_validates_against_primary_schemas(self) -> None:
+        pairs = (
+            ("unknown_observation.json", "OpenSound_Observation_v0.1.schema.json"),
+            ("farhp_applicable_analysis.json", "OpenSound_AnalysisAttempt_v0.1.schema.json"),
+            ("farhp_not_applicable_analysis.json", "OpenSound_AnalysisAttempt_v0.1.schema.json"),
+            ("farhp_abstain_analysis.json", "OpenSound_AnalysisAttempt_v0.1.schema.json"),
+        )
+        for fixture_name, schema_name in pairs:
+            fixture = json.loads((FIXTURE_ROOT / fixture_name).read_text(encoding="utf-8"))
+            schema = json.loads((SCHEMA_ROOT / schema_name).read_text(encoding="utf-8"))
+            errors = list(Draft202012Validator(schema).iter_errors(fixture))
+            self.assertEqual(errors, [], fixture_name)
+
+    def test_minimal_farhp_fixture_states_remain_distinct(self) -> None:
+        applicable = json.loads((FIXTURE_ROOT / "farhp_applicable_analysis.json").read_text(encoding="utf-8"))
+        not_applicable = json.loads((FIXTURE_ROOT / "farhp_not_applicable_analysis.json").read_text(encoding="utf-8"))
+        abstained = json.loads((FIXTURE_ROOT / "farhp_abstain_analysis.json").read_text(encoding="utf-8"))
+        self.assertEqual(applicable["status"], "completed")
+        self.assertEqual(not_applicable["status"], "not_applicable")
+        self.assertEqual(abstained["status"], "abstained")
+        self.assertNotEqual(not_applicable["outputs"]["applicability"]["state"], abstained["outputs"]["applicability"]["state"])
 
     def test_not_applicable_value_cannot_carry_numeric_value(self) -> None:
         c = self.contracts()
