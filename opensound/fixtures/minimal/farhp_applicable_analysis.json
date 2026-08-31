@@ -1,0 +1,13 @@
+{
+  "object_type": "analysis_attempt",
+  "schema_version": "opensound-analysis-0.1",
+  "analysis_id": "ana-minimal-farhp-applicable-001",
+  "method_id": "farhp",
+  "method_version": "0.3",
+  "status": "completed",
+  "outputs": {
+    "applicability": {"state": "applicable", "confidence": 0.95},
+    "farhp_artifact_ref": "farhp-fixture-001"
+  },
+  "provenance": {"fixture": true}
+}

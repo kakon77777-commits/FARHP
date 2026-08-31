@@ -1,0 +1,27 @@
+name: Open Sound MVP Reference Tests
+
+on:
+  push:
+    branches:
+      - integration/open-sound-mvp-v0.1
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  reference-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      - name: Install FARHP Core
+        run: python -m pip install -e farhp/core
+      - name: Run FARHP Core regression
+        run: python -m unittest discover -s farhp/core/tests -v
+      - name: Run Open Sound reference tests
+        env:
+          PYTHONPATH: opensound/src
+        run: python -m unittest discover -s opensound/tests -v
