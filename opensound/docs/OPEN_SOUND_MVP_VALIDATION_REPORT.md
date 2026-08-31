@@ -3,153 +3,140 @@
 **Repository:** `kakon77777-commits/FARHP`  
 **Branch:** `integration/open-sound-mvp-v0.1`  
 **Base:** `main@9c3c12be7aefe7fd7f905a5cb021ff65d2a01687`  
-**Validated implementation head:** `65a9fdaa9695937351063ad56ccbe492cfb0526b`  
-**Evidence ceiling:** L2  
-**Scope:** small / deterministic / auditable reference MVP  
+**Validated implementation anchor:** `ba114a1e1155fe3db7f7a3dd2c0855fbd03949b1`  
+**Evidence ceiling:** **L2**  
+**Scope:** small / deterministic / auditable reference MVP
 
 ---
 
-## 1. Canonical acceptance target
+## 1. Verdict
 
-The MVP must implement the following reference loop without turning FARHP into a universal sound model:
+`OPEN-SOUND-MVP-REFERENCE = COMPLETE` for the explicitly scoped deterministic reference MVP, subject only to the documentation-only closure commit retaining the same full green suite before PR readiness.
+
+This verdict means contract closure, deterministic runtime closure, controlled synthetic Research Harness closure, and the explicit final acceptance behaviors below. It does **not** mean natural-sound truth, human perceptual validation, production readiness, universal sound coverage, or external replication.
+
+## 2. Canonical acceptance loop
 
 ```text
 Observation
 → Region / applicability
 → route
 → FARHP / noise / transient reference modules
+→ explicit coupling when required
 → model-only reconstruction
 → residual
 → evidence / benchmark
 → commit / abstain / branch / reopen
 ```
 
-## 2. Phase status
+FARHP remains the harmonic-relative-phase specialist rather than a universal sound model.
 
-| Phase | Status | Scope |
+## 3. Phase status
+
+| Phase | Status | Key evidence |
 |---|---|---|
-| P0 Contract Closure | COMPLETE | FARHP spec reconciliation, Open Sound contracts, semantic validators, FARHP adapter |
-| P1 Deterministic Runtime | COMPLETE | deterministic routing/modules/reconstruction/residual/invariants/replay/fail-closed behavior |
-| P2 Research Harness | COMPLETE | benchmark registry, deterministic fixtures, metrics, hidden-label, evidence/claims, replay, Research CI |
+| P0 Contract Closure | COMPLETE | 40/40 at run `33369187917` |
+| P1 Deterministic Runtime | COMPLETE | 49/49 at run `33369621144` |
+| P2 Research Harness | COMPLETE | 59/59 at run `33369919046` |
+| MVP runtime closure | COMPLETE | 70/70 at run `33370340138` |
+| Final acceptance | COMPLETE | 74/74 at run `33376344538` |
 
-## 3. TDD evidence
+## 4. TDD lineage
 
-### P0 RED
+### P0
 
-Run `33368625953` failed only on the newly introduced P0 contract gaps while the pre-existing FARHP baseline remained green.
+- RED run `33368625953`: newly introduced tests failed on the expected spec-parity / missing-validator gaps while existing FARHP behavior remained green.
+- GREEN run `33369187917`: FARHP 29/29 + Open Sound 11/11 = **40/40 PASS**.
 
-### P0 GREEN / closure
+### P1
 
-Run `33369187917`:
+- RED run `33369359165`: P0 stayed green; P1 failed because runtime modules did not yet exist.
+- GREEN run `33369621144`: FARHP 29/29 + Open Sound 20/20 = **49/49 PASS**.
 
-- FARHP 29/29 PASS;
-- Open Sound 11/11 PASS;
-- combined 40/40 PASS.
+### P2
 
-### P1 RED
+- RED run `33369719607`: P0/P1 stayed green; P2 failed because the benchmark/research module did not yet exist.
+- GREEN run `33369919046`: FARHP 29/29 + Open Sound 30/30 = **59/59 PASS**.
 
-Run `33369359165` kept the P0 suite green and failed because the P1 runtime modules did not yet exist.
+### MVP closure
 
-### P1 GREEN
+- RED run `33370152655`: previous suites stayed green and closure tests exposed missing invariant/runtime-closure behavior.
+- GREEN run `33370340138`: FARHP 29/29 + Open Sound 41/41 = **70/70 PASS**.
 
-Run `33369621144`:
+### Final acceptance
 
-- FARHP 29/29 PASS;
-- Open Sound 20/20 PASS;
-- combined 49/49 PASS.
+- RED commit `87e11780d68de7a24d0541af1bbae5098a42416a`, run `33370721048`: all prior behavior stayed green; exactly four new acceptance gaps remained — complete hidden-label stripping, explicit DomainExpansionRequest, explicit transient→FARHP coupling graph/exchange, and residual reopening API.
+- GREEN implementation `ba114a1e1155fe3db7f7a3dd2c0855fbd03949b1`, run `33376344538`: FARHP 29/29 + Open Sound 45/45 = **74/74 PASS**.
 
-### P2 RED
+## 5. Contract / semantic closure
 
-Run `33369719607` kept P0/P1 green and failed because `opensound.benchmark` did not yet exist.
-
-### P2 GREEN
-
-Run `33369919046`:
-
-- FARHP 29/29 PASS;
-- Open Sound 30/30 PASS;
-- combined 59/59 PASS.
-
-### MVP closure RED
-
-Run `33370152655` kept all previous suites green and failed because the final required invariant/runtime-closure module did not yet exist.
-
-### MVP closure GREEN
-
-Run `33370340138`:
-
-- FARHP 29/29 PASS;
-- Open Sound 41/41 PASS;
-- combined **70/70 PASS**.
-
-## 4. Contract / semantic closure
-
-Verified by executable tests:
+Executable tests verify:
 
 - Trajectory YAML / JSON Schema required-field parity;
 - reconciled FARHP namespace;
 - Transform report contract parity;
 - FARHP-G explicitly requires inverse filtering;
 - duplicate FARHP spec trees remain byte-identical;
-- trajectory time arrays must share length;
-- `unknown / missing / not_applicable / abstain` stay distinct;
-- `not_applicable` may not carry a numeric value;
-- `abstain` may not carry a fake estimate;
+- trajectory time-indexed arrays share length;
+- `unknown / missing / not_applicable / abstain` remain distinct;
+- `not_applicable` cannot carry a numeric estimate;
+- `abstain` cannot carry a fake estimate;
 - Observation schema requires provenance;
 - duplicate stable identity with different content is rejected;
 - broken references are rejected;
-- immutable revision lineage cycles are rejected;
+- immutable revision-lineage cycles are rejected;
 - synthetic evidence cannot claim natural/human levels;
-- residual cannot silently be re-declared as noise without supporting evidence.
+- residual cannot silently be re-declared as noise without evidence;
+- candidate Region state is not treated as established.
 
-## 5. Runtime closure
+## 6. Runtime closure
 
-Verified by executable tests:
+Executable tests verify:
 
 - circular interpolation crosses the ±π boundary correctly;
-- pure harmonic route activates FARHP and commits;
-- noise-only route does not force FARHP;
-- transient-only route does not force FARHP;
-- H+N+T reference reconstruction contains harmonic/noise/transient components;
+- pure harmonic activates FARHP and commits;
+- noise-only and transient-only do not force FARHP;
+- H+N+T produces explicit harmonic/noise/transient reference components;
 - model-only reconstruction never uses preserved raw residual;
-- witness reconstruction round-trips exactly by adding the preserved residual;
-- unsupported observations abstain, preserve full residual, and request expansion;
-- explicit two-source conflicts do not produce a fake single-FARHP frame;
-- explicit branch metadata is produced for competing F0 candidates;
+- witness reconstruction remains distinct;
+- unsupported observations abstain, preserve full residual, and emit an explicit open `DomainExpansionRequest`;
+- source conflict branches rather than fabricating a high-confidence single FARHP result;
 - `farhp_only`, `noise_only`, and `transient_only` invariants are executable;
-- checkpoint / rollback replays the same deterministic state;
-- runtime ledger records route, reconstruction, residual, and terminal state;
-- unexpected module exceptions fail closed, preserve the full residual, and record `module_fail`.
+- checkpoint / rollback deterministically reproduces state;
+- module exceptions fail closed and preserve residual;
+- runtime ledger records route/residual/terminal states;
+- when transient and FARHP are both active, a declared `transient-detector → farhp` coupling port transfers `transient_cleaned_waveform` and logs a `port_exchange` event.
 
-## 6. Research-harness closure
+## 7. Research Harness closure
 
-Verified by executable tests:
+Executable tests verify:
 
-- seed benchmark matrix is versioned and present;
-- fixtures replay identically from family + seed;
-- required metrics are registered;
-- hidden private labels do not enter runtime metadata;
+- versioned seed benchmark matrix;
+- deterministic fixture replay from family + seed;
+- required metrics registry;
+- hidden-label mode removes private/class/source/filename/directory/text-description hints before runtime;
 - completed synthetic runs emit evidence no higher than L2;
-- correct abstention is counted as success for unsupported cases;
-- artifact stress does not create high-confidence FARHP truth claims;
+- correct abstention is success where benchmark contract requires it;
+- artifact stress does not become high-confidence FARHP truth;
 - support and counter-evidence are both retained;
-- disputed claims remain disputed rather than overwriting negative evidence;
 - replay bundles reproduce benchmark status and metrics;
-- the reference Research CI matrix passes.
+- reference Research CI matrix passes;
+- preserved unsupported residual can be reopened by an explicitly labeled controlled L2 reference solver, preserving observation identity, retaining the old residual, reducing the new residual, and emitting `RESIDUAL_REOPENING` evidence.
 
-## 7. Legacy regression boundary
+The reopening solver is deliberately an oracle/reference fixture solver for testing lineage and evidence semantics; it is **not** a claim that arbitrary unknown sounds are solved.
 
-The FARHP-Core regression remains green throughout the final implementation validation:
+## 8. Legacy regression boundary
 
-- 29/29 FARHP tests PASS at closure;
-- the original pre-Open-Sound FARHP baseline remains included within that suite;
-- FARHP-Core was adapted, not rewritten;
-- FARHP-Y / FARHP-G distinction remains intact;
-- G remains an inverse-filter estimate rather than physiological ground truth.
+The final acceptance run keeps the FARHP Core/spec suite green at **29/29**. FARHP-Core was adapted rather than rewritten. The following boundaries remain intact:
 
-## 8. Evidence ceiling / non-claims
+- FARHP-Y = observed output-waveform domain;
+- FARHP-G = estimate from explicitly declared inverse filtering, not physiological ground truth;
+- FARHP is not forced onto noise-only, transient-only, unsupported, or explicit source-conflict cases;
+- WebLab RC status is not converted into production certification.
 
-This MVP is **not** evidence for:
+## 9. Evidence ceiling / non-claims
+
+This reference MVP is **not** evidence for:
 
 - natural-sound truth;
 - human perceptual validity;
@@ -161,8 +148,16 @@ This MVP is **not** evidence for:
 
 The current scientific/engineering ceiling remains **L2**.
 
-## 9. Reference MVP acceptance
+## 10. Maintenance warning
 
-Based on the canonical P0/P1/P2 requirements and executable closure gates, the implementation at `65a9fdaa...` satisfies the reference-MVP engineering acceptance criteria.
+GitHub Actions currently reports a platform deprecation warning because the selected action versions target Node 20 and are being forced onto Node 24. This did not cause test failures and is not an Open Sound scientific/runtime blocker, but the workflow action versions should be maintained separately.
 
-The integration branch is intentionally left unmerged. Final branch metadata / documentation closure must remain green before any merge decision.
+## 11. Acceptance
+
+At implementation anchor `ba114a1e1155fe3db7f7a3dd2c0855fbd03949b1`, GitHub Actions run `33376344538` executed:
+
+- FARHP Core/spec: **29 tests, 0 failures**;
+- Open Sound: **45 tests, 0 failures**;
+- total: **74 tests, 0 failures**.
+
+After a documentation-only closure commit re-runs this same full suite green, PR #1 may be marked ready for review. The integration branch remains intentionally unmerged until the user chooses integration.

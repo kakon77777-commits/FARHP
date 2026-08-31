@@ -2,13 +2,14 @@
 
 This directory contains the small, deterministic, auditable reference MVP for FARHP Open Sound. It extends the existing FARHP repository without replacing FARHP-Core v0.3.
 
-## Canonical scope
+## Canonical loop
 
 ```text
 Observation
 → Region / applicability
 → deterministic routing
-→ FARHP / noise / transient modules
+→ FARHP / noise / transient reference modules
+→ explicit coupling where required
 → model-only reconstruction
 → residual
 → evidence / benchmark
@@ -41,7 +42,9 @@ These states must not collapse into an ambiguous `null`.
 - deterministic router;
 - FARHP, basic noise, basic transient, and residual modules;
 - circular / toroidal geometry support;
+- explicit transient → FARHP coupling port and exchange when both are active;
 - model-only vs witness reconstruction separation;
+- explicit DomainExpansionRequest for unsupported observations;
 - invariant engine;
 - explicit branches;
 - checkpoint / rollback replay;
@@ -53,10 +56,11 @@ These states must not collapse into an ambiguous `null`.
 - versioned benchmark registry;
 - deterministic fixture generator;
 - metric registry;
-- hidden-label execution;
+- hidden-label execution with common metadata hints stripped;
 - L2 synthetic evidence ledger;
 - claim registry with counter-evidence;
 - replay bundles;
+- residual reopening reference experiment;
 - Research CI reference matrix.
 
 ## Validation
@@ -71,9 +75,17 @@ PYTHONPATH=opensound/src python -m unittest discover -s opensound/tests -v
 
 On PowerShell, set `PYTHONPATH` before the second command instead of using the POSIX inline assignment.
 
+Latest acceptance implementation anchor: `ba114a1e1155fe3db7f7a3dd2c0855fbd03949b1`.
+
+GitHub Actions run `33376344538` verified:
+
+- FARHP Core/spec: **29/29 PASS**;
+- Open Sound: **45/45 PASS**;
+- combined: **74/74 PASS**.
+
 ## Evidence boundary
 
-The reference MVP evidence ceiling is **L2**. It provides contract, runtime, controlled synthetic reconstruction, routing, abstention, replay, and regression evidence. It does **not** establish natural-sound truth, human perceptual validation, production readiness, or external replication.
+The reference MVP evidence ceiling is **L2**. It provides contract, runtime, controlled synthetic reconstruction, routing, abstention, replay, coupling, residual reopening, and regression evidence. It does **not** establish natural-sound truth, human perceptual validation, production readiness, or external replication.
 
 ## FARHP boundary
 
@@ -81,7 +93,7 @@ The reference MVP evidence ceiling is **L2**. It provides contract, runtime, con
 - FARHP-G is an estimate produced by explicitly declared inverse filtering and is not physiological ground truth.
 - FARHP is not forced onto noise-only, transient-only, unsupported, or conflicting-source observations.
 
-## Current branch
+## Branch
 
 Reference implementation work is isolated on:
 
