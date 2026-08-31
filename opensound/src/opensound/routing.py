@@ -39,21 +39,16 @@ def characterize_signal(waveform: np.ndarray, sample_rate_hz: int) -> SignalFeat
     centered = x - float(np.mean(x))
     rms = float(np.sqrt(np.mean(np.square(centered))))
     eps = 1e-12
-
     min_tau = max(2, int(sample_rate_hz / 350.0))
     max_tau = min(int(sample_rate_hz / 70.0), x.size // 2)
     periodicity = 0.0
     if rms > eps and max_tau > min_tau:
         energy = float(np.dot(centered, centered)) + eps
-        values = []
-        for tau in range(min_tau, max_tau + 1):
-            values.append(float(np.dot(centered[:-tau], centered[tau:]) / energy))
+        values = [float(np.dot(centered[:-tau], centered[tau:]) / energy) for tau in range(min_tau, max_tau + 1)]
         periodicity = float(np.clip(max(values, default=0.0), 0.0, 1.0))
-
     spectrum = np.abs(np.fft.rfft(centered)) ** 2
     positive = spectrum[1:] + eps
     spectral_flatness = float(np.exp(np.mean(np.log(positive))) / np.mean(positive)) if positive.size else 0.0
-
     diff = np.abs(np.diff(centered))
     median_diff = float(np.median(diff)) + eps if diff.size else eps
     transient_score = float(np.max(diff) / median_diff) if diff.size else 0.0
@@ -74,34 +69,33 @@ class DeterministicRouter:
             },
             region_refs=["human-auditory", "atmospheric-acoustic"],
         )
-
         if metadata.get("unsupported_component"):
             decision.region_refs = ["unknown-mechanical"]
             decision.domain_expansion_requested = True
             decision.reasons["farhp"] = ["unsupported_component"]
             return decision, features
-
         candidates = metadata.get("f0_candidates_hz")
         if isinstance(candidates, (list, tuple)) and len(candidates) > 1:
             decision.method_states["farhp"] = "abstain"
             decision.reasons["farhp"] = ["competing_fundamentals"]
             return decision, features
-
+        artifact_suspected = bool(metadata.get("artifact_suspected"))
         if features.periodicity >= 0.48:
-            state = "applicable" if features.periodicity >= 0.68 else "weakly_applicable"
+            if artifact_suspected:
+                state = "weakly_applicable"
+                decision.reasons["farhp"] = ["artifact_suspected", f"periodicity={features.periodicity:.4f}"]
+            else:
+                state = "applicable" if features.periodicity >= 0.68 else "weakly_applicable"
+                decision.reasons["farhp"] = [f"periodicity={features.periodicity:.4f}"]
             decision.method_states["farhp"] = state
             decision.selected_methods.append("farhp")
-            decision.reasons["farhp"] = [f"periodicity={features.periodicity:.4f}"]
         else:
             decision.reasons["farhp"] = [f"insufficient_periodicity={features.periodicity:.4f}"]
-
-        if features.spectral_flatness >= 0.001 or features.periodicity < 0.48:
+        if features.spectral_flatness >= 0.001 or features.periodicity < 0.48 or artifact_suspected:
             decision.method_states["noise-estimator"] = "applicable"
             decision.selected_methods.append("noise-estimator")
-
-        if features.transient_score >= 3.0:
+        if features.transient_score >= 3.0 or artifact_suspected:
             decision.method_states["transient-detector"] = "applicable"
             decision.selected_methods.append("transient-detector")
-
         decision.selected_methods.append("residual-structure-analyzer")
         return decision, features
