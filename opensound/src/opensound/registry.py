@@ -33,6 +33,9 @@ class RegionRegistry:
     def get(self, region_id: str) -> RegionRecord:
         return self._records[region_id]
 
+    def is_established(self, region_id: str) -> bool:
+        return self.get(region_id).status == "established"
+
 
 @dataclass(frozen=True, slots=True)
 class MethodRecord:

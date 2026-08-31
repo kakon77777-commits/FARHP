@@ -1,5 +1,8 @@
 from __future__ import annotations
 
+import json
+from typing import Any
+
 from .contracts import (
     AvailabilityState,
     EvidenceLevel,
@@ -74,3 +77,31 @@ def validate_revision_lineage(revisions: list[RevisionRecord]) -> list[str]:
             seen.add(current)
             current = previous[current]
     return []
+
+
+def validate_unique_identity(records: list[dict[str, Any]], *, id_key: str) -> list[str]:
+    seen: dict[str, str] = {}
+    errors: list[str] = []
+    for record in records:
+        identity = record.get(id_key)
+        if not isinstance(identity, str) or not identity:
+            errors.append(f"{id_key}: missing stable identity")
+            continue
+        canonical = json.dumps(record, sort_keys=True, separators=(",", ":"), default=str)
+        previous = seen.get(identity)
+        if previous is not None and previous != canonical:
+            errors.append(f"{identity}: duplicate identity has different content")
+        else:
+            seen[identity] = canonical
+    return errors
+
+
+def validate_referential_integrity(refs: list[str], objects: dict[str, Any]) -> list[str]:
+    return [f"{ref}: unresolved reference" for ref in refs if ref not in objects]
+
+
+def validate_residual_semantics(record: dict[str, Any]) -> list[str]:
+    errors: list[str] = []
+    if record.get("type") == "noise" and not record.get("evidence_refs"):
+        errors.append("residual cannot be declared noise without explicit supporting evidence")
+    return errors
